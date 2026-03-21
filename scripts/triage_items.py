@@ -36,10 +36,12 @@ def norm(text):
 
 def score_text(text, words, weight):
     total = 0.0
+    hits = 0
     for w in words:
         if w and w in text:
             total += weight
-    return total
+            hits += 1
+    return total, hits
 
 
 def get_profile(mode):
@@ -51,8 +53,8 @@ def get_profile(mode):
             'w_high': 1.3,
             'w_medium': 0.75,
             'w_low': 0.9,
-            'send_threshold': 3.2,
-            'digest_threshold': 1.5,
+            'send_threshold': 3.6,
+            'digest_threshold': 1.6,
         }
     return {
         'high': GENERAL_HIGH,
@@ -61,8 +63,8 @@ def get_profile(mode):
         'w_high': 1.1,
         'w_medium': 0.7,
         'w_low': 0.9,
-        'send_threshold': 3.0,
-        'digest_threshold': 1.2,
+        'send_threshold': 3.4,
+        'digest_threshold': 1.4,
     }
 
 
@@ -79,44 +81,58 @@ def decide(item, default_mode):
     text = ' '.join([title, summary, feed_name, ' '.join(tags), ' '.join(priority_topics)])
 
     score = 0.0
-    score += score_text(text, profile['high'], profile['w_high'])
-    score += score_text(text, profile['medium'], profile['w_medium'])
-    score -= score_text(text, profile['low'], profile['w_low'])
+    high_score, high_hits = score_text(text, profile['high'], profile['w_high'])
+    med_score, med_hits = score_text(text, profile['medium'], profile['w_medium'])
+    low_score, low_hits = score_text(text, profile['low'], profile['w_low'])
+    score += high_score + med_score - low_score
+    base_hits = high_hits + med_hits
 
     include = [norm(x) for x in item.get('include', [])]
     exclude = [norm(x) for x in item.get('exclude', [])]
     if include:
         if any(x in text for x in include):
-            score += 1.6
+            score += 1.0
+            base_hits += 1
         else:
             score -= 0.8
     if exclude and any(x in text for x in exclude):
         score -= 3.0
 
-    score += score_text(text, boost_keywords, 1.0)
-    score -= score_text(text, suppress_keywords, 1.2)
-    score += score_text(text, priority_topics, 0.8)
+    boost_score, boost_hits = score_text(text, boost_keywords, 0.35)
+    priority_score, priority_hits = score_text(text, priority_topics, 0.25)
+    suppress_score, suppress_hits = score_text(text, suppress_keywords, 0.8)
+    score += boost_score + priority_score - suppress_score
 
     if title.startswith('show hn:'):
         score += 0.9
+        base_hits += 1
     if any(feed in feed_name for feed in SOLID_TECH_FEEDS):
-        score += 0.5
+        score += 0.4
     if mode == 'general-tech':
         if 'github blog' in feed_name and ('github' in text or 'actions' in text or 'copilot' in text or 'open source' in text):
-            score += 0.8
+            score += 0.6
+            base_hits += 1
         if 'open source' in text or 'sdk' in text or 'library' in text or 'framework' in text:
-            score += 0.5
+            score += 0.4
+            base_hits += 1
     else:
         if 'openclaw' in text or 'agent' in text or 'workflow' in text or 'automation' in text:
-            score += 0.9
+            score += 0.8
+            base_hits += 1
         if 'rss' in text:
-            score += 0.7
+            score += 0.5
+            base_hits += 1
         if 'github blog' in feed_name and ('copilot' in text or 'actions' in text or 'workflow' in text):
-            score += 0.6
+            score += 0.5
+            base_hits += 1
     if summary == 'comments':
         score -= 0.1
 
-    if score >= profile['send_threshold']:
+    # Guardrail: config keywords can help, but cannot alone promote weak items to send.
+    if base_hits == 0 and (boost_hits > 0 or priority_hits > 0):
+        score = min(score, profile['digest_threshold'] - 0.05)
+
+    if score >= profile['send_threshold'] and base_hits >= 2:
         decision = 'send'
         reason = f'High-signal match for {mode} curation goals'
     elif score >= profile['digest_threshold']:
@@ -133,6 +149,12 @@ def decide(item, default_mode):
             'decision': decision,
             'score': round(score, 2),
             'reason': reason,
+            'debug': {
+                'base_hits': base_hits,
+                'boost_hits': boost_hits,
+                'priority_hits': priority_hits,
+                'suppress_hits': suppress_hits,
+            }
         }
     }
 
