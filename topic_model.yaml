@@ -33,6 +33,16 @@ topic_model:
   - harness
   - acp
   - repo template
+  - workflow recipe
+  - integration recipe
+  - starter template
+  - cli workflow
+  - command flag
+  - release note
+  - changelog
+  - feature update
+  - mcp server
+  - skill showcase
   - sdlc scaffold
   weak_terms:
   - ai
@@ -51,6 +61,61 @@ topic_model:
   - election
   - gossip
   cooccurrence_rules:
+  - name: feature_update_pattern
+    when_any:
+      - release
+      - release notes
+      - changelog
+      - new feature
+      - feature update
+    and_any:
+      - openclaw
+      - claude code
+      - codex
+      - gemini
+      - gemini cli
+      - mcp
+      - skill
+    score: 1.2
+
+  - name: workflow_application_pattern
+    when_any:
+      - workflow
+      - automation
+      - setup guide
+      - how-to
+      - use case
+      - showcase
+      - recipe
+      - template
+      - scaffold
+    and_any:
+      - openclaw
+      - claude code
+      - codex
+      - gemini
+      - gemini cli
+      - mcp
+      - skill
+      - agent
+    score: 1.0
+
+  - name: mcp_skill_pattern
+    when_any:
+      - mcp
+      - mcp server
+      - skill
+      - tool calling
+      - integration
+    and_any:
+      - openclaw
+      - claude code
+      - codex
+      - gemini
+      - workflow
+      - cli
+    score: 1.0
+
   - all:
     - claude
     - code
@@ -139,6 +204,11 @@ scoring_policy:
   thresholds:
     send: 3.8
     digest: 1.5
+    workflow_showcase_bonus: 0.8
+    official_feature_update_bonus: 0.8
+    integration_recipe_bonus: 0.7
+    mcp_skill_bonus: 0.8
+    generic_ai_news_penalty: -0.8
 update_policy:
   review_cycle: weekly
   promotion_rules:
