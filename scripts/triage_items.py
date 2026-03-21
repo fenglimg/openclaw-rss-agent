@@ -220,6 +220,15 @@ def decide(item, default_mode, tm, ignore_feed_mode=False):
     if base_hits == 0 and (boost_hits > 0 or priority_hits > 0):
         score = min(score, profile['digest_threshold'] - 0.05)
 
+    discovery_tooling_floor = False
+    if mode == 'general-tech':
+        is_show_hn = 'show hn:' in title
+        is_github_repo = 'github.com/' in (item.get('link') or '')
+        tooling_hits = sum(1 for x in ['repo template', 'ai-assisted', 'sdlc', 'scaffold', 'tooling'] if x in text or x in title)
+        if is_show_hn and is_github_repo and tooling_hits >= 2:
+            score = max(score, profile['digest_threshold'])
+            discovery_tooling_floor = True
+
     if score >= profile['send_threshold'] and base_hits >= 2:
         decision = 'send'
         reason = f'High-signal match for {mode} curation goals'
@@ -247,6 +256,7 @@ def decide(item, default_mode, tm, ignore_feed_mode=False):
                 'source_adjust': source_adjust,
                 'language_adjust': language_adjust,
                 'priority_hits': priority_hits,
+                'discovery_tooling_floor': discovery_tooling_floor,
                 'suppress_hits': suppress_hits + suppress_local_hits,
             }
         }
