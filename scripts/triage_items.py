@@ -68,8 +68,8 @@ def get_profile(mode):
     }
 
 
-def decide(item, default_mode):
-    mode = item.get('triage_mode') or default_mode
+def decide(item, default_mode, ignore_feed_mode=False):
+    mode = default_mode if ignore_feed_mode else (item.get('triage_mode') or default_mode)
     profile = get_profile(mode)
     title = norm(item.get('title'))
     summary = norm(item.get('summary'))
@@ -163,13 +163,14 @@ def main():
     ap = argparse.ArgumentParser()
     ap.add_argument('--input', required=True)
     ap.add_argument('--mode', choices=['general-tech', 'agentic'], default='general-tech')
+    ap.add_argument('--ignore-feed-mode', action='store_true')
     args = ap.parse_args()
 
     with open(args.input, 'r', encoding='utf-8') as f:
         data = json.load(f)
     items = data.get('new_items', [])
 
-    triaged = [decide(item, args.mode) for item in items]
+    triaged = [decide(item, args.mode, ignore_feed_mode=args.ignore_feed_mode) for item in items]
     counts = {'send': 0, 'digest': 0, 'drop': 0}
     for item in triaged:
         counts[item['triage']['decision']] += 1
@@ -177,6 +178,7 @@ def main():
     print(json.dumps({
         'ok': True,
         'default_mode': args.mode,
+        'ignore_feed_mode': args.ignore_feed_mode,
         'items': triaged,
         'counts': counts,
     }, ensure_ascii=False, indent=2))

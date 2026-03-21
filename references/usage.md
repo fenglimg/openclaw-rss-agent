@@ -19,6 +19,18 @@ python3 scripts/run_pipeline.py \
   --triage-mode agentic
 ```
 
+## Force a global triage mode
+
+Use this when you want all feeds evaluated under one mode, ignoring per-feed `triage_mode`.
+
+```bash
+python3 scripts/run_pipeline.py \
+  --config /root/rss/feeds.yaml \
+  --state /root/rss/state.json \
+  --triage-mode agentic \
+  --ignore-feed-mode
+```
+
 ## Wider time window
 
 ```bash
@@ -72,6 +84,15 @@ python3 scripts/triage_items.py \
   --mode general-tech
 ```
 
+## Debug triage with forced mode
+
+```bash
+python3 scripts/triage_items.py \
+  --input /root/rss/output/deduped.json \
+  --mode agentic \
+  --ignore-feed-mode
+```
+
 ## Config notes
 
 Per-feed config can set:
@@ -82,6 +103,7 @@ Per-feed config can set:
 
 Use `include` / `exclude` for stronger filtering.
 Use `boost_keywords` / `priority_topics` for softer ranking.
+Use `--ignore-feed-mode` when you want pipeline-level mode to override all feeds.
 
 ## OpenClaw usage pattern
 
