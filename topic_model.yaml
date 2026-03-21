@@ -1,78 +1,90 @@
 version: 1
-
 topic_model:
   seed_terms:
-    - openclaw
-    - claude code
-    - codex
-    - gemini
-    - glm
-    - mimo
-    - mcp
-    - skill
-    - skills
-    - openclaw skill
-    - openclaw 使用技巧
-
+  - openclaw
+  - claude code
+  - codex
+  - gemini
+  - glm
+  - mimo
+  - mcp
+  - skill
+  - skills
+  - openclaw skill
+  - openclaw 使用技巧
   promoted_terms:
-    - coding agents
-    - ai-assisted development
-    - workflow automation
-    - tool calling
-    - function calling
-    - mcp server
-    - model context protocol
-    - context engineering
-    - agentic engineering
-    - developer tooling
-    - devtools
-    - repo orchestration
-    - multi-agent
-    - changelog
-    - release notes
-    - plugin marketplace
-    - skills registry
-    - harness
-    - acp
-
+  - coding agents
+  - ai-assisted development
+  - workflow automation
+  - tool calling
+  - function calling
+  - mcp server
+  - model context protocol
+  - context engineering
+  - agentic engineering
+  - developer tooling
+  - devtools
+  - repo orchestration
+  - multi-agent
+  - changelog
+  - release notes
+  - plugin marketplace
+  - skills registry
+  - harness
+  - acp
   weak_terms:
-    - ai
-    - workflow
-    - automation
-    - model
-    - tool
-    - assistant
-
+  - ai
+  - workflow
+  - automation
+  - model
+  - tool
+  - assistant
   suppress_terms:
-    - war
-    - politics
-    - celebrity
-    - sports
-    - attack
-    - military
-    - election
-    - gossip
-
+  - war
+  - politics
+  - celebrity
+  - sports
+  - attack
+  - military
+  - election
+  - gossip
   cooccurrence_rules:
-    - all: [claude, code]
-      bonus: 1.2
-    - all: [openai, codex]
-      bonus: 1.2
-    - all: [gemini, cli]
-      bonus: 1.2
-    - all: [mcp, server]
-      bonus: 1.0
-    - all: [agent, workflow]
-      bonus: 0.8
-    - all: [github, actions]
-      bonus: 0.8
-    - all: [context, engineering]
-      bonus: 0.9
-    - all: [skill, registry]
-      bonus: 0.8
-    - all: [plugin, marketplace]
-      bonus: 0.8
-
+  - all:
+    - claude
+    - code
+    bonus: 1.2
+  - all:
+    - openai
+    - codex
+    bonus: 1.2
+  - all:
+    - gemini
+    - cli
+    bonus: 1.2
+  - all:
+    - mcp
+    - server
+    bonus: 1.0
+  - all:
+    - agent
+    - workflow
+    bonus: 0.8
+  - all:
+    - github
+    - actions
+    bonus: 0.8
+  - all:
+    - context
+    - engineering
+    bonus: 0.9
+  - all:
+    - skill
+    - registry
+    bonus: 0.8
+  - all:
+    - plugin
+    - marketplace
+    bonus: 0.8
 source_policy:
   role_weights:
     official_release: 0.9
@@ -84,7 +96,6 @@ source_policy:
     curated_list: 0.1
     media: -0.1
     aggregator: -0.2
-
   source_overrides:
     openclaw_releases: 0.9
     openai_codex_releases: 0.9
@@ -93,32 +104,27 @@ source_policy:
     simon_willison: 0.6
     linux_do_latest: 0.2
     hacker_news: 0.1
-
 language_policy:
   default_adjust: 0.0
-
   by_language:
     en:
       adjust: 0.2
       strengths:
-        - official releases
-        - changelogs
-        - protocol updates
-
+      - official releases
+      - changelogs
+      - protocol updates
     zh:
       adjust: 0.1
       strengths:
-        - deployment tips
-        - workaround patterns
-        - community usage tricks
-
+      - deployment tips
+      - workaround patterns
+      - community usage tricks
     ja:
       adjust: 0.0
     de:
       adjust: 0.0
     fr:
       adjust: 0.0
-
 scoring_policy:
   seed_term_weight: 1.2
   promoted_term_weight: 0.7
@@ -128,23 +134,27 @@ scoring_policy:
   source_weight_multiplier: 1.0
   language_weight_multiplier: 1.0
   cooccurrence_multiplier: 1.0
-
   thresholds:
     send: 3.8
     digest: 1.5
-
 update_policy:
   review_cycle: weekly
-
   promotion_rules:
     min_high_signal_hits: 3
     min_distinct_sources: 2
     min_keep_rate: 0.6
-
   demotion_rules:
     min_noise_hits: 3
     max_keep_rate: 0.2
-
   candidate_limits:
     max_promotions_per_cycle: 5
     max_demotions_per_cycle: 5
+enrichment_policy:
+  enabled: true
+  max_candidates_per_run: 2
+  validate_send_candidates: true
+  validate_high_digest_candidates: true
+  send_margin: 0.7
+  noisy_source_roles:
+  - aggregator
+  - media

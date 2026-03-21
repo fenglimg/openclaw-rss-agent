@@ -38,6 +38,8 @@ def main():
         fetched = os.path.join(tmp, 'fetched.json')
         deduped = os.path.join(tmp, 'deduped.json')
         triaged = os.path.join(tmp, 'triaged.json')
+        enrichment_candidates = os.path.join(tmp, 'enrichment_candidates.json')
+        enrichment_results = os.path.join(tmp, 'enrichment_results.json')
 
         data = run_json([
             sys.executable, str(BASE / 'fetch_feeds.py'),
@@ -70,6 +72,20 @@ def main():
         with open(triaged, 'w', encoding='utf-8') as f:
             json.dump(triaged_data, f, ensure_ascii=False, indent=2)
 
+        enrichment_candidate_data = run_json([
+            sys.executable, str(BASE / 'select_enrichment_candidates.py'),
+            '--input', triaged,
+        ])
+        with open(enrichment_candidates, 'w', encoding='utf-8') as f:
+            json.dump(enrichment_candidate_data, f, ensure_ascii=False, indent=2)
+
+        enrichment_result_data = run_json([
+            sys.executable, str(BASE / 'enrichment_stub.py'),
+            '--input', enrichment_candidates,
+        ])
+        with open(enrichment_results, 'w', encoding='utf-8') as f:
+            json.dump(enrichment_result_data, f, ensure_ascii=False, indent=2)
+
         digest = run_text([
             sys.executable, str(BASE / 'build_digest.py'),
             '--input', triaged,
@@ -87,6 +103,8 @@ def main():
             'counts': deduped_data.get('counts', {}),
             'triage_counts': triaged_data.get('counts', {}),
             'feed_health': data.get('feed_health', []),
+            'enrichment_candidates': enrichment_candidate_data.get('candidates', []),
+            'enrichment_results': enrichment_result_data.get('results', []),
             'digest': digest,
             'items': triaged_data.get('items', []),
             'send_items': [x for x in triaged_data.get('items', []) if x.get('triage', {}).get('decision') == 'send'],
