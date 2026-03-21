@@ -4,23 +4,28 @@ import json
 import re
 
 
-HIGH_SIGNAL = [
-    'openclaw', 'agent', 'agents', 'ai', 'llm', 'rss', 'automation', 'workflow',
-    'github actions', 'copilot', 'release', 'launch', 'open source', 'cli',
-    'sdk', 'api', 'tooling', 'prompt', 'model', 'inference', 'vector', 'rag'
+GENERAL_HIGH = [
+    'ai', 'llm', 'open source', 'cli', 'sdk', 'api', 'tooling', 'release', 'launch',
+    'github actions', 'copilot', 'workflow', 'automation', 'prompt', 'model'
 ]
-
-MEDIUM_SIGNAL = [
+GENERAL_MEDIUM = [
     'python', 'rust', 'go', 'typescript', 'docker', 'kubernetes', 'database',
     'security', 'git', 'github', 'devtools', 'oss', 'parser', 'search',
     'compiler', 'middleware', 'benchmark', 'performance', 'infra', 'deployment',
-    'framework', 'library', 'sdk', 'testing', 'release notes', 'actions'
+    'framework', 'library', 'testing', 'release notes', 'actions'
 ]
+GENERAL_LOW = ['funding', 'opinion', 'hiring', 'layoffs', 'sales', 'marketing', 'politics', 'celebrity', 'sports']
 
-LOW_SIGNAL = [
-    'funding', 'opinion', 'hiring', 'layoffs', 'sales', 'marketing', 'politics',
-    'celebrity', 'sports'
+AGENTIC_HIGH = [
+    'openclaw', 'agent', 'agents', 'agentic', 'ai agent', 'coding agent', 'workflow',
+    'automation', 'rss', 'prompt', 'tooling', 'cli', 'sdk', 'api', 'copilot',
+    'model context', 'rag', 'vector', 'inference', 'tool calling', 'multi-agent'
 ]
+AGENTIC_MEDIUM = [
+    'llm', 'github actions', 'github', 'search', 'parser', 'library', 'framework',
+    'devtools', 'open source', 'release', 'middleware', 'orchestration', 'evaluation'
+]
+AGENTIC_LOW = ['politics', 'celebrity', 'sports', 'sales', 'marketing', 'opinion']
 
 SOLID_TECH_FEEDS = ['github blog', 'hacker news']
 
@@ -37,7 +42,32 @@ def score_text(text, words, weight):
     return total
 
 
-def decide(item):
+def get_profile(mode):
+    if mode == 'agentic':
+        return {
+            'high': AGENTIC_HIGH,
+            'medium': AGENTIC_MEDIUM,
+            'low': AGENTIC_LOW,
+            'w_high': 1.3,
+            'w_medium': 0.75,
+            'w_low': 0.9,
+            'send_threshold': 3.2,
+            'digest_threshold': 1.5,
+        }
+    return {
+        'high': GENERAL_HIGH,
+        'medium': GENERAL_MEDIUM,
+        'low': GENERAL_LOW,
+        'w_high': 1.1,
+        'w_medium': 0.7,
+        'w_low': 0.9,
+        'send_threshold': 3.0,
+        'digest_threshold': 1.2,
+    }
+
+
+def decide(item, mode):
+    profile = get_profile(mode)
     title = norm(item.get('title'))
     summary = norm(item.get('summary'))
     feed_name = norm(item.get('feed_name'))
@@ -45,9 +75,9 @@ def decide(item):
     text = ' '.join([title, summary, feed_name, ' '.join(tags)])
 
     score = 0.0
-    score += score_text(text, HIGH_SIGNAL, 1.1)
-    score += score_text(text, MEDIUM_SIGNAL, 0.7)
-    score -= score_text(text, LOW_SIGNAL, 0.9)
+    score += score_text(text, profile['high'], profile['w_high'])
+    score += score_text(text, profile['medium'], profile['w_medium'])
+    score -= score_text(text, profile['low'], profile['w_low'])
 
     include = [norm(x) for x in item.get('include', [])]
     exclude = [norm(x) for x in item.get('exclude', [])]
@@ -63,26 +93,35 @@ def decide(item):
         score += 0.9
     if any(feed in feed_name for feed in SOLID_TECH_FEEDS):
         score += 0.5
-    if 'github blog' in feed_name and ('github' in text or 'actions' in text or 'copilot' in text or 'open source' in text):
-        score += 0.8
-    if 'open source' in text or 'sdk' in text or 'library' in text or 'framework' in text:
-        score += 0.5
+    if mode == 'general-tech':
+        if 'github blog' in feed_name and ('github' in text or 'actions' in text or 'copilot' in text or 'open source' in text):
+            score += 0.8
+        if 'open source' in text or 'sdk' in text or 'library' in text or 'framework' in text:
+            score += 0.5
+    else:
+        if 'openclaw' in text or 'agent' in text or 'workflow' in text or 'automation' in text:
+            score += 0.9
+        if 'rss' in text:
+            score += 0.7
+        if 'github blog' in feed_name and ('copilot' in text or 'actions' in text or 'workflow' in text):
+            score += 0.6
     if summary == 'comments':
         score -= 0.1
 
-    if score >= 3.0:
+    if score >= profile['send_threshold']:
         decision = 'send'
-        reason = 'High-signal match for tracked technical/agent topics'
-    elif score >= 1.2:
+        reason = f'High-signal match for {mode} curation goals'
+    elif score >= profile['digest_threshold']:
         decision = 'digest'
-        reason = 'Good fit for a technical roundup'
+        reason = f'Good fit for {mode} roundup'
     else:
         decision = 'drop'
-        reason = 'Low relevance or low signal for current RSS curation goals'
+        reason = f'Low relevance for {mode} curation goals'
 
     return {
         **item,
         'triage': {
+            'mode': mode,
             'decision': decision,
             'score': round(score, 2),
             'reason': reason,
@@ -93,19 +132,21 @@ def decide(item):
 def main():
     ap = argparse.ArgumentParser()
     ap.add_argument('--input', required=True)
+    ap.add_argument('--mode', choices=['general-tech', 'agentic'], default='general-tech')
     args = ap.parse_args()
 
     with open(args.input, 'r', encoding='utf-8') as f:
         data = json.load(f)
     items = data.get('new_items', [])
 
-    triaged = [decide(item) for item in items]
+    triaged = [decide(item, args.mode) for item in items]
     counts = {'send': 0, 'digest': 0, 'drop': 0}
     for item in triaged:
         counts[item['triage']['decision']] += 1
 
     print(json.dumps({
         'ok': True,
+        'mode': args.mode,
         'items': triaged,
         'counts': counts,
     }, ensure_ascii=False, indent=2))

@@ -27,6 +27,7 @@ def main():
     ap.add_argument('--limit-per-feed', type=int, default=10)
     ap.add_argument('--digest-title', default='📡 RSS Digest')
     ap.add_argument('--max-items', type=int, default=10)
+    ap.add_argument('--triage-mode', choices=['general-tech', 'agentic'], default='general-tech')
     ap.add_argument('--write-state', action='store_true')
     ap.add_argument('--output-json')
     args = ap.parse_args()
@@ -59,6 +60,7 @@ def main():
         triaged_data = run_json([
             sys.executable, str(BASE / 'triage_items.py'),
             '--input', deduped,
+            '--mode', args.triage_mode,
         ])
         with open(triaged, 'w', encoding='utf-8') as f:
             json.dump(triaged_data, f, ensure_ascii=False, indent=2)
@@ -72,6 +74,7 @@ def main():
 
         result = {
             'ok': True,
+            'triage_mode': args.triage_mode,
             'fetched_count': data.get('count', 0),
             'new_count': deduped_data.get('counts', {}).get('new', 0),
             'counts': deduped_data.get('counts', {}),
