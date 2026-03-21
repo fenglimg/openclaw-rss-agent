@@ -31,6 +31,7 @@ AGENTIC_MEDIUM = [
 AGENTIC_LOW = ['politics', 'celebrity', 'sports', 'sales', 'marketing', 'opinion']
 
 SOLID_TECH_FEEDS = ['github blog', 'hacker news']
+DIGESTY_FEED_HINTS = ['digest', 'radar', 'roundup', 'weekly', 'daily report', 'report']
 TOPIC_MODEL_PATH = Path(__file__).resolve().parent.parent / 'topic_model.yaml'
 
 
@@ -186,6 +187,10 @@ def decide(item, default_mode, tm, ignore_feed_mode=False):
         base_hits += 1
     if any(feed in feed_name for feed in SOLID_TECH_FEEDS):
         score += 0.4
+    title_digesty = any(h in title for h in DIGESTY_FEED_HINTS)
+    feed_digesty = any(h in feed_name for h in DIGESTY_FEED_HINTS)
+    if title_digesty or feed_digesty:
+        score -= 0.9
     if mode == 'general-tech':
         if 'github blog' in feed_name and ('github' in text or 'actions' in text or 'copilot' in text or 'open source' in text):
             score += 0.6
@@ -263,6 +268,76 @@ def decide(item, default_mode, tm, ignore_feed_mode=False):
     }
 
 
+
+
+def canonical_series_key(item):
+    title = norm(item.get('title'))
+    feed_id = item.get('feed_id') or ''
+    series = title
+    series = re.sub(r'\b(20\d{2}-\d{2}-\d{2})\b', '', series)
+    series = re.sub(r'\b(zh|en)\b', '', series)
+    replacements = {
+        '生态日报': 'agents ecosystem digest',
+        '社区动态日报': 'community digest',
+        '官方内容追踪报告': 'official tracker report',
+        '工具社区动态日报': 'tools digest',
+        '日报': 'digest',
+        '报告': 'report',
+    }
+    for a, b in replacements.items():
+        series = series.replace(a, b)
+    series = re.sub(r'[^a-z0-9一-鿿]+', ' ', series)
+    series = re.sub(r'\s+', ' ', series).strip()
+    return f"{feed_id}::{series}"
+
+
+def dedupe_and_limit(items, per_feed_limit=2):
+    ordered = sorted(
+        items,
+        key=lambda x: (
+            x.get('triage', {}).get('enriched_score', x.get('triage', {}).get('score', 0)),
+            x.get('triage', {}).get('decision') == 'send'
+        ),
+        reverse=True,
+    )
+
+    kept = []
+    feed_counts = {}
+    seen_series = set()
+
+    for item in ordered:
+        triage = item.get('triage', {})
+        if triage.get('decision') == 'drop':
+            kept.append(item)
+            continue
+
+        feed_id = item.get('feed_id') or 'unknown'
+        series_key = canonical_series_key(item)
+        title = norm(item.get('title'))
+
+        if series_key in seen_series:
+            item['triage']['decision'] = 'drop'
+            item['triage']['reason'] = 'Dropped as same-series / bilingual duplicate'
+            item['triage']['debug']['series_deduped'] = True
+            kept.append(item)
+            continue
+
+        if feed_counts.get(feed_id, 0) >= per_feed_limit:
+            item['triage']['decision'] = 'drop'
+            item['triage']['reason'] = 'Dropped by same-feed cap'
+            item['triage']['debug']['same_feed_capped'] = True
+            kept.append(item)
+            continue
+
+        seen_series.add(series_key)
+        feed_counts[feed_id] = feed_counts.get(feed_id, 0) + 1
+        item['triage']['debug']['series_key'] = series_key
+        item['triage']['debug']['same_feed_rank'] = feed_counts[feed_id]
+        item['triage']['debug']['preferred_locale'] = 'zh' if re.search(r'[一-鿿]', title) else 'en'
+        kept.append(item)
+
+    return kept
+
 def main():
     ap = argparse.ArgumentParser()
     ap.add_argument('--input', required=True)
@@ -276,6 +351,7 @@ def main():
     tm = load_topic_model()
 
     triaged = [decide(item, args.mode, tm, ignore_feed_mode=args.ignore_feed_mode) for item in items]
+    triaged = dedupe_and_limit(triaged, per_feed_limit=2)
     counts = {'send': 0, 'digest': 0, 'drop': 0}
     for item in triaged:
         counts[item['triage']['decision']] += 1
