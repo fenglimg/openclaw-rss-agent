@@ -195,9 +195,12 @@ def decide(item, default_mode, tm, ignore_feed_mode=False):
             base_hits += 1
         if any(x in text for x in ['attack', 'war', 'military', 'missile', 'election', 'president', 'prime minister']):
             score -= 1.6
-        if 'show hn:' in title or 'repo template' in text or 'ai-assisted' in text or 'sdlc' in text:
-            score += 0.8
+        workflow_scaffold_hits = sum(1 for x in ['show hn:', 'repo template', 'ai-assisted', 'sdlc', 'software development'] if x in text or x in title)
+        if workflow_scaffold_hits >= 2:
+            score += 1.5
             base_hits += 1
+        elif workflow_scaffold_hits == 1:
+            score += 0.6
     else:
         if 'openclaw' in text or 'agent' in text or 'workflow' in text or 'automation' in text:
             score += 0.9
