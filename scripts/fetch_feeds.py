@@ -145,8 +145,12 @@ def main():
                     'feed_name': feed_name,
                     'feed_url': url,
                     'tags': feed.get('tags', []),
+                    'triage_mode': feed.get('triage_mode'),
                     'include': feed.get('include', []),
                     'exclude': feed.get('exclude', []),
+                    'boost_keywords': feed.get('boost_keywords', []),
+                    'suppress_keywords': feed.get('suppress_keywords', []),
+                    'priority_topics': feed.get('priority_topics', []),
                     **item,
                 })
             feed_health.append({

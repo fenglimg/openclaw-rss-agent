@@ -37,7 +37,7 @@ def norm(text):
 def score_text(text, words, weight):
     total = 0.0
     for w in words:
-        if w in text:
+        if w and w in text:
             total += weight
     return total
 
@@ -66,13 +66,17 @@ def get_profile(mode):
     }
 
 
-def decide(item, mode):
+def decide(item, default_mode):
+    mode = item.get('triage_mode') or default_mode
     profile = get_profile(mode)
     title = norm(item.get('title'))
     summary = norm(item.get('summary'))
     feed_name = norm(item.get('feed_name'))
     tags = [norm(t) for t in item.get('tags', [])]
-    text = ' '.join([title, summary, feed_name, ' '.join(tags)])
+    priority_topics = [norm(t) for t in item.get('priority_topics', [])]
+    boost_keywords = [norm(t) for t in item.get('boost_keywords', [])]
+    suppress_keywords = [norm(t) for t in item.get('suppress_keywords', [])]
+    text = ' '.join([title, summary, feed_name, ' '.join(tags), ' '.join(priority_topics)])
 
     score = 0.0
     score += score_text(text, profile['high'], profile['w_high'])
@@ -88,6 +92,10 @@ def decide(item, mode):
             score -= 0.8
     if exclude and any(x in text for x in exclude):
         score -= 3.0
+
+    score += score_text(text, boost_keywords, 1.0)
+    score -= score_text(text, suppress_keywords, 1.2)
+    score += score_text(text, priority_topics, 0.8)
 
     if title.startswith('show hn:'):
         score += 0.9
@@ -146,7 +154,7 @@ def main():
 
     print(json.dumps({
         'ok': True,
-        'mode': args.mode,
+        'default_mode': args.mode,
         'items': triaged,
         'counts': counts,
     }, ensure_ascii=False, indent=2))

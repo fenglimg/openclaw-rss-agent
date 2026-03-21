@@ -4,6 +4,7 @@ feeds:
     url: https://linux.do/latest.rss
     enabled: true
     tags: [community, linux]
+    triage_mode: agentic
     include:
       - openclaw
       - agent
@@ -11,11 +12,27 @@ feeds:
     exclude:
       - ad
       - spam
+    boost_keywords:
+      - workflow
+      - automation
+      - prompt
+    suppress_keywords:
+      - politics
+      - celebrity
+    priority_topics:
+      - openclaw
+      - agent tooling
 
   - id: hacker_news
     name: Hacker News
     url: https://news.ycombinator.com/rss
     enabled: true
     tags: [tech]
+    triage_mode: general-tech
     include: []
     exclude: []
+    boost_keywords: []
+    suppress_keywords: []
+    priority_topics:
+      - devtools
+      - open source
