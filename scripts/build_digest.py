@@ -51,6 +51,14 @@ def main():
                 shown_score = triage.get('enriched_score', triage.get('score'))
                 if triage.get('reason'):
                     lines.append(f'- 判断：{trim(triage.get("reason"), 120)}（score {shown_score})')
+                enrichment = triage.get('enrichment') or {}
+                if enrichment.get('validated'):
+                    label = '已多源验证'
+                    if enrichment.get('officialHit'):
+                        label = '已官方确认'
+                    lines.append(f'- 验证：{label}（sources {enrichment.get("crossSourceCount", 0)}, Δ+{enrichment.get("confidenceDelta", 0)})')
+                elif enrichment:
+                    lines.append(f'- 验证：未确认（{trim(enrichment.get("reason", "no result"), 80)}）')
                 if item.get('link'):
                     lines.append(f'<{item.get("link")}>')
                 lines.append('')
