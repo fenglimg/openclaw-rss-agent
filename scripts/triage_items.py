@@ -131,6 +131,39 @@ def cooccurrence_bonus(text, rules):
     return bonus, hits
 
 
+def applied_signal_score(text, title, item):
+    score = 0.0
+    hits = 0
+
+    tool_terms = ['openclaw', 'claude code', 'codex', 'gemini', 'gemini cli', 'mcp', 'skill', 'agent', 'workflow', 'tool calling']
+    applied_terms = ['release', 'release notes', 'changelog', 'new feature', 'feature update', 'integration', 'setup', 'how-to', 'use case', 'showcase', 'template', 'scaffold', 'recipe', 'cli', 'command', 'flag']
+    generic_news_terms = ['funding', 'valuation', 'policy', 'macro', 'benchmark', 'opinion', 'lawsuit', 'election']
+
+    tool_hits = sum(1 for x in tool_terms if x in text)
+    applied_hits = sum(1 for x in applied_terms if x in text)
+    generic_hits = sum(1 for x in generic_news_terms if x in text)
+
+    if tool_hits and applied_hits:
+        score += 1.6
+        hits += 1
+    elif applied_hits >= 2:
+        score += 0.8
+        hits += 1
+
+    if any(x in text for x in ['mcp server', 'skill showcase', 'workflow recipe', 'integration recipe', 'repo template', 'starter template']):
+        score += 1.0
+        hits += 1
+
+    if item.get('source_role') in ('official_release', 'official_blog') and any(x in text for x in ['release', 'changelog', 'feature', 'integration']):
+        score += 0.8
+        hits += 1
+
+    if generic_hits and applied_hits == 0:
+        score -= 1.0
+
+    return score, hits
+
+
 def decide(item, default_mode, tm, ignore_feed_mode=False):
     mode = default_mode if ignore_feed_mode else (item.get('triage_mode') or default_mode)
     profile = get_profile(mode, tm)
@@ -177,10 +210,12 @@ def decide(item, default_mode, tm, ignore_feed_mode=False):
     score += boost_score + priority_score - suppress_local_score
 
     co_bonus, co_hits = cooccurrence_bonus(text, profile['cooccurrence_rules'])
+    applied_bonus, applied_hits = applied_signal_score(text, title, item)
     score += co_bonus
+    score += applied_bonus
     score += source_adjust
     score += language_adjust
-    base_hits += co_hits
+    base_hits += co_hits + applied_hits
 
     if title.startswith('show hn:'):
         score += 0.9
@@ -234,15 +269,17 @@ def decide(item, default_mode, tm, ignore_feed_mode=False):
             score = max(score, profile['digest_threshold'])
             discovery_tooling_floor = True
 
-    if score >= profile['send_threshold'] and base_hits >= 2:
+    has_applied_signal = applied_hits > 0 or any(x in text for x in ['release', 'changelog', 'workflow', 'integration', 'mcp', 'skill', 'setup', 'how-to', 'template', 'scaffold'])
+
+    if score >= profile['send_threshold'] and base_hits >= 2 and has_applied_signal:
         decision = 'send'
-        reason = f'High-signal match for {mode} curation goals'
-    elif score >= profile['digest_threshold']:
+        reason = f'High-signal applied update for {mode} curation goals'
+    elif score >= profile['digest_threshold'] and (has_applied_signal or score >= profile['send_threshold'] - 0.2):
         decision = 'digest'
-        reason = f'Good fit for {mode} roundup'
+        reason = f'Good applied-layer fit for {mode} roundup'
     else:
         decision = 'drop'
-        reason = f'Low relevance for {mode} curation goals'
+        reason = f'Low applied relevance for {mode} curation goals'
 
     return {
         **item,
@@ -257,6 +294,7 @@ def decide(item, default_mode, tm, ignore_feed_mode=False):
                 'promoted_hits': promoted_hits,
                 'weak_hits': weak_hits,
                 'cooccurrence_hits': co_hits,
+                'applied_hits': applied_hits,
                 'boost_hits': boost_hits,
                 'source_adjust': source_adjust,
                 'language_adjust': language_adjust,
@@ -277,6 +315,12 @@ def canonical_series_key(item):
     series = re.sub(r'\b(20\d{2}-\d{2}-\d{2})\b', '', series)
     series = re.sub(r'\b(zh|en)\b', '', series)
     replacements = {
+        'ai cli 工具社区动态日报': 'ai cli digest',
+        'ai cli tools digest': 'ai cli digest',
+        'ai agents 生态日报': 'ai agents digest',
+        'ai agents ecosystem digest': 'ai agents digest',
+        'ai 官方内容追踪报告': 'official tracker report',
+        'ai official tracker report': 'official tracker report',
         '生态日报': 'agents ecosystem digest',
         '社区动态日报': 'community digest',
         '官方内容追踪报告': 'official tracker report',
