@@ -1,15 +1,19 @@
 #!/usr/bin/env python3
 import argparse
 import json
-import os
-import sys
+import re
 import time
 import xml.etree.ElementTree as ET
 from datetime import datetime, timezone
 from email.utils import parsedate_to_datetime
+from html import unescape
 
 import requests
 import yaml
+
+
+TAG_RE = re.compile(r'<[^>]+>')
+WS_RE = re.compile(r'\s+')
 
 
 def iso_now():
@@ -39,6 +43,15 @@ def parse_date(value):
     return None
 
 
+def clean_html(text):
+    if not text:
+        return None
+    text = unescape(text)
+    text = TAG_RE.sub(' ', text)
+    text = WS_RE.sub(' ', text).strip()
+    return text or None
+
+
 def text_of(node, path, ns=None):
     found = node.find(path, ns or {})
     if found is not None and found.text:
@@ -60,10 +73,10 @@ def collect_feed_entries(xml_text):
             summary = text_of(item, 'description') or text_of(item, 'summary')
             entries.append({
                 'id': guid or link or title,
-                'title': title,
-                'link': link,
+                'title': clean_html(title),
+                'link': clean_html(link),
                 'published': to_iso(parse_date(pub)) if pub else None,
-                'summary': summary,
+                'summary': clean_html(summary),
             })
         return entries
 
@@ -86,11 +99,11 @@ def collect_feed_entries(xml_text):
         pub = text_of(entry, 'atom:published', ns) or text_of(entry, 'atom:updated', ns)
         summary = text_of(entry, 'atom:summary', ns) or text_of(entry, 'atom:content', ns)
         entries.append({
-            'id': entry_id,
-            'title': title,
-            'link': link,
+            'id': clean_html(entry_id),
+            'title': clean_html(title),
+            'link': clean_html(link),
             'published': to_iso(parse_date(pub)) if pub else None,
-            'summary': summary,
+            'summary': clean_html(summary),
         })
     return entries
 
