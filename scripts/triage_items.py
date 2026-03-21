@@ -132,6 +132,35 @@ def cooccurrence_bonus(text, rules):
 
 
 
+
+def chinese_community_signal(text, item):
+    feed_id = item.get('feed_id') or ''
+    if feed_id not in ('linux_do_latest', 'v2ex_rss'):
+        return 0.0, 0
+
+    positive_terms = ['教程', '配置', '接入', '实测', '玩法', '工作流', '自动化', '集成', 'mcp', 'skill', 'openclaw', 'claude code', 'codex', 'gemini', '用法', '踩坑', '解决']
+    negative_terms = ['闲聊', '水', '买了', '大手一挥', '吐槽', '求推荐', '灌水']
+
+    pos_hits = sum(1 for x in positive_terms if x in text)
+    neg_hits = sum(1 for x in negative_terms if x in text)
+
+    score = 0.0
+    hits = 0
+    if pos_hits >= 2:
+        score += 1.2
+        hits += 1
+    elif pos_hits == 1:
+        score += 0.5
+        hits += 1
+
+    if neg_hits and pos_hits == 0:
+        score -= 1.2
+    elif neg_hits:
+        score -= 0.6
+
+    return score, hits
+
+
 def core_ecosystem_priority(text, item):
     core_terms = ['openclaw', 'claude code', 'codex', 'gemini cli', 'mcp', 'mcp server', 'skill']
     secondary_terms = ['gemini', 'agent', 'workflow', 'tool calling']
@@ -238,14 +267,16 @@ def decide(item, default_mode, tm, ignore_feed_mode=False):
     score += boost_score + priority_score - suppress_local_score
 
     co_bonus, co_hits = cooccurrence_bonus(text, profile['cooccurrence_rules'])
+    community_bonus, community_hits = chinese_community_signal(text, item)
     core_bonus, core_hits = core_ecosystem_priority(text, item)
     applied_bonus, applied_hits = applied_signal_score(text, title, item)
     score += co_bonus
+    score += community_bonus
     score += core_bonus
     score += applied_bonus
     score += source_adjust
     score += language_adjust
-    base_hits += co_hits + core_hits + applied_hits
+    base_hits += co_hits + community_hits + core_hits + applied_hits
 
     if title.startswith('show hn:'):
         score += 0.9
@@ -301,11 +332,12 @@ def decide(item, default_mode, tm, ignore_feed_mode=False):
 
     has_core_ecosystem_hit = core_hits > 0 or any(x in text for x in ['openclaw', 'claude code', 'codex', 'gemini cli', 'mcp', 'mcp server', 'skill'])
     has_applied_signal = applied_hits > 0 or any(x in text for x in ['release', 'changelog', 'workflow', 'integration', 'mcp', 'skill', 'setup', 'how-to', 'template', 'scaffold'])
+    has_strong_cn_practical_signal = community_hits > 0 and community_bonus > 0.8
 
-    if score >= profile['send_threshold'] and base_hits >= 2 and has_applied_signal and has_core_ecosystem_hit:
+    if score >= profile['send_threshold'] and base_hits >= 2 and (has_core_ecosystem_hit and has_applied_signal or has_strong_cn_practical_signal):
         decision = 'send'
         reason = f'High-signal core-ecosystem applied update for {mode} curation goals'
-    elif score >= profile['digest_threshold'] and (has_core_ecosystem_hit or has_applied_signal):
+    elif score >= profile['digest_threshold'] and (has_core_ecosystem_hit or has_applied_signal or has_strong_cn_practical_signal):
         decision = 'digest'
         reason = f'Good ecosystem/app-layer fit for {mode} roundup'
     else:
@@ -325,6 +357,7 @@ def decide(item, default_mode, tm, ignore_feed_mode=False):
                 'promoted_hits': promoted_hits,
                 'weak_hits': weak_hits,
                 'cooccurrence_hits': co_hits,
+                'community_hits': community_hits,
                 'core_hits': core_hits,
                 'applied_hits': applied_hits,
                 'boost_hits': boost_hits,
