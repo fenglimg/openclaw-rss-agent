@@ -40,6 +40,7 @@ def main():
         triaged = os.path.join(tmp, 'triaged.json')
         enrichment_candidates = os.path.join(tmp, 'enrichment_candidates.json')
         enrichment_results = os.path.join(tmp, 'enrichment_results.json')
+        merged = os.path.join(tmp, 'merged.json')
 
         data = run_json([
             sys.executable, str(BASE / 'fetch_feeds.py'),
@@ -86,9 +87,17 @@ def main():
         with open(enrichment_results, 'w', encoding='utf-8') as f:
             json.dump(enrichment_result_data, f, ensure_ascii=False, indent=2)
 
+        merged_data = run_json([
+            sys.executable, str(BASE / 'merge_enrichment.py'),
+            '--triaged', triaged,
+            '--enrichment', enrichment_results,
+        ])
+        with open(merged, 'w', encoding='utf-8') as f:
+            json.dump(merged_data, f, ensure_ascii=False, indent=2)
+
         digest = run_text([
             sys.executable, str(BASE / 'build_digest.py'),
-            '--input', triaged,
+            '--input', merged,
             '--title', args.digest_title,
             '--max-items', str(args.max_items),
             '--format', 'discord' if args.output_format == 'discord' else 'text',
@@ -102,14 +111,15 @@ def main():
             'new_count': deduped_data.get('counts', {}).get('new', 0),
             'counts': deduped_data.get('counts', {}),
             'triage_counts': triaged_data.get('counts', {}),
+            'final_counts': merged_data.get('counts', {}),
             'feed_health': data.get('feed_health', []),
             'enrichment_candidates': enrichment_candidate_data.get('candidates', []),
             'enrichment_results': enrichment_result_data.get('results', []),
             'digest': digest,
-            'items': triaged_data.get('items', []),
-            'send_items': [x for x in triaged_data.get('items', []) if x.get('triage', {}).get('decision') == 'send'],
-            'digest_items': [x for x in triaged_data.get('items', []) if x.get('triage', {}).get('decision') == 'digest'],
-            'drop_items': [x for x in triaged_data.get('items', []) if x.get('triage', {}).get('decision') == 'drop'],
+            'items': merged_data.get('items', []),
+            'send_items': [x for x in merged_data.get('items', []) if x.get('triage', {}).get('final_decision', x.get('triage', {}).get('decision')) == 'send'],
+            'digest_items': [x for x in merged_data.get('items', []) if x.get('triage', {}).get('final_decision', x.get('triage', {}).get('decision')) == 'digest'],
+            'drop_items': [x for x in merged_data.get('items', []) if x.get('triage', {}).get('final_decision', x.get('triage', {}).get('decision')) == 'drop'],
         }
         if args.output_json:
             with open(args.output_json, 'w', encoding='utf-8') as f:

@@ -23,7 +23,7 @@ def main():
         data = json.load(f)
 
     items = data.get('items', [])
-    selected = [x for x in items if x.get('triage', {}).get('decision') in ('send', 'digest')]
+    selected = [x for x in items if x.get('triage', {}).get('final_decision', x.get('triage', {}).get('decision')) in ('send', 'digest')]
     selected = selected[: args.max_items]
 
     by_feed = defaultdict(list)
@@ -34,8 +34,8 @@ def main():
     if not selected:
         lines.append('今天没有筛到新的高价值 RSS 条目。')
     else:
-        send_count = sum(1 for x in selected if x.get('triage', {}).get('decision') == 'send')
-        digest_count = sum(1 for x in selected if x.get('triage', {}).get('decision') == 'digest')
+        send_count = sum(1 for x in selected if x.get('triage', {}).get('final_decision', x.get('triage', {}).get('decision')) == 'send')
+        digest_count = sum(1 for x in selected if x.get('triage', {}).get('final_decision', x.get('triage', {}).get('decision')) == 'digest')
         lines.append(f'本次共筛到 {len(selected)} 条值得关注的内容（send: {send_count}, digest: {digest_count}）：')
         lines.append('')
         idx = 1
@@ -43,12 +43,14 @@ def main():
             lines.append(f'**{feed_name}**')
             for item in group:
                 triage = item.get('triage', {})
-                badge = '🔥' if triage.get('decision') == 'send' else '•'
+                decision = triage.get('final_decision', triage.get('decision'))
+                badge = '🔥' if decision == 'send' else '•'
                 lines.append(f'{idx}. {badge} {item.get("title") or "(untitled)"}')
                 if item.get('summary'):
                     lines.append(f'- {trim(item.get("summary"), 180)}')
+                shown_score = triage.get('enriched_score', triage.get('score'))
                 if triage.get('reason'):
-                    lines.append(f'- 判断：{trim(triage.get("reason"), 120)}（score {triage.get("score")})')
+                    lines.append(f'- 判断：{trim(triage.get("reason"), 120)}（score {shown_score})')
                 if item.get('link'):
                     lines.append(f'<{item.get("link")}>')
                 lines.append('')
