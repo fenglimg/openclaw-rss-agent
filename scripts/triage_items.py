@@ -14,7 +14,7 @@ GENERAL_MEDIUM = [
     'compiler', 'middleware', 'benchmark', 'performance', 'infra', 'deployment',
     'framework', 'library', 'testing', 'release notes', 'actions'
 ]
-GENERAL_LOW = ['funding', 'opinion', 'hiring', 'layoffs', 'sales', 'marketing', 'politics', 'celebrity', 'sports']
+GENERAL_LOW = ['funding', 'opinion', 'hiring', 'layoffs', 'sales', 'marketing', 'politics', 'celebrity', 'sports', 'attack', 'war', 'military', 'missile', 'iran', 'uk']
 
 AGENTIC_HIGH = [
     'openclaw', 'agent', 'agents', 'agentic', 'ai agent', 'coding agent', 'workflow',
@@ -115,6 +115,8 @@ def decide(item, default_mode, ignore_feed_mode=False):
         if 'open source' in text or 'sdk' in text or 'library' in text or 'framework' in text:
             score += 0.4
             base_hits += 1
+        if any(x in text for x in ['attack', 'war', 'military', 'missile', 'election', 'president', 'prime minister']):
+            score -= 1.6
     else:
         if 'openclaw' in text or 'agent' in text or 'workflow' in text or 'automation' in text:
             score += 0.9
