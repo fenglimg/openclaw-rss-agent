@@ -1,0 +1,24 @@
+{
+  "new_items": [
+    {
+      "feed_id": "hacker_news",
+      "feed_name": "Hacker News",
+      "feed_url": "https://news.ycombinator.com/rss",
+      "tags": ["tech"],
+      "source_role": "aggregator",
+      "language": "en",
+      "triage_mode": "general-tech",
+      "include": [],
+      "exclude": [],
+      "boost_keywords": ["open source", "devtools"],
+      "suppress_keywords": ["politics", "celebrity"],
+      "priority_topics": ["agent tooling", "workflow"],
+      "id": "https://github.com/pangon/ai-sdlc-scaffold/",
+      "title": "Show HN: AI SDLC Scaffold, repo template for AI-assisted software development",
+      "link": "https://github.com/pangon/ai-sdlc-scaffold/",
+      "published": "2026-03-21T12:43:09Z",
+      "summary": "Comments",
+      "_dedupe_key": "id:https://github.com/pangon/ai-sdlc-scaffold/"
+    }
+  ]
+}
