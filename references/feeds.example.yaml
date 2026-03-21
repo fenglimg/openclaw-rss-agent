@@ -1,0 +1,21 @@
+feeds:
+  - id: linux_do
+    name: Linux DO
+    url: https://linux.do/latest.rss
+    enabled: true
+    tags: [community, linux]
+    include:
+      - openclaw
+      - agent
+      - rss
+    exclude:
+      - ad
+      - spam
+
+  - id: hacker_news
+    name: Hacker News
+    url: https://news.ycombinator.com/rss
+    enabled: true
+    tags: [tech]
+    include: []
+    exclude: []
