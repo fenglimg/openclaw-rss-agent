@@ -135,19 +135,27 @@ def applied_signal_score(text, title, item):
     score = 0.0
     hits = 0
 
-    tool_terms = ['openclaw', 'claude code', 'codex', 'gemini', 'gemini cli', 'mcp', 'skill', 'agent', 'workflow', 'tool calling']
+    ecosystem_terms = ['openclaw', 'claude code', 'codex', 'gemini cli', 'gemini', 'mcp', 'mcp server', 'skill']
+    tool_terms = ecosystem_terms + ['agent', 'workflow', 'tool calling']
     applied_terms = ['release', 'release notes', 'changelog', 'new feature', 'feature update', 'integration', 'setup', 'how-to', 'use case', 'showcase', 'template', 'scaffold', 'recipe', 'cli', 'command', 'flag']
     generic_news_terms = ['funding', 'valuation', 'policy', 'macro', 'benchmark', 'opinion', 'lawsuit', 'election']
 
+    ecosystem_hits = sum(1 for x in ecosystem_terms if x in text)
     tool_hits = sum(1 for x in tool_terms if x in text)
     applied_hits = sum(1 for x in applied_terms if x in text)
     generic_hits = sum(1 for x in generic_news_terms if x in text)
 
-    if tool_hits and applied_hits:
-        score += 1.6
+    if ecosystem_hits:
+        score += 1.2
+        hits += 1
+    if ecosystem_hits and applied_hits:
+        score += 1.4
+        hits += 1
+    elif tool_hits and applied_hits:
+        score += 1.2
         hits += 1
     elif applied_hits >= 2:
-        score += 0.8
+        score += 0.6
         hits += 1
 
     if any(x in text for x in ['mcp server', 'skill showcase', 'workflow recipe', 'integration recipe', 'repo template', 'starter template']):
@@ -158,8 +166,8 @@ def applied_signal_score(text, title, item):
         score += 0.8
         hits += 1
 
-    if generic_hits and applied_hits == 0:
-        score -= 1.0
+    if generic_hits and applied_hits == 0 and ecosystem_hits == 0:
+        score -= 1.2
 
     return score, hits
 
@@ -366,10 +374,16 @@ def dedupe_and_limit(items, per_feed_limit=2):
             kept.append(item)
             continue
 
-        if feed_counts.get(feed_id, 0) >= per_feed_limit:
+        feed_name = norm(item.get('feed_name'))
+        effective_limit = per_feed_limit
+        if any(h in feed_name for h in DIGESTY_FEED_HINTS):
+            effective_limit = 1
+
+        if feed_counts.get(feed_id, 0) >= effective_limit:
             item['triage']['decision'] = 'drop'
             item['triage']['reason'] = 'Dropped by same-feed cap'
             item['triage']['debug']['same_feed_capped'] = True
+            item['triage']['debug']['effective_feed_limit'] = effective_limit
             kept.append(item)
             continue
 
