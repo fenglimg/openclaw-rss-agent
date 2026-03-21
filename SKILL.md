@@ -28,30 +28,58 @@ python3 {baseDir}/scripts/run_pipeline.py \
   --state /root/rss/state.json \
   --window-hours 24 \
   --limit-per-feed 10 \
+  --triage-mode general-tech \
   --digest-title "📡 RSS Digest"
 ```
 
-This runner already chains:
+This runner chains:
 1. `fetch_feeds.py`
 2. `dedupe.py`
-3. `build_digest.py`
+3. `triage_items.py`
+4. `build_digest.py`
 
-Use the lower-level scripts directly only when debugging, testing, or doing custom routing.
+Use lower-level scripts directly only for debugging, testing, or custom routing.
 
-## File conventions
+## Triage modes
+
+Supported modes:
+- `general-tech`: broader technical roundup mode for devtools, OSS, GitHub, and general engineering news
+- `agentic`: narrower mode for OpenClaw, agents, workflows, automation, coding agents, and related tooling
+
+The pipeline accepts a default mode via `--triage-mode`.
+Each feed may override that default with `triage_mode` in the feed config.
+
+## Feed configuration
 
 Recommended workspace layout:
 - `/root/rss/feeds.yaml`
 - `/root/rss/state.json`
 - `/root/rss/output/`
 
-If the real config file does not exist yet, propose creating it.
 Use `references/feeds.example.yaml` as the format reference.
+
+Per-feed fields:
+- `id`
+- `name`
+- `url`
+- `enabled`
+- `tags`
+- `triage_mode`
+- `include`
+- `exclude`
+- `boost_keywords`
+- `suppress_keywords`
+- `priority_topics`
+
+Notes:
+- `boost_keywords` and `priority_topics` only score against real fetched content, not against config text itself
+- feed-local `triage_mode` overrides the pipeline default for that feed
+- use `include` / `exclude` for hard filtering, and `boost_keywords` / `priority_topics` for softer ranking
 
 ## Task recipes
 
 ### 1. Build a digest in chat
-Use `run_pipeline.py` and return the `digest` text to the user.
+Run `run_pipeline.py` and return the `digest` text.
 Default behavior:
 - last 24 hours
 - compact digest
@@ -65,12 +93,18 @@ Report:
 - status code / error
 - item count fetched
 
-### 3. Debug filtering
-Use `fetch_feeds.py` followed by `dedupe.py` separately when debugging:
+### 3. Debug filtering or triage
+Use scripts separately when debugging:
+- `fetch_feeds.py`
+- `dedupe.py`
+- `triage_items.py`
+
+Inspect:
 - include/exclude rules
 - time windows
 - dedupe behavior
-- state problems
+- mode differences
+- triage debug fields (`base_hits`, `boost_hits`, `priority_hits`, `suppress_hits`)
 
 ### 4. Proactive delivery
 If the user explicitly asks to send results to Discord or another channel:
@@ -85,7 +119,7 @@ For Discord:
 
 ## State and dedupe
 
-State file should track:
+State file tracks:
 - seen item ids/links/hashes
 - last successful run time
 - per-feed health snapshots
@@ -102,6 +136,7 @@ Dedupe priority:
 - When feed fetch fails, report feed health separately from content results.
 - If article content is missing from RSS, summarize only from the feed entry unless the user asks for full-page fetch.
 - Keep summaries grounded in retrieved text.
+- Treat `send` as scarce and `digest` as the normal default.
 
 ## When to read references
 
@@ -116,7 +151,8 @@ Dedupe priority:
 - `scripts/run_pipeline.py`: default entry point
 - `scripts/fetch_feeds.py`: fetch and normalize entries
 - `scripts/dedupe.py`: remove seen/duplicate entries
-- `scripts/build_digest.py`: assemble Markdown/plaintext digest
+- `scripts/triage_items.py`: assign `send` / `digest` / `drop`
+- `scripts/build_digest.py`: assemble digest text
 - `scripts/state_io.py`: read/write state safely
 
 ## Default operating mode
@@ -124,5 +160,6 @@ Dedupe priority:
 Unless the user asks otherwise:
 - prefer a digest over many single-item posts
 - use the last 24 hours as the default time window
-- surface only high-signal items
+- use `general-tech` as the pipeline default
+- let feed-local `triage_mode` override when configured
 - keep output concise and readable
