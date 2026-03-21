@@ -34,6 +34,7 @@ def main():
     with tempfile.TemporaryDirectory(prefix='rss-agent-') as tmp:
         fetched = os.path.join(tmp, 'fetched.json')
         deduped = os.path.join(tmp, 'deduped.json')
+        triaged = os.path.join(tmp, 'triaged.json')
 
         data = run_json([
             sys.executable, str(BASE / 'fetch_feeds.py'),
@@ -55,9 +56,16 @@ def main():
         with open(deduped, 'w', encoding='utf-8') as f:
             json.dump(deduped_data, f, ensure_ascii=False, indent=2)
 
+        triaged_data = run_json([
+            sys.executable, str(BASE / 'triage_items.py'),
+            '--input', deduped,
+        ])
+        with open(triaged, 'w', encoding='utf-8') as f:
+            json.dump(triaged_data, f, ensure_ascii=False, indent=2)
+
         digest = run_text([
             sys.executable, str(BASE / 'build_digest.py'),
-            '--input', deduped,
+            '--input', triaged,
             '--title', args.digest_title,
             '--max-items', str(args.max_items),
         ])
@@ -67,9 +75,13 @@ def main():
             'fetched_count': data.get('count', 0),
             'new_count': deduped_data.get('counts', {}).get('new', 0),
             'counts': deduped_data.get('counts', {}),
+            'triage_counts': triaged_data.get('counts', {}),
             'feed_health': data.get('feed_health', []),
             'digest': digest,
-            'new_items': deduped_data.get('new_items', []),
+            'items': triaged_data.get('items', []),
+            'send_items': [x for x in triaged_data.get('items', []) if x.get('triage', {}).get('decision') == 'send'],
+            'digest_items': [x for x in triaged_data.get('items', []) if x.get('triage', {}).get('decision') == 'digest'],
+            'drop_items': [x for x in triaged_data.get('items', []) if x.get('triage', {}).get('decision') == 'drop'],
         }
         if args.output_json:
             with open(args.output_json, 'w', encoding='utf-8') as f:
