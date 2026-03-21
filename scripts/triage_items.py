@@ -404,6 +404,7 @@ def dedupe_and_limit(items, per_feed_limit=2):
     ordered = sorted(
         items,
         key=lambda x: (
+            x.get('triage', {}).get('debug', {}).get('core_hits', 0),
             x.get('triage', {}).get('enriched_score', x.get('triage', {}).get('score', 0)),
             x.get('triage', {}).get('decision') == 'send'
         ),
@@ -423,6 +424,12 @@ def dedupe_and_limit(items, per_feed_limit=2):
         feed_id = item.get('feed_id') or 'unknown'
         series_key = canonical_series_key(item)
         title = norm(item.get('title'))
+        core_hits = triage.get('debug', {}).get('core_hits', 0)
+        applied_hits = triage.get('debug', {}).get('applied_hits', 0)
+
+        if triage.get('decision') == 'send' and core_hits == 0:
+            item['triage']['decision'] = 'digest'
+            item['triage']['reason'] = 'Demoted to digest as non-core ecosystem filler'
 
         if series_key in seen_series:
             item['triage']['decision'] = 'drop'
