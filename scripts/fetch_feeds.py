@@ -145,6 +145,8 @@ def main():
                     'feed_name': feed_name,
                     'feed_url': url,
                     'tags': feed.get('tags', []),
+                    'source_role': feed.get('source_role'),
+                    'language': feed.get('language'),
                     'triage_mode': feed.get('triage_mode'),
                     'include': feed.get('include', []),
                     'exclude': feed.get('exclude', []),

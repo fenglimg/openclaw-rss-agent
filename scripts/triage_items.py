@@ -55,6 +55,23 @@ def load_topic_model(path=TOPIC_MODEL_PATH):
         return yaml.safe_load(f) or {}
 
 
+def get_source_adjust(item, tm):
+    sp = tm.get('source_policy', {})
+    role_weights = sp.get('role_weights', {})
+    source_overrides = sp.get('source_overrides', {})
+    feed_id = item.get('feed_id') or ''
+    source_role = item.get('source_role') or ''
+    return float(source_overrides.get(feed_id, role_weights.get(source_role, 0.0)))
+
+
+def get_language_adjust(item, tm):
+    lp = tm.get('language_policy', {})
+    by_language = lp.get('by_language', {})
+    lang = item.get('language') or ''
+    default_adjust = float(lp.get('default_adjust', 0.0))
+    return float(by_language.get(lang, {}).get('adjust', default_adjust))
+
+
 def get_profile(mode, tm):
     tp = tm.get('topic_model', {})
     sp = tm.get('scoring_policy', {})
@@ -121,6 +138,8 @@ def decide(item, default_mode, tm, ignore_feed_mode=False):
     feed_name = norm(item.get('feed_name'))
     tags = [norm(t) for t in item.get('tags', [])]
     boost_keywords = [norm(t) for t in item.get('boost_keywords', [])]
+    source_adjust = get_source_adjust(item, tm)
+    language_adjust = get_language_adjust(item, tm)
     suppress_keywords = [norm(t) for t in item.get('suppress_keywords', [])]
     priority_topics = [norm(t) for t in item.get('priority_topics', [])]
     text = ' '.join([title, summary, feed_name, ' '.join(tags)])
@@ -158,6 +177,8 @@ def decide(item, default_mode, tm, ignore_feed_mode=False):
 
     co_bonus, co_hits = cooccurrence_bonus(text, profile['cooccurrence_rules'])
     score += co_bonus
+    score += source_adjust
+    score += language_adjust
     base_hits += co_hits
 
     if title.startswith('show hn:'):
@@ -217,6 +238,8 @@ def decide(item, default_mode, tm, ignore_feed_mode=False):
                 'weak_hits': weak_hits,
                 'cooccurrence_hits': co_hits,
                 'boost_hits': boost_hits,
+                'source_adjust': source_adjust,
+                'language_adjust': language_adjust,
                 'priority_hits': priority_hits,
                 'suppress_hits': suppress_hits + suppress_local_hits,
             }

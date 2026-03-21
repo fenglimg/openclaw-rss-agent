@@ -5,6 +5,8 @@ feeds:
     enabled: true
     tags: [community, linux]
     triage_mode: agentic
+    source_role: community_forum
+    language: zh
     include:
       - openclaw
       - agent
@@ -29,6 +31,8 @@ feeds:
     enabled: true
     tags: [tech]
     triage_mode: general-tech
+    source_role: official_blog
+    language: en
     include: []
     exclude: []
     boost_keywords: []
