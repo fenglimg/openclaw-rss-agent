@@ -12,13 +12,17 @@ HIGH_SIGNAL = [
 
 MEDIUM_SIGNAL = [
     'python', 'rust', 'go', 'typescript', 'docker', 'kubernetes', 'database',
-    'security', 'git', 'github', 'devtools', 'oss', 'parser', 'search'
+    'security', 'git', 'github', 'devtools', 'oss', 'parser', 'search',
+    'compiler', 'middleware', 'benchmark', 'performance', 'infra', 'deployment',
+    'framework', 'library', 'sdk', 'testing', 'release notes', 'actions'
 ]
 
 LOW_SIGNAL = [
     'funding', 'opinion', 'hiring', 'layoffs', 'sales', 'marketing', 'politics',
-    'celebrity', 'sports', 'macrumors'
+    'celebrity', 'sports'
 ]
+
+SOLID_TECH_FEEDS = ['github blog', 'hacker news']
 
 
 def norm(text):
@@ -41,33 +45,37 @@ def decide(item):
     text = ' '.join([title, summary, feed_name, ' '.join(tags)])
 
     score = 0.0
-    score += score_text(text, HIGH_SIGNAL, 1.2)
-    score += score_text(text, MEDIUM_SIGNAL, 0.6)
-    score -= score_text(text, LOW_SIGNAL, 1.0)
+    score += score_text(text, HIGH_SIGNAL, 1.1)
+    score += score_text(text, MEDIUM_SIGNAL, 0.7)
+    score -= score_text(text, LOW_SIGNAL, 0.9)
 
     include = [norm(x) for x in item.get('include', [])]
     exclude = [norm(x) for x in item.get('exclude', [])]
     if include:
         if any(x in text for x in include):
-            score += 1.5
+            score += 1.6
         else:
-            score -= 1.0
+            score -= 0.8
     if exclude and any(x in text for x in exclude):
         score -= 3.0
 
     if title.startswith('show hn:'):
+        score += 0.9
+    if any(feed in feed_name for feed in SOLID_TECH_FEEDS):
+        score += 0.5
+    if 'github blog' in feed_name and ('github' in text or 'actions' in text or 'copilot' in text or 'open source' in text):
         score += 0.8
-    if 'github blog' in feed_name:
-        score += 0.6
-    if 'hacker news' in feed_name:
-        score += 0.4
+    if 'open source' in text or 'sdk' in text or 'library' in text or 'framework' in text:
+        score += 0.5
+    if summary == 'comments':
+        score -= 0.1
 
     if score >= 3.0:
         decision = 'send'
         reason = 'High-signal match for tracked technical/agent topics'
-    elif score >= 1.4:
+    elif score >= 1.2:
         decision = 'digest'
-        reason = 'Relevant enough for roundup, but not urgent'
+        reason = 'Good fit for a technical roundup'
     else:
         decision = 'drop'
         reason = 'Low relevance or low signal for current RSS curation goals'
