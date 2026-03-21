@@ -18,90 +18,102 @@ Use this skill for RSS/Atom feed workflows:
 - summarize interesting entries
 - route curated results to chat channels
 
-## Workflow
+## Default workflow
 
-### 1. Load feed configuration
-Read `references/feeds.example.yaml` as the format reference.
-Use the real feed config file from the workspace if one exists, for example:
-- `/root/rss/feeds.yaml`
+For most tasks, use the pipeline runner:
 
-If the real config file does not exist yet, propose creating it.
+```bash
+python3 {baseDir}/scripts/run_pipeline.py \
+  --config /root/rss/feeds.yaml \
+  --state /root/rss/state.json \
+  --window-hours 24 \
+  --limit-per-feed 10 \
+  --digest-title "📡 RSS Digest"
+```
 
-### 2. Fetch recent entries
-Use `scripts/fetch_feeds.py` to:
-- fetch configured RSS/Atom feeds
-- normalize fields (`id`, `title`, `link`, `published`, `summary`, `feed_id`)
-- emit structured JSON
+This runner already chains:
+1. `fetch_feeds.py`
+2. `dedupe.py`
+3. `build_digest.py`
 
-Prefer fetching only the most recent window needed for the task.
+Use the lower-level scripts directly only when debugging, testing, or doing custom routing.
 
-### 3. Dedupe and filter
-Use `scripts/dedupe.py` plus workspace state files to:
-- skip already-seen entries
-- dedupe by `guid`, then `link`, then hash of `title + published`
-- filter by:
-  - disabled feeds
-  - time window
-  - include/exclude keywords
-  - optional feed tags
-
-### 4. Triage
-For small result sets, triage in-model:
-- decide which items are worth surfacing
-- prefer concrete, high-signal, implementation-relevant posts
-- avoid noisy, repetitive, low-information items
-
-Use these rough buckets:
-- `send`: worth posting now
-- `digest`: worth including in roundup
-- `drop`: not worth surfacing
-
-### 5. Summarize
-Summarize only selected items.
-Default summary shape:
-- one-line takeaway
-- 2-4 bullets
-- original link
-
-If the user asks for a digest, group related items and keep output compact.
-
-### 6. Deliver
-If the user asks to send results proactively, use the `message` tool.
-Otherwise return the digest in chat.
-
-For Discord:
-- do not use markdown tables
-- keep links in angle brackets
-- prefer bullets and short sections
-
-## Files and state
+## File conventions
 
 Recommended workspace layout:
 - `/root/rss/feeds.yaml`
 - `/root/rss/state.json`
 - `/root/rss/output/`
 
+If the real config file does not exist yet, propose creating it.
+Use `references/feeds.example.yaml` as the format reference.
+
+## Task recipes
+
+### 1. Build a digest in chat
+Use `run_pipeline.py` and return the `digest` text to the user.
+Default behavior:
+- last 24 hours
+- compact digest
+- no proactive send unless requested
+
+### 2. Check feed health
+Use `fetch_feeds.py` when the user asks whether feeds are working.
+Report:
+- which feeds succeeded
+- which feeds failed
+- status code / error
+- item count fetched
+
+### 3. Debug filtering
+Use `fetch_feeds.py` followed by `dedupe.py` separately when debugging:
+- include/exclude rules
+- time windows
+- dedupe behavior
+- state problems
+
+### 4. Proactive delivery
+If the user explicitly asks to send results to Discord or another channel:
+- run `run_pipeline.py`
+- inspect the `digest`
+- use the `message` tool to deliver it
+
+For Discord:
+- do not use markdown tables
+- keep links in angle brackets
+- prefer bullets and short sections
+
+## State and dedupe
+
 State file should track:
 - seen item ids/links/hashes
 - last successful run time
-- optional per-feed health info
+- per-feed health snapshots
 
-## Safety / quality rules
+Dedupe priority:
+1. `guid` / `id`
+2. `link`
+3. hash of `title + published`
 
-- Do not spam chat channels with every new RSS item.
+## Quality rules
+
+- Do not spam channels with every new RSS item.
 - Prefer digest delivery unless the user explicitly wants real-time alerts.
 - When feed fetch fails, report feed health separately from content results.
 - If article content is missing from RSS, summarize only from the feed entry unless the user asks for full-page fetch.
-- Keep summaries grounded in the retrieved entry text and linked page when available.
+- Keep summaries grounded in retrieved text.
 
 ## When to read references
 
-- Read `references/feeds.example.yaml` when creating or validating feed config.
-- Read `references/prompts.md` when you need triage or summary prompt patterns.
-- Read `references/architecture.md` when designing cron jobs, delivery routing, or storage layout.
+- `references/feeds.example.yaml` — when creating or validating feed config
+- `references/prompts.md` — when adding AI triage or summary prompts
+- `references/architecture.md` — when designing storage and routing
+- `references/usage.md` — when you need command examples and OpenClaw integration patterns
+- `references/cron.md` — when the user wants reminders, scheduled digests, or channel delivery automation
 
 ## When to use scripts
 
+- `scripts/run_pipeline.py`: default entry point
 - `scripts/fetch_feeds.py`: fetch and normalize entries
 - `scripts/dedupe.py`: remove seen/duplicate entries
 - `scripts/build_digest.py`: assemble Markdown/plaintext digest
