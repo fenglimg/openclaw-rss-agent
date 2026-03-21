@@ -2,6 +2,9 @@
 import argparse
 import json
 import re
+from pathlib import Path
+
+import yaml
 
 
 GENERAL_HIGH = [
@@ -28,6 +31,7 @@ AGENTIC_MEDIUM = [
 AGENTIC_LOW = ['politics', 'celebrity', 'sports', 'sales', 'marketing', 'opinion']
 
 SOLID_TECH_FEEDS = ['github blog', 'hacker news']
+TOPIC_MODEL_PATH = Path(__file__).resolve().parent.parent / 'topic_model.yaml'
 
 
 def norm(text):
@@ -38,13 +42,23 @@ def score_text(text, words, weight):
     total = 0.0
     hits = 0
     for w in words:
-        if w and w in text:
+        if w and norm(w) in text:
             total += weight
             hits += 1
     return total, hits
 
 
-def get_profile(mode):
+def load_topic_model(path=TOPIC_MODEL_PATH):
+    if not path.exists():
+        return {}
+    with open(path, 'r', encoding='utf-8') as f:
+        return yaml.safe_load(f) or {}
+
+
+def get_profile(mode, tm):
+    tp = tm.get('topic_model', {})
+    sp = tm.get('scoring_policy', {})
+    thresholds = sp.get('thresholds', {})
     if mode == 'agentic':
         return {
             'high': AGENTIC_HIGH,
@@ -53,8 +67,18 @@ def get_profile(mode):
             'w_high': 1.3,
             'w_medium': 0.8,
             'w_low': 0.9,
-            'send_threshold': 3.6,
-            'digest_threshold': 1.3,
+            'seed_terms': tp.get('seed_terms', []),
+            'promoted_terms': tp.get('promoted_terms', []),
+            'weak_terms': tp.get('weak_terms', []),
+            'suppress_terms': tp.get('suppress_terms', []),
+            'cooccurrence_rules': tp.get('cooccurrence_rules', []),
+            'seed_weight': sp.get('seed_term_weight', 1.2),
+            'promoted_weight': sp.get('promoted_term_weight', 0.7),
+            'weak_weight': sp.get('weak_term_weight', 0.2),
+            'suppress_weight': sp.get('suppress_term_penalty', 1.0),
+            'max_weak': sp.get('max_weak_term_contribution', 0.6),
+            'send_threshold': thresholds.get('send', 3.8),
+            'digest_threshold': thresholds.get('digest', 1.5),
         }
     return {
         'high': GENERAL_HIGH,
@@ -63,21 +87,42 @@ def get_profile(mode):
         'w_high': 1.1,
         'w_medium': 0.7,
         'w_low': 0.9,
-        'send_threshold': 3.4,
-        'digest_threshold': 1.4,
+        'seed_terms': tp.get('seed_terms', []),
+        'promoted_terms': tp.get('promoted_terms', []),
+        'weak_terms': tp.get('weak_terms', []),
+        'suppress_terms': tp.get('suppress_terms', []),
+        'cooccurrence_rules': tp.get('cooccurrence_rules', []),
+        'seed_weight': sp.get('seed_term_weight', 1.2),
+        'promoted_weight': sp.get('promoted_term_weight', 0.7),
+        'weak_weight': sp.get('weak_term_weight', 0.2),
+        'suppress_weight': sp.get('suppress_term_penalty', 1.0),
+        'max_weak': sp.get('max_weak_term_contribution', 0.6),
+        'send_threshold': thresholds.get('send', 3.8) - 0.4,
+        'digest_threshold': thresholds.get('digest', 1.5),
     }
 
 
-def decide(item, default_mode, ignore_feed_mode=False):
+def cooccurrence_bonus(text, rules):
+    bonus = 0.0
+    hits = 0
+    for rule in rules:
+        words = [norm(x) for x in rule.get('all', [])]
+        if words and all(w in text for w in words):
+            bonus += float(rule.get('bonus', 0.0))
+            hits += 1
+    return bonus, hits
+
+
+def decide(item, default_mode, tm, ignore_feed_mode=False):
     mode = default_mode if ignore_feed_mode else (item.get('triage_mode') or default_mode)
-    profile = get_profile(mode)
+    profile = get_profile(mode, tm)
     title = norm(item.get('title'))
     summary = norm(item.get('summary'))
     feed_name = norm(item.get('feed_name'))
     tags = [norm(t) for t in item.get('tags', [])]
-    priority_topics = [norm(t) for t in item.get('priority_topics', [])]
     boost_keywords = [norm(t) for t in item.get('boost_keywords', [])]
     suppress_keywords = [norm(t) for t in item.get('suppress_keywords', [])]
+    priority_topics = [norm(t) for t in item.get('priority_topics', [])]
     text = ' '.join([title, summary, feed_name, ' '.join(tags)])
 
     score = 0.0
@@ -86,6 +131,14 @@ def decide(item, default_mode, ignore_feed_mode=False):
     low_score, low_hits = score_text(text, profile['low'], profile['w_low'])
     score += high_score + med_score - low_score
     base_hits = high_hits + med_hits
+
+    seed_score, seed_hits = score_text(text, profile['seed_terms'], profile['seed_weight'])
+    promoted_score, promoted_hits = score_text(text, profile['promoted_terms'], profile['promoted_weight'])
+    weak_score, weak_hits = score_text(text, profile['weak_terms'], profile['weak_weight'])
+    weak_score = min(weak_score, profile['max_weak'])
+    suppress_score, suppress_hits = score_text(text, profile['suppress_terms'], profile['suppress_weight'])
+    score += seed_score + promoted_score + weak_score - suppress_score
+    base_hits += seed_hits + promoted_hits
 
     include = [norm(x) for x in item.get('include', [])]
     exclude = [norm(x) for x in item.get('exclude', [])]
@@ -100,8 +153,12 @@ def decide(item, default_mode, ignore_feed_mode=False):
 
     boost_score, boost_hits = score_text(text, boost_keywords, 0.35)
     priority_score, priority_hits = score_text(text, priority_topics, 0.25)
-    suppress_score, suppress_hits = score_text(text, suppress_keywords, 0.8)
-    score += boost_score + priority_score - suppress_score
+    suppress_local_score, suppress_local_hits = score_text(text, suppress_keywords, 0.8)
+    score += boost_score + priority_score - suppress_local_score
+
+    co_bonus, co_hits = cooccurrence_bonus(text, profile['cooccurrence_rules'])
+    score += co_bonus
+    base_hits += co_hits
 
     if title.startswith('show hn:'):
         score += 0.9
@@ -133,7 +190,6 @@ def decide(item, default_mode, ignore_feed_mode=False):
     if summary == 'comments':
         score -= 0.1
 
-    # Guardrail: config keywords can help, but cannot alone promote weak items to send.
     if base_hits == 0 and (boost_hits > 0 or priority_hits > 0):
         score = min(score, profile['digest_threshold'] - 0.05)
 
@@ -156,9 +212,13 @@ def decide(item, default_mode, ignore_feed_mode=False):
             'reason': reason,
             'debug': {
                 'base_hits': base_hits,
+                'seed_hits': seed_hits,
+                'promoted_hits': promoted_hits,
+                'weak_hits': weak_hits,
+                'cooccurrence_hits': co_hits,
                 'boost_hits': boost_hits,
                 'priority_hits': priority_hits,
-                'suppress_hits': suppress_hits,
+                'suppress_hits': suppress_hits + suppress_local_hits,
             }
         }
     }
@@ -174,8 +234,9 @@ def main():
     with open(args.input, 'r', encoding='utf-8') as f:
         data = json.load(f)
     items = data.get('new_items', [])
+    tm = load_topic_model()
 
-    triaged = [decide(item, args.mode, ignore_feed_mode=args.ignore_feed_mode) for item in items]
+    triaged = [decide(item, args.mode, tm, ignore_feed_mode=args.ignore_feed_mode) for item in items]
     counts = {'send': 0, 'digest': 0, 'drop': 0}
     for item in triaged:
         counts[item['triage']['decision']] += 1
@@ -184,6 +245,7 @@ def main():
         'ok': True,
         'default_mode': args.mode,
         'ignore_feed_mode': args.ignore_feed_mode,
+        'topic_model_loaded': bool(tm),
         'items': triaged,
         'counts': counts,
     }, ensure_ascii=False, indent=2))
