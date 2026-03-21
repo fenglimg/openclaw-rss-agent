@@ -131,6 +131,26 @@ def cooccurrence_bonus(text, rules):
     return bonus, hits
 
 
+
+def core_ecosystem_priority(text, item):
+    core_terms = ['openclaw', 'claude code', 'codex', 'gemini cli', 'mcp', 'mcp server', 'skill']
+    secondary_terms = ['gemini', 'agent', 'workflow', 'tool calling']
+    core_hits = sum(1 for x in core_terms if x in text)
+    secondary_hits = sum(1 for x in secondary_terms if x in text)
+    bonus = 0.0
+    hits = 0
+    if core_hits:
+        bonus += 1.8
+        hits += 1
+    elif secondary_hits >= 2:
+        bonus += 0.7
+        hits += 1
+    if (item.get('feed_id') or '') == 'linux_do_latest' and any(x in text for x in ['openclaw', 'claude code', 'codex', 'gemini', 'mcp', 'skill', '工作流', '教程', '配置', '用法']):
+        bonus += 1.2
+        hits += 1
+    return bonus, hits
+
+
 def applied_signal_score(text, title, item):
     score = 0.0
     hits = 0
@@ -218,12 +238,14 @@ def decide(item, default_mode, tm, ignore_feed_mode=False):
     score += boost_score + priority_score - suppress_local_score
 
     co_bonus, co_hits = cooccurrence_bonus(text, profile['cooccurrence_rules'])
+    core_bonus, core_hits = core_ecosystem_priority(text, item)
     applied_bonus, applied_hits = applied_signal_score(text, title, item)
     score += co_bonus
+    score += core_bonus
     score += applied_bonus
     score += source_adjust
     score += language_adjust
-    base_hits += co_hits + applied_hits
+    base_hits += co_hits + core_hits + applied_hits
 
     if title.startswith('show hn:'):
         score += 0.9
@@ -277,17 +299,18 @@ def decide(item, default_mode, tm, ignore_feed_mode=False):
             score = max(score, profile['digest_threshold'])
             discovery_tooling_floor = True
 
+    has_core_ecosystem_hit = core_hits > 0 or any(x in text for x in ['openclaw', 'claude code', 'codex', 'gemini cli', 'mcp', 'mcp server', 'skill'])
     has_applied_signal = applied_hits > 0 or any(x in text for x in ['release', 'changelog', 'workflow', 'integration', 'mcp', 'skill', 'setup', 'how-to', 'template', 'scaffold'])
 
-    if score >= profile['send_threshold'] and base_hits >= 2 and has_applied_signal:
+    if score >= profile['send_threshold'] and base_hits >= 2 and has_applied_signal and has_core_ecosystem_hit:
         decision = 'send'
-        reason = f'High-signal applied update for {mode} curation goals'
-    elif score >= profile['digest_threshold'] and (has_applied_signal or score >= profile['send_threshold'] - 0.2):
+        reason = f'High-signal core-ecosystem applied update for {mode} curation goals'
+    elif score >= profile['digest_threshold'] and (has_core_ecosystem_hit or has_applied_signal):
         decision = 'digest'
-        reason = f'Good applied-layer fit for {mode} roundup'
+        reason = f'Good ecosystem/app-layer fit for {mode} roundup'
     else:
         decision = 'drop'
-        reason = f'Low applied relevance for {mode} curation goals'
+        reason = f'Low core-ecosystem relevance for {mode} curation goals'
 
     return {
         **item,
@@ -302,6 +325,7 @@ def decide(item, default_mode, tm, ignore_feed_mode=False):
                 'promoted_hits': promoted_hits,
                 'weak_hits': weak_hits,
                 'cooccurrence_hits': co_hits,
+                'core_hits': core_hits,
                 'applied_hits': applied_hits,
                 'boost_hits': boost_hits,
                 'source_adjust': source_adjust,
