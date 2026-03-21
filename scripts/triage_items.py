@@ -78,7 +78,7 @@ def decide(item, default_mode):
     priority_topics = [norm(t) for t in item.get('priority_topics', [])]
     boost_keywords = [norm(t) for t in item.get('boost_keywords', [])]
     suppress_keywords = [norm(t) for t in item.get('suppress_keywords', [])]
-    text = ' '.join([title, summary, feed_name, ' '.join(tags), ' '.join(priority_topics)])
+    text = ' '.join([title, summary, feed_name, ' '.join(tags)])
 
     score = 0.0
     high_score, high_hits = score_text(text, profile['high'], profile['w_high'])
