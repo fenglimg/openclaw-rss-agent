@@ -16,6 +16,7 @@ def main():
     ap.add_argument('--input', required=True)
     ap.add_argument('--title', default='📡 RSS Digest')
     ap.add_argument('--max-items', type=int, default=10)
+    ap.add_argument('--format', choices=['text', 'discord'], default='discord')
     args = ap.parse_args()
 
     with open(args.input, 'r', encoding='utf-8') as f:
@@ -53,6 +54,7 @@ def main():
                 lines.append('')
                 idx += 1
 
+    # text and discord are currently rendered the same, but keep the flag for future formatting divergence
     print('\n'.join(lines).strip())
 
 

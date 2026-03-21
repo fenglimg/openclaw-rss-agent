@@ -15,7 +15,7 @@ Avoid minute-level polling unless there is a strong need.
 ### 1. Main-session reminder style
 Use when you want the main session to decide how to respond.
 
-Example cron payload idea:
+Example systemEvent text:
 - "Reminder: run the RSS agent digest check and surface anything high-signal from the last 24 hours."
 
 ### 2. Isolated agent run
@@ -26,6 +26,18 @@ Suggested isolated prompt structure:
 - inspect feed health
 - summarize only high-signal items
 - if nothing is notable, return a short no-update message
+
+## Practical cron pattern with this repo
+
+Typical task:
+1. Run `scripts/run_pipeline.py`
+2. Produce Discord-friendly digest text
+3. If digest is non-empty and notable, deliver it
+
+Suggested runtime flags:
+- `--output-format discord`
+- `--write-state`
+- suitable `--triage-mode`
 
 ## Recommended behavior
 

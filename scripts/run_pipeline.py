@@ -27,6 +27,7 @@ def main():
     ap.add_argument('--limit-per-feed', type=int, default=10)
     ap.add_argument('--digest-title', default='📡 RSS Digest')
     ap.add_argument('--max-items', type=int, default=10)
+    ap.add_argument('--output-format', choices=['json', 'text', 'discord'], default='json')
     ap.add_argument('--triage-mode', choices=['general-tech', 'agentic'], default='general-tech')
     ap.add_argument('--ignore-feed-mode', action='store_true')
     ap.add_argument('--write-state', action='store_true')
@@ -74,6 +75,7 @@ def main():
             '--input', triaged,
             '--title', args.digest_title,
             '--max-items', str(args.max_items),
+            '--format', 'discord' if args.output_format == 'discord' else 'text',
         ])
 
         result = {
@@ -94,7 +96,10 @@ def main():
         if args.output_json:
             with open(args.output_json, 'w', encoding='utf-8') as f:
                 json.dump(result, f, ensure_ascii=False, indent=2)
-        print(json.dumps(result, ensure_ascii=False, indent=2))
+        if args.output_format == 'json':
+            print(json.dumps(result, ensure_ascii=False, indent=2))
+        else:
+            print(digest.strip())
 
 
 if __name__ == '__main__':

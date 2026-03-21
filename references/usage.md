@@ -31,6 +31,15 @@ python3 scripts/run_pipeline.py \
   --ignore-feed-mode
 ```
 
+## Discord-friendly output
+
+```bash
+python3 scripts/run_pipeline.py \
+  --config /root/rss/feeds.yaml \
+  --state /root/rss/state.json \
+  --output-format discord
+```
+
 ## Wider time window
 
 ```bash
@@ -109,5 +118,5 @@ Use `--ignore-feed-mode` when you want pipeline-level mode to override all feeds
 
 Typical agent flow:
 1. Run `scripts/run_pipeline.py`
-2. Read the `digest` field from JSON output
-3. Return the digest in chat, or send it with the `message` tool if proactive delivery was requested
+2. Inspect JSON when needed
+3. Deliver the `digest` text in chat or via `message.send`
