@@ -32,6 +32,8 @@ topic_model:
   - skills registry
   - harness
   - acp
+  - repo template
+  - sdlc scaffold
   weak_terms:
   - ai
   - workflow
