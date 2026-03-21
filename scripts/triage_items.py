@@ -51,10 +51,10 @@ def get_profile(mode):
             'medium': AGENTIC_MEDIUM,
             'low': AGENTIC_LOW,
             'w_high': 1.3,
-            'w_medium': 0.75,
+            'w_medium': 0.8,
             'w_low': 0.9,
             'send_threshold': 3.6,
-            'digest_threshold': 1.6,
+            'digest_threshold': 1.3,
         }
     return {
         'high': GENERAL_HIGH,
@@ -117,13 +117,16 @@ def decide(item, default_mode, ignore_feed_mode=False):
             base_hits += 1
     else:
         if 'openclaw' in text or 'agent' in text or 'workflow' in text or 'automation' in text:
-            score += 0.8
+            score += 0.9
+            base_hits += 1
+        if 'ai-assisted' in text or 'tooling' in text or 'sdlc' in text or 'repo template' in text:
+            score += 0.7
             base_hits += 1
         if 'rss' in text:
             score += 0.5
             base_hits += 1
         if 'github blog' in feed_name and ('copilot' in text or 'actions' in text or 'workflow' in text):
-            score += 0.5
+            score += 0.6
             base_hits += 1
     if summary == 'comments':
         score -= 0.1
