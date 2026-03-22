@@ -1,0 +1,265 @@
+{
+  "ok": true,
+  "items": [
+    {
+      "canonical_url": "https://github.com/openclaw/clawhub",
+      "object_type": "github-repo",
+      "parent_url": null,
+      "raw_urls": [
+        "https://github.com/openclaw/clawhub",
+        "https://github.com/openclaw/clawhub/blob/main/clawhub"
+      ],
+      "skills": [
+        "Agent Browser",
+        "Github",
+        "Gog",
+        "Polymarket",
+        "Summarize",
+        "self-improving-agent"
+      ],
+      "references": 7,
+      "priority": "P0"
+    },
+    {
+      "canonical_url": "https://github.com/VoltAgent/awesome-openclaw-skills",
+      "object_type": "github-repo",
+      "parent_url": null,
+      "raw_urls": [
+        "https://github.com/VoltAgent/awesome-openclaw-skills",
+        "https://github.com/VoltAgent/awesome-openclaw-skills/blob/main/README.md",
+        "https://github.com/VoltAgent/awesome-openclaw-skills/blob/main/categories/browser-and-automation.md"
+      ],
+      "skills": [
+        "Agent Browser",
+        "Github",
+        "Gog"
+      ],
+      "references": 5,
+      "priority": "P0"
+    },
+    {
+      "canonical_url": "https://github.com/openclaw/skills",
+      "object_type": "github-repo",
+      "parent_url": null,
+      "raw_urls": [
+        "https://github.com/openclaw/skills"
+      ],
+      "skills": [
+        "Github",
+        "Gog",
+        "Summarize"
+      ],
+      "references": 3,
+      "priority": "P0"
+    },
+    {
+      "canonical_url": "https://topclawhubskills.com/",
+      "object_type": "trend-ranking-page",
+      "parent_url": null,
+      "raw_urls": [
+        "https://topclawhubskills.com/"
+      ],
+      "skills": [
+        "Gog"
+      ],
+      "references": 1,
+      "priority": "P1"
+    },
+    {
+      "canonical_url": "https://github.com/openclaw",
+      "object_type": "other",
+      "parent_url": null,
+      "raw_urls": [
+        "https://github.com/openclaw"
+      ],
+      "skills": [
+        "Github",
+        "Summarize"
+      ],
+      "references": 2,
+      "priority": "P2"
+    },
+    {
+      "canonical_url": "https://clawhub.ai/TheSethRose/agent-browser",
+      "object_type": "clawhub-skill-page",
+      "parent_url": null,
+      "raw_urls": [
+        "https://clawhub.ai/TheSethRose/agent-browser"
+      ],
+      "skills": [
+        "Agent Browser"
+      ],
+      "references": 1,
+      "priority": "P2"
+    },
+    {
+      "canonical_url": "https://clawhub.ai/ivangdavila/self-improving",
+      "object_type": "clawhub-skill-page",
+      "parent_url": null,
+      "raw_urls": [
+        "https://clawhub.ai/ivangdavila/self-improving"
+      ],
+      "skills": [
+        "self-improving-agent"
+      ],
+      "references": 1,
+      "priority": "P2"
+    },
+    {
+      "canonical_url": "https://clawhub.ai/pskoett/self-improving-agent",
+      "object_type": "clawhub-skill-page",
+      "parent_url": null,
+      "raw_urls": [
+        "https://clawhub.ai/pskoett/self-improving-agent"
+      ],
+      "skills": [
+        "self-improving-agent"
+      ],
+      "references": 1,
+      "priority": "P2"
+    },
+    {
+      "canonical_url": "https://clawhub.ai/steipete/gog",
+      "object_type": "clawhub-skill-page",
+      "parent_url": null,
+      "raw_urls": [
+        "https://clawhub.ai/steipete/gog"
+      ],
+      "skills": [
+        "Gog"
+      ],
+      "references": 1,
+      "priority": "P2"
+    },
+    {
+      "canonical_url": "https://github.com/chainstacklabs/polyclaw",
+      "object_type": "github-repo",
+      "parent_url": null,
+      "raw_urls": [
+        "https://github.com/chainstacklabs/polyclaw"
+      ],
+      "skills": [
+        "Polymarket"
+      ],
+      "references": 1,
+      "priority": "P2"
+    },
+    {
+      "canonical_url": "https://github.com/lacymorrow/openclaw-polymarket-trading-skill",
+      "object_type": "github-repo",
+      "parent_url": null,
+      "raw_urls": [
+        "https://github.com/lacymorrow/openclaw-polymarket-trading-skill"
+      ],
+      "skills": [
+        "Polymarket"
+      ],
+      "references": 1,
+      "priority": "P2"
+    },
+    {
+      "canonical_url": "https://github.com/mvanhorn/clawdbot-skill-polymarket",
+      "object_type": "github-repo",
+      "parent_url": null,
+      "raw_urls": [
+        "https://github.com/mvanhorn/clawdbot-skill-polymarket"
+      ],
+      "skills": [
+        "Polymarket"
+      ],
+      "references": 1,
+      "priority": "P2"
+    },
+    {
+      "canonical_url": "https://github.com/openclaw/clawhub/issues/630",
+      "object_type": "github-issue",
+      "parent_url": "https://github.com/openclaw/clawhub",
+      "raw_urls": [
+        "https://github.com/openclaw/clawhub/issues/630"
+      ],
+      "skills": [
+        "self-improving-agent"
+      ],
+      "references": 1,
+      "priority": "P2"
+    },
+    {
+      "canonical_url": "https://github.com/openclaw/clawhub/issues/87",
+      "object_type": "github-issue",
+      "parent_url": "https://github.com/openclaw/clawhub",
+      "raw_urls": [
+        "https://github.com/openclaw/clawhub/issues/87"
+      ],
+      "skills": [
+        "Polymarket"
+      ],
+      "references": 1,
+      "priority": "P2"
+    },
+    {
+      "canonical_url": "https://github.com/openclaw/openclaw",
+      "object_type": "github-repo",
+      "parent_url": null,
+      "raw_urls": [
+        "https://github.com/openclaw/openclaw"
+      ],
+      "skills": [
+        "Gog"
+      ],
+      "references": 1,
+      "priority": "P2"
+    },
+    {
+      "canonical_url": "https://github.com/openclaw/skills/blob/main/skills/pskoett/self-improving-agent/SKILL.md",
+      "object_type": "github-skill-spec",
+      "parent_url": "https://github.com/openclaw/skills",
+      "raw_urls": [
+        "https://github.com/openclaw/skills/blob/main/skills/pskoett/self-improving-agent/SKILL.md"
+      ],
+      "skills": [
+        "self-improving-agent"
+      ],
+      "references": 1,
+      "priority": "P2"
+    },
+    {
+      "canonical_url": "https://github.com/openclaw/skills/blob/main/skills/thesethrose/agent-browser/SKILL.md",
+      "object_type": "github-skill-spec",
+      "parent_url": "https://github.com/openclaw/skills",
+      "raw_urls": [
+        "https://github.com/openclaw/skills/blob/main/skills/thesethrose/agent-browser/SKILL.md"
+      ],
+      "skills": [
+        "Agent Browser"
+      ],
+      "references": 1,
+      "priority": "P2"
+    },
+    {
+      "canonical_url": "https://github.com/peterskoett/self-improving-agent",
+      "object_type": "github-repo",
+      "parent_url": null,
+      "raw_urls": [
+        "https://github.com/peterskoett/self-improving-agent"
+      ],
+      "skills": [
+        "self-improving-agent"
+      ],
+      "references": 1,
+      "priority": "P2"
+    },
+    {
+      "canonical_url": "https://github.com/topics/openclaw-skill",
+      "object_type": "github-repo",
+      "parent_url": null,
+      "raw_urls": [
+        "https://github.com/topics/openclaw-skill"
+      ],
+      "skills": [
+        "Github"
+      ],
+      "references": 1,
+      "priority": "P2"
+    }
+  ]
+}
