@@ -1,0 +1,290 @@
+{
+  "ok": true,
+  "items": [
+    {
+      "canonical_url": "https://github.com/obra/superpowers",
+      "object_type": "github-repo",
+      "parent_url": null,
+      "raw_urls": [
+        "https://github.com/obra/superpowers",
+        "https://github.com/obra/superpowers/blob/main/RELEASE-NOTES.md"
+      ],
+      "skills": [
+        "obra/superpowers"
+      ],
+      "references": 2
+    },
+    {
+      "canonical_url": "https://github.com/yigitkonur/superpowers-codex",
+      "object_type": "github-repo",
+      "parent_url": null,
+      "raw_urls": [
+        "https://github.com/yigitkonur/superpowers-codex"
+      ],
+      "skills": [
+        "obra/superpowers"
+      ],
+      "references": 1
+    },
+    {
+      "canonical_url": "https://github.com/BryanHoo/superpowers-ccg",
+      "object_type": "github-repo",
+      "parent_url": null,
+      "raw_urls": [
+        "https://github.com/BryanHoo/superpowers-ccg"
+      ],
+      "skills": [
+        "obra/superpowers"
+      ],
+      "references": 1
+    },
+    {
+      "canonical_url": "https://github.com/subinium/awesome-claude-code",
+      "object_type": "github-repo",
+      "parent_url": null,
+      "raw_urls": [
+        "https://github.com/subinium/awesome-claude-code"
+      ],
+      "skills": [
+        "jarrodwatts/claude-hud"
+      ],
+      "references": 1
+    },
+    {
+      "canonical_url": "https://github.com/jarrodwatts",
+      "object_type": "github-user-or-org",
+      "parent_url": null,
+      "raw_urls": [
+        "https://github.com/jarrodwatts"
+      ],
+      "skills": [
+        "jarrodwatts/claude-hud"
+      ],
+      "references": 1
+    },
+    {
+      "canonical_url": "https://github.com/jarrodwatts/claude-delegator",
+      "object_type": "github-repo",
+      "parent_url": null,
+      "raw_urls": [
+        "https://github.com/jarrodwatts/claude-delegator"
+      ],
+      "skills": [
+        "jarrodwatts/claude-hud"
+      ],
+      "references": 1
+    },
+    {
+      "canonical_url": "https://github.com/jarrodwatts/claude-hud",
+      "object_type": "github-repo",
+      "parent_url": null,
+      "raw_urls": [
+        "https://github.com/jarrodwatts/claude-hud/blob/main/CLAUDE.README.md"
+      ],
+      "skills": [
+        "jarrodwatts/claude-hud"
+      ],
+      "references": 1
+    },
+    {
+      "canonical_url": "https://github.com/gsd-build/get-shit-done",
+      "object_type": "github-repo",
+      "parent_url": null,
+      "raw_urls": [
+        "https://github.com/gsd-build/get-shit-done",
+        "https://github.com/gsd-build/get-shit-done/blob/main/CHANGELOG.md",
+        "https://github.com/gsd-build/get-shit-done/releases"
+      ],
+      "skills": [
+        "gsd-build/get-shit-done"
+      ],
+      "references": 3
+    },
+    {
+      "canonical_url": "https://dev.to/alikazmidev/the-complete-beginners-guide-to-gsd-get-shit-done-framework-for-claude-code-24h0",
+      "object_type": "other",
+      "parent_url": null,
+      "raw_urls": [
+        "https://dev.to/alikazmidev/the-complete-beginners-guide-to-gsd-get-shit-done-framework-for-claude-code-24h0"
+      ],
+      "skills": [
+        "gsd-build/get-shit-done"
+      ],
+      "references": 1
+    },
+    {
+      "canonical_url": "https://github.com/google-gemini/gemini-cli",
+      "object_type": "github-repo",
+      "parent_url": null,
+      "raw_urls": [
+        "https://github.com/google-gemini/gemini-cli"
+      ],
+      "skills": [
+        "google-gemini/gemini-cli"
+      ],
+      "references": 1
+    },
+    {
+      "canonical_url": "https://inventivehq.com/blog/gemini-vs-claude-vs-codex-comparison",
+      "object_type": "other",
+      "parent_url": null,
+      "raw_urls": [
+        "https://inventivehq.com/blog/gemini-vs-claude-vs-codex-comparison"
+      ],
+      "skills": [
+        "google-gemini/gemini-cli"
+      ],
+      "references": 1
+    },
+    {
+      "canonical_url": "https://www.squadbase.dev/en/blog/claude-code-vs-gemini-cli-vs-codex-cli-whats-the-best-choice-for-internal",
+      "object_type": "other",
+      "parent_url": null,
+      "raw_urls": [
+        "https://www.squadbase.dev/en/blog/claude-code-vs-gemini-cli-vs-codex-cli-whats-the-best-choice-for-internal"
+      ],
+      "skills": [
+        "google-gemini/gemini-cli"
+      ],
+      "references": 1
+    },
+    {
+      "canonical_url": "https://www.deployhq.com/blog/comparing-claude-code-openai-codex-and-google-gemini-cli-which-ai-coding-assistant-is-right-for-your-deployment-workflow",
+      "object_type": "other",
+      "parent_url": null,
+      "raw_urls": [
+        "https://www.deployhq.com/blog/comparing-claude-code-openai-codex-and-google-gemini-cli-which-ai-coding-assistant-is-right-for-your-deployment-workflow"
+      ],
+      "skills": [
+        "davila7/claude-code-templates",
+        "google-gemini/gemini-cli"
+      ],
+      "references": 2
+    },
+    {
+      "canonical_url": "https://github.com/patrickespake/ai_cli_management",
+      "object_type": "github-repo",
+      "parent_url": null,
+      "raw_urls": [
+        "https://github.com/patrickespake/ai_cli_management"
+      ],
+      "skills": [
+        "anthropics/claude-code",
+        "mindfold-ai/Trellis",
+        "openai/codex"
+      ],
+      "references": 3
+    },
+    {
+      "canonical_url": "https://github.com/google-github-actions/run-gemini-cli",
+      "object_type": "github-repo",
+      "parent_url": null,
+      "raw_urls": [
+        "https://github.com/google-github-actions/run-gemini-cli"
+      ],
+      "skills": [
+        "anthropics/claude-code",
+        "openai/codex"
+      ],
+      "references": 2
+    },
+    {
+      "canonical_url": "https://github.com/anthropics/claude-code",
+      "object_type": "github-repo",
+      "parent_url": null,
+      "raw_urls": [
+        "https://github.com/anthropics/claude-code"
+      ],
+      "skills": [
+        "anthropics/claude-code"
+      ],
+      "references": 1
+    },
+    {
+      "canonical_url": "https://github.com/anthropics/claude-code-action",
+      "object_type": "github-repo",
+      "parent_url": null,
+      "raw_urls": [
+        "https://github.com/anthropics/claude-code-action"
+      ],
+      "skills": [
+        "anthropics/claude-code"
+      ],
+      "references": 1
+    },
+    {
+      "canonical_url": "https://github.com/poemswe/co-researcher",
+      "object_type": "github-repo",
+      "parent_url": null,
+      "raw_urls": [
+        "https://github.com/poemswe/co-researcher"
+      ],
+      "skills": [
+        "openai/codex"
+      ],
+      "references": 1
+    },
+    {
+      "canonical_url": "https://github.com/openai/codex-action",
+      "object_type": "github-repo",
+      "parent_url": null,
+      "raw_urls": [
+        "https://github.com/openai/codex-action"
+      ],
+      "skills": [
+        "openai/codex"
+      ],
+      "references": 1
+    },
+    {
+      "canonical_url": "https://github.com/mindfold-ai/Trellis",
+      "object_type": "github-repo",
+      "parent_url": null,
+      "raw_urls": [
+        "https://github.com/mindfold-ai/Trellis",
+        "https://github.com/mindfold-ai/Trellis/activity"
+      ],
+      "skills": [
+        "mindfold-ai/Trellis"
+      ],
+      "references": 2
+    },
+    {
+      "canonical_url": "https://github.com/mindfold-ai",
+      "object_type": "github-user-or-org",
+      "parent_url": null,
+      "raw_urls": [
+        "https://github.com/mindfold-ai"
+      ],
+      "skills": [
+        "mindfold-ai/Trellis"
+      ],
+      "references": 1
+    },
+    {
+      "canonical_url": "https://github.com/davila7/claude-code-templates",
+      "object_type": "github-repo",
+      "parent_url": null,
+      "raw_urls": [
+        "https://github.com/davila7/claude-code-templates",
+        "https://github.com/davila7/claude-code-templates/blob/main/CLAUDE.md"
+      ],
+      "skills": [
+        "davila7/claude-code-templates"
+      ],
+      "references": 2
+    },
+    {
+      "canonical_url": "https://medium.com/latinxinai/complete-guide-to-claude-code-templates-4e53d6688b34",
+      "object_type": "editorial-reference",
+      "parent_url": null,
+      "raw_urls": [
+        "https://medium.com/latinxinai/complete-guide-to-claude-code-templates-4e53d6688b34"
+      ],
+      "skills": [
+        "davila7/claude-code-templates"
+      ],
+      "references": 1
+    }
+  ]
+}
