@@ -1,0 +1,228 @@
+{
+  "ok": true,
+  "items": [
+    {
+      "name": "obra/superpowers",
+      "url": "https://github.com/obra/superpowers",
+      "kind": "applied-watchlist",
+      "category": "workflow-framework",
+      "description": "An agentic skills framework & software development methodology that works.",
+      "base_score": 5.8,
+      "final_score": 7.4,
+      "judgment": "follow",
+      "source_roles": {
+        "promote-source": 2,
+        "reference-project": 0,
+        "editorial-reference": 0,
+        "risk/evidence": 0
+      },
+      "filtered_refs": [
+        {
+          "url": "https://github.com/obra/superpowers",
+          "source_judgment": "promote-source",
+          "object_type": "github-repo",
+          "title": "obra/superpowers: An agentic skills framework & software ... - GitHub"
+        }
+      ],
+      "why": "Looks real and ecosystem-backed, but not yet compelling enough as a top adoption candidate."
+    },
+    {
+      "name": "jarrodwatts/claude-hud",
+      "url": "https://github.com/jarrodwatts/claude-hud",
+      "kind": "project-radar",
+      "category": "tooling-surface",
+      "description": "A Claude Code plugin that shows what's happening - context usage, active tools, running agents, and todo progress",
+      "base_score": 5.2,
+      "final_score": 5.6,
+      "judgment": "follow",
+      "source_roles": {
+        "promote-source": 0,
+        "reference-project": 1,
+        "editorial-reference": 0,
+        "risk/evidence": 0
+      },
+      "filtered_refs": [
+        {
+          "url": "https://github.com/jarrodwatts",
+          "source_judgment": "reference-project",
+          "object_type": "github-user-or-org",
+          "title": "Jarrod Watts jarrodwatts - GitHub"
+        }
+      ],
+      "why": "Interesting applied signal, but stronger source support is still needed."
+    },
+    {
+      "name": "gsd-build/get-shit-done",
+      "url": "https://github.com/gsd-build/get-shit-done",
+      "kind": "applied-watchlist",
+      "category": "workflow-framework",
+      "description": "A light-weight and powerful meta-prompting, context engineering and spec-driven development system for Claude Code by TÂCHES.",
+      "base_score": 4.6,
+      "final_score": 5.4,
+      "judgment": "follow",
+      "source_roles": {
+        "promote-source": 0,
+        "reference-project": 3,
+        "editorial-reference": 0,
+        "risk/evidence": 0
+      },
+      "filtered_refs": [
+        {
+          "url": "https://github.com/gsd-build/get-shit-done",
+          "source_judgment": "reference-project",
+          "object_type": "github-repo",
+          "title": "CHANGELOG.md - gsd-build/get-shit-done"
+        }
+      ],
+      "why": "Interesting applied signal, but stronger source support is still needed."
+    },
+    {
+      "name": "google-gemini/gemini-cli",
+      "url": "https://github.com/google-gemini/gemini-cli",
+      "kind": "applied-watchlist",
+      "category": "applied-project",
+      "description": "An open-source AI agent that brings the power of Gemini directly into your terminal.",
+      "base_score": 4.4,
+      "final_score": 4.4,
+      "judgment": "deep-dive",
+      "source_roles": {
+        "promote-source": 0,
+        "reference-project": 0,
+        "editorial-reference": 0,
+        "risk/evidence": 0
+      },
+      "filtered_refs": [],
+      "why": "Needs deeper inspection due to weaker source support, domain ambiguity, or less reusable product signal."
+    },
+    {
+      "name": "anthropics/claude-code",
+      "url": "https://github.com/anthropics/claude-code",
+      "kind": "applied-watchlist",
+      "category": "workflow-framework",
+      "description": "Claude Code is an agentic coding tool that lives in your terminal, understands your codebase, and helps you code faster by executing routine tasks, explaining complex code, and handling git workflows - all through natural language commands.",
+      "base_score": 4.4,
+      "final_score": 6.0,
+      "judgment": "adopt",
+      "source_roles": {
+        "promote-source": 2,
+        "reference-project": 0,
+        "editorial-reference": 0,
+        "risk/evidence": 0
+      },
+      "filtered_refs": [
+        {
+          "url": "https://github.com/patrickespake/ai_cli_management",
+          "source_judgment": "promote-source",
+          "object_type": "github-repo",
+          "title": "Parallel AI System with Codex, Gemini, and Claude Code Cli · GitHub"
+        },
+        {
+          "url": "https://github.com/google-github-actions/run-gemini-cli",
+          "source_judgment": "promote-source",
+          "object_type": "github-repo",
+          "title": "google-github-actions/run-gemini-cli"
+        }
+      ],
+      "why": "Practical workflow/tooling candidate with promoted source support and clearer reusable value."
+    },
+    {
+      "name": "openai/codex",
+      "url": "https://github.com/openai/codex",
+      "kind": "applied-watchlist",
+      "category": "applied-project",
+      "description": "Lightweight coding agent that runs in your terminal",
+      "base_score": 4.0,
+      "final_score": 5.6,
+      "judgment": "follow",
+      "source_roles": {
+        "promote-source": 2,
+        "reference-project": 0,
+        "editorial-reference": 0,
+        "risk/evidence": 0
+      },
+      "filtered_refs": [
+        {
+          "url": "https://github.com/patrickespake/ai_cli_management",
+          "source_judgment": "promote-source",
+          "object_type": "github-repo",
+          "title": "Parallel AI System with Codex, Gemini, and Claude Code Cli · GitHub"
+        },
+        {
+          "url": "https://github.com/google-github-actions/run-gemini-cli",
+          "source_judgment": "promote-source",
+          "object_type": "github-repo",
+          "title": "google-github-actions/run-gemini-cli"
+        }
+      ],
+      "why": "Looks real and ecosystem-backed, but not yet compelling enough as a top adoption candidate."
+    },
+    {
+      "name": "mindfold-ai/Trellis",
+      "url": "https://github.com/mindfold-ai/Trellis",
+      "kind": "applied-watchlist",
+      "category": "applied-project",
+      "description": "All-in-one AI framework & toolkit",
+      "base_score": 3.8,
+      "final_score": 5.8,
+      "judgment": "follow",
+      "source_roles": {
+        "promote-source": 3,
+        "reference-project": 1,
+        "editorial-reference": 0,
+        "risk/evidence": 0
+      },
+      "filtered_refs": [
+        {
+          "url": "https://github.com/mindfold-ai/Trellis",
+          "source_judgment": "promote-source",
+          "object_type": "github-repo",
+          "title": "mindfold-ai/Trellis Activity"
+        },
+        {
+          "url": "https://github.com/patrickespake/ai_cli_management",
+          "source_judgment": "promote-source",
+          "object_type": "github-repo",
+          "title": "Parallel AI System with Codex, Gemini, and Claude Code ..."
+        },
+        {
+          "url": "https://github.com/mindfold-ai",
+          "source_judgment": "reference-project",
+          "object_type": "github-user-or-org",
+          "title": "mindfold-ai"
+        }
+      ],
+      "why": "Looks real and ecosystem-backed, but not yet compelling enough as a top adoption candidate."
+    },
+    {
+      "name": "davila7/claude-code-templates",
+      "url": "https://github.com/davila7/claude-code-templates",
+      "kind": "applied-watchlist",
+      "category": "workflow-framework",
+      "description": "CLI tool for configuring and monitoring Claude Code",
+      "base_score": 3.4,
+      "final_score": 5.2,
+      "judgment": "adopt",
+      "source_roles": {
+        "promote-source": 2,
+        "reference-project": 0,
+        "editorial-reference": 1,
+        "risk/evidence": 0
+      },
+      "filtered_refs": [
+        {
+          "url": "https://github.com/davila7/claude-code-templates",
+          "source_judgment": "promote-source",
+          "object_type": "github-repo",
+          "title": "davila7/claude-code-templates"
+        },
+        {
+          "url": "https://medium.com/latinxinai/complete-guide-to-claude-code-templates-4e53d6688b34",
+          "source_judgment": "editorial-reference",
+          "object_type": "editorial-reference",
+          "title": "Complete Guide to Claude Code Templates | by Daniel Avila | LatinXinAI | Medium"
+        }
+      ],
+      "why": "Practical workflow/tooling candidate with promoted source support and clearer reusable value."
+    }
+  ]
+}
