@@ -1,0 +1,35 @@
+id: skill-mcp-ecosystem
+name: Skill & MCP Ecosystem
+purpose: >
+  Track rising, top-base, and curated skill/MCP ecosystem sources relevant to OpenClaw evolution.
+entries:
+  - repo: openclaw/skills
+    role: registry-backup
+    tags: [skills, registry, openclaw]
+  - repo: VoltAgent/awesome-openclaw-skills
+    role: category-index
+    tags: [skills, awesome-list, discovery]
+  - repo: LeoYeAI/openclaw-master-skills
+    role: curated-collection
+    tags: [skills, curated, weekly]
+  - repo: openclaw/clawhub
+    role: registry-core
+    tags: [clawhub, registry, skills]
+anchors:
+  - repo: anthropics/claude-code
+    role: official-anchor
+  - repo: google-gemini/gemini-cli
+    role: official-anchor
+  - repo: openai/codex
+    role: official-anchor
+externals:
+  - url: https://clawhub.ai/ademczuk/skills-weekly
+    role: trend-source
+  - url: https://playbooks.com/skills/openclaw/skills/last30days-weekly
+    role: trend-source
+  - url: https://clawhubtrends.com/rising.html
+    role: trend-source
+  - url: https://topclawhubskills.com/
+    role: top-base-source
+  - url: https://openclaw-hub.org/openclaw-hub-top-skills.html
+    role: top-base-source

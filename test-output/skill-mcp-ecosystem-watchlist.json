@@ -1,0 +1,198 @@
+{
+  "ok": true,
+  "watchlist": "skill-mcp-ecosystem",
+  "profile": "openclaw-evolution",
+  "source_pack": "skill-mcp-ecosystem",
+  "count": 7,
+  "items": [
+    {
+      "repo": "google-gemini/gemini-cli",
+      "url": "https://github.com/google-gemini/gemini-cli",
+      "role": "official-anchor",
+      "tags": [],
+      "description": "An open-source AI agent that brings the power of Gemini directly into your terminal.",
+      "stars": 98630,
+      "forks": 12498,
+      "pushedAt": "2026-03-22T06:49:54Z",
+      "topics": [
+        "gemini",
+        "gemini-api",
+        "ai",
+        "ai-agents",
+        "cli",
+        "mcp-client",
+        "mcp-server"
+      ],
+      "keyword_hits": 2,
+      "watch_score": 4.2,
+      "section": "anchors",
+      "profile": "openclaw-evolution",
+      "source_pack": "skill-mcp-ecosystem"
+    },
+    {
+      "repo": "anthropics/claude-code",
+      "url": "https://github.com/anthropics/claude-code",
+      "role": "official-anchor",
+      "tags": [],
+      "description": "Claude Code is an agentic coding tool that lives in your terminal, understands your codebase, and helps you code faster by executing routine tasks, explaining complex code, and handling git workflows - all through natural language commands.",
+      "stars": 81052,
+      "forks": 6725,
+      "pushedAt": "2026-03-20T22:24:50Z",
+      "topics": [],
+      "keyword_hits": 2,
+      "watch_score": 4.2,
+      "section": "anchors",
+      "profile": "openclaw-evolution",
+      "source_pack": "skill-mcp-ecosystem"
+    },
+    {
+      "repo": "VoltAgent/awesome-openclaw-skills",
+      "url": "https://github.com/VoltAgent/awesome-openclaw-skills",
+      "role": "category-index",
+      "tags": [
+        "skills",
+        "awesome-list",
+        "discovery"
+      ],
+      "description": "The awesome collection of OpenClaw skills. 5,400+ skills filtered and categorized from the official OpenClaw Skills Registry.🦞",
+      "stars": 40600,
+      "forks": 3887,
+      "pushedAt": "2026-03-21T12:07:32Z",
+      "topics": [
+        "agent-skills",
+        "awesome-list",
+        "clawdbot",
+        "clawdbot-skill",
+        "clawd",
+        "clawdhub",
+        "moltbot",
+        "moltbot-skills",
+        "openclaw",
+        "openclaw-skills",
+        "awesome",
+        "awesome-lists"
+      ],
+      "keyword_hits": 4,
+      "watch_score": 4.1,
+      "section": "entries",
+      "profile": "openclaw-evolution",
+      "source_pack": "skill-mcp-ecosystem"
+    },
+    {
+      "repo": "openai/codex",
+      "url": "https://github.com/openai/codex",
+      "role": "official-anchor",
+      "tags": [],
+      "description": "Lightweight coding agent that runs in your terminal",
+      "stars": 66800,
+      "forks": 8925,
+      "pushedAt": "2026-03-22T06:26:22Z",
+      "topics": [],
+      "keyword_hits": 1,
+      "watch_score": 3.85,
+      "section": "anchors",
+      "profile": "openclaw-evolution",
+      "source_pack": "skill-mcp-ecosystem"
+    },
+    {
+      "repo": "openclaw/clawhub",
+      "url": "https://github.com/openclaw/clawhub",
+      "role": "registry-core",
+      "tags": [
+        "clawhub",
+        "registry",
+        "skills"
+      ],
+      "description": "Skill Directory for OpenClaw",
+      "stars": 6567,
+      "forks": 1033,
+      "pushedAt": "2026-03-22T03:56:56Z",
+      "topics": [
+        "directory",
+        "skill"
+      ],
+      "keyword_hits": 4,
+      "watch_score": 3.3,
+      "section": "entries",
+      "profile": "openclaw-evolution",
+      "source_pack": "skill-mcp-ecosystem"
+    },
+    {
+      "repo": "openclaw/skills",
+      "url": "https://github.com/openclaw/skills",
+      "role": "registry-backup",
+      "tags": [
+        "skills",
+        "registry",
+        "openclaw"
+      ],
+      "description": "All versions of all skills that are on clawhub.com archived",
+      "stars": 3223,
+      "forks": 926,
+      "pushedAt": "2026-03-22T06:41:42Z",
+      "topics": [
+        "backup",
+        "skill",
+        "archive",
+        "clawhub",
+        "openclaw"
+      ],
+      "keyword_hits": 4,
+      "watch_score": 3.3,
+      "section": "entries",
+      "profile": "openclaw-evolution",
+      "source_pack": "skill-mcp-ecosystem"
+    },
+    {
+      "repo": "LeoYeAI/openclaw-master-skills",
+      "url": "https://github.com/LeoYeAI/openclaw-master-skills",
+      "role": "curated-collection",
+      "tags": [
+        "skills",
+        "curated",
+        "weekly"
+      ],
+      "description": "🧠 Curated collection of 339+ best OpenClaw skills — weekly updated by MyClaw.ai from ClawHub, GitHub & community. AI, productivity, dev, marketing, finance & more.",
+      "stars": 1991,
+      "forks": 370,
+      "pushedAt": "2026-03-12T03:29:12Z",
+      "topics": [
+        "ai-agent",
+        "curated",
+        "myclaw",
+        "openclaw",
+        "skills",
+        "weekly",
+        "agentskills",
+        "skill-collection"
+      ],
+      "keyword_hits": 3,
+      "watch_score": 1.65,
+      "section": "entries",
+      "profile": "openclaw-evolution",
+      "source_pack": "skill-mcp-ecosystem"
+    }
+  ],
+  "externals": [
+    {
+      "url": "https://clawhub.ai/ademczuk/skills-weekly",
+      "role": "trend-source"
+    },
+    {
+      "url": "https://playbooks.com/skills/openclaw/skills/last30days-weekly",
+      "role": "trend-source"
+    },
+    {
+      "url": "https://clawhubtrends.com/rising.html",
+      "role": "trend-source"
+    },
+    {
+      "url": "https://topclawhubskills.com/",
+      "role": "top-base-source"
+    },
+    {
+      "url": "https://openclaw-hub.org/openclaw-hub-top-skills.html",
+      "role": "top-base-source"
+    }
+  ]
+}
