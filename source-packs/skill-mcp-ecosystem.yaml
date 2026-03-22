@@ -1,0 +1,9 @@
+id: skill-mcp-ecosystem
+name: Skill & MCP Ecosystem
+focus:
+  - clawhub
+  - awesome skill registries
+  - skill trend sources
+  - mcp ecosystem sources
+notes: >
+  Tracks skills, MCP servers, registries, and ecosystem-level evolution signals.

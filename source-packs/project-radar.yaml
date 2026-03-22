@@ -1,0 +1,9 @@
+id: project-radar
+name: Project Radar
+focus:
+  - github trending
+  - releases
+  - high-star repositories
+  - fast-growing repositories
+notes: >
+  Project discovery layer for both large-base important repos and fast-rising repos.

@@ -1,0 +1,11 @@
+id: core-ecosystem
+name: Core Ecosystem
+focus:
+  - openclaw
+  - claude code
+  - codex
+  - gemini cli
+  - mcp
+  - skills
+notes: >
+  High-priority ecosystem sources for both evolution tracks.

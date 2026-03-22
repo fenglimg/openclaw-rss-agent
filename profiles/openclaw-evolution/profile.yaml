@@ -1,0 +1,32 @@
+id: openclaw-evolution
+name: OpenClaw Evolution
+purpose: >
+  Discover materials that OpenClaw itself could absorb, reuse, productize, or learn from.
+questions:
+  - What should OpenClaw absorb today?
+  - What could become a skill, workflow, docs upgrade, or product capability?
+source_packs:
+  - core-ecosystem
+  - skill-mcp-ecosystem
+  - community-practical
+candidate_buckets:
+  - important_updates
+  - candidate_skill
+  - candidate_workflow_capability
+  - candidate_docs_upgrade
+  - candidate_product_capability
+  - community_practice
+  - project_radar
+output_targets:
+  - evolution-brief
+  - adoption-queue
+  - deep-dive-queue
+search_layer_role:
+  - validation
+  - context-expansion
+  - source-discovery
+agent_role:
+  - novelty-judgment
+  - adoption-judgment
+  - semantic-classification
+  - synthesis

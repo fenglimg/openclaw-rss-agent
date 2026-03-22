@@ -1,0 +1,9 @@
+id: community-practical
+name: Community Practical
+focus:
+  - linux.do
+  - v2ex
+  - hacker news
+  - author blogs
+notes: >
+  Practical community usage, repairs, workarounds, integration patterns, and workflow discoveries.

@@ -1,0 +1,34 @@
+id: applied-ai-evolution
+name: Applied AI Evolution
+purpose: >
+  Discover practical, reliable, application-layer materials that help the user improve
+  real AI workflows, tool usage, and project awareness.
+questions:
+  - What is worth trying today?
+  - What is reliable, novel, and practically useful?
+source_packs:
+  - core-ecosystem
+  - project-radar
+  - community-practical
+candidate_buckets:
+  - important_updates
+  - applied_workflows
+  - candidate_try_now
+  - candidate_fix_or_workaround
+  - candidate_follow_project
+  - candidate_high_signal_repo
+  - community_practice
+  - project_radar
+output_targets:
+  - applied-brief
+  - save-or-try-queue
+  - deep-dive-queue
+search_layer_role:
+  - validation
+  - context-expansion
+  - source-discovery
+agent_role:
+  - novelty-judgment
+  - practical-value-judgment
+  - semantic-classification
+  - synthesis
