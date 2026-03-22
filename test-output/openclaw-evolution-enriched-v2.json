@@ -1,0 +1,428 @@
+{
+  "ok": true,
+  "items": [
+    {
+      "skill": "self-improving-agent",
+      "owners": [
+        "pskoett"
+      ],
+      "signal_summary": "trend_score=5.6 cross_source=True best_rank=1",
+      "validation_sources": [
+        {
+          "title": "Skill deleted from ClawHub Self-Improving-Agent https ... - GitHub",
+          "url": "https://github.com/openclaw/clawhub/issues/630",
+          "source": "tavily, grok",
+          "source_judgment": "risk-signal"
+        },
+        {
+          "title": "ClawHub - Skill Directory for OpenClaw - GitHub",
+          "url": "https://github.com/openclaw/clawhub",
+          "source": "tavily, exa, grok",
+          "source_judgment": "promote-source"
+        },
+        {
+          "title": "VoltAgent/awesome-openclaw-skills",
+          "url": "https://github.com/VoltAgent/awesome-openclaw-skills",
+          "source": "grok",
+          "source_judgment": "promote-source"
+        },
+        {
+          "title": "peterskoett/self-improving-agent",
+          "url": "https://github.com/peterskoett/self-improving-agent",
+          "source": "exa",
+          "source_judgment": "evidence-only"
+        },
+        {
+          "title": "self-improving-agent - ClawHub",
+          "url": "https://clawhub.ai/pskoett/self-improving-agent",
+          "source": "tavily, exa, grok",
+          "source_judgment": "inspect-skill-spec"
+        },
+        {
+          "title": "self-improving-agent: The OpenClaw Skill That Teaches Your AI to Learn From Its Own Mistakes | ClawHub Blog | ClawHub Skills Lib",
+          "url": "https://www.clawhub-skills.com/blog/self-improving-agent-skill-guide",
+          "source": "exa",
+          "source_judgment": null
+        }
+      ],
+      "source_candidate_urls": [
+        {
+          "url": "https://github.com/openclaw/clawhub/issues/630",
+          "source_judgment": "risk-signal",
+          "object_type": "github-issue",
+          "source_score": 1.3
+        },
+        {
+          "url": "https://github.com/openclaw/clawhub",
+          "source_judgment": "promote-source",
+          "object_type": "github-repo",
+          "source_score": 5.0
+        },
+        {
+          "url": "https://github.com/VoltAgent/awesome-openclaw-skills",
+          "source_judgment": "promote-source",
+          "object_type": "github-repo",
+          "source_score": 4.5
+        },
+        {
+          "url": "https://clawhub.ai/pskoett/self-improving-agent",
+          "source_judgment": "inspect-skill-spec",
+          "object_type": "clawhub-skill-page",
+          "source_score": 1.1
+        },
+        {
+          "url": "https://clawhub.ai/ivangdavila/self-improving",
+          "source_judgment": "inspect-skill-spec",
+          "object_type": "clawhub-skill-page",
+          "source_score": 1.1
+        }
+      ],
+      "source_quality_notes": [
+        "Includes canonical sources already strong enough for promotion.",
+        "Contains explicit risk/evidence signal that should affect judgment, not just popularity."
+      ],
+      "suggested_judgment": "adopt-or-follow"
+    },
+    {
+      "skill": "Polymarket",
+      "owners": [
+        "joelchance"
+      ],
+      "signal_summary": "trend_score=5.57 cross_source=True best_rank=2",
+      "validation_sources": [
+        {
+          "title": "Suspect skills · Issue #87 · openclaw/clawhub - GitHub",
+          "url": "https://github.com/openclaw/clawhub/issues/87",
+          "source": "tavily",
+          "source_judgment": "risk-signal"
+        },
+        {
+          "title": "Polymarket prediction markets skill for Clawdbot - GitHub",
+          "url": "https://github.com/mvanhorn/clawdbot-skill-polymarket",
+          "source": "tavily",
+          "source_judgment": "evidence-only"
+        },
+        {
+          "title": "lacymorrow/openclaw-polymarket-trading-skill",
+          "url": "https://github.com/lacymorrow/openclaw-polymarket-trading-skill",
+          "source": "exa",
+          "source_judgment": "evidence-only"
+        },
+        {
+          "title": "ClawHub - Skill Directory for OpenClaw - GitHub",
+          "url": "https://github.com/openclaw/clawhub",
+          "source": "tavily",
+          "source_judgment": "promote-source"
+        },
+        {
+          "title": "chainstacklabs/polyclaw: Trading-enabled Polymarket skill ... - GitHub",
+          "url": "https://github.com/chainstacklabs/polyclaw",
+          "source": "tavily, exa",
+          "source_judgment": "evidence-only"
+        },
+        {
+          "title": "polymarket — ClawHub",
+          "url": "https://clawhub.ai/skills/polymarket",
+          "source": "exa",
+          "source_judgment": null
+        }
+      ],
+      "source_candidate_urls": [
+        {
+          "url": "https://github.com/openclaw/clawhub/issues/87",
+          "source_judgment": "risk-signal",
+          "object_type": "github-issue",
+          "source_score": 1.3
+        },
+        {
+          "url": "https://github.com/openclaw/clawhub",
+          "source_judgment": "promote-source",
+          "object_type": "github-repo",
+          "source_score": 5.0
+        }
+      ],
+      "source_quality_notes": [
+        "Includes canonical sources already strong enough for promotion.",
+        "Contains explicit risk/evidence signal that should affect judgment, not just popularity."
+      ],
+      "suggested_judgment": "deep-dive"
+    },
+    {
+      "skill": "Gog",
+      "owners": [
+        "steipete"
+      ],
+      "signal_summary": "trend_score=5.57 cross_source=True best_rank=2",
+      "validation_sources": [
+        {
+          "title": "openclaw/skills: All versions of all skills that are on clawhub ...",
+          "url": "https://github.com/openclaw/skills",
+          "source": "tavily, exa, grok",
+          "source_judgment": "promote-source"
+        },
+        {
+          "title": "VoltAgent/awesome-openclaw-skills",
+          "url": "https://github.com/VoltAgent/awesome-openclaw-skills",
+          "source": "exa",
+          "source_judgment": "promote-source"
+        },
+        {
+          "title": "ClawHub - OpenClaw",
+          "url": "https://docs.openclaw.ai/tools/clawdhub",
+          "source": "exa",
+          "source_judgment": null
+        },
+        {
+          "title": "ClawHub - Skill Directory for OpenClaw",
+          "url": "https://github.com/openclaw/clawhub",
+          "source": "tavily, exa, grok",
+          "source_judgment": "promote-source"
+        },
+        {
+          "title": "OpenClaw — Personal AI Assistant",
+          "url": "https://github.com/openclaw/openclaw",
+          "source": "grok",
+          "source_judgment": "evidence-only"
+        },
+        {
+          "title": "LeoYeAI/openclaw-master-skills",
+          "url": "https://github.com/LeoYeAI/openclaw-master-skills",
+          "source": "tavily",
+          "source_judgment": null
+        }
+      ],
+      "source_candidate_urls": [
+        {
+          "url": "https://github.com/openclaw/skills",
+          "source_judgment": "promote-source",
+          "object_type": "github-repo",
+          "source_score": 3.5
+        },
+        {
+          "url": "https://github.com/VoltAgent/awesome-openclaw-skills",
+          "source_judgment": "promote-source",
+          "object_type": "github-repo",
+          "source_score": 4.5
+        },
+        {
+          "url": "https://github.com/openclaw/clawhub",
+          "source_judgment": "promote-source",
+          "object_type": "github-repo",
+          "source_score": 5.0
+        },
+        {
+          "url": "https://clawhub.ai/steipete/gog",
+          "source_judgment": "inspect-skill-spec",
+          "object_type": "clawhub-skill-page",
+          "source_score": 1.1
+        }
+      ],
+      "source_quality_notes": [
+        "Includes canonical sources already strong enough for promotion."
+      ],
+      "suggested_judgment": "follow"
+    },
+    {
+      "skill": "Summarize",
+      "owners": [
+        "steipete"
+      ],
+      "signal_summary": "trend_score=5.5 cross_source=True best_rank=4",
+      "validation_sources": [
+        {
+          "title": "openclaw/skills",
+          "url": "https://github.com/openclaw/skills",
+          "source": "exa",
+          "source_judgment": "promote-source"
+        },
+        {
+          "title": "ClawHub - Skill Directory for OpenClaw - GitHub",
+          "url": "https://github.com/openclaw/clawhub",
+          "source": "tavily, exa",
+          "source_judgment": "promote-source"
+        },
+        {
+          "title": "What is OpenClaw ClawHub? - Medium",
+          "url": "https://medium.com/data-science-in-your-pocket/what-is-openclaw-clawhub-e123c2dd0db1",
+          "source": "tavily",
+          "source_judgment": null
+        },
+        {
+          "title": "What are OpenClaw Skills? A 2026 Developer's Guide | DigitalOcean",
+          "url": "https://www.digitalocean.com/resources/articles/what-are-openclaw-skills",
+          "source": "tavily",
+          "source_judgment": null
+        },
+        {
+          "title": "Best ClawHub Skills: A Complete Guide - DataCamp",
+          "url": "https://www.datacamp.com/blog/best-clawhub-skills",
+          "source": "tavily",
+          "source_judgment": null
+        },
+        {
+          "title": "clawhub - OpenClaw Skills",
+          "url": "https://openclawskills.best/skills/zaycv/clawhub1",
+          "source": "exa",
+          "source_judgment": null
+        }
+      ],
+      "source_candidate_urls": [
+        {
+          "url": "https://github.com/openclaw/skills",
+          "source_judgment": "promote-source",
+          "object_type": "github-repo",
+          "source_score": 3.5
+        },
+        {
+          "url": "https://github.com/openclaw/clawhub",
+          "source_judgment": "promote-source",
+          "object_type": "github-repo",
+          "source_score": 5.0
+        }
+      ],
+      "source_quality_notes": [
+        "Includes canonical sources already strong enough for promotion."
+      ],
+      "suggested_judgment": "adopt-or-follow"
+    },
+    {
+      "skill": "Github",
+      "owners": [
+        "steipete"
+      ],
+      "signal_summary": "trend_score=5.43 cross_source=True best_rank=6",
+      "validation_sources": [
+        {
+          "title": "openclaw/skills",
+          "url": "https://github.com/openclaw/skills",
+          "source": "exa",
+          "source_judgment": "promote-source"
+        },
+        {
+          "title": "openclaw",
+          "url": "https://github.com/openclaw",
+          "source": "exa",
+          "source_judgment": "evidence-only"
+        },
+        {
+          "title": "ClawHub - Skill Directory for OpenClaw - GitHub",
+          "url": "https://github.com/openclaw/clawhub",
+          "source": "tavily, exa",
+          "source_judgment": "promote-source"
+        },
+        {
+          "title": "openclaw/clawhub - GitHub",
+          "url": "https://github.com/openclaw/clawhub/blob/main/clawhub",
+          "source": "tavily",
+          "source_judgment": null
+        },
+        {
+          "title": "openclaw/docs/tools/clawhub.md at main - GitHub",
+          "url": "https://github.com/openclaw/openclaw/blob/main/docs/tools/clawhub.md",
+          "source": "tavily",
+          "source_judgment": null
+        },
+        {
+          "title": "Installing and Using the GitHub Skill in OpenClaw - Educative.io",
+          "url": "https://www.educative.io/courses/learn-openclaw/installing-the-github-skill-from-clawhub",
+          "source": "tavily",
+          "source_judgment": null
+        }
+      ],
+      "source_candidate_urls": [
+        {
+          "url": "https://github.com/openclaw/skills",
+          "source_judgment": "promote-source",
+          "object_type": "github-repo",
+          "source_score": 3.5
+        },
+        {
+          "url": "https://github.com/openclaw/clawhub",
+          "source_judgment": "promote-source",
+          "object_type": "github-repo",
+          "source_score": 5.0
+        }
+      ],
+      "source_quality_notes": [
+        "Includes canonical sources already strong enough for promotion."
+      ],
+      "suggested_judgment": "adopt-or-follow"
+    },
+    {
+      "skill": "Agent Browser",
+      "owners": [
+        "MaTriXy",
+        "TheSethRose"
+      ],
+      "signal_summary": "trend_score=5.43 cross_source=True best_rank=6",
+      "validation_sources": [
+        {
+          "title": "VoltAgent/awesome-openclaw-skills",
+          "url": "https://github.com/VoltAgent/awesome-openclaw-skills",
+          "source": "exa, grok",
+          "source_judgment": "promote-source"
+        },
+        {
+          "title": "ClawHub - Skill Directory for OpenClaw - GitHub",
+          "url": "https://github.com/openclaw/clawhub",
+          "source": "tavily, exa, grok",
+          "source_judgment": "promote-source"
+        },
+        {
+          "title": "skills/skills/thesethrose/agent-browser/SKILL.md at main - GitHub",
+          "url": "https://github.com/openclaw/skills/blob/main/skills/thesethrose/agent-browser/SKILL.md",
+          "source": "tavily, exa, grok",
+          "source_judgment": "inspect-skill-spec"
+        },
+        {
+          "title": "Best Openclaw Skills You Should Install (From ClawHub's 500+ Skills)",
+          "url": "https://www.reddit.com/r/AI_Agents/comments/1r2u356/best_openclaw_skills_you_should_install_from/",
+          "source": "tavily",
+          "source_judgment": null
+        },
+        {
+          "title": "categories/browser-and-automation.md at main · VoltAgent/awesome-openclaw-skills",
+          "url": "https://github.com/VoltAgent/awesome-openclaw-skills/blob/main/categories/browser-and-automation.md",
+          "source": "exa",
+          "source_judgment": null
+        },
+        {
+          "title": "Agent Browser - ClawHub",
+          "url": "https://clawhub.ai/TheSethRose/agent-browser",
+          "source": "tavily, grok",
+          "source_judgment": "inspect-skill-spec"
+        }
+      ],
+      "source_candidate_urls": [
+        {
+          "url": "https://github.com/VoltAgent/awesome-openclaw-skills",
+          "source_judgment": "promote-source",
+          "object_type": "github-repo",
+          "source_score": 4.5
+        },
+        {
+          "url": "https://github.com/openclaw/clawhub",
+          "source_judgment": "promote-source",
+          "object_type": "github-repo",
+          "source_score": 5.0
+        },
+        {
+          "url": "https://github.com/openclaw/skills/blob/main/skills/thesethrose/agent-browser/SKILL.md",
+          "source_judgment": "inspect-skill-spec",
+          "object_type": "github-skill-spec",
+          "source_score": 1.1
+        },
+        {
+          "url": "https://clawhub.ai/TheSethRose/agent-browser",
+          "source_judgment": "inspect-skill-spec",
+          "object_type": "clawhub-skill-page",
+          "source_score": 1.1
+        }
+      ],
+      "source_quality_notes": [
+        "Includes canonical sources already strong enough for promotion."
+      ],
+      "suggested_judgment": "adopt-or-follow"
+    }
+  ]
+}
