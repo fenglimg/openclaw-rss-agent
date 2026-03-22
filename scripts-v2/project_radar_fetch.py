@@ -10,8 +10,8 @@ from urllib.request import urlopen, Request
 FEED_URL = 'https://mshibanami.github.io/GitHubTrendingRSS/daily/all.xml'
 REPO_RE = re.compile(r'https://github\.com/([^/]+)/([^/#?]+)')
 KEYWORDS = [
-    'openclaw', 'claude', 'codex', 'gemini', 'mcp', 'skill', 'workflow',
-    'agent', 'agents', 'template', 'scaffold', 'automation', 'tooling'
+    'openclaw', 'claude', 'claude-code', 'codex', 'gemini', 'gemini-cli', 'mcp', 'model-context-protocol',
+    'skill', 'skills', 'workflow', 'agent', 'agents', 'template', 'scaffold', 'starter', 'plugin', 'integration', 'automation', 'tooling'
 ]
 
 
@@ -66,6 +66,17 @@ def topic_names(meta):
     return [x for x in out if x]
 
 
+def is_relevant(text):
+    strong = ['openclaw', 'claude', 'claude-code', 'codex', 'gemini', 'gemini-cli', 'mcp', 'model-context-protocol', 'skill', 'workflow', 'agent', 'plugin', 'integration', 'template', 'scaffold', 'starter']
+    weak = ['ai', 'rag', 'automation', 'tooling']
+    deny = ['systemd', 'protobuf', 'minecraft', 'money online', 'vulnerability', 'security scanner', 'containers', 'kubernetes']
+    if any(x in text for x in deny):
+        return False
+    strong_hits = sum(1 for x in strong if x in text)
+    weak_hits = sum(1 for x in weak if x in text)
+    return strong_hits >= 1 or (strong_hits == 0 and weak_hits >= 2)
+
+
 def score(item, meta):
     text = ' '.join([
         item.get('title', ''),
@@ -99,11 +110,11 @@ def classify(item, meta, keyword_hits):
         meta.get('description', ''),
         ' '.join(topic_names(meta)),
     ]).lower()
-    if any(x in text for x in ['mcp', 'mcp-server', 'model-context-protocol']):
+    if any(x in text for x in ['mcp', 'mcp-server', 'model-context-protocol', 'claude-code', 'codex', 'gemini-cli']):
         return 'candidate_high_signal_repo'
-    if any(x in text for x in ['template', 'scaffold', 'starter']):
+    if any(x in text for x in ['template', 'scaffold', 'starter', 'plugin', 'integration']):
         return 'candidate_try_now'
-    if keyword_hits >= 2:
+    if keyword_hits >= 3:
         return 'candidate_follow_project'
     return 'project_radar'
 
@@ -124,7 +135,12 @@ def main():
         meta = gh_repo(repo)
         if not meta:
             continue
+        combined_text = ' '.join([item.get('title',''), item.get('description',''), meta.get('description',''), ' '.join(topic_names(meta))]).lower()
+        if not is_relevant(combined_text):
+            continue
         repo_score, keyword_hits = score(item, meta)
+        if keyword_hits < 2 and meta.get('stargazerCount', 0) < 30000:
+            continue
         out.append({
             'bucket': classify(item, meta, keyword_hits),
             'repo': meta.get('nameWithOwner') or repo,
