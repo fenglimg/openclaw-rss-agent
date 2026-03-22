@@ -1,0 +1,1533 @@
+{
+  "ok": true,
+  "profile": "openclaw-evolution",
+  "source_pack": "skill-mcp-ecosystem",
+  "kind": "refined-trend-intelligence",
+  "sources": {
+    "clawhubtrends-rising": {
+      "count": 27,
+      "items": [
+        {
+          "rank": 1,
+          "skill": "self-improving-agent",
+          "skill_url": "skills/self-improving-agent.html",
+          "owner": "pskoett",
+          "owner_url": "owners/pskoett.html",
+          "delta": "7,016",
+          "pct_change": "2.6%",
+          "downloads": "280,381",
+          "downloads_per_day": "3689.2",
+          "velocity": "",
+          "age": "76d",
+          "source": "clawhubtrends-rising",
+          "role": "rising"
+        },
+        {
+          "rank": 2,
+          "skill": "Polymarket",
+          "skill_url": "skills/polymarket-trade.html",
+          "owner": "joelchance",
+          "owner_url": "owners/joelchance.html",
+          "delta": "4,883",
+          "pct_change": "19.2%",
+          "downloads": "30,290",
+          "downloads_per_day": "2330.0",
+          "velocity": "",
+          "age": "13d",
+          "source": "clawhubtrends-rising",
+          "role": "rising"
+        },
+        {
+          "rank": 3,
+          "skill": "Skill Vetter",
+          "skill_url": "skills/skill-vetter.html",
+          "owner": "spclaudehome",
+          "owner_url": "owners/spclaudehome.html",
+          "delta": "3,996",
+          "pct_change": "3.0%",
+          "downloads": "135,620",
+          "downloads_per_day": "2712.4",
+          "velocity": "",
+          "age": "50d",
+          "source": "clawhubtrends-rising",
+          "role": "rising"
+        },
+        {
+          "rank": 4,
+          "skill": "Summarize",
+          "skill_url": "skills/summarize.html",
+          "owner": "steipete",
+          "owner_url": "owners/steipete.html",
+          "delta": "3,444",
+          "pct_change": "1.8%",
+          "downloads": "192,613",
+          "downloads_per_day": "2501.5",
+          "velocity": "",
+          "age": "77d",
+          "source": "clawhubtrends-rising",
+          "role": "rising"
+        },
+        {
+          "rank": 5,
+          "skill": "Self-Improving + Proactive Agent",
+          "skill_url": "skills/self-improving.html",
+          "owner": "ivangdavila",
+          "owner_url": "owners/ivangdavila.html",
+          "delta": "3,097",
+          "pct_change": "3.2%",
+          "downloads": "99,533",
+          "downloads_per_day": "2927.4",
+          "velocity": "",
+          "age": "34d",
+          "source": "clawhubtrends-rising",
+          "role": "rising"
+        },
+        {
+          "rank": 6,
+          "skill": "Agent Browser",
+          "skill_url": "skills/agent-browser.html",
+          "owner": "TheSethRose",
+          "owner_url": "owners/thesethrose.html",
+          "delta": "2,699",
+          "pct_change": "1.8%",
+          "downloads": "156,727",
+          "downloads_per_day": "2239.0",
+          "velocity": "",
+          "age": "70d",
+          "source": "clawhubtrends-rising",
+          "role": "rising"
+        },
+        {
+          "rank": 8,
+          "skill": "Multi Search Engine",
+          "skill_url": "skills/multi-search-engine.html",
+          "owner": "gpyAngyoujun",
+          "owner_url": "owners/gpyangyoujun.html",
+          "delta": "2,279",
+          "pct_change": "3.1%",
+          "downloads": "75,284",
+          "downloads_per_day": "1636.6",
+          "velocity": "",
+          "age": "46d",
+          "source": "clawhubtrends-rising",
+          "role": "rising"
+        },
+        {
+          "rank": 9,
+          "skill": "Tavily 搜索",
+          "skill_url": "skills/openclaw-tavily-search.html",
+          "owner": "Jacky1n7",
+          "owner_url": "owners/jacky1n7.html",
+          "delta": "2,230",
+          "pct_change": "4.6%",
+          "downloads": "50,585",
+          "downloads_per_day": "2107.7",
+          "velocity": "",
+          "age": "24d",
+          "source": "clawhubtrends-rising",
+          "role": "rising"
+        },
+        {
+          "rank": 10,
+          "skill": "ontology",
+          "skill_url": "skills/ontology.html",
+          "owner": "oswalpalash",
+          "owner_url": "owners/oswalpalash.html",
+          "delta": "2,004",
+          "pct_change": "1.6%",
+          "downloads": "123,988",
+          "downloads_per_day": "2254.3",
+          "velocity": "",
+          "age": "55d",
+          "source": "clawhubtrends-rising",
+          "role": "rising"
+        },
+        {
+          "rank": 11,
+          "skill": "Agent Browser",
+          "skill_url": "skills/agent-browser-clawdbot.html",
+          "owner": "MaTriXy",
+          "owner_url": "owners/matrixy.html",
+          "delta": "1,953",
+          "pct_change": "5.5%",
+          "downloads": "37,734",
+          "downloads_per_day": "628.9",
+          "velocity": "",
+          "age": "60d",
+          "source": "clawhubtrends-rising",
+          "role": "rising"
+        },
+        {
+          "rank": 12,
+          "skill": "Github",
+          "skill_url": "skills/github.html",
+          "owner": "steipete",
+          "owner_url": "owners/steipete.html",
+          "delta": "1,612",
+          "pct_change": "1.3%",
+          "downloads": "125,096",
+          "downloads_per_day": "1624.6",
+          "velocity": "",
+          "age": "77d",
+          "source": "clawhubtrends-rising",
+          "role": "rising"
+        },
+        {
+          "rank": 13,
+          "skill": "Proactive Agent",
+          "skill_url": "skills/proactive-agent.html",
+          "owner": "halthelobster",
+          "owner_url": "owners/halthelobster.html",
+          "delta": "1,540",
+          "pct_change": "1.4%",
+          "downloads": "114,236",
+          "downloads_per_day": "2155.4",
+          "velocity": "",
+          "age": "53d",
+          "source": "clawhubtrends-rising",
+          "role": "rising"
+        },
+        {
+          "rank": 14,
+          "skill": "Gog",
+          "skill_url": "skills/gog.html",
+          "owner": "steipete",
+          "owner_url": "owners/steipete.html",
+          "delta": "1,491",
+          "pct_change": "1.2%",
+          "downloads": "126,822",
+          "downloads_per_day": "1647.0",
+          "velocity": "",
+          "age": "77d",
+          "source": "clawhubtrends-rising",
+          "role": "rising"
+        },
+        {
+          "rank": 15,
+          "skill": "Baidu Search",
+          "skill_url": "skills/baidu-search.html",
+          "owner": "ide-rea",
+          "owner_url": "owners/ide-rea.html",
+          "delta": "1,357",
+          "pct_change": "2.5%",
+          "downloads": "55,796",
+          "downloads_per_day": "1239.9",
+          "velocity": "",
+          "age": "45d",
+          "source": "clawhubtrends-rising",
+          "role": "rising"
+        },
+        {
+          "rank": 16,
+          "skill": "Weather",
+          "skill_url": "skills/weather.html",
+          "owner": "steipete",
+          "owner_url": "owners/steipete.html",
+          "delta": "1,357",
+          "pct_change": "1.3%",
+          "downloads": "107,230",
+          "downloads_per_day": "1392.6",
+          "velocity": "",
+          "age": "77d",
+          "source": "clawhubtrends-rising",
+          "role": "rising"
+        }
+      ]
+    },
+    "topclawhubskills": {
+      "count": 30,
+      "items": [
+        {
+          "rank": 1,
+          "skill": "self-improving-agent",
+          "skill_url": "https://clawhub.ai/skills/self-improving-agent",
+          "owner": "pskoett",
+          "owner_url": "https://github.com/pskoett",
+          "downloads": "87.6K",
+          "stars": "972",
+          "installs_per_day": "1.1K",
+          "age": "2mo ago",
+          "safety": "Suspicious",
+          "summary": "Captures learnings, errors, and corrections to enable continuous improvement. Use when: (1…",
+          "source": "topclawhubskills",
+          "role": "top-base"
+        },
+        {
+          "rank": 2,
+          "skill": "Gog",
+          "skill_url": "https://clawhub.ai/skills/gog",
+          "owner": "steipete",
+          "owner_url": "https://github.com/steipete",
+          "downloads": "77.7K",
+          "stars": "1.4K",
+          "installs_per_day": "607",
+          "age": "2mo ago",
+          "safety": "OK",
+          "summary": "Google Workspace CLI for Gmail, Calendar, Drive, Contacts, Sheets, and Docs.",
+          "source": "topclawhubskills",
+          "role": "top-base"
+        },
+        {
+          "rank": 3,
+          "skill": "Tavily Web Search",
+          "skill_url": "https://clawhub.ai/skills/tavily-search",
+          "owner": "arun-8687",
+          "owner_url": "https://github.com/arun-8687",
+          "downloads": "76.3K",
+          "stars": "743",
+          "installs_per_day": "345",
+          "age": "2mo ago",
+          "safety": "OK",
+          "summary": "AI-optimized web search via Tavily API. Returns concise, relevant results for AI agents.",
+          "source": "topclawhubskills",
+          "role": "top-base"
+        },
+        {
+          "rank": 4,
+          "skill": "Find Skills",
+          "skill_url": "https://clawhub.ai/skills/find-skills",
+          "owner": "JimLiuxinghai",
+          "owner_url": "https://github.com/JimLiuxinghai",
+          "downloads": "72.3K",
+          "stars": "593",
+          "installs_per_day": "320",
+          "age": "1mo ago",
+          "safety": "Suspicious",
+          "summary": "Helps users discover and install agent skills when they ask questions like \"how do I do X\"…",
+          "source": "topclawhubskills",
+          "role": "top-base"
+        },
+        {
+          "rank": 5,
+          "skill": "Summarize",
+          "skill_url": "https://clawhub.ai/skills/summarize",
+          "owner": "steipete",
+          "owner_url": "https://github.com/steipete",
+          "downloads": "66.4K",
+          "stars": "1.4K",
+          "installs_per_day": "309",
+          "age": "2mo ago",
+          "safety": "OK",
+          "summary": "Summarize URLs or files with the summarize CLI (web, PDFs, images, audio, YouTube).",
+          "source": "topclawhubskills",
+          "role": "top-base"
+        },
+        {
+          "rank": 6,
+          "skill": "Github",
+          "skill_url": "https://clawhub.ai/skills/github",
+          "owner": "steipete",
+          "owner_url": "https://github.com/steipete",
+          "downloads": "61.6K",
+          "stars": "1.2K",
+          "installs_per_day": "208",
+          "age": "2mo ago",
+          "safety": "OK",
+          "summary": "Interact with GitHub using the `gh` CLI. Use `gh issue`, `gh pr`, `gh run`, and `gh api` f…",
+          "source": "topclawhubskills",
+          "role": "top-base"
+        },
+        {
+          "rank": 7,
+          "skill": "Agent Browser",
+          "skill_url": "https://clawhub.ai/skills/agent-browser",
+          "owner": "TheSethRose",
+          "owner_url": "https://github.com/TheSethRose",
+          "downloads": "61.1K",
+          "stars": "721",
+          "installs_per_day": "321",
+          "age": "2mo ago",
+          "safety": "Suspicious",
+          "summary": "A fast Rust-based headless browser automation CLI with Node.js fallback that enables AI ag…",
+          "source": "topclawhubskills",
+          "role": "top-base"
+        },
+        {
+          "rank": 8,
+          "skill": "Weather",
+          "skill_url": "https://clawhub.ai/skills/weather",
+          "owner": "steipete",
+          "owner_url": "https://github.com/steipete",
+          "downloads": "52.2K",
+          "stars": "999",
+          "installs_per_day": "185",
+          "age": "2mo ago",
+          "safety": "OK",
+          "summary": "Get current weather and forecasts (no API key required).",
+          "source": "topclawhubskills",
+          "role": "top-base"
+        },
+        {
+          "rank": 9,
+          "skill": "Polymarket",
+          "skill_url": "https://clawhub.ai/skills/polymarketodds",
+          "owner": "joelchance",
+          "owner_url": "https://github.com/joelchance",
+          "downloads": "50.7K",
+          "stars": "34",
+          "installs_per_day": "128",
+          "age": "27d ago",
+          "safety": "OK",
+          "summary": "Query Polymarket prediction markets - check odds, trending markets, search events, track p…",
+          "source": "topclawhubskills",
+          "role": "top-base"
+        },
+        {
+          "rank": 10,
+          "skill": "Proactive Agent",
+          "skill_url": "https://clawhub.ai/skills/proactive-agent",
+          "owner": "halthelobster",
+          "owner_url": "https://github.com/halthelobster",
+          "downloads": "49.2K",
+          "stars": "405",
+          "installs_per_day": "327",
+          "age": "1mo ago",
+          "safety": "Suspicious",
+          "summary": "Transform AI agents from task-followers into proactive partners that anticipate needs and …",
+          "source": "topclawhubskills",
+          "role": "top-base"
+        },
+        {
+          "rank": 11,
+          "skill": "Sonoscli",
+          "skill_url": "https://clawhub.ai/skills/sonoscli",
+          "owner": "steipete",
+          "owner_url": "https://github.com/steipete",
+          "downloads": "44.6K",
+          "stars": "1.1K",
+          "installs_per_day": "30",
+          "age": "2mo ago",
+          "safety": "OK",
+          "summary": "Control Sonos speakers (discover/status/play/volume/group).",
+          "source": "topclawhubskills",
+          "role": "top-base"
+        },
+        {
+          "rank": 12,
+          "skill": "Notion",
+          "skill_url": "https://clawhub.ai/skills/notion",
+          "owner": "steipete",
+          "owner_url": "https://github.com/steipete",
+          "downloads": "35.9K",
+          "stars": "802",
+          "installs_per_day": "131",
+          "age": "2mo ago",
+          "safety": "OK",
+          "summary": "Notion API for creating and managing pages, databases, and blocks.",
+          "source": "topclawhubskills",
+          "role": "top-base"
+        },
+        {
+          "rank": 13,
+          "skill": "Nano Pdf",
+          "skill_url": "https://clawhub.ai/skills/nano-pdf",
+          "owner": "steipete",
+          "owner_url": "https://github.com/steipete",
+          "downloads": "32.9K",
+          "stars": "761",
+          "installs_per_day": "78",
+          "age": "2mo ago",
+          "safety": "OK",
+          "summary": "Edit PDFs with natural-language instructions using the nano-pdf CLI.",
+          "source": "topclawhubskills",
+          "role": "top-base"
+        },
+        {
+          "rank": 14,
+          "skill": "Nano Banana Pro",
+          "skill_url": "https://clawhub.ai/skills/nano-banana-pro",
+          "owner": "steipete",
+          "owner_url": "https://github.com/steipete",
+          "downloads": "31.6K",
+          "stars": "715",
+          "installs_per_day": "144",
+          "age": "2mo ago",
+          "safety": "OK",
+          "summary": "Generate/edit images with Nano Banana Pro (Gemini 3 Pro Image). Use for image create/modif…",
+          "source": "topclawhubskills",
+          "role": "top-base"
+        },
+        {
+          "rank": 15,
+          "skill": "API Gateway",
+          "skill_url": "https://clawhub.ai/skills/api-gateway",
+          "owner": "byungkyu",
+          "owner_url": "https://github.com/byungkyu",
+          "downloads": "31.2K",
+          "stars": "84",
+          "installs_per_day": "149",
+          "age": "1mo ago",
+          "safety": "OK",
+          "summary": "Connect to 100+ APIs (Google Workspace, Microsoft 365, GitHub, Notion, Slack, Airtable, Hu…",
+          "source": "topclawhubskills",
+          "role": "top-base"
+        }
+      ]
+    }
+  },
+  "items": [
+    {
+      "skill": "self-improving-agent",
+      "owners": [
+        "pskoett"
+      ],
+      "sources": [
+        "clawhubtrends-rising",
+        "topclawhubskills"
+      ],
+      "roles": [
+        "rising",
+        "top-base"
+      ],
+      "best_rank": 1,
+      "cross_source": true,
+      "trend_score": 5.6,
+      "rising": {
+        "rank": 1,
+        "delta": "7,016",
+        "pct_change": "2.6%",
+        "downloads": "280,381",
+        "downloads_per_day": "3689.2",
+        "velocity": "",
+        "age": "76d",
+        "owner": "pskoett",
+        "skill_url": "skills/self-improving-agent.html"
+      },
+      "top_base": {
+        "rank": 1,
+        "downloads": "87.6K",
+        "stars": "972",
+        "installs_per_day": "1.1K",
+        "age": "2mo ago",
+        "owner": "pskoett",
+        "safety": "Suspicious",
+        "summary": "Captures learnings, errors, and corrections to enable continuous improvement. Use when: (1…",
+        "skill_url": "https://clawhub.ai/skills/self-improving-agent"
+      },
+      "profile": "openclaw-evolution",
+      "source_pack": "skill-mcp-ecosystem"
+    },
+    {
+      "skill": "Polymarket",
+      "owners": [
+        "joelchance"
+      ],
+      "sources": [
+        "clawhubtrends-rising",
+        "topclawhubskills"
+      ],
+      "roles": [
+        "rising",
+        "top-base"
+      ],
+      "best_rank": 2,
+      "cross_source": true,
+      "trend_score": 5.57,
+      "rising": {
+        "rank": 2,
+        "delta": "4,883",
+        "pct_change": "19.2%",
+        "downloads": "30,290",
+        "downloads_per_day": "2330.0",
+        "velocity": "",
+        "age": "13d",
+        "owner": "joelchance",
+        "skill_url": "skills/polymarket-trade.html"
+      },
+      "top_base": {
+        "rank": 9,
+        "downloads": "50.7K",
+        "stars": "34",
+        "installs_per_day": "128",
+        "age": "27d ago",
+        "owner": "joelchance",
+        "safety": "OK",
+        "summary": "Query Polymarket prediction markets - check odds, trending markets, search events, track p…",
+        "skill_url": "https://clawhub.ai/skills/polymarketodds"
+      },
+      "profile": "openclaw-evolution",
+      "source_pack": "skill-mcp-ecosystem"
+    },
+    {
+      "skill": "Gog",
+      "owners": [
+        "steipete"
+      ],
+      "sources": [
+        "clawhubtrends-rising",
+        "topclawhubskills"
+      ],
+      "roles": [
+        "rising",
+        "top-base"
+      ],
+      "best_rank": 2,
+      "cross_source": true,
+      "trend_score": 5.57,
+      "rising": {
+        "rank": 14,
+        "delta": "1,491",
+        "pct_change": "1.2%",
+        "downloads": "126,822",
+        "downloads_per_day": "1647.0",
+        "velocity": "",
+        "age": "77d",
+        "owner": "steipete",
+        "skill_url": "skills/gog.html"
+      },
+      "top_base": {
+        "rank": 2,
+        "downloads": "77.7K",
+        "stars": "1.4K",
+        "installs_per_day": "607",
+        "age": "2mo ago",
+        "owner": "steipete",
+        "safety": "OK",
+        "summary": "Google Workspace CLI for Gmail, Calendar, Drive, Contacts, Sheets, and Docs.",
+        "skill_url": "https://clawhub.ai/skills/gog"
+      },
+      "profile": "openclaw-evolution",
+      "source_pack": "skill-mcp-ecosystem"
+    },
+    {
+      "skill": "Summarize",
+      "owners": [
+        "steipete"
+      ],
+      "sources": [
+        "clawhubtrends-rising",
+        "topclawhubskills"
+      ],
+      "roles": [
+        "rising",
+        "top-base"
+      ],
+      "best_rank": 4,
+      "cross_source": true,
+      "trend_score": 5.5,
+      "rising": {
+        "rank": 4,
+        "delta": "3,444",
+        "pct_change": "1.8%",
+        "downloads": "192,613",
+        "downloads_per_day": "2501.5",
+        "velocity": "",
+        "age": "77d",
+        "owner": "steipete",
+        "skill_url": "skills/summarize.html"
+      },
+      "top_base": {
+        "rank": 5,
+        "downloads": "66.4K",
+        "stars": "1.4K",
+        "installs_per_day": "309",
+        "age": "2mo ago",
+        "owner": "steipete",
+        "safety": "OK",
+        "summary": "Summarize URLs or files with the summarize CLI (web, PDFs, images, audio, YouTube).",
+        "skill_url": "https://clawhub.ai/skills/summarize"
+      },
+      "profile": "openclaw-evolution",
+      "source_pack": "skill-mcp-ecosystem"
+    },
+    {
+      "skill": "Github",
+      "owners": [
+        "steipete"
+      ],
+      "sources": [
+        "clawhubtrends-rising",
+        "topclawhubskills"
+      ],
+      "roles": [
+        "rising",
+        "top-base"
+      ],
+      "best_rank": 6,
+      "cross_source": true,
+      "trend_score": 5.43,
+      "rising": {
+        "rank": 12,
+        "delta": "1,612",
+        "pct_change": "1.3%",
+        "downloads": "125,096",
+        "downloads_per_day": "1624.6",
+        "velocity": "",
+        "age": "77d",
+        "owner": "steipete",
+        "skill_url": "skills/github.html"
+      },
+      "top_base": {
+        "rank": 6,
+        "downloads": "61.6K",
+        "stars": "1.2K",
+        "installs_per_day": "208",
+        "age": "2mo ago",
+        "owner": "steipete",
+        "safety": "OK",
+        "summary": "Interact with GitHub using the `gh` CLI. Use `gh issue`, `gh pr`, `gh run`, and `gh api` f…",
+        "skill_url": "https://clawhub.ai/skills/github"
+      },
+      "profile": "openclaw-evolution",
+      "source_pack": "skill-mcp-ecosystem"
+    },
+    {
+      "skill": "Agent Browser",
+      "owners": [
+        "MaTriXy",
+        "TheSethRose"
+      ],
+      "sources": [
+        "clawhubtrends-rising",
+        "topclawhubskills"
+      ],
+      "roles": [
+        "rising",
+        "top-base"
+      ],
+      "best_rank": 6,
+      "cross_source": true,
+      "trend_score": 5.43,
+      "rising": {
+        "rank": 11,
+        "delta": "1,953",
+        "pct_change": "5.5%",
+        "downloads": "37,734",
+        "downloads_per_day": "628.9",
+        "velocity": "",
+        "age": "60d",
+        "owner": "MaTriXy",
+        "skill_url": "skills/agent-browser-clawdbot.html"
+      },
+      "top_base": {
+        "rank": 7,
+        "downloads": "61.1K",
+        "stars": "721",
+        "installs_per_day": "321",
+        "age": "2mo ago",
+        "owner": "TheSethRose",
+        "safety": "Suspicious",
+        "summary": "A fast Rust-based headless browser automation CLI with Node.js fallback that enables AI ag…",
+        "skill_url": "https://clawhub.ai/skills/agent-browser"
+      },
+      "profile": "openclaw-evolution",
+      "source_pack": "skill-mcp-ecosystem"
+    },
+    {
+      "skill": "Weather",
+      "owners": [
+        "steipete"
+      ],
+      "sources": [
+        "clawhubtrends-rising",
+        "topclawhubskills"
+      ],
+      "roles": [
+        "rising",
+        "top-base"
+      ],
+      "best_rank": 8,
+      "cross_source": true,
+      "trend_score": 5.37,
+      "rising": {
+        "rank": 16,
+        "delta": "1,357",
+        "pct_change": "1.3%",
+        "downloads": "107,230",
+        "downloads_per_day": "1392.6",
+        "velocity": "",
+        "age": "77d",
+        "owner": "steipete",
+        "skill_url": "skills/weather.html"
+      },
+      "top_base": {
+        "rank": 8,
+        "downloads": "52.2K",
+        "stars": "999",
+        "installs_per_day": "185",
+        "age": "2mo ago",
+        "owner": "steipete",
+        "safety": "OK",
+        "summary": "Get current weather and forecasts (no API key required).",
+        "skill_url": "https://clawhub.ai/skills/weather"
+      },
+      "profile": "openclaw-evolution",
+      "source_pack": "skill-mcp-ecosystem"
+    },
+    {
+      "skill": "Proactive Agent",
+      "owners": [
+        "halthelobster"
+      ],
+      "sources": [
+        "clawhubtrends-rising",
+        "topclawhubskills"
+      ],
+      "roles": [
+        "rising",
+        "top-base"
+      ],
+      "best_rank": 10,
+      "cross_source": true,
+      "trend_score": 5.3,
+      "rising": {
+        "rank": 13,
+        "delta": "1,540",
+        "pct_change": "1.4%",
+        "downloads": "114,236",
+        "downloads_per_day": "2155.4",
+        "velocity": "",
+        "age": "53d",
+        "owner": "halthelobster",
+        "skill_url": "skills/proactive-agent.html"
+      },
+      "top_base": {
+        "rank": 10,
+        "downloads": "49.2K",
+        "stars": "405",
+        "installs_per_day": "327",
+        "age": "1mo ago",
+        "owner": "halthelobster",
+        "safety": "Suspicious",
+        "summary": "Transform AI agents from task-followers into proactive partners that anticipate needs and …",
+        "skill_url": "https://clawhub.ai/skills/proactive-agent"
+      },
+      "profile": "openclaw-evolution",
+      "source_pack": "skill-mcp-ecosystem"
+    },
+    {
+      "skill": "Nano Pdf",
+      "owners": [
+        "steipete"
+      ],
+      "sources": [
+        "clawhubtrends-rising",
+        "topclawhubskills"
+      ],
+      "roles": [
+        "rising",
+        "top-base"
+      ],
+      "best_rank": 13,
+      "cross_source": true,
+      "trend_score": 5.2,
+      "rising": {
+        "rank": 21,
+        "delta": "1,119",
+        "pct_change": "1.6%",
+        "downloads": "69,191",
+        "downloads_per_day": "898.6",
+        "velocity": "",
+        "age": "77d",
+        "owner": "steipete",
+        "skill_url": "skills/nano-pdf.html"
+      },
+      "top_base": {
+        "rank": 13,
+        "downloads": "32.9K",
+        "stars": "761",
+        "installs_per_day": "78",
+        "age": "2mo ago",
+        "owner": "steipete",
+        "safety": "OK",
+        "summary": "Edit PDFs with natural-language instructions using the nano-pdf CLI.",
+        "skill_url": "https://clawhub.ai/skills/nano-pdf"
+      },
+      "profile": "openclaw-evolution",
+      "source_pack": "skill-mcp-ecosystem"
+    },
+    {
+      "skill": "Nano Banana Pro",
+      "owners": [
+        "steipete"
+      ],
+      "sources": [
+        "clawhubtrends-rising",
+        "topclawhubskills"
+      ],
+      "roles": [
+        "rising",
+        "top-base"
+      ],
+      "best_rank": 14,
+      "cross_source": true,
+      "trend_score": 5.17,
+      "rising": {
+        "rank": 18,
+        "delta": "1,315",
+        "pct_change": "2.2%",
+        "downloads": "61,615",
+        "downloads_per_day": "800.2",
+        "velocity": "",
+        "age": "77d",
+        "owner": "steipete",
+        "skill_url": "skills/nano-banana-pro.html"
+      },
+      "top_base": {
+        "rank": 14,
+        "downloads": "31.6K",
+        "stars": "715",
+        "installs_per_day": "144",
+        "age": "2mo ago",
+        "owner": "steipete",
+        "safety": "OK",
+        "summary": "Generate/edit images with Nano Banana Pro (Gemini 3 Pro Image). Use for image create/modif…",
+        "skill_url": "https://clawhub.ai/skills/nano-banana-pro"
+      },
+      "profile": "openclaw-evolution",
+      "source_pack": "skill-mcp-ecosystem"
+    },
+    {
+      "skill": "API Gateway",
+      "owners": [
+        "byungkyu"
+      ],
+      "sources": [
+        "clawhubtrends-rising",
+        "topclawhubskills"
+      ],
+      "roles": [
+        "rising",
+        "top-base"
+      ],
+      "best_rank": 15,
+      "cross_source": true,
+      "trend_score": 5.13,
+      "rising": {
+        "rank": 30,
+        "delta": "899",
+        "pct_change": "1.8%",
+        "downloads": "51,370",
+        "downloads_per_day": "1048.4",
+        "velocity": "",
+        "age": "49d",
+        "owner": "byungkyu",
+        "skill_url": "skills/api-gateway.html"
+      },
+      "top_base": {
+        "rank": 15,
+        "downloads": "31.2K",
+        "stars": "84",
+        "installs_per_day": "149",
+        "age": "1mo ago",
+        "owner": "byungkyu",
+        "safety": "OK",
+        "summary": "Connect to 100+ APIs (Google Workspace, Microsoft 365, GitHub, Notion, Slack, Airtable, Hu…",
+        "skill_url": "https://clawhub.ai/skills/api-gateway"
+      },
+      "profile": "openclaw-evolution",
+      "source_pack": "skill-mcp-ecosystem"
+    },
+    {
+      "skill": "Obsidian",
+      "owners": [
+        "steipete"
+      ],
+      "sources": [
+        "clawhubtrends-rising",
+        "topclawhubskills"
+      ],
+      "roles": [
+        "rising",
+        "top-base"
+      ],
+      "best_rank": 16,
+      "cross_source": true,
+      "trend_score": 5.1,
+      "rising": {
+        "rank": 27,
+        "delta": "1,007",
+        "pct_change": "1.7%",
+        "downloads": "60,264",
+        "downloads_per_day": "782.6",
+        "velocity": "",
+        "age": "77d",
+        "owner": "steipete",
+        "skill_url": "skills/obsidian.html"
+      },
+      "top_base": {
+        "rank": 16,
+        "downloads": "30.9K",
+        "stars": "725",
+        "installs_per_day": "129",
+        "age": "2mo ago",
+        "owner": "steipete",
+        "safety": "OK",
+        "summary": "Work with Obsidian vaults (plain Markdown notes) and automate via obsidian-cli.",
+        "skill_url": "https://clawhub.ai/skills/obsidian"
+      },
+      "profile": "openclaw-evolution",
+      "source_pack": "skill-mcp-ecosystem"
+    },
+    {
+      "skill": "Humanizer",
+      "owners": [
+        "biostartechnology"
+      ],
+      "sources": [
+        "clawhubtrends-rising",
+        "topclawhubskills"
+      ],
+      "roles": [
+        "rising",
+        "top-base"
+      ],
+      "best_rank": 17,
+      "cross_source": true,
+      "trend_score": 5.07,
+      "rising": {
+        "rank": 23,
+        "delta": "1,057",
+        "pct_change": "1.6%",
+        "downloads": "65,530",
+        "downloads_per_day": "1149.6",
+        "velocity": "",
+        "age": "57d",
+        "owner": "biostartechnology",
+        "skill_url": "skills/humanizer.html"
+      },
+      "top_base": {
+        "rank": 17,
+        "downloads": "28.6K",
+        "stars": "274",
+        "installs_per_day": "261",
+        "age": "1mo ago",
+        "owner": "biostartechnology",
+        "safety": "OK",
+        "summary": "Remove signs of AI-generated writing from text. Use when editing or reviewing text to make…",
+        "skill_url": "https://clawhub.ai/skills/humanizer"
+      },
+      "profile": "openclaw-evolution",
+      "source_pack": "skill-mcp-ecosystem"
+    },
+    {
+      "skill": "Free Ride - Unlimited free AI",
+      "owners": [
+        "Shaivpidadi"
+      ],
+      "sources": [
+        "clawhubtrends-rising",
+        "topclawhubskills"
+      ],
+      "roles": [
+        "rising",
+        "top-base"
+      ],
+      "best_rank": 20,
+      "cross_source": true,
+      "trend_score": 4.97,
+      "rising": {
+        "rank": 24,
+        "delta": "1,047",
+        "pct_change": "2.5%",
+        "downloads": "43,695",
+        "downloads_per_day": "971.0",
+        "velocity": "",
+        "age": "45d",
+        "owner": "Shaivpidadi",
+        "skill_url": "skills/free-ride.html"
+      },
+      "top_base": {
+        "rank": 20,
+        "downloads": "26.1K",
+        "stars": "90",
+        "installs_per_day": "190",
+        "age": "1mo ago",
+        "owner": "Shaivpidadi",
+        "safety": "OK",
+        "summary": "Manages free AI models from OpenRouter for OpenClaw. Automatically ranks models by quality…",
+        "skill_url": "https://clawhub.ai/skills/free-ride"
+      },
+      "profile": "openclaw-evolution",
+      "source_pack": "skill-mcp-ecosystem"
+    },
+    {
+      "skill": "Auto-Updater Skill",
+      "owners": [
+        "maximeprades"
+      ],
+      "sources": [
+        "clawhubtrends-rising",
+        "topclawhubskills"
+      ],
+      "roles": [
+        "rising",
+        "top-base"
+      ],
+      "best_rank": 23,
+      "cross_source": true,
+      "trend_score": 4.87,
+      "rising": {
+        "rank": 28,
+        "delta": "948",
+        "pct_change": "1.8%",
+        "downloads": "52,827",
+        "downloads_per_day": "776.9",
+        "velocity": "",
+        "age": "68d",
+        "owner": "maximeprades",
+        "skill_url": "skills/auto-updater.html"
+      },
+      "top_base": {
+        "rank": 23,
+        "downloads": "24.0K",
+        "stars": "315",
+        "installs_per_day": "178",
+        "age": "2mo ago",
+        "owner": "maximeprades",
+        "safety": "Suspicious",
+        "summary": "Automatically update Clawdbot and all installed skills once daily. Runs via cron, checks f…",
+        "skill_url": "https://clawhub.ai/skills/auto-updater"
+      },
+      "profile": "openclaw-evolution",
+      "source_pack": "skill-mcp-ecosystem"
+    },
+    {
+      "skill": "Skill Creator",
+      "owners": [
+        "chindden"
+      ],
+      "sources": [
+        "clawhubtrends-rising",
+        "topclawhubskills"
+      ],
+      "roles": [
+        "rising",
+        "top-base"
+      ],
+      "best_rank": 25,
+      "cross_source": true,
+      "trend_score": 4.8,
+      "rising": {
+        "rank": 26,
+        "delta": "1,023",
+        "pct_change": "2.1%",
+        "downloads": "50,328",
+        "downloads_per_day": "932.0",
+        "velocity": "",
+        "age": "54d",
+        "owner": "chindden",
+        "skill_url": "skills/skill-creator.html"
+      },
+      "top_base": {
+        "rank": 25,
+        "downloads": "21.9K",
+        "stars": "677",
+        "installs_per_day": "84",
+        "age": "1mo ago",
+        "owner": "chindden",
+        "safety": "Suspicious",
+        "summary": "Guide for creating effective skills. This skill should be used when users want to create a…",
+        "skill_url": "https://clawhub.ai/skills/skill-creator"
+      },
+      "profile": "openclaw-evolution",
+      "source_pack": "skill-mcp-ecosystem"
+    },
+    {
+      "skill": "Skill Vetter",
+      "owners": [
+        "spclaudehome"
+      ],
+      "sources": [
+        "clawhubtrends-rising"
+      ],
+      "roles": [
+        "rising"
+      ],
+      "best_rank": 3,
+      "cross_source": false,
+      "trend_score": 2.93,
+      "rising": {
+        "rank": 3,
+        "delta": "3,996",
+        "pct_change": "3.0%",
+        "downloads": "135,620",
+        "downloads_per_day": "2712.4",
+        "velocity": "",
+        "age": "50d",
+        "owner": "spclaudehome",
+        "skill_url": "skills/skill-vetter.html"
+      },
+      "top_base": null,
+      "profile": "openclaw-evolution",
+      "source_pack": "skill-mcp-ecosystem"
+    },
+    {
+      "skill": "Self-Improving + Proactive Agent",
+      "owners": [
+        "ivangdavila"
+      ],
+      "sources": [
+        "clawhubtrends-rising"
+      ],
+      "roles": [
+        "rising"
+      ],
+      "best_rank": 5,
+      "cross_source": false,
+      "trend_score": 2.87,
+      "rising": {
+        "rank": 5,
+        "delta": "3,097",
+        "pct_change": "3.2%",
+        "downloads": "99,533",
+        "downloads_per_day": "2927.4",
+        "velocity": "",
+        "age": "34d",
+        "owner": "ivangdavila",
+        "skill_url": "skills/self-improving.html"
+      },
+      "top_base": null,
+      "profile": "openclaw-evolution",
+      "source_pack": "skill-mcp-ecosystem"
+    },
+    {
+      "skill": "Multi Search Engine",
+      "owners": [
+        "gpyAngyoujun"
+      ],
+      "sources": [
+        "clawhubtrends-rising"
+      ],
+      "roles": [
+        "rising"
+      ],
+      "best_rank": 8,
+      "cross_source": false,
+      "trend_score": 2.77,
+      "rising": {
+        "rank": 8,
+        "delta": "2,279",
+        "pct_change": "3.1%",
+        "downloads": "75,284",
+        "downloads_per_day": "1636.6",
+        "velocity": "",
+        "age": "46d",
+        "owner": "gpyAngyoujun",
+        "skill_url": "skills/multi-search-engine.html"
+      },
+      "top_base": null,
+      "profile": "openclaw-evolution",
+      "source_pack": "skill-mcp-ecosystem"
+    },
+    {
+      "skill": "Tavily 搜索",
+      "owners": [
+        "Jacky1n7"
+      ],
+      "sources": [
+        "clawhubtrends-rising"
+      ],
+      "roles": [
+        "rising"
+      ],
+      "best_rank": 9,
+      "cross_source": false,
+      "trend_score": 2.73,
+      "rising": {
+        "rank": 9,
+        "delta": "2,230",
+        "pct_change": "4.6%",
+        "downloads": "50,585",
+        "downloads_per_day": "2107.7",
+        "velocity": "",
+        "age": "24d",
+        "owner": "Jacky1n7",
+        "skill_url": "skills/openclaw-tavily-search.html"
+      },
+      "top_base": null,
+      "profile": "openclaw-evolution",
+      "source_pack": "skill-mcp-ecosystem"
+    },
+    {
+      "skill": "ontology",
+      "owners": [
+        "oswalpalash"
+      ],
+      "sources": [
+        "clawhubtrends-rising"
+      ],
+      "roles": [
+        "rising"
+      ],
+      "best_rank": 10,
+      "cross_source": false,
+      "trend_score": 2.7,
+      "rising": {
+        "rank": 10,
+        "delta": "2,004",
+        "pct_change": "1.6%",
+        "downloads": "123,988",
+        "downloads_per_day": "2254.3",
+        "velocity": "",
+        "age": "55d",
+        "owner": "oswalpalash",
+        "skill_url": "skills/ontology.html"
+      },
+      "top_base": null,
+      "profile": "openclaw-evolution",
+      "source_pack": "skill-mcp-ecosystem"
+    },
+    {
+      "skill": "Tavily Web Search",
+      "owners": [
+        "arun-8687"
+      ],
+      "sources": [
+        "topclawhubskills"
+      ],
+      "roles": [
+        "top-base"
+      ],
+      "best_rank": 3,
+      "cross_source": false,
+      "trend_score": 2.53,
+      "rising": null,
+      "top_base": {
+        "rank": 3,
+        "downloads": "76.3K",
+        "stars": "743",
+        "installs_per_day": "345",
+        "age": "2mo ago",
+        "owner": "arun-8687",
+        "safety": "OK",
+        "summary": "AI-optimized web search via Tavily API. Returns concise, relevant results for AI agents.",
+        "skill_url": "https://clawhub.ai/skills/tavily-search"
+      },
+      "profile": "openclaw-evolution",
+      "source_pack": "skill-mcp-ecosystem"
+    },
+    {
+      "skill": "Baidu Search",
+      "owners": [
+        "ide-rea"
+      ],
+      "sources": [
+        "clawhubtrends-rising"
+      ],
+      "roles": [
+        "rising"
+      ],
+      "best_rank": 15,
+      "cross_source": false,
+      "trend_score": 2.53,
+      "rising": {
+        "rank": 15,
+        "delta": "1,357",
+        "pct_change": "2.5%",
+        "downloads": "55,796",
+        "downloads_per_day": "1239.9",
+        "velocity": "",
+        "age": "45d",
+        "owner": "ide-rea",
+        "skill_url": "skills/baidu-search.html"
+      },
+      "top_base": null,
+      "profile": "openclaw-evolution",
+      "source_pack": "skill-mcp-ecosystem"
+    },
+    {
+      "skill": "Find Skills",
+      "owners": [
+        "JimLiuxinghai"
+      ],
+      "sources": [
+        "topclawhubskills"
+      ],
+      "roles": [
+        "top-base"
+      ],
+      "best_rank": 4,
+      "cross_source": false,
+      "trend_score": 2.5,
+      "rising": null,
+      "top_base": {
+        "rank": 4,
+        "downloads": "72.3K",
+        "stars": "593",
+        "installs_per_day": "320",
+        "age": "1mo ago",
+        "owner": "JimLiuxinghai",
+        "safety": "Suspicious",
+        "summary": "Helps users discover and install agent skills when they ask questions like \"how do I do X\"…",
+        "skill_url": "https://clawhub.ai/skills/find-skills"
+      },
+      "profile": "openclaw-evolution",
+      "source_pack": "skill-mcp-ecosystem"
+    },
+    {
+      "skill": "Word / DOCX",
+      "owners": [
+        "ivangdavila"
+      ],
+      "sources": [
+        "clawhubtrends-rising"
+      ],
+      "roles": [
+        "rising"
+      ],
+      "best_rank": 17,
+      "cross_source": false,
+      "trend_score": 2.47,
+      "rising": {
+        "rank": 17,
+        "delta": "1,338",
+        "pct_change": "5.1%",
+        "downloads": "27,733",
+        "downloads_per_day": "693.3",
+        "velocity": "",
+        "age": "40d",
+        "owner": "ivangdavila",
+        "skill_url": "skills/word-docx.html"
+      },
+      "top_base": null,
+      "profile": "openclaw-evolution",
+      "source_pack": "skill-mcp-ecosystem"
+    },
+    {
+      "skill": "Excel / XLSX",
+      "owners": [
+        "ivangdavila"
+      ],
+      "sources": [
+        "clawhubtrends-rising"
+      ],
+      "roles": [
+        "rising"
+      ],
+      "best_rank": 19,
+      "cross_source": false,
+      "trend_score": 2.4,
+      "rising": {
+        "rank": 19,
+        "delta": "1,265",
+        "pct_change": "5.6%",
+        "downloads": "23,780",
+        "downloads_per_day": "594.5",
+        "velocity": "",
+        "age": "40d",
+        "owner": "ivangdavila",
+        "skill_url": "skills/excel-xlsx.html"
+      },
+      "top_base": null,
+      "profile": "openclaw-evolution",
+      "source_pack": "skill-mcp-ecosystem"
+    },
+    {
+      "skill": "Evolver",
+      "owners": [
+        "autogame-17"
+      ],
+      "sources": [
+        "clawhubtrends-rising"
+      ],
+      "roles": [
+        "rising"
+      ],
+      "best_rank": 20,
+      "cross_source": false,
+      "trend_score": 2.37,
+      "rising": {
+        "rank": 20,
+        "delta": "1,148",
+        "pct_change": "3.9%",
+        "downloads": "30,874",
+        "downloads_per_day": "857.6",
+        "velocity": "",
+        "age": "36d",
+        "owner": "autogame-17",
+        "skill_url": "skills/evolver.html"
+      },
+      "top_base": null,
+      "profile": "openclaw-evolution",
+      "source_pack": "skill-mcp-ecosystem"
+    },
+    {
+      "skill": "Sonoscli",
+      "owners": [
+        "steipete"
+      ],
+      "sources": [
+        "topclawhubskills"
+      ],
+      "roles": [
+        "top-base"
+      ],
+      "best_rank": 11,
+      "cross_source": false,
+      "trend_score": 2.27,
+      "rising": null,
+      "top_base": {
+        "rank": 11,
+        "downloads": "44.6K",
+        "stars": "1.1K",
+        "installs_per_day": "30",
+        "age": "2mo ago",
+        "owner": "steipete",
+        "safety": "OK",
+        "summary": "Control Sonos speakers (discover/status/play/volume/group).",
+        "skill_url": "https://clawhub.ai/skills/sonoscli"
+      },
+      "profile": "openclaw-evolution",
+      "source_pack": "skill-mcp-ecosystem"
+    },
+    {
+      "skill": "Notion",
+      "owners": [
+        "steipete"
+      ],
+      "sources": [
+        "topclawhubskills"
+      ],
+      "roles": [
+        "top-base"
+      ],
+      "best_rank": 12,
+      "cross_source": false,
+      "trend_score": 2.23,
+      "rising": null,
+      "top_base": {
+        "rank": 12,
+        "downloads": "35.9K",
+        "stars": "802",
+        "installs_per_day": "131",
+        "age": "2mo ago",
+        "owner": "steipete",
+        "safety": "OK",
+        "summary": "Notion API for creating and managing pages, databases, and blocks.",
+        "skill_url": "https://clawhub.ai/skills/notion"
+      },
+      "profile": "openclaw-evolution",
+      "source_pack": "skill-mcp-ecosystem"
+    },
+    {
+      "skill": "Feishu Evolver Wrapper",
+      "owners": [
+        "autogame-17"
+      ],
+      "sources": [
+        "clawhubtrends-rising"
+      ],
+      "roles": [
+        "rising"
+      ],
+      "best_rank": 25,
+      "cross_source": false,
+      "trend_score": 2.2,
+      "rising": {
+        "rank": 25,
+        "delta": "1,039",
+        "pct_change": "4.1%",
+        "downloads": "26,375",
+        "downloads_per_day": "732.6",
+        "velocity": "",
+        "age": "36d",
+        "owner": "autogame-17",
+        "skill_url": "skills/feishu-evolver-wrapper.html"
+      },
+      "top_base": null,
+      "profile": "openclaw-evolution",
+      "source_pack": "skill-mcp-ecosystem"
+    }
+  ]
+}

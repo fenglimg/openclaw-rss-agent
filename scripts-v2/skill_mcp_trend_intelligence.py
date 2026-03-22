@@ -1,162 +1,179 @@
 #!/usr/bin/env python3
-import argparse
 import json
 import re
-from collections import defaultdict
+from html import unescape
 from urllib.request import Request, urlopen
 
-SOURCES = [
-    {"url": "https://clawhub.ai/ademczuk/skills-weekly", "role": "weekly", "name": "skills-weekly"},
-    {"url": "https://playbooks.com/skills/openclaw/skills/last30days-weekly", "role": "weekly", "name": "last30days-weekly"},
-    {"url": "https://clawhubtrends.com/rising.html", "role": "rising", "name": "clawhubtrends-rising"},
-    {"url": "https://topclawhubskills.com/", "role": "top-base", "name": "topclawhubskills"},
-    {"url": "https://openclaw-hub.org/openclaw-hub-top-skills.html", "role": "top-base", "name": "openclaw-hub-top-skills"},
-]
-
-STOP = {
-    'openclaw', 'skills', 'skill', 'weekly', 'rising', 'top', 'home', 'login', 'tools', 'advertise',
-    'dashboard', 'leaderboard', 'updated', 'live data', 'every', 'security', 'this', 'absolute delta',
-    'most popular clawhub skills', 'openclaw hub top skills', 'top clawhub skills', 'clawhub trends',
-    'openclaw skills weekly', 'last30days-weekly', 'home mcp skills advertise', 'top skills getting started'
-}
-
-OWNER_SKILL_PAT = re.compile(r'([a-z0-9_-]+)/([a-z0-9._-]{3,})', re.I)
-TITLE_PAT = re.compile(r'\b([A-Z][A-Za-z0-9+._-]{2,}(?:\s+[A-Z][A-Za-z0-9+._-]{2,}){0,3})\b')
+UA = {'User-Agent': 'openclaw-rss-agent/2.0'}
 
 
 def fetch(url):
-    req = Request(url, headers={'User-Agent': 'openclaw-rss-agent/2.0'})
+    req = Request(url, headers=UA)
     with urlopen(req, timeout=30) as resp:
         return resp.read().decode('utf-8', errors='ignore')
 
 
-def strip_html(text):
-    text = re.sub(r'<script[\s\S]*?</script>', ' ', text, flags=re.I)
-    text = re.sub(r'<style[\s\S]*?</style>', ' ', text, flags=re.I)
+def clean(text):
+    text = unescape(text)
     text = re.sub(r'<[^>]+>', ' ', text)
-    text = re.sub(r'\s+', ' ', text)
+    text = re.sub(r'\s+', ' ', text).strip()
     return text
 
 
-def clean_name(name):
-    s = re.sub(r'\s+', ' ', name).strip(' -–—|:,.')
-    return s
-
-
-def candidate_records(raw):
+def parse_rising(html):
     out = []
-    for owner, skill in OWNER_SKILL_PAT.findall(raw):
-        owner = clean_name(owner)
-        skill = clean_name(skill)
-        if owner.lower() in STOP or skill.lower() in STOP:
+    tbody = re.search(r'<tbody>([\s\S]*?)</tbody>', html, re.I)
+    if not tbody:
+        return out
+    rows = re.findall(r'<tr[^>]*data-delta="([^"]+)"[^>]*data-pct="([^"]+)"[^>]*>([\s\S]*?)</tr>', tbody.group(1), re.I)
+    for delta_attr, pct_attr, row in rows[:30]:
+        tds = re.findall(r'<td[^>]*>([\s\S]*?)</td>', row, re.I)
+        if len(tds) < 8:
             continue
-        if len(skill) < 3:
+        rank = clean(tds[0])
+        skill_m = re.search(r'<a[^>]*href="([^"]*skills/[^"]+)"[^>]*>([^<]+)</a>', tds[1], re.I)
+        owner_m = re.search(r'<a[^>]*href="([^"]*owners/[^"]+)"[^>]*>([^<]+)</a>', tds[2], re.I)
+        if not skill_m or not owner_m:
             continue
-        out.append({'owner': owner, 'skill': skill, 'kind': 'owner/skill'})
-
-    for title in TITLE_PAT.findall(raw):
-        title = clean_name(title)
-        low = title.lower()
-        if low in STOP:
-            continue
-        if len(title) < 4:
-            continue
-        if any(x in low for x in ['http', 'github', 'openclaw hub', 'clawhub', 'weekly', 'rising', 'top clawhub']):
-            continue
-        out.append({'owner': None, 'skill': title, 'kind': 'title'})
+        out.append({
+            'rank': int(rank) if rank.isdigit() else None,
+            'skill': clean(skill_m.group(2)),
+            'skill_url': skill_m.group(1),
+            'owner': clean(owner_m.group(2)).lstrip('@'),
+            'owner_url': owner_m.group(1),
+            'delta': clean(tds[3]).replace('+', ''),
+            'pct_change': clean(tds[4]).replace('+', ''),
+            'downloads': clean(tds[5]),
+            'downloads_per_day': clean(tds[6]),
+            'velocity': clean(tds[7]),
+            'age': clean(tds[8]) if len(tds) > 8 else '',
+            'source': 'clawhubtrends-rising',
+            'role': 'rising',
+        })
     return out
 
 
-def normalize(skill):
-    s = skill.lower().strip()
-    s = re.sub(r'[^a-z0-9+._ -]+', ' ', s)
-    s = re.sub(r'\s+', ' ', s).strip()
-    return s
+def parse_topclawhubskills(html):
+    out = []
+    rows = re.findall(r'<tr[^>]*data-search="([^"]+)"[^>]*>([\s\S]*?)</tr>', html, re.I)
+    for _search, row in rows[:30]:
+        tds = re.findall(r'<td[^>]*>([\s\S]*?)</td>', row, re.I)
+        if len(tds) < 7:
+            continue
+        rank = clean(tds[0])
+        skill_m = re.search(r'<a[^>]*href="([^"]*clawhub\.ai/skills/[^"]+)"[^>]*class="skill-name"[^>]*>([^<]+)</a>', tds[1], re.I)
+        owner_m = re.search(r'<a[^>]*href="([^"]*github\.com/[^"]+)"[^>]*>@?([^<]+)</a>', tds[2], re.I)
+        summary_m = re.search(r'<div[^>]*class="skill-summary"[^>]*>([\s\S]*?)</div>', tds[1], re.I)
+        badge_m = re.search(r'<span[^>]*class="badge[^"]*"[^>]*>([^<]+)</span>', tds[-1], re.I)
+        if not skill_m or not owner_m:
+            continue
+        out.append({
+            'rank': int(rank) if rank.isdigit() else None,
+            'skill': clean(skill_m.group(2)),
+            'skill_url': skill_m.group(1),
+            'owner': clean(owner_m.group(2)).lstrip('@'),
+            'owner_url': owner_m.group(1),
+            'downloads': clean(tds[3]),
+            'stars': clean(tds[4]),
+            'installs_per_day': clean(tds[5]),
+            'age': clean(tds[6]),
+            'safety': clean(badge_m.group(1)) if badge_m else '',
+            'summary': clean(summary_m.group(1)) if summary_m else '',
+            'source': 'topclawhubskills',
+            'role': 'top-base',
+        })
+    return out
 
 
-def main():
-    ap = argparse.ArgumentParser()
-    ap.add_argument('--per-source-limit', type=int, default=8)
-    args = ap.parse_args()
-
-    grouped = defaultdict(lambda: {
-        'skill': None,
-        'owners': set(),
-        'roles': set(),
-        'sources': set(),
-        'mentions': 0,
-    })
-    source_samples = []
-
-    for src in SOURCES:
-        try:
-            html = fetch(src['url'])
-            raw = strip_html(html)
-            records = candidate_records(raw)
-            kept = []
-            seen = set()
-            for rec in records:
-                norm = normalize(rec['skill'])
-                if not norm or norm in seen or norm in STOP:
-                    continue
-                seen.add(norm)
-                kept.append(rec)
-                g = grouped[norm]
-                g['skill'] = rec['skill']
-                if rec['owner']:
-                    g['owners'].add(rec['owner'])
-                g['roles'].add(src['role'])
-                g['sources'].add(src['name'])
-                g['mentions'] += 1
-                if len(kept) >= args.per_source_limit:
-                    break
-            source_samples.append({
-                'name': src['name'],
-                'role': src['role'],
-                'url': src['url'],
-                'parsed_candidates': kept,
-                'count': len(kept),
+def merge_items(*groups):
+    merged = {}
+    for items in groups:
+        for item in items:
+            key = item['skill'].lower().strip()
+            cur = merged.setdefault(key, {
+                'skill': item['skill'],
+                'owners': set(),
+                'sources': set(),
+                'roles': set(),
+                'best_rank': None,
+                'rising': None,
+                'top_base': None,
             })
-        except Exception as e:
-            source_samples.append({
-                'name': src['name'],
-                'role': src['role'],
-                'url': src['url'],
-                'error': str(e),
-                'parsed_candidates': [],
-                'count': 0,
-            })
-
-    items = []
-    for norm, g in grouped.items():
-        score = 0.0
-        if 'rising' in g['roles']:
-            score += 1.5
-        if 'top-base' in g['roles']:
-            score += 1.2
-        if 'weekly' in g['roles']:
-            score += 0.8
-        score += min(g['mentions'] * 0.5, 2.0)
-        items.append({
-            'skill': g['skill'],
-            'owners': sorted(g['owners']),
-            'roles': sorted(g['roles']),
-            'sources': sorted(g['sources']),
-            'mentions': g['mentions'],
+            if item.get('owner'):
+                cur['owners'].add(item['owner'])
+            cur['sources'].add(item['source'])
+            cur['roles'].add(item['role'])
+            rank = item.get('rank')
+            if isinstance(rank, int):
+                cur['best_rank'] = rank if cur['best_rank'] is None else min(cur['best_rank'], rank)
+            if item['role'] == 'rising':
+                cur['rising'] = {
+                    'rank': item.get('rank'),
+                    'delta': item.get('delta'),
+                    'pct_change': item.get('pct_change'),
+                    'downloads': item.get('downloads'),
+                    'downloads_per_day': item.get('downloads_per_day'),
+                    'velocity': item.get('velocity'),
+                    'age': item.get('age'),
+                    'owner': item.get('owner'),
+                    'skill_url': item.get('skill_url'),
+                }
+            if item['role'] == 'top-base':
+                cur['top_base'] = {
+                    'rank': item.get('rank'),
+                    'downloads': item.get('downloads'),
+                    'stars': item.get('stars'),
+                    'installs_per_day': item.get('installs_per_day'),
+                    'age': item.get('age'),
+                    'owner': item.get('owner'),
+                    'safety': item.get('safety'),
+                    'summary': item.get('summary'),
+                    'skill_url': item.get('skill_url'),
+                }
+    out = []
+    for cur in merged.values():
+        score = 0
+        if cur['rising']:
+            score += 2.0
+        if cur['top_base']:
+            score += 1.6
+        if len(cur['sources']) > 1:
+            score += 1.0
+        if cur['best_rank']:
+            score += max(0, (31 - min(cur['best_rank'], 30))) / 30
+        out.append({
+            'skill': cur['skill'],
+            'owners': sorted(cur['owners']),
+            'sources': sorted(cur['sources']),
+            'roles': sorted(cur['roles']),
+            'best_rank': cur['best_rank'],
+            'cross_source': len(cur['sources']) > 1,
             'trend_score': round(score, 2),
+            'rising': cur['rising'],
+            'top_base': cur['top_base'],
             'profile': 'openclaw-evolution',
             'source_pack': 'skill-mcp-ecosystem',
         })
+    out.sort(key=lambda x: (x['trend_score'], -(x['best_rank'] or 999), x['skill'].lower()), reverse=True)
+    return out
 
-    items.sort(key=lambda x: (x['trend_score'], x['mentions'], x['skill'].lower()), reverse=True)
 
+def main():
+    rising_html = fetch('https://clawhubtrends.com/rising.html')
+    top_html = fetch('https://topclawhubskills.com/')
+    rising = parse_rising(rising_html)
+    top = parse_topclawhubskills(top_html)
+    merged = merge_items(rising, top)
     print(json.dumps({
         'ok': True,
         'profile': 'openclaw-evolution',
         'source_pack': 'skill-mcp-ecosystem',
-        'kind': 'trend-intelligence',
-        'source_samples': source_samples,
-        'items': items[:40],
+        'kind': 'refined-trend-intelligence',
+        'sources': {
+            'clawhubtrends-rising': {'count': len(rising), 'items': rising[:15]},
+            'topclawhubskills': {'count': len(top), 'items': top[:15]},
+        },
+        'items': merged[:30],
     }, ensure_ascii=False, indent=2))
 
 
