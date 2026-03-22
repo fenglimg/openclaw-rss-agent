@@ -1,0 +1,830 @@
+{
+  "ok": true,
+  "profile": "openclaw-evolution",
+  "source_pack": "skill-mcp-ecosystem",
+  "kind": "trend-intelligence",
+  "source_samples": [
+    {
+      "name": "skills-weekly",
+      "role": "weekly",
+      "url": "https://clawhub.ai/ademczuk/skills-weekly",
+      "parsed_candidates": [
+        {
+          "owner": "Name",
+          "skill": "description",
+          "kind": "owner/skill"
+        },
+        {
+          "owner": "X",
+          "skill": "Twitter",
+          "kind": "owner/skill"
+        },
+        {
+          "owner": "gateway",
+          "skill": "container",
+          "kind": "owner/skill"
+        },
+        {
+          "owner": "mnt",
+          "skill": "host",
+          "kind": "owner/skill"
+        },
+        {
+          "owner": "installing",
+          "skill": "run",
+          "kind": "owner/skill"
+        },
+        {
+          "owner": "org",
+          "skill": "licenses",
+          "kind": "owner/skill"
+        },
+        {
+          "owner": "ai",
+          "skill": "api",
+          "kind": "owner/skill"
+        },
+        {
+          "owner": "dev",
+          "skill": "null",
+          "kind": "owner/skill"
+        }
+      ],
+      "count": 8
+    },
+    {
+      "name": "last30days-weekly",
+      "role": "weekly",
+      "url": "https://playbooks.com/skills/openclaw/skills/last30days-weekly",
+      "parsed_candidates": [
+        {
+          "owner": "skills-weekly",
+          "skill": "openclaw-skill",
+          "kind": "owner/skill"
+        },
+        {
+          "owner": "X",
+          "skill": "Web",
+          "kind": "owner/skill"
+        },
+        {
+          "owner": "ai",
+          "skill": "api",
+          "kind": "owner/skill"
+        },
+        {
+          "owner": "X",
+          "skill": "Twitter",
+          "kind": "owner/skill"
+        },
+        {
+          "owner": "scripts",
+          "skill": "clawhub_snapshot.py",
+          "kind": "owner/skill"
+        },
+        {
+          "owner": "local",
+          "skill": "share",
+          "kind": "owner/skill"
+        },
+        {
+          "owner": "skills-weekly",
+          "skill": "metrics.db",
+          "kind": "owner/skill"
+        },
+        {
+          "owner": "skills-weekly",
+          "skill": "weekly_signals.json",
+          "kind": "owner/skill"
+        }
+      ],
+      "count": 8
+    },
+    {
+      "name": "clawhubtrends-rising",
+      "role": "rising",
+      "url": "https://clawhubtrends.com/rising.html",
+      "parsed_candidates": [
+        {
+          "owner": "DL",
+          "skill": "day",
+          "kind": "owner/skill"
+        },
+        {
+          "owner": null,
+          "skill": "Change",
+          "kind": "title"
+        },
+        {
+          "owner": null,
+          "skill": "Skill Owner Delta",
+          "kind": "title"
+        },
+        {
+          "owner": null,
+          "skill": "Change Downloads",
+          "kind": "title"
+        },
+        {
+          "owner": null,
+          "skill": "Velocity Age",
+          "kind": "title"
+        },
+        {
+          "owner": null,
+          "skill": "Polymarket",
+          "kind": "title"
+        },
+        {
+          "owner": null,
+          "skill": "Skill Vetter",
+          "kind": "title"
+        },
+        {
+          "owner": null,
+          "skill": "Summarize",
+          "kind": "title"
+        }
+      ],
+      "count": 8
+    },
+    {
+      "name": "topclawhubskills",
+      "role": "top-base",
+      "url": "https://topclawhubskills.com/",
+      "parsed_candidates": [
+        {
+          "owner": "discover",
+          "skill": "status",
+          "kind": "owner/skill"
+        },
+        {
+          "owner": "play",
+          "skill": "volume",
+          "kind": "owner/skill"
+        },
+        {
+          "owner": "Generate",
+          "skill": "edit",
+          "kind": "owner/skill"
+        },
+        {
+          "owner": "create",
+          "skill": "modif",
+          "kind": "owner/skill"
+        },
+        {
+          "owner": "IMAP",
+          "skill": "SMTP",
+          "kind": "owner/skill"
+        },
+        {
+          "owner": "RSS",
+          "skill": "Atom",
+          "kind": "owner/skill"
+        },
+        {
+          "owner": "new",
+          "skill": "unread",
+          "kind": "owner/skill"
+        },
+        {
+          "owner": "search",
+          "skill": "indexing",
+          "kind": "owner/skill"
+        }
+      ],
+      "count": 8
+    },
+    {
+      "name": "openclaw-hub-top-skills",
+      "role": "top-base",
+      "url": "https://openclaw-hub.org/openclaw-hub-top-skills.html",
+      "parsed_candidates": [
+        {
+          "owner": null,
+          "skill": "Discover",
+          "kind": "title"
+        },
+        {
+          "owner": null,
+          "skill": "Security Notice Before",
+          "kind": "title"
+        },
+        {
+          "owner": null,
+          "skill": "Even",
+          "kind": "title"
+        },
+        {
+          "owner": null,
+          "skill": "Always",
+          "kind": "title"
+        },
+        {
+          "owner": null,
+          "skill": "Downloads",
+          "kind": "title"
+        },
+        {
+          "owner": null,
+          "skill": "Stars",
+          "kind": "title"
+        },
+        {
+          "owner": null,
+          "skill": "Installations Top",
+          "kind": "title"
+        },
+        {
+          "owner": null,
+          "skill": "Downloads Most",
+          "kind": "title"
+        }
+      ],
+      "count": 8
+    }
+  ],
+  "items": [
+    {
+      "skill": "Velocity Age",
+      "owners": [],
+      "roles": [
+        "rising"
+      ],
+      "sources": [
+        "clawhubtrends-rising"
+      ],
+      "mentions": 1,
+      "trend_score": 2.0,
+      "profile": "openclaw-evolution",
+      "source_pack": "skill-mcp-ecosystem"
+    },
+    {
+      "skill": "Summarize",
+      "owners": [],
+      "roles": [
+        "rising"
+      ],
+      "sources": [
+        "clawhubtrends-rising"
+      ],
+      "mentions": 1,
+      "trend_score": 2.0,
+      "profile": "openclaw-evolution",
+      "source_pack": "skill-mcp-ecosystem"
+    },
+    {
+      "skill": "Skill Vetter",
+      "owners": [],
+      "roles": [
+        "rising"
+      ],
+      "sources": [
+        "clawhubtrends-rising"
+      ],
+      "mentions": 1,
+      "trend_score": 2.0,
+      "profile": "openclaw-evolution",
+      "source_pack": "skill-mcp-ecosystem"
+    },
+    {
+      "skill": "Skill Owner Delta",
+      "owners": [],
+      "roles": [
+        "rising"
+      ],
+      "sources": [
+        "clawhubtrends-rising"
+      ],
+      "mentions": 1,
+      "trend_score": 2.0,
+      "profile": "openclaw-evolution",
+      "source_pack": "skill-mcp-ecosystem"
+    },
+    {
+      "skill": "Polymarket",
+      "owners": [],
+      "roles": [
+        "rising"
+      ],
+      "sources": [
+        "clawhubtrends-rising"
+      ],
+      "mentions": 1,
+      "trend_score": 2.0,
+      "profile": "openclaw-evolution",
+      "source_pack": "skill-mcp-ecosystem"
+    },
+    {
+      "skill": "day",
+      "owners": [
+        "DL"
+      ],
+      "roles": [
+        "rising"
+      ],
+      "sources": [
+        "clawhubtrends-rising"
+      ],
+      "mentions": 1,
+      "trend_score": 2.0,
+      "profile": "openclaw-evolution",
+      "source_pack": "skill-mcp-ecosystem"
+    },
+    {
+      "skill": "Change Downloads",
+      "owners": [],
+      "roles": [
+        "rising"
+      ],
+      "sources": [
+        "clawhubtrends-rising"
+      ],
+      "mentions": 1,
+      "trend_score": 2.0,
+      "profile": "openclaw-evolution",
+      "source_pack": "skill-mcp-ecosystem"
+    },
+    {
+      "skill": "Change",
+      "owners": [],
+      "roles": [
+        "rising"
+      ],
+      "sources": [
+        "clawhubtrends-rising"
+      ],
+      "mentions": 1,
+      "trend_score": 2.0,
+      "profile": "openclaw-evolution",
+      "source_pack": "skill-mcp-ecosystem"
+    },
+    {
+      "skill": "Twitter",
+      "owners": [
+        "X"
+      ],
+      "roles": [
+        "weekly"
+      ],
+      "sources": [
+        "last30days-weekly",
+        "skills-weekly"
+      ],
+      "mentions": 2,
+      "trend_score": 1.8,
+      "profile": "openclaw-evolution",
+      "source_pack": "skill-mcp-ecosystem"
+    },
+    {
+      "skill": "api",
+      "owners": [
+        "ai"
+      ],
+      "roles": [
+        "weekly"
+      ],
+      "sources": [
+        "last30days-weekly",
+        "skills-weekly"
+      ],
+      "mentions": 2,
+      "trend_score": 1.8,
+      "profile": "openclaw-evolution",
+      "source_pack": "skill-mcp-ecosystem"
+    },
+    {
+      "skill": "volume",
+      "owners": [
+        "play"
+      ],
+      "roles": [
+        "top-base"
+      ],
+      "sources": [
+        "topclawhubskills"
+      ],
+      "mentions": 1,
+      "trend_score": 1.7,
+      "profile": "openclaw-evolution",
+      "source_pack": "skill-mcp-ecosystem"
+    },
+    {
+      "skill": "unread",
+      "owners": [
+        "new"
+      ],
+      "roles": [
+        "top-base"
+      ],
+      "sources": [
+        "topclawhubskills"
+      ],
+      "mentions": 1,
+      "trend_score": 1.7,
+      "profile": "openclaw-evolution",
+      "source_pack": "skill-mcp-ecosystem"
+    },
+    {
+      "skill": "status",
+      "owners": [
+        "discover"
+      ],
+      "roles": [
+        "top-base"
+      ],
+      "sources": [
+        "topclawhubskills"
+      ],
+      "mentions": 1,
+      "trend_score": 1.7,
+      "profile": "openclaw-evolution",
+      "source_pack": "skill-mcp-ecosystem"
+    },
+    {
+      "skill": "Stars",
+      "owners": [],
+      "roles": [
+        "top-base"
+      ],
+      "sources": [
+        "openclaw-hub-top-skills"
+      ],
+      "mentions": 1,
+      "trend_score": 1.7,
+      "profile": "openclaw-evolution",
+      "source_pack": "skill-mcp-ecosystem"
+    },
+    {
+      "skill": "SMTP",
+      "owners": [
+        "IMAP"
+      ],
+      "roles": [
+        "top-base"
+      ],
+      "sources": [
+        "topclawhubskills"
+      ],
+      "mentions": 1,
+      "trend_score": 1.7,
+      "profile": "openclaw-evolution",
+      "source_pack": "skill-mcp-ecosystem"
+    },
+    {
+      "skill": "Security Notice Before",
+      "owners": [],
+      "roles": [
+        "top-base"
+      ],
+      "sources": [
+        "openclaw-hub-top-skills"
+      ],
+      "mentions": 1,
+      "trend_score": 1.7,
+      "profile": "openclaw-evolution",
+      "source_pack": "skill-mcp-ecosystem"
+    },
+    {
+      "skill": "modif",
+      "owners": [
+        "create"
+      ],
+      "roles": [
+        "top-base"
+      ],
+      "sources": [
+        "topclawhubskills"
+      ],
+      "mentions": 1,
+      "trend_score": 1.7,
+      "profile": "openclaw-evolution",
+      "source_pack": "skill-mcp-ecosystem"
+    },
+    {
+      "skill": "Installations Top",
+      "owners": [],
+      "roles": [
+        "top-base"
+      ],
+      "sources": [
+        "openclaw-hub-top-skills"
+      ],
+      "mentions": 1,
+      "trend_score": 1.7,
+      "profile": "openclaw-evolution",
+      "source_pack": "skill-mcp-ecosystem"
+    },
+    {
+      "skill": "indexing",
+      "owners": [
+        "search"
+      ],
+      "roles": [
+        "top-base"
+      ],
+      "sources": [
+        "topclawhubskills"
+      ],
+      "mentions": 1,
+      "trend_score": 1.7,
+      "profile": "openclaw-evolution",
+      "source_pack": "skill-mcp-ecosystem"
+    },
+    {
+      "skill": "Even",
+      "owners": [],
+      "roles": [
+        "top-base"
+      ],
+      "sources": [
+        "openclaw-hub-top-skills"
+      ],
+      "mentions": 1,
+      "trend_score": 1.7,
+      "profile": "openclaw-evolution",
+      "source_pack": "skill-mcp-ecosystem"
+    },
+    {
+      "skill": "edit",
+      "owners": [
+        "Generate"
+      ],
+      "roles": [
+        "top-base"
+      ],
+      "sources": [
+        "topclawhubskills"
+      ],
+      "mentions": 1,
+      "trend_score": 1.7,
+      "profile": "openclaw-evolution",
+      "source_pack": "skill-mcp-ecosystem"
+    },
+    {
+      "skill": "Downloads Most",
+      "owners": [],
+      "roles": [
+        "top-base"
+      ],
+      "sources": [
+        "openclaw-hub-top-skills"
+      ],
+      "mentions": 1,
+      "trend_score": 1.7,
+      "profile": "openclaw-evolution",
+      "source_pack": "skill-mcp-ecosystem"
+    },
+    {
+      "skill": "Downloads",
+      "owners": [],
+      "roles": [
+        "top-base"
+      ],
+      "sources": [
+        "openclaw-hub-top-skills"
+      ],
+      "mentions": 1,
+      "trend_score": 1.7,
+      "profile": "openclaw-evolution",
+      "source_pack": "skill-mcp-ecosystem"
+    },
+    {
+      "skill": "Discover",
+      "owners": [],
+      "roles": [
+        "top-base"
+      ],
+      "sources": [
+        "openclaw-hub-top-skills"
+      ],
+      "mentions": 1,
+      "trend_score": 1.7,
+      "profile": "openclaw-evolution",
+      "source_pack": "skill-mcp-ecosystem"
+    },
+    {
+      "skill": "Atom",
+      "owners": [
+        "RSS"
+      ],
+      "roles": [
+        "top-base"
+      ],
+      "sources": [
+        "topclawhubskills"
+      ],
+      "mentions": 1,
+      "trend_score": 1.7,
+      "profile": "openclaw-evolution",
+      "source_pack": "skill-mcp-ecosystem"
+    },
+    {
+      "skill": "Always",
+      "owners": [],
+      "roles": [
+        "top-base"
+      ],
+      "sources": [
+        "openclaw-hub-top-skills"
+      ],
+      "mentions": 1,
+      "trend_score": 1.7,
+      "profile": "openclaw-evolution",
+      "source_pack": "skill-mcp-ecosystem"
+    },
+    {
+      "skill": "weekly_signals.json",
+      "owners": [
+        "skills-weekly"
+      ],
+      "roles": [
+        "weekly"
+      ],
+      "sources": [
+        "last30days-weekly"
+      ],
+      "mentions": 1,
+      "trend_score": 1.3,
+      "profile": "openclaw-evolution",
+      "source_pack": "skill-mcp-ecosystem"
+    },
+    {
+      "skill": "Web",
+      "owners": [
+        "X"
+      ],
+      "roles": [
+        "weekly"
+      ],
+      "sources": [
+        "last30days-weekly"
+      ],
+      "mentions": 1,
+      "trend_score": 1.3,
+      "profile": "openclaw-evolution",
+      "source_pack": "skill-mcp-ecosystem"
+    },
+    {
+      "skill": "share",
+      "owners": [
+        "local"
+      ],
+      "roles": [
+        "weekly"
+      ],
+      "sources": [
+        "last30days-weekly"
+      ],
+      "mentions": 1,
+      "trend_score": 1.3,
+      "profile": "openclaw-evolution",
+      "source_pack": "skill-mcp-ecosystem"
+    },
+    {
+      "skill": "run",
+      "owners": [
+        "installing"
+      ],
+      "roles": [
+        "weekly"
+      ],
+      "sources": [
+        "skills-weekly"
+      ],
+      "mentions": 1,
+      "trend_score": 1.3,
+      "profile": "openclaw-evolution",
+      "source_pack": "skill-mcp-ecosystem"
+    },
+    {
+      "skill": "openclaw-skill",
+      "owners": [
+        "skills-weekly"
+      ],
+      "roles": [
+        "weekly"
+      ],
+      "sources": [
+        "last30days-weekly"
+      ],
+      "mentions": 1,
+      "trend_score": 1.3,
+      "profile": "openclaw-evolution",
+      "source_pack": "skill-mcp-ecosystem"
+    },
+    {
+      "skill": "null",
+      "owners": [
+        "dev"
+      ],
+      "roles": [
+        "weekly"
+      ],
+      "sources": [
+        "skills-weekly"
+      ],
+      "mentions": 1,
+      "trend_score": 1.3,
+      "profile": "openclaw-evolution",
+      "source_pack": "skill-mcp-ecosystem"
+    },
+    {
+      "skill": "metrics.db",
+      "owners": [
+        "skills-weekly"
+      ],
+      "roles": [
+        "weekly"
+      ],
+      "sources": [
+        "last30days-weekly"
+      ],
+      "mentions": 1,
+      "trend_score": 1.3,
+      "profile": "openclaw-evolution",
+      "source_pack": "skill-mcp-ecosystem"
+    },
+    {
+      "skill": "licenses",
+      "owners": [
+        "org"
+      ],
+      "roles": [
+        "weekly"
+      ],
+      "sources": [
+        "skills-weekly"
+      ],
+      "mentions": 1,
+      "trend_score": 1.3,
+      "profile": "openclaw-evolution",
+      "source_pack": "skill-mcp-ecosystem"
+    },
+    {
+      "skill": "host",
+      "owners": [
+        "mnt"
+      ],
+      "roles": [
+        "weekly"
+      ],
+      "sources": [
+        "skills-weekly"
+      ],
+      "mentions": 1,
+      "trend_score": 1.3,
+      "profile": "openclaw-evolution",
+      "source_pack": "skill-mcp-ecosystem"
+    },
+    {
+      "skill": "description",
+      "owners": [
+        "Name"
+      ],
+      "roles": [
+        "weekly"
+      ],
+      "sources": [
+        "skills-weekly"
+      ],
+      "mentions": 1,
+      "trend_score": 1.3,
+      "profile": "openclaw-evolution",
+      "source_pack": "skill-mcp-ecosystem"
+    },
+    {
+      "skill": "container",
+      "owners": [
+        "gateway"
+      ],
+      "roles": [
+        "weekly"
+      ],
+      "sources": [
+        "skills-weekly"
+      ],
+      "mentions": 1,
+      "trend_score": 1.3,
+      "profile": "openclaw-evolution",
+      "source_pack": "skill-mcp-ecosystem"
+    },
+    {
+      "skill": "clawhub_snapshot.py",
+      "owners": [
+        "scripts"
+      ],
+      "roles": [
+        "weekly"
+      ],
+      "sources": [
+        "last30days-weekly"
+      ],
+      "mentions": 1,
+      "trend_score": 1.3,
+      "profile": "openclaw-evolution",
+      "source_pack": "skill-mcp-ecosystem"
+    }
+  ]
+}
