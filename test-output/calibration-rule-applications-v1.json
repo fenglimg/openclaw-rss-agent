@@ -1,0 +1,77 @@
+{
+  "ok": true,
+  "items": [
+    {
+      "name": "jarrodwatts/claude-hud",
+      "track": "applied-ai-evolution",
+      "previous_judgment": "follow",
+      "calibrated_judgment": "adopt",
+      "applied_rules": [
+        "tooling_surface_upgrade"
+      ],
+      "applied_rule_notes": [
+        "tooling surface + author ecosystem + awesome/plugin refs → upgrade pressure toward adopt"
+      ],
+      "why": "Concrete tooling surface with repeated ecosystem references, adjacent author projects, and clear practical utility.",
+      "evidence_summary": {
+        "github_hits": 6,
+        "doc_hits": 0,
+        "ecosystem_hits": 2
+      }
+    },
+    {
+      "name": "gsd-build/get-shit-done",
+      "track": "applied-ai-evolution",
+      "previous_judgment": "follow",
+      "calibrated_judgment": "follow",
+      "applied_rules": [
+        "framework_to_study"
+      ],
+      "applied_rule_notes": [
+        "methodology/framework signal → strong follow, not direct adopt by default"
+      ],
+      "why": "Signal remains interesting, but the extra targeted evidence is not yet strong enough to justify an upgrade.",
+      "evidence_summary": {
+        "github_hits": 2,
+        "doc_hits": 0,
+        "ecosystem_hits": 1
+      }
+    },
+    {
+      "name": "Gog",
+      "track": "openclaw-evolution",
+      "previous_judgment": "follow",
+      "calibrated_judgment": "follow",
+      "applied_rules": [
+        "strong_support_weak_lesson"
+      ],
+      "applied_rule_notes": [
+        "strong support but unclear reusable lesson → keep follow"
+      ],
+      "why": "Well-supported skill, but the reusable product lesson remains less clear than browser/search/summarize style capabilities.",
+      "evidence_summary": {
+        "github_hits": 6,
+        "doc_hits": 2,
+        "ecosystem_hits": 8
+      }
+    },
+    {
+      "name": "Proactive Agent",
+      "track": "openclaw-evolution",
+      "previous_judgment": "follow",
+      "calibrated_judgment": "adopt-candidate",
+      "applied_rules": [
+        "behavior_layer_upgrade"
+      ],
+      "applied_rule_notes": [
+        "behavior-layer capability + canonical ecosystem support → upgrade toward adopt-candidate"
+      ],
+      "why": "Proactive execution remains strategically relevant; if stronger canonical references exist, it should move closer to adopt.",
+      "evidence_summary": {
+        "github_hits": 7,
+        "doc_hits": 2,
+        "ecosystem_hits": 7
+      }
+    }
+  ]
+}
