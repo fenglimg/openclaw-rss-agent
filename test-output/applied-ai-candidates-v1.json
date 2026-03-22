@@ -1,0 +1,194 @@
+{
+  "ok": true,
+  "items": [
+    {
+      "name": "jarrodwatts/claude-hud",
+      "url": "https://github.com/jarrodwatts/claude-hud",
+      "kind": "project-radar",
+      "base_score": 5.2,
+      "description": "A Claude Code plugin that shows what's happening - context usage, active tools, running agents, and todo progress",
+      "topics": [
+        "anthropic",
+        "claude",
+        "claude-code",
+        "cli",
+        "plugin",
+        "statusline",
+        "typescript"
+      ]
+    },
+    {
+      "name": "vllm-project/vllm-omni",
+      "url": "https://github.com/vllm-project/vllm-omni",
+      "kind": "project-radar",
+      "base_score": 4.6,
+      "description": "A framework for efficient model inference with omni-modality models",
+      "topics": [
+        "diffusion",
+        "inference",
+        "model-serving",
+        "pytorch",
+        "transformer",
+        "audio-generation",
+        "image-generation",
+        "multimodal",
+        "video-generation"
+      ]
+    },
+    {
+      "name": "opendataloader-project/opendataloader-pdf",
+      "url": "https://github.com/opendataloader-project/opendataloader-pdf",
+      "kind": "project-radar",
+      "base_score": 3.75,
+      "description": "PDF Parser for AI-ready data. Automate PDF accessibility. Open-source.",
+      "topics": [
+        "json",
+        "markdown",
+        "pdf",
+        "ai",
+        "document-parsing",
+        "html",
+        "pdf-converter",
+        "tables",
+        "pdf-parser",
+        "rag",
+        "accessibility",
+        "bounding-box",
+        "eaa",
+        "ocr",
+        "pdf-accessibility",
+        "pdf-extraction",
+        "pdf-ua",
+        "tagged-pdf",
+        "ocr-recognition",
+        "a11y"
+      ]
+    },
+    {
+      "name": "obra/superpowers",
+      "url": "https://github.com/obra/superpowers",
+      "kind": "applied-watchlist",
+      "base_score": 5.8,
+      "description": "An agentic skills framework & software development methodology that works.",
+      "topics": [],
+      "role": "framework-core"
+    },
+    {
+      "name": "gsd-build/get-shit-done",
+      "url": "https://github.com/gsd-build/get-shit-done",
+      "kind": "applied-watchlist",
+      "base_score": 4.6,
+      "description": "A light-weight and powerful meta-prompting, context engineering and spec-driven development system for Claude Code by TÂCHES.",
+      "topics": [
+        "claude-code",
+        "context-engineering",
+        "meta-prompting",
+        "spec-driven-development"
+      ],
+      "role": "workflow-framework"
+    },
+    {
+      "name": "google-gemini/gemini-cli",
+      "url": "https://github.com/google-gemini/gemini-cli",
+      "kind": "applied-watchlist",
+      "base_score": 4.4,
+      "description": "An open-source AI agent that brings the power of Gemini directly into your terminal.",
+      "topics": [
+        "gemini",
+        "gemini-api",
+        "ai",
+        "ai-agents",
+        "cli",
+        "mcp-client",
+        "mcp-server"
+      ],
+      "role": "official-anchor"
+    },
+    {
+      "name": "anthropics/claude-code",
+      "url": "https://github.com/anthropics/claude-code",
+      "kind": "applied-watchlist",
+      "base_score": 4.4,
+      "description": "Claude Code is an agentic coding tool that lives in your terminal, understands your codebase, and helps you code faster by executing routine tasks, explaining complex code, and handling git workflows - all through natural language commands.",
+      "topics": [],
+      "role": "official-anchor"
+    },
+    {
+      "name": "openai/codex",
+      "url": "https://github.com/openai/codex",
+      "kind": "applied-watchlist",
+      "base_score": 4.0,
+      "description": "Lightweight coding agent that runs in your terminal",
+      "topics": [],
+      "role": "official-anchor"
+    },
+    {
+      "name": "mindfold-ai/Trellis",
+      "url": "https://github.com/mindfold-ai/Trellis",
+      "kind": "applied-watchlist",
+      "base_score": 3.8,
+      "description": "All-in-one AI framework & toolkit",
+      "topics": [
+        "ai-agent",
+        "ai-coding",
+        "claude-code",
+        "cli",
+        "cursor",
+        "developer-tools",
+        "typescript",
+        "workflow",
+        "codex"
+      ],
+      "role": "workflow-framework"
+    },
+    {
+      "name": "davila7/claude-code-templates",
+      "url": "https://github.com/davila7/claude-code-templates",
+      "kind": "applied-watchlist",
+      "base_score": 3.4,
+      "description": "CLI tool for configuring and monitoring Claude Code",
+      "topics": [
+        "anthropic",
+        "anthropic-claude",
+        "claude",
+        "claude-code"
+      ],
+      "role": "template-ecosystem"
+    },
+    {
+      "name": "gsd-build/gsd-2",
+      "url": "https://github.com/gsd-build/gsd-2",
+      "kind": "applied-watchlist",
+      "base_score": 3.2,
+      "description": "A powerful meta-prompting, context engineering and spec-driven development system that enables agents to work for long periods of time autonomously without losing track of the big picture",
+      "topics": [
+        "context-engineering",
+        "meta-prompting",
+        "spec-driven-development"
+      ],
+      "role": "agent-framework"
+    },
+    {
+      "name": "nyldn/claude-octopus",
+      "url": "https://github.com/nyldn/claude-octopus",
+      "kind": "applied-watchlist",
+      "base_score": 3.2,
+      "description": "Multi-AI orchestration plugin for Claude Code — 7 providers (Codex, Gemini, Claude, Perplexity, OpenRouter, Ollama, Copilot), 47 commands, 50 skills, Double Diamond workflows",
+      "topics": [
+        "ai-agents",
+        "ai-orchestration",
+        "claude-code",
+        "claude-code-plugin",
+        "codex",
+        "copilot",
+        "developer-tools",
+        "double-diamond",
+        "gemini",
+        "multi-ai",
+        "multi-llm",
+        "ollama"
+      ],
+      "role": "orchestration-tool"
+    }
+  ]
+}

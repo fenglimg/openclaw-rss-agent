@@ -1,0 +1,328 @@
+{
+  "ok": true,
+  "items": [
+    {
+      "name": "obra/superpowers",
+      "url": "https://github.com/obra/superpowers",
+      "kind": "applied-watchlist",
+      "base_score": 5.8,
+      "description": "An agentic skills framework & software development methodology that works.",
+      "topics": [],
+      "role": "framework-core",
+      "category": "workflow-framework",
+      "validation_refs": [
+        {
+          "title": "obra/superpowers: An agentic skills framework & software ... - GitHub",
+          "url": "https://github.com/obra/superpowers",
+          "source": "tavily, exa, grok"
+        },
+        {
+          "title": "superpowers/RELEASE-NOTES.md at main - GitHub",
+          "url": "https://github.com/obra/superpowers/blob/main/RELEASE-NOTES.md",
+          "source": "grok"
+        },
+        {
+          "title": "Codex-native fork of obra/superpowers — 14 composable skills",
+          "url": "https://github.com/yigitkonur/superpowers-codex",
+          "source": "grok"
+        },
+        {
+          "title": "GitHub - BryanHoo/superpowers-ccg: Claude Code superpowers",
+          "url": "https://github.com/BryanHoo/superpowers-ccg",
+          "source": "tavily"
+        }
+      ],
+      "quality_notes": [
+        "Has GitHub-confirmed ecosystem references."
+      ],
+      "suggested_judgment": "adopt-or-follow"
+    },
+    {
+      "name": "jarrodwatts/claude-hud",
+      "url": "https://github.com/jarrodwatts/claude-hud",
+      "kind": "project-radar",
+      "base_score": 5.2,
+      "description": "A Claude Code plugin that shows what's happening - context usage, active tools, running agents, and todo progress",
+      "topics": [
+        "anthropic",
+        "claude",
+        "claude-code",
+        "cli",
+        "plugin",
+        "statusline",
+        "typescript"
+      ],
+      "category": "tooling-surface",
+      "validation_refs": [
+        {
+          "title": "GitHub - subinium/awesome-claude-code: Curated list of tools, skills, plugins, and workflows for Claude Code",
+          "url": "https://github.com/subinium/awesome-claude-code",
+          "source": "grok"
+        },
+        {
+          "title": "Jarrod Watts jarrodwatts - GitHub",
+          "url": "https://github.com/jarrodwatts",
+          "source": "tavily, exa"
+        },
+        {
+          "title": "GitHub - jarrodwatts/claude-delegator: Delegate tasks to Codex and Gemini directly from within Claude Code",
+          "url": "https://github.com/jarrodwatts/claude-delegator",
+          "source": "grok"
+        },
+        {
+          "title": "claude-hud/CLAUDE.README.md at main · jarrodwatts ... - GitHub",
+          "url": "https://github.com/jarrodwatts/claude-hud/blob/main/CLAUDE.README.md",
+          "source": "tavily"
+        }
+      ],
+      "quality_notes": [
+        "Has GitHub-confirmed ecosystem references."
+      ],
+      "suggested_judgment": "adopt-or-follow"
+    },
+    {
+      "name": "gsd-build/get-shit-done",
+      "url": "https://github.com/gsd-build/get-shit-done",
+      "kind": "applied-watchlist",
+      "base_score": 4.6,
+      "description": "A light-weight and powerful meta-prompting, context engineering and spec-driven development system for Claude Code by TÂCHES.",
+      "topics": [
+        "claude-code",
+        "context-engineering",
+        "meta-prompting",
+        "spec-driven-development"
+      ],
+      "role": "workflow-framework",
+      "category": "workflow-framework",
+      "validation_refs": [
+        {
+          "title": "CHANGELOG.md - gsd-build/get-shit-done",
+          "url": "https://github.com/gsd-build/get-shit-done/blob/main/CHANGELOG.md",
+          "source": "grok"
+        },
+        {
+          "title": "Releases · gsd-build/get-shit-done - GitHub",
+          "url": "https://github.com/gsd-build/get-shit-done/releases",
+          "source": "tavily, grok"
+        },
+        {
+          "title": "GitHub - gsd-build/get-shit-done",
+          "url": "https://github.com/gsd-build/get-shit-done",
+          "source": "tavily, exa, grok"
+        },
+        {
+          "title": "The Complete Beginner's Guide to GSD (Get Shit Done) Framework for Claude Code - DEV Community",
+          "url": "https://dev.to/alikazmidev/the-complete-beginners-guide-to-gsd-get-shit-done-framework-for-claude-code-24h0",
+          "source": "exa"
+        }
+      ],
+      "quality_notes": [
+        "Has GitHub-confirmed ecosystem references."
+      ],
+      "suggested_judgment": "follow"
+    },
+    {
+      "name": "google-gemini/gemini-cli",
+      "url": "https://github.com/google-gemini/gemini-cli",
+      "kind": "applied-watchlist",
+      "base_score": 4.4,
+      "description": "An open-source AI agent that brings the power of Gemini directly into your terminal.",
+      "topics": [
+        "gemini",
+        "gemini-api",
+        "ai",
+        "ai-agents",
+        "cli",
+        "mcp-client",
+        "mcp-server"
+      ],
+      "role": "official-anchor",
+      "category": "official-anchor",
+      "validation_refs": [
+        {
+          "title": "google-gemini/gemini-cli: An open-source AI agent that ... - GitHub",
+          "url": "https://github.com/google-gemini/gemini-cli",
+          "source": "tavily, exa"
+        },
+        {
+          "title": "Gemini CLI vs Claude Code vs Codex: Choosing the Right AI ...",
+          "url": "https://inventivehq.com/blog/gemini-vs-claude-vs-codex-comparison",
+          "source": "tavily"
+        },
+        {
+          "title": "Claude Code vs. Gemini CLI vs. Codex CLI: What's the Best Choice ...",
+          "url": "https://www.squadbase.dev/en/blog/claude-code-vs-gemini-cli-vs-codex-cli-whats-the-best-choice-for-internal",
+          "source": "tavily"
+        },
+        {
+          "title": "Comparing Claude Code, OpenAI Codex, and Google Gemini CLI",
+          "url": "https://www.deployhq.com/blog/comparing-claude-code-openai-codex-and-google-gemini-cli-which-ai-coding-assistant-is-right-for-your-deployment-workflow",
+          "source": "tavily"
+        }
+      ],
+      "quality_notes": [
+        "Has GitHub-confirmed ecosystem references."
+      ],
+      "suggested_judgment": "follow"
+    },
+    {
+      "name": "anthropics/claude-code",
+      "url": "https://github.com/anthropics/claude-code",
+      "kind": "applied-watchlist",
+      "base_score": 4.4,
+      "description": "Claude Code is an agentic coding tool that lives in your terminal, understands your codebase, and helps you code faster by executing routine tasks, explaining complex code, and handling git workflows - all through natural language commands.",
+      "topics": [],
+      "role": "official-anchor",
+      "category": "workflow-framework",
+      "validation_refs": [
+        {
+          "title": "Parallel AI System with Codex, Gemini, and Claude Code Cli · GitHub",
+          "url": "https://github.com/patrickespake/ai_cli_management",
+          "source": "tavily"
+        },
+        {
+          "title": "google-github-actions/run-gemini-cli",
+          "url": "https://github.com/google-github-actions/run-gemini-cli",
+          "source": "exa"
+        },
+        {
+          "title": "anthropics/claude-code: Claude Code is an agentic coding ... - GitHub",
+          "url": "https://github.com/anthropics/claude-code",
+          "source": "tavily, exa"
+        },
+        {
+          "title": "anthropics/claude-code-action",
+          "url": "https://github.com/anthropics/claude-code-action",
+          "source": "exa"
+        }
+      ],
+      "quality_notes": [
+        "Has GitHub-confirmed ecosystem references."
+      ],
+      "suggested_judgment": "adopt-or-follow"
+    },
+    {
+      "name": "openai/codex",
+      "url": "https://github.com/openai/codex",
+      "kind": "applied-watchlist",
+      "base_score": 4.0,
+      "description": "Lightweight coding agent that runs in your terminal",
+      "topics": [],
+      "role": "official-anchor",
+      "category": "official-anchor",
+      "validation_refs": [
+        {
+          "title": "GitHub - poemswe/co-researcher: Plugin and Skills for Claude Code ...",
+          "url": "https://github.com/poemswe/co-researcher",
+          "source": "tavily"
+        },
+        {
+          "title": "Parallel AI System with Codex, Gemini, and Claude Code Cli · GitHub",
+          "url": "https://github.com/patrickespake/ai_cli_management",
+          "source": "tavily, grok"
+        },
+        {
+          "title": "openai/codex-action",
+          "url": "https://github.com/openai/codex-action",
+          "source": "exa"
+        },
+        {
+          "title": "google-github-actions/run-gemini-cli",
+          "url": "https://github.com/google-github-actions/run-gemini-cli",
+          "source": "exa, grok"
+        }
+      ],
+      "quality_notes": [
+        "Has GitHub-confirmed ecosystem references."
+      ],
+      "suggested_judgment": "follow"
+    },
+    {
+      "name": "mindfold-ai/Trellis",
+      "url": "https://github.com/mindfold-ai/Trellis",
+      "kind": "applied-watchlist",
+      "base_score": 3.8,
+      "description": "All-in-one AI framework & toolkit",
+      "topics": [
+        "ai-agent",
+        "ai-coding",
+        "claude-code",
+        "cli",
+        "cursor",
+        "developer-tools",
+        "typescript",
+        "workflow",
+        "codex"
+      ],
+      "role": "workflow-framework",
+      "category": "applied-project",
+      "validation_refs": [
+        {
+          "title": "mindfold-ai/Trellis Activity",
+          "url": "https://github.com/mindfold-ai/Trellis/activity",
+          "source": "grok"
+        },
+        {
+          "title": "mindfold-ai/Trellis: All-in-one AI framework & toolkit",
+          "url": "https://github.com/mindfold-ai/Trellis",
+          "source": "tavily, exa, grok"
+        },
+        {
+          "title": "Parallel AI System with Codex, Gemini, and Claude Code ...",
+          "url": "https://github.com/patrickespake/ai_cli_management",
+          "source": "tavily"
+        },
+        {
+          "title": "mindfold-ai",
+          "url": "https://github.com/mindfold-ai",
+          "source": "exa"
+        }
+      ],
+      "quality_notes": [
+        "Has GitHub-confirmed ecosystem references."
+      ],
+      "suggested_judgment": "follow"
+    },
+    {
+      "name": "davila7/claude-code-templates",
+      "url": "https://github.com/davila7/claude-code-templates",
+      "kind": "applied-watchlist",
+      "base_score": 3.4,
+      "description": "CLI tool for configuring and monitoring Claude Code",
+      "topics": [
+        "anthropic",
+        "anthropic-claude",
+        "claude",
+        "claude-code"
+      ],
+      "role": "template-ecosystem",
+      "category": "workflow-framework",
+      "validation_refs": [
+        {
+          "title": "davila7/claude-code-templates",
+          "url": "https://github.com/davila7/claude-code-templates",
+          "source": "exa, grok"
+        },
+        {
+          "title": "claude-code-templates/CLAUDE.md at main - GitHub",
+          "url": "https://github.com/davila7/claude-code-templates/blob/main/CLAUDE.md",
+          "source": "tavily, exa"
+        },
+        {
+          "title": "Complete Guide to Claude Code Templates | by Daniel Avila | LatinXinAI | Medium",
+          "url": "https://medium.com/latinxinai/complete-guide-to-claude-code-templates-4e53d6688b34",
+          "source": "exa, grok"
+        },
+        {
+          "title": "Comparing Claude Code, OpenAI Codex, and Google Gemini CLI: Which AI Coding Assistant is Right for Your Deployment Workflow",
+          "url": "https://www.deployhq.com/blog/comparing-claude-code-openai-codex-and-google-gemini-cli-which-ai-coding-assistant-is-right-for-your-deployment-workflow",
+          "source": "grok"
+        }
+      ],
+      "quality_notes": [
+        "Has GitHub-confirmed ecosystem references."
+      ],
+      "suggested_judgment": "adopt-or-follow"
+    }
+  ]
+}
