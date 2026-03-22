@@ -1,0 +1,254 @@
+{
+  "ok": true,
+  "items": [
+    {
+      "skill": "self-improving-agent",
+      "owners": [
+        "pskoett"
+      ],
+      "signal_summary": "trend_score=5.6 cross_source=True best_rank=1",
+      "validation_sources": [
+        {
+          "title": "Skill deleted from ClawHub Self-Improving-Agent https ... - GitHub",
+          "url": "https://github.com/openclaw/clawhub/issues/630",
+          "source": "tavily"
+        },
+        {
+          "title": "ClawHub - Skill Directory for OpenClaw - GitHub",
+          "url": "https://github.com/openclaw/clawhub",
+          "source": "tavily, exa, grok"
+        },
+        {
+          "title": "peterskoett/self-improving-agent",
+          "url": "https://github.com/peterskoett/self-improving-agent",
+          "source": "exa, grok"
+        },
+        {
+          "title": "skills/skills/pskoett/self-improving-agent/SKILL.md at main · openclaw/skills",
+          "url": "https://github.com/openclaw/skills/blob/main/skills/pskoett/self-improving-agent/SKILL.md",
+          "source": "grok"
+        }
+      ],
+      "source_candidate_urls": [
+        "https://github.com/openclaw/clawhub/issues/630",
+        "https://github.com/openclaw/clawhub",
+        "https://github.com/peterskoett/self-improving-agent",
+        "https://github.com/openclaw/skills/blob/main/skills/pskoett/self-improving-agent/SKILL.md",
+        "https://clawhub.ai/pskoett/self-improving-agent",
+        "https://clawhub.ai/ivangdavila/self-improving"
+      ],
+      "source_quality_notes": [
+        "Has at least one high-trust ecosystem reference (GitHub or ClawHub).",
+        "Cross-domain ecosystem confirmation exists beyond a single ranking page."
+      ],
+      "suggested_judgment": "adopt-or-follow"
+    },
+    {
+      "skill": "Polymarket",
+      "owners": [
+        "joelchance"
+      ],
+      "signal_summary": "trend_score=5.57 cross_source=True best_rank=2",
+      "validation_sources": [
+        {
+          "title": "Suspect skills · Issue #87 · openclaw/clawhub - GitHub",
+          "url": "https://github.com/openclaw/clawhub/issues/87",
+          "source": "tavily, exa"
+        },
+        {
+          "title": "Polymarket prediction markets skill for Clawdbot - GitHub",
+          "url": "https://github.com/mvanhorn/clawdbot-skill-polymarket",
+          "source": "tavily, exa, grok"
+        },
+        {
+          "title": "lacymorrow/openclaw-polymarket-trading-skill",
+          "url": "https://github.com/lacymorrow/openclaw-polymarket-trading-skill",
+          "source": "exa"
+        },
+        {
+          "title": "ClawHub - Skill Directory for OpenClaw - GitHub",
+          "url": "https://github.com/openclaw/clawhub",
+          "source": "tavily, grok"
+        }
+      ],
+      "source_candidate_urls": [
+        "https://github.com/openclaw/clawhub/issues/87",
+        "https://github.com/mvanhorn/clawdbot-skill-polymarket",
+        "https://github.com/lacymorrow/openclaw-polymarket-trading-skill",
+        "https://github.com/openclaw/clawhub",
+        "https://github.com/chainstacklabs/polyclaw"
+      ],
+      "source_quality_notes": [
+        "Has at least one high-trust ecosystem reference (GitHub or ClawHub).",
+        "Cross-domain ecosystem confirmation exists beyond a single ranking page."
+      ],
+      "suggested_judgment": "follow"
+    },
+    {
+      "skill": "Gog",
+      "owners": [
+        "steipete"
+      ],
+      "signal_summary": "trend_score=5.57 cross_source=True best_rank=2",
+      "validation_sources": [
+        {
+          "title": "GitHub - openclaw/openclaw: OpenClaw — Personal AI Assistant",
+          "url": "https://github.com/openclaw/openclaw",
+          "source": "grok"
+        },
+        {
+          "title": "openclaw/skills",
+          "url": "https://github.com/openclaw/skills",
+          "source": "exa, grok"
+        },
+        {
+          "title": "ClawHub - Skill Directory for OpenClaw - GitHub",
+          "url": "https://github.com/openclaw/clawhub",
+          "source": "tavily, exa, grok"
+        },
+        {
+          "title": "awesome-openclaw-skills/README.md at main - GitHub",
+          "url": "https://github.com/VoltAgent/awesome-openclaw-skills/blob/main/README.md",
+          "source": "tavily"
+        }
+      ],
+      "source_candidate_urls": [
+        "https://github.com/openclaw/openclaw",
+        "https://github.com/openclaw/skills",
+        "https://github.com/openclaw/clawhub",
+        "https://github.com/VoltAgent/awesome-openclaw-skills/blob/main/README.md",
+        "https://topclawhubskills.com/",
+        "https://clawhub.ai/steipete/gog"
+      ],
+      "source_quality_notes": [
+        "Has at least one high-trust ecosystem reference (GitHub or ClawHub).",
+        "Cross-domain ecosystem confirmation exists beyond a single ranking page."
+      ],
+      "suggested_judgment": "follow"
+    },
+    {
+      "skill": "Summarize",
+      "owners": [
+        "steipete"
+      ],
+      "signal_summary": "trend_score=5.5 cross_source=True best_rank=4",
+      "validation_sources": [
+        {
+          "title": "openclaw/skills",
+          "url": "https://github.com/openclaw/skills",
+          "source": "exa"
+        },
+        {
+          "title": "openclaw",
+          "url": "https://github.com/openclaw",
+          "source": "exa"
+        },
+        {
+          "title": "ClawHub - Skill Directory for OpenClaw - GitHub",
+          "url": "https://github.com/openclaw/clawhub",
+          "source": "tavily, exa"
+        },
+        {
+          "title": "What is OpenClaw ClawHub? - Medium",
+          "url": "https://medium.com/data-science-in-your-pocket/what-is-openclaw-clawhub-e123c2dd0db1",
+          "source": "tavily"
+        }
+      ],
+      "source_candidate_urls": [
+        "https://github.com/openclaw/skills",
+        "https://github.com/openclaw",
+        "https://github.com/openclaw/clawhub"
+      ],
+      "source_quality_notes": [
+        "Has at least one high-trust ecosystem reference (GitHub or ClawHub).",
+        "Cross-domain ecosystem confirmation exists beyond a single ranking page."
+      ],
+      "suggested_judgment": "adopt-or-follow"
+    },
+    {
+      "skill": "Github",
+      "owners": [
+        "steipete"
+      ],
+      "signal_summary": "trend_score=5.43 cross_source=True best_rank=6",
+      "validation_sources": [
+        {
+          "title": "openclaw/skills",
+          "url": "https://github.com/openclaw/skills",
+          "source": "exa, grok"
+        },
+        {
+          "title": "openclaw",
+          "url": "https://github.com/openclaw",
+          "source": "exa"
+        },
+        {
+          "title": "ClawHub - Skill Directory for OpenClaw - GitHub",
+          "url": "https://github.com/openclaw/clawhub",
+          "source": "tavily, exa, grok"
+        },
+        {
+          "title": "openclaw/clawhub - GitHub",
+          "url": "https://github.com/openclaw/clawhub/blob/main/clawhub",
+          "source": "tavily"
+        }
+      ],
+      "source_candidate_urls": [
+        "https://github.com/openclaw/skills",
+        "https://github.com/openclaw",
+        "https://github.com/openclaw/clawhub",
+        "https://github.com/openclaw/clawhub/blob/main/clawhub",
+        "https://github.com/topics/openclaw-skill",
+        "https://github.com/VoltAgent/awesome-openclaw-skills/blob/main/README.md"
+      ],
+      "source_quality_notes": [
+        "Has at least one high-trust ecosystem reference (GitHub or ClawHub).",
+        "Cross-domain ecosystem confirmation exists beyond a single ranking page."
+      ],
+      "suggested_judgment": "adopt-or-follow"
+    },
+    {
+      "skill": "Agent Browser",
+      "owners": [
+        "MaTriXy",
+        "TheSethRose"
+      ],
+      "signal_summary": "trend_score=5.43 cross_source=True best_rank=6",
+      "validation_sources": [
+        {
+          "title": "awesome-openclaw-skills/README.md at main - GitHub",
+          "url": "https://github.com/VoltAgent/awesome-openclaw-skills/blob/main/README.md",
+          "source": "tavily"
+        },
+        {
+          "title": "VoltAgent/awesome-openclaw-skills",
+          "url": "https://github.com/VoltAgent/awesome-openclaw-skills",
+          "source": "exa, grok"
+        },
+        {
+          "title": "ClawHub - Skill Directory for OpenClaw - GitHub",
+          "url": "https://github.com/openclaw/clawhub",
+          "source": "tavily, exa, grok"
+        },
+        {
+          "title": "skills/skills/thesethrose/agent-browser/SKILL.md at main - GitHub",
+          "url": "https://github.com/openclaw/skills/blob/main/skills/thesethrose/agent-browser/SKILL.md",
+          "source": "tavily, exa, grok"
+        }
+      ],
+      "source_candidate_urls": [
+        "https://github.com/VoltAgent/awesome-openclaw-skills/blob/main/README.md",
+        "https://github.com/VoltAgent/awesome-openclaw-skills",
+        "https://github.com/openclaw/clawhub",
+        "https://github.com/openclaw/skills/blob/main/skills/thesethrose/agent-browser/SKILL.md",
+        "https://github.com/VoltAgent/awesome-openclaw-skills/blob/main/categories/browser-and-automation.md",
+        "https://clawhub.ai/TheSethRose/agent-browser"
+      ],
+      "source_quality_notes": [
+        "Has at least one high-trust ecosystem reference (GitHub or ClawHub).",
+        "Cross-domain ecosystem confirmation exists beyond a single ranking page."
+      ],
+      "suggested_judgment": "adopt-or-follow"
+    }
+  ]
+}
