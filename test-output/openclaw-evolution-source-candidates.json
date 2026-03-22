@@ -1,0 +1,235 @@
+{
+  "ok": true,
+  "items": [
+    {
+      "url": "https://github.com/openclaw/clawhub",
+      "kind": "github-repo-or-page",
+      "skills": [
+        "Agent Browser",
+        "Github",
+        "Gog",
+        "Polymarket",
+        "Summarize",
+        "self-improving-agent"
+      ],
+      "references": 6,
+      "priority": "P0",
+      "reason": "Repeatedly surfaced as a supporting ecosystem reference for high-signal skills (Agent Browser, Github, Gog)."
+    },
+    {
+      "url": "https://github.com/VoltAgent/awesome-openclaw-skills/blob/main/README.md",
+      "kind": "github-repo-or-page",
+      "skills": [
+        "Agent Browser",
+        "Github",
+        "Gog"
+      ],
+      "references": 3,
+      "priority": "P0",
+      "reason": "Repeatedly surfaced as a supporting ecosystem reference for high-signal skills (Agent Browser, Github, Gog)."
+    },
+    {
+      "url": "https://github.com/openclaw/skills",
+      "kind": "github-repo-or-page",
+      "skills": [
+        "Github",
+        "Gog",
+        "Summarize"
+      ],
+      "references": 3,
+      "priority": "P0",
+      "reason": "Repeatedly surfaced as a supporting ecosystem reference for high-signal skills (Github, Gog, Summarize)."
+    },
+    {
+      "url": "https://github.com/openclaw",
+      "kind": "github-repo-or-page",
+      "skills": [
+        "Github",
+        "Summarize"
+      ],
+      "references": 2,
+      "priority": "P0",
+      "reason": "Repeatedly surfaced as a supporting ecosystem reference for high-signal skills (Github, Summarize)."
+    },
+    {
+      "url": "https://github.com/openclaw/clawhub/issues/630",
+      "kind": "issue-reference",
+      "skills": [
+        "self-improving-agent"
+      ],
+      "references": 1,
+      "priority": "P1",
+      "reason": "Issue/discussion surfaced as contextual validation or risk signal (self-improving-agent)."
+    },
+    {
+      "url": "https://github.com/openclaw/clawhub/issues/87",
+      "kind": "issue-reference",
+      "skills": [
+        "Polymarket"
+      ],
+      "references": 1,
+      "priority": "P1",
+      "reason": "Issue/discussion surfaced as contextual validation or risk signal (Polymarket)."
+    },
+    {
+      "url": "https://topclawhubskills.com/",
+      "kind": "trend-ranking-page",
+      "skills": [
+        "Gog"
+      ],
+      "references": 1,
+      "priority": "P1",
+      "reason": "Looks like a ranking/trend source useful for continued ecosystem monitoring (Gog)."
+    },
+    {
+      "url": "https://clawhub.ai/TheSethRose/agent-browser",
+      "kind": "clawhub-skill-page",
+      "skills": [
+        "Agent Browser"
+      ],
+      "references": 1,
+      "priority": "P2",
+      "reason": "Direct ClawHub skill page repeatedly surfaced during enrichment (Agent Browser)."
+    },
+    {
+      "url": "https://clawhub.ai/ivangdavila/self-improving",
+      "kind": "clawhub-skill-page",
+      "skills": [
+        "self-improving-agent"
+      ],
+      "references": 1,
+      "priority": "P2",
+      "reason": "Direct ClawHub skill page repeatedly surfaced during enrichment (self-improving-agent)."
+    },
+    {
+      "url": "https://clawhub.ai/pskoett/self-improving-agent",
+      "kind": "clawhub-skill-page",
+      "skills": [
+        "self-improving-agent"
+      ],
+      "references": 1,
+      "priority": "P2",
+      "reason": "Direct ClawHub skill page repeatedly surfaced during enrichment (self-improving-agent)."
+    },
+    {
+      "url": "https://clawhub.ai/steipete/gog",
+      "kind": "clawhub-skill-page",
+      "skills": [
+        "Gog"
+      ],
+      "references": 1,
+      "priority": "P2",
+      "reason": "Direct ClawHub skill page repeatedly surfaced during enrichment (Gog)."
+    },
+    {
+      "url": "https://github.com/VoltAgent/awesome-openclaw-skills",
+      "kind": "github-repo-or-page",
+      "skills": [
+        "Agent Browser"
+      ],
+      "references": 1,
+      "priority": "P2",
+      "reason": "Repeatedly surfaced as a supporting ecosystem reference for high-signal skills (Agent Browser)."
+    },
+    {
+      "url": "https://github.com/VoltAgent/awesome-openclaw-skills/blob/main/categories/browser-and-automation.md",
+      "kind": "github-repo-or-page",
+      "skills": [
+        "Agent Browser"
+      ],
+      "references": 1,
+      "priority": "P2",
+      "reason": "Repeatedly surfaced as a supporting ecosystem reference for high-signal skills (Agent Browser)."
+    },
+    {
+      "url": "https://github.com/chainstacklabs/polyclaw",
+      "kind": "github-repo-or-page",
+      "skills": [
+        "Polymarket"
+      ],
+      "references": 1,
+      "priority": "P2",
+      "reason": "Repeatedly surfaced as a supporting ecosystem reference for high-signal skills (Polymarket)."
+    },
+    {
+      "url": "https://github.com/lacymorrow/openclaw-polymarket-trading-skill",
+      "kind": "github-repo-or-page",
+      "skills": [
+        "Polymarket"
+      ],
+      "references": 1,
+      "priority": "P2",
+      "reason": "Repeatedly surfaced as a supporting ecosystem reference for high-signal skills (Polymarket)."
+    },
+    {
+      "url": "https://github.com/mvanhorn/clawdbot-skill-polymarket",
+      "kind": "github-repo-or-page",
+      "skills": [
+        "Polymarket"
+      ],
+      "references": 1,
+      "priority": "P2",
+      "reason": "Repeatedly surfaced as a supporting ecosystem reference for high-signal skills (Polymarket)."
+    },
+    {
+      "url": "https://github.com/openclaw/clawhub/blob/main/clawhub",
+      "kind": "github-repo-or-page",
+      "skills": [
+        "Github"
+      ],
+      "references": 1,
+      "priority": "P2",
+      "reason": "Repeatedly surfaced as a supporting ecosystem reference for high-signal skills (Github)."
+    },
+    {
+      "url": "https://github.com/openclaw/openclaw",
+      "kind": "github-repo-or-page",
+      "skills": [
+        "Gog"
+      ],
+      "references": 1,
+      "priority": "P2",
+      "reason": "Repeatedly surfaced as a supporting ecosystem reference for high-signal skills (Gog)."
+    },
+    {
+      "url": "https://github.com/openclaw/skills/blob/main/skills/pskoett/self-improving-agent/SKILL.md",
+      "kind": "skill-spec",
+      "skills": [
+        "self-improving-agent"
+      ],
+      "references": 1,
+      "priority": "P2",
+      "reason": "Direct skill specification page useful for close capability inspection (self-improving-agent)."
+    },
+    {
+      "url": "https://github.com/openclaw/skills/blob/main/skills/thesethrose/agent-browser/SKILL.md",
+      "kind": "skill-spec",
+      "skills": [
+        "Agent Browser"
+      ],
+      "references": 1,
+      "priority": "P2",
+      "reason": "Direct skill specification page useful for close capability inspection (Agent Browser)."
+    },
+    {
+      "url": "https://github.com/peterskoett/self-improving-agent",
+      "kind": "github-repo-or-page",
+      "skills": [
+        "self-improving-agent"
+      ],
+      "references": 1,
+      "priority": "P2",
+      "reason": "Repeatedly surfaced as a supporting ecosystem reference for high-signal skills (self-improving-agent)."
+    },
+    {
+      "url": "https://github.com/topics/openclaw-skill",
+      "kind": "github-repo-or-page",
+      "skills": [
+        "Github"
+      ],
+      "references": 1,
+      "priority": "P2",
+      "reason": "Repeatedly surfaced as a supporting ecosystem reference for high-signal skills (Github)."
+    }
+  ]
+}
