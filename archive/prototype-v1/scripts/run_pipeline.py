@@ -25,7 +25,7 @@ def main():
     ap.add_argument('--state', required=True)
     ap.add_argument('--window-hours', type=int, default=24)
     ap.add_argument('--limit-per-feed', type=int, default=10)
-    ap.add_argument('--digest-title', default='📡 RSS Digest')
+    ap.add_argument('--digest-title', default='📡 AI Coding / Agent 工具日报')
     ap.add_argument('--max-items', type=int, default=10)
     ap.add_argument('--output-format', choices=['json', 'text', 'discord'], default='json')
     ap.add_argument('--triage-mode', choices=['general-tech', 'agentic'], default='general-tech')
@@ -41,6 +41,7 @@ def main():
         enrichment_candidates = os.path.join(tmp, 'enrichment_candidates.json')
         enrichment_results = os.path.join(tmp, 'enrichment_results.json')
         merged = os.path.join(tmp, 'merged.json')
+        github_radar = os.path.join(tmp, 'github_radar.json')
 
         data = run_json([
             sys.executable, str(BASE / 'fetch_feeds.py'),
@@ -95,6 +96,17 @@ def main():
         with open(merged, 'w', encoding='utf-8') as f:
             json.dump(merged_data, f, ensure_ascii=False, indent=2)
 
+        github_radar_data = run_json([
+            sys.executable, str(BASE / 'github_radar.py'),
+            '--input', merged,
+        ])
+        with open(github_radar, 'w', encoding='utf-8') as f:
+            json.dump(github_radar_data, f, ensure_ascii=False, indent=2)
+
+        merged_data['github_radar'] = github_radar_data.get('repos', [])
+        with open(merged, 'w', encoding='utf-8') as f:
+            json.dump(merged_data, f, ensure_ascii=False, indent=2)
+
         digest = run_text([
             sys.executable, str(BASE / 'build_digest.py'),
             '--input', merged,
@@ -115,6 +127,7 @@ def main():
             'feed_health': data.get('feed_health', []),
             'enrichment_candidates': enrichment_candidate_data.get('candidates', []),
             'enrichment_results': enrichment_result_data.get('results', []),
+            'github_radar': github_radar_data.get('repos', []),
             'digest': digest,
             'items': merged_data.get('items', []),
             'send_items': [x for x in merged_data.get('items', []) if x.get('triage', {}).get('final_decision', x.get('triage', {}).get('decision')) == 'send'],

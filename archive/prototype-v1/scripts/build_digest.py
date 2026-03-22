@@ -161,18 +161,12 @@ def main():
         sections = [
             ('important_updates', '## 重要更新'),
             ('applied_workflows', '## 应用层新玩法'),
-            ('github_radar', '## GitHub 项目雷达'),
             ('community_practice', '## 社区实战 / 修复 / 技巧'),
         ]
         seen_titles = set(x.get('title') for x in top_picks)
         running_idx = len(top_picks) + 1
         for key, header in sections:
             section_items = [x for x in buckets.get(key, []) if x.get('title') not in seen_titles]
-            if not section_items and key == 'github_radar':
-                lines.append(header)
-                lines.append('- 暂无单独 GitHub 项目雷达条目；下一步会接入 star 基数 / 最近 star 增长。')
-                lines.append('')
-                continue
             if not section_items:
                 continue
             lines.append(header)
@@ -180,6 +174,21 @@ def main():
                 lines.extend(render_item(running_idx, item))
                 lines.append('')
                 running_idx += 1
+
+        lines.append('## GitHub 项目雷达')
+        radar = data.get('github_radar', []) or []
+        if not radar:
+            lines.append('- 暂无可展示的 GitHub 项目雷达条目。')
+            lines.append('')
+        else:
+            for idx, repo in enumerate(radar[:3], start=1):
+                lines.append(f'- {idx}. {repo.get("repo")}｜Stars {repo.get("stars", 0)}｜雷达分 {repo.get("score")}')
+                if repo.get('description'):
+                    lines.append(f'  - 简介：{trim(repo.get("description"), 120)}')
+                if repo.get('linked_title'):
+                    lines.append(f'  - 线索：{trim(repo.get("linked_title"), 120)}（来源 {repo.get("linked_feed")})')
+                lines.append(f'  - 链接：<{repo.get("url")}>')
+            lines.append('')
 
     chunks = split_chunks(lines, max_chars=1700 if args.format == 'discord' else 100000)
     if len(chunks) == 1:
