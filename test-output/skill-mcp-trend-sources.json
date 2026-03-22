@@ -1,0 +1,73 @@
+{
+  "ok": true,
+  "profile": "openclaw-evolution",
+  "source_pack": "skill-mcp-ecosystem",
+  "kind": "trend-sources-snapshot",
+  "items": [
+    {
+      "name": "skills-weekly",
+      "url": "https://clawhub.ai/ademczuk/skills-weekly",
+      "role": "trend-source",
+      "candidates": [
+        "OpenClaw Skills Weekly",
+        "ClawHub ClawHub Skills Upload",
+        "Import Search System Light",
+        "Dark Sign",
+        "GitHub Skill"
+      ],
+      "count": 5
+    },
+    {
+      "name": "last30days-weekly",
+      "url": "https://playbooks.com/skills/openclaw/skills/last30days-weekly",
+      "role": "trend-source",
+      "candidates": [
+        "ademczuk",
+        "last30days-weekly",
+        "Home MCP Skills Advertise",
+        "Tools Login",
+        "This"
+      ],
+      "count": 5
+    },
+    {
+      "name": "clawhubtrends-rising",
+      "url": "https://clawhubtrends.com/rising.html",
+      "role": "rising-source",
+      "candidates": [
+        "Rising Skills",
+        "ClawHub Trends ClawHub Trends",
+        "Dashboard Rising Leaderboard Owners",
+        "Rising Skills Skills",
+        "Absolute Delta"
+      ],
+      "count": 5
+    },
+    {
+      "name": "topclawhubskills",
+      "url": "https://topclawhubskills.com/",
+      "role": "top-base-source",
+      "candidates": [
+        "Top ClawHub Skills",
+        "OpenClawLab",
+        "Live Data",
+        "Updated",
+        "Top ClawHub Skills Every"
+      ],
+      "count": 5
+    },
+    {
+      "name": "openclaw-hub-top-skills",
+      "url": "https://openclaw-hub.org/openclaw-hub-top-skills.html",
+      "role": "top-base-source",
+      "candidates": [
+        "OpenClaw Hub Top Skills",
+        "Most Popular ClawHub Skills",
+        "OpenClaw Hub Home Skills",
+        "Top Skills Getting Started",
+        "Security OpenClaw Hub Top"
+      ],
+      "count": 5
+    }
+  ]
+}
