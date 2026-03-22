@@ -1,0 +1,367 @@
+{
+  "ok": true,
+  "watchlist": "applied-ai-ecosystem",
+  "count": 15,
+  "items": [
+    {
+      "repo": "obra/superpowers",
+      "url": "https://github.com/obra/superpowers",
+      "role": "framework-core",
+      "tags": [
+        "claude-code",
+        "codex",
+        "gemini-cli",
+        "skills",
+        "workflows"
+      ],
+      "description": "An agentic skills framework & software development methodology that works.",
+      "stars": 103753,
+      "forks": 8341,
+      "pushedAt": "2026-03-19T20:26:22Z",
+      "topics": [],
+      "keyword_hits": 5,
+      "watch_score": 5.8,
+      "section": "entries"
+    },
+    {
+      "repo": "gsd-build/get-shit-done",
+      "url": "https://github.com/gsd-build/get-shit-done",
+      "role": "workflow-framework",
+      "tags": [
+        "claude-code",
+        "codex",
+        "gemini-cli",
+        "context-engineering"
+      ],
+      "description": "A light-weight and powerful meta-prompting, context engineering and spec-driven development system for Claude Code by TÂCHES.",
+      "stars": 38242,
+      "forks": 3112,
+      "pushedAt": "2026-03-21T22:36:04Z",
+      "topics": [
+        "claude-code",
+        "context-engineering",
+        "meta-prompting",
+        "spec-driven-development"
+      ],
+      "keyword_hits": 4,
+      "watch_score": 4.6,
+      "section": "entries"
+    },
+    {
+      "repo": "google-gemini/gemini-cli",
+      "url": "https://github.com/google-gemini/gemini-cli",
+      "role": "official-anchor",
+      "tags": [],
+      "description": "An open-source AI agent that brings the power of Gemini directly into your terminal.",
+      "stars": 98630,
+      "forks": 12498,
+      "pushedAt": "2026-03-22T06:33:52Z",
+      "topics": [
+        "gemini",
+        "gemini-api",
+        "ai",
+        "ai-agents",
+        "cli",
+        "mcp-client",
+        "mcp-server"
+      ],
+      "keyword_hits": 2,
+      "watch_score": 4.4,
+      "section": "anchors"
+    },
+    {
+      "repo": "anthropics/claude-code",
+      "url": "https://github.com/anthropics/claude-code",
+      "role": "official-anchor",
+      "tags": [],
+      "description": "Claude Code is an agentic coding tool that lives in your terminal, understands your codebase, and helps you code faster by executing routine tasks, explaining complex code, and handling git workflows - all through natural language commands.",
+      "stars": 81050,
+      "forks": 6725,
+      "pushedAt": "2026-03-20T22:24:50Z",
+      "topics": [],
+      "keyword_hits": 2,
+      "watch_score": 4.4,
+      "section": "anchors"
+    },
+    {
+      "repo": "openai/codex",
+      "url": "https://github.com/openai/codex",
+      "role": "official-anchor",
+      "tags": [],
+      "description": "Lightweight coding agent that runs in your terminal",
+      "stars": 66798,
+      "forks": 8925,
+      "pushedAt": "2026-03-22T06:26:22Z",
+      "topics": [],
+      "keyword_hits": 1,
+      "watch_score": 4.0,
+      "section": "anchors"
+    },
+    {
+      "repo": "mindfold-ai/Trellis",
+      "url": "https://github.com/mindfold-ai/Trellis",
+      "role": "workflow-framework",
+      "tags": [
+        "claude-code",
+        "codex",
+        "gemini-cli",
+        "workflow"
+      ],
+      "description": "All-in-one AI framework & toolkit",
+      "stars": 3946,
+      "forks": 201,
+      "pushedAt": "2026-03-22T03:03:55Z",
+      "topics": [
+        "ai-agent",
+        "ai-coding",
+        "claude-code",
+        "cli",
+        "cursor",
+        "developer-tools",
+        "typescript",
+        "workflow",
+        "codex"
+      ],
+      "keyword_hits": 4,
+      "watch_score": 3.8,
+      "section": "entries"
+    },
+    {
+      "repo": "davila7/claude-code-templates",
+      "url": "https://github.com/davila7/claude-code-templates",
+      "role": "template-ecosystem",
+      "tags": [
+        "claude-code",
+        "templates",
+        "mcp",
+        "hooks"
+      ],
+      "description": "CLI tool for configuring and monitoring Claude Code",
+      "stars": 23339,
+      "forks": 2235,
+      "pushedAt": "2026-03-22T04:24:58Z",
+      "topics": [
+        "anthropic",
+        "anthropic-claude",
+        "claude",
+        "claude-code"
+      ],
+      "keyword_hits": 3,
+      "watch_score": 3.4,
+      "section": "entries"
+    },
+    {
+      "repo": "gsd-build/gsd-2",
+      "url": "https://github.com/gsd-build/gsd-2",
+      "role": "agent-framework",
+      "tags": [
+        "claude-code",
+        "codex",
+        "gemini-cli",
+        "workflow"
+      ],
+      "description": "A powerful meta-prompting, context engineering and spec-driven development system that enables agents to work for long periods of time autonomously without losing track of the big picture",
+      "stars": 2600,
+      "forks": 240,
+      "pushedAt": "2026-03-22T03:33:55Z",
+      "topics": [
+        "context-engineering",
+        "meta-prompting",
+        "spec-driven-development"
+      ],
+      "keyword_hits": 4,
+      "watch_score": 3.2,
+      "section": "entries"
+    },
+    {
+      "repo": "nyldn/claude-octopus",
+      "url": "https://github.com/nyldn/claude-octopus",
+      "role": "orchestration-tool",
+      "tags": [
+        "claude-code",
+        "codex",
+        "gemini-cli",
+        "multi-model"
+      ],
+      "description": "Multi-AI orchestration plugin for Claude Code — 7 providers (Codex, Gemini, Claude, Perplexity, OpenRouter, Ollama, Copilot), 47 commands, 50 skills, Double Diamond workflows",
+      "stars": 1817,
+      "forks": 151,
+      "pushedAt": "2026-03-22T03:34:28Z",
+      "topics": [
+        "ai-agents",
+        "ai-orchestration",
+        "claude-code",
+        "claude-code-plugin",
+        "codex",
+        "copilot",
+        "developer-tools",
+        "double-diamond",
+        "gemini",
+        "multi-ai",
+        "multi-llm",
+        "ollama"
+      ],
+      "keyword_hits": 7,
+      "watch_score": 3.2,
+      "section": "entries"
+    },
+    {
+      "repo": "jarrodwatts/claude-hud",
+      "url": "https://github.com/jarrodwatts/claude-hud",
+      "role": "plugin-tool",
+      "tags": [
+        "claude-code",
+        "plugin",
+        "observability"
+      ],
+      "description": "A Claude Code plugin that shows what's happening - context usage, active tools, running agents, and todo progress",
+      "stars": 10661,
+      "forks": 453,
+      "pushedAt": "2026-03-20T01:45:28Z",
+      "topics": [
+        "anthropic",
+        "claude",
+        "claude-code",
+        "cli",
+        "plugin",
+        "statusline",
+        "typescript"
+      ],
+      "keyword_hits": 2,
+      "watch_score": 3.0,
+      "section": "entries"
+    },
+    {
+      "repo": "shinpr/claude-code-workflows",
+      "url": "https://github.com/shinpr/claude-code-workflows",
+      "role": "workflow-marketplace",
+      "tags": [
+        "claude-code",
+        "workflows",
+        "plugins"
+      ],
+      "description": "Production-ready development workflows for Claude Code, powered by specialized AI agents.",
+      "stars": 222,
+      "forks": 38,
+      "pushedAt": "2026-03-21T08:25:12Z",
+      "topics": [
+        "claude-code",
+        "code-quality",
+        "productivity",
+        "claude-code-plugin",
+        "ai-agents",
+        "skills",
+        "development-workflow",
+        "agentic-ai",
+        "automation",
+        "developer-tools",
+        "prompt-engineering",
+        "agent-skills",
+        "llm-orchestration"
+      ],
+      "keyword_hits": 5,
+      "watch_score": 2.0,
+      "section": "entries"
+    },
+    {
+      "repo": "BryanHoo/superpowers-ccg",
+      "url": "https://github.com/BryanHoo/superpowers-ccg",
+      "role": "derivative-framework",
+      "tags": [
+        "claude-code",
+        "codex",
+        "gemini-cli",
+        "mcp"
+      ],
+      "description": "Claude Code superpowers: core skills library",
+      "stars": 81,
+      "forks": 1,
+      "pushedAt": "2026-01-28T12:07:37Z",
+      "topics": [],
+      "keyword_hits": 5,
+      "watch_score": 2.0,
+      "section": "entries"
+    },
+    {
+      "repo": "kingbootoshi/codex-orchestrator",
+      "url": "https://github.com/kingbootoshi/codex-orchestrator",
+      "role": "orchestration-tool",
+      "tags": [
+        "codex",
+        "claude-code",
+        "orchestration"
+      ],
+      "description": "Delegate tasks to OpenAI Codex agents via tmux sessions. Designed for Claude Code orchestration.",
+      "stars": 248,
+      "forks": 37,
+      "pushedAt": "2026-03-12T18:41:35Z",
+      "topics": [],
+      "keyword_hits": 3,
+      "watch_score": 1.2,
+      "section": "entries"
+    },
+    {
+      "repo": "feiskyer/codex-settings",
+      "url": "https://github.com/feiskyer/codex-settings",
+      "role": "codex-settings",
+      "tags": [
+        "codex",
+        "skills",
+        "prompts",
+        "config"
+      ],
+      "description": "OpenAI Codex CLI settings, configurations, skills and prompts for vibe coding",
+      "stars": 163,
+      "forks": 24,
+      "pushedAt": "2026-03-09T01:37:32Z",
+      "topics": [
+        "agentic-ai",
+        "agents",
+        "ai",
+        "codex",
+        "copilot",
+        "litellm",
+        "openai",
+        "spec-driven-development",
+        "vibe-coding",
+        "claude-code",
+        "claude-skills"
+      ],
+      "keyword_hits": 3,
+      "watch_score": 1.2,
+      "section": "entries"
+    },
+    {
+      "repo": "earchibald/gemini-superpowers",
+      "url": "https://github.com/earchibald/gemini-superpowers",
+      "role": "derivative-framework",
+      "tags": [
+        "gemini-cli",
+        "skills",
+        "workflows"
+      ],
+      "description": "An adaptor for Gemini CLI to use the world-class obra/superpowers framework.",
+      "stars": 12,
+      "forks": 1,
+      "pushedAt": "2026-02-09T03:51:15Z",
+      "topics": [],
+      "keyword_hits": 3,
+      "watch_score": 1.2,
+      "section": "entries"
+    }
+  ],
+  "indexes": [
+    {
+      "url": "https://github.com/caramaschiHG/awesome-ai-agents-2026",
+      "role": "category-index"
+    },
+    {
+      "url": "https://github.com/rohitg00/awesome-claude-code-toolkit",
+      "role": "category-index"
+    },
+    {
+      "url": "https://github.com/quemsah/awesome-claude-plugins",
+      "role": "category-index"
+    }
+  ]
+}

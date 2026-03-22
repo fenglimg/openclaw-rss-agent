@@ -1,0 +1,59 @@
+id: applied-ai-ecosystem
+name: Applied AI Ecosystem
+purpose: >
+  Track framework ecosystems, workflow systems, plugin/template/skills ecosystems,
+  and adjacent author-led tooling around Claude Code, Codex, Gemini CLI, MCP, and AI coding workflows.
+entries:
+  - repo: obra/superpowers
+    role: framework-core
+    tags: [claude-code, codex, gemini-cli, skills, workflows]
+  - repo: mindfold-ai/Trellis
+    role: workflow-framework
+    tags: [claude-code, codex, gemini-cli, workflow]
+  - repo: gsd-build/get-shit-done
+    role: workflow-framework
+    tags: [claude-code, codex, gemini-cli, context-engineering]
+  - repo: gsd-build/GSD-2
+    role: agent-framework
+    tags: [claude-code, codex, gemini-cli, workflow]
+  - repo: jarrodwatts/claude-hud
+    role: plugin-tool
+    tags: [claude-code, plugin, observability]
+  - repo: shinpr/claude-code-workflows
+    role: workflow-marketplace
+    tags: [claude-code, workflows, plugins]
+  - repo: davila7/claude-code-templates
+    role: template-ecosystem
+    tags: [claude-code, templates, mcp, hooks]
+  - repo: feiskyer/codex-settings
+    role: codex-settings
+    tags: [codex, skills, prompts, config]
+  - repo: kingbootoshi/codex-orchestrator
+    role: orchestration-tool
+    tags: [codex, claude-code, orchestration]
+  - repo: nyldn/claude-octopus
+    role: orchestration-tool
+    tags: [claude-code, codex, gemini-cli, multi-model]
+  - repo: BryanHoo/superpowers-ccg
+    role: derivative-framework
+    tags: [claude-code, codex, gemini-cli, mcp]
+  - repo: earchibald/gemini-superpowers
+    role: derivative-framework
+    tags: [gemini-cli, skills, workflows]
+  - repo: PrimeLocus/Hydra
+    role: orchestration-framework
+    tags: [claude-code, codex, gemini-cli, multi-agent]
+anchors:
+  - repo: anthropics/claude-code
+    role: official-anchor
+  - repo: openai/codex
+    role: official-anchor
+  - repo: google-gemini/gemini-cli
+    role: official-anchor
+indexes:
+  - url: https://github.com/caramaschiHG/awesome-ai-agents-2026
+    role: category-index
+  - url: https://github.com/rohitg00/awesome-claude-code-toolkit
+    role: category-index
+  - url: https://github.com/quemsah/awesome-claude-plugins
+    role: category-index
