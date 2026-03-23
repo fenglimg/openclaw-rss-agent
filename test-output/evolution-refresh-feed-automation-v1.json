@@ -1,0 +1,253 @@
+{
+  "title": "evolution-refresh-feed-automation-v1",
+  "generated_at": "2026-03-23T14:39:10.957053+00:00",
+  "surface": "refresh",
+  "policy": {
+    "anti_repeat": [
+      "cooldown",
+      "repeat_penalty",
+      "suppressed_until",
+      "event_gating",
+      "angle_gating"
+    ],
+    "sort_key": "effective_serve_score",
+    "item_limit": 6
+  },
+  "summary": {
+    "candidate_count": 11,
+    "visible_count": 2,
+    "selected_count": 2,
+    "suppressed_count": 9,
+    "gated_count": 11,
+    "selected_names": [
+      "Proactive Agent",
+      "jarrodwatts/claude-hud"
+    ],
+    "suppressed_names": [
+      "Agent Browser",
+      "davila7/claude-code-templates",
+      "Gog",
+      "anthropics/claude-code",
+      "google-gemini/gemini-cli",
+      "gsd-build/get-shit-done",
+      "openai/codex",
+      "Polymarket",
+      "Weather"
+    ]
+  },
+  "items": [
+    {
+      "rank": 1,
+      "canonical_id": "capability:proactive-agent",
+      "name": "Proactive Agent",
+      "queue": "priority",
+      "target_audience": "both",
+      "target_audience_label": "双向收益",
+      "recommended_action": "adopt_candidate",
+      "recommended_action_label": "采纳候选",
+      "why_now": "圈内作者直接把 Proactive Agent 的价值点说了出来：Proactive Agent is one of the more interesting behavior-layer OpenClaw surfaces I have seen lately。",
+      "recommended_action_reason": "今天先按能力层方向重点看一遍。",
+      "evidence_summary": {
+        "stable_count": 2,
+        "signal_count": 3,
+        "verification_count": 1,
+        "lanes_with_evidence": [
+          "stable",
+          "signal",
+          "verification"
+        ],
+        "label_preview": [
+          "主链接",
+          "稳定来源 2",
+          "X linked object"
+        ]
+      },
+      "base_serve_score": 25,
+      "effective_serve_score": 23,
+      "repeat_penalty": 2,
+      "cooldown_active": true,
+      "same_event": true,
+      "same_angle": true,
+      "fresh_override": true,
+      "suppressed_until": "2026-03-24T04:28:50.423335+00:00",
+      "suppression_reason": "",
+      "links": [
+        "https://github.com/openclaw/skills",
+        "https://github.com/VoltAgent/awesome-openclaw-skills"
+      ]
+    },
+    {
+      "rank": 2,
+      "canonical_id": "repo:jarrodwatts/claude-hud",
+      "name": "jarrodwatts/claude-hud",
+      "queue": "priority",
+      "target_audience": "user",
+      "target_audience_label": "用户升级",
+      "recommended_action": "try_now",
+      "recommended_action_label": "马上试",
+      "why_now": "圈内作者直接把 jarrodwatts/claude-hud 的价值点说了出来：Claude HUD is one of the few Claude Code add-ons that actually changes how I work day to day。",
+      "recommended_action_reason": "今天先把它放进优先体验名单。",
+      "evidence_summary": {
+        "stable_count": 2,
+        "signal_count": 3,
+        "verification_count": 1,
+        "lanes_with_evidence": [
+          "stable",
+          "signal",
+          "verification"
+        ],
+        "label_preview": [
+          "主链接",
+          "稳定来源 2",
+          "X linked object"
+        ]
+      },
+      "base_serve_score": 24,
+      "effective_serve_score": 22,
+      "repeat_penalty": 2,
+      "cooldown_active": true,
+      "same_event": true,
+      "same_angle": true,
+      "fresh_override": true,
+      "suppressed_until": "2026-03-24T04:28:50.423335+00:00",
+      "suppression_reason": "",
+      "links": [
+        "https://github.com/jarrodwatts/claude-hud",
+        "https://github.com/jarrodwatts/claude-delegator"
+      ]
+    }
+  ],
+  "suppressed_items": [
+    {
+      "canonical_id": "skill:agent-browser",
+      "name": "Agent Browser",
+      "queue": "priority",
+      "base_serve_score": 23,
+      "effective_serve_score": -85,
+      "repeat_penalty": 8,
+      "suppressed_until": "2026-03-24T10:28:50.423335+00:00",
+      "suppression_reason": "cooldown:same-event+same-angle",
+      "same_event": true,
+      "same_angle": true
+    },
+    {
+      "canonical_id": "repo:davila7/claude-code-templates",
+      "name": "davila7/claude-code-templates",
+      "queue": "priority",
+      "base_serve_score": 19,
+      "effective_serve_score": -89,
+      "repeat_penalty": 8,
+      "suppressed_until": "2026-03-24T10:28:50.423335+00:00",
+      "suppression_reason": "cooldown:same-event+same-angle",
+      "same_event": true,
+      "same_angle": true
+    },
+    {
+      "canonical_id": "workflow:gog",
+      "name": "Gog",
+      "queue": "follow",
+      "base_serve_score": 19,
+      "effective_serve_score": -89,
+      "repeat_penalty": 8,
+      "suppressed_until": "2026-03-24T14:28:50.423335+00:00",
+      "suppression_reason": "cooldown:same-event+same-angle",
+      "same_event": true,
+      "same_angle": true
+    },
+    {
+      "canonical_id": "repo:anthropics/claude-code",
+      "name": "anthropics/claude-code",
+      "queue": "official_anchors",
+      "base_serve_score": 17,
+      "effective_serve_score": -91,
+      "repeat_penalty": 8,
+      "suppressed_until": "2026-03-24T02:28:50.423335+00:00",
+      "suppression_reason": "cooldown:same-event+same-angle",
+      "same_event": true,
+      "same_angle": true
+    },
+    {
+      "canonical_id": "repo:google-gemini/gemini-cli",
+      "name": "google-gemini/gemini-cli",
+      "queue": "official_anchors",
+      "base_serve_score": 17,
+      "effective_serve_score": -91,
+      "repeat_penalty": 8,
+      "suppressed_until": "2026-03-24T02:28:50.423335+00:00",
+      "suppression_reason": "cooldown:same-event+same-angle",
+      "same_event": true,
+      "same_angle": true
+    },
+    {
+      "canonical_id": "repo:gsd-build/get-shit-done",
+      "name": "gsd-build/get-shit-done",
+      "queue": "follow",
+      "base_serve_score": 17,
+      "effective_serve_score": -91,
+      "repeat_penalty": 8,
+      "suppressed_until": "2026-03-24T20:28:50.423335+00:00",
+      "suppression_reason": "cooldown:same-event+same-angle",
+      "same_event": true,
+      "same_angle": true
+    },
+    {
+      "canonical_id": "repo:openai/codex",
+      "name": "openai/codex",
+      "queue": "official_anchors",
+      "base_serve_score": 17,
+      "effective_serve_score": -91,
+      "repeat_penalty": 8,
+      "suppressed_until": "2026-03-24T02:28:50.423335+00:00",
+      "suppression_reason": "cooldown:same-event+same-angle",
+      "same_event": true,
+      "same_angle": true
+    },
+    {
+      "canonical_id": "workflow:polymarket",
+      "name": "Polymarket",
+      "queue": "deprioritized",
+      "base_serve_score": 16,
+      "effective_serve_score": -92,
+      "repeat_penalty": 8,
+      "suppressed_until": "2026-03-25T02:28:50.423335+00:00",
+      "suppression_reason": "cooldown:same-event+same-angle",
+      "same_event": true,
+      "same_angle": true
+    },
+    {
+      "canonical_id": "skill:weather",
+      "name": "Weather",
+      "queue": "deprioritized",
+      "base_serve_score": 15,
+      "effective_serve_score": -93,
+      "repeat_penalty": 8,
+      "suppressed_until": "2026-03-25T02:28:50.423335+00:00",
+      "suppression_reason": "cooldown:same-event+same-angle",
+      "same_event": true,
+      "same_angle": true
+    }
+  ],
+  "artifact_role": "refresh-feed",
+  "inputs": {
+    "payload": {
+      "title": "daily-payload-v2",
+      "path": "test-output/evolution-refresh-payload-v1.json"
+    },
+    "recommendation_state_in": {
+      "title": "evolution-recommendation-memory-pre-serve-v1",
+      "path": "test-output/evolution-recommendation-memory-pre-serve-v1.json",
+      "lifecycle_stage": "pre-serve"
+    }
+  },
+  "outputs": {
+    "recommendation_state_out": {
+      "title": "evolution-recommendation-memory-post-serve-v1",
+      "path": "test-output/evolution-recommendation-memory-post-serve-v1.json",
+      "lifecycle_stage": "post-serve"
+    }
+  },
+  "producer": {
+    "script": "scripts-v2/run_evolution_refresh_pipeline_v1.py",
+    "mode": "automation-ready"
+  }
+}

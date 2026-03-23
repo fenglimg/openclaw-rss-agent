@@ -1,0 +1,10 @@
+{
+  "ok": true,
+  "status": "sent",
+  "channel_id": "1484951098660753558",
+  "message": "[ACP] Phase 4 unified refresh runner\nstatus=review-ready | tests=passed | artifacts=test-output/evolution-refresh-run-v1.json, test-output/evolution-refresh-feed-automation-v1.json, outputs/evolution-refresh-feed-automation-v1.md, outputs/evolution-refresh-review-v1.md | recommend_review=yes",
+  "token_source": "env.DISCORD_BOT_TOKEN_SILIJIAN",
+  "http_status": 200,
+  "response_excerpt": "{\"type\":0,\"content\":\"[ACP] Phase 4 unified refresh runner\\nstatus=review-ready | tests=passed | artifacts=test-output/evolution-refresh-run-v1.json, test-output/evolution-refresh-feed-automation-v1.json, outputs/evolution-refresh-feed-automation-v1.md, outputs/evolution-refresh-review-v1.md | recommend_review=yes\",\"mentions\":[],\"mention_roles\":[],\"attachments\":[],\"embeds\":[],\"timestamp\":\"2026-03-23T14:39:11.407000+00:00\",\"edited_timestamp\":null,\"flags\":0,\"components\":[],\"id\":\"1485649116531920956\",\"channel_id\":\"1484951098660753558\",\"author\":{\"id\":\"1481152336561705022\",\"username\":\"silijian\",\"avatar\":null,\"discriminator\":\"5683\",\"public_flags\":0,\"flags\":0,\"bot\":true,\"banner\":null,\"accent_color\":null,\"global_name\":null,\"avatar_decoration_data\":null,\"collectibles\":null,\"display_name_styles\":null,\"banner_color\":null,\"clan\":null,\"primary_guild\":null},\"pinned\":false,\"mention_everyone\":false,\"tts\":false,\"position\":2717}\n",
+  "message_id": "1485649116531920956"
+}

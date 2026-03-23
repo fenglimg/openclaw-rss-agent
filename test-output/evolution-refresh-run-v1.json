@@ -1,0 +1,88 @@
+{
+  "title": "evolution-refresh-run-v1",
+  "status": "review-ready",
+  "generated_at": "2026-03-23T14:39:10.957053+00:00",
+  "runner": "scripts-v2/run_evolution_refresh_pipeline_v1.py",
+  "mode": "automation-ready",
+  "surface": "refresh",
+  "execution": {
+    "mode": "review",
+    "payload_strategy": "rebuild",
+    "item_limit": 6,
+    "review_ready_note_requested": true,
+    "tests_status": "passed",
+    "recommend_review": "yes"
+  },
+  "inputs": {
+    "payload": {
+      "title": "daily-payload-v2",
+      "path": "test-output/evolution-refresh-payload-v1.json"
+    },
+    "recommendation_state_in": {
+      "title": "evolution-recommendation-memory-pre-serve-v1",
+      "path": "test-output/evolution-recommendation-memory-pre-serve-v1.json",
+      "lifecycle_stage": "pre-serve"
+    }
+  },
+  "outputs": {
+    "recommendation_state_out": {
+      "title": "evolution-recommendation-memory-post-serve-v1",
+      "path": "test-output/evolution-recommendation-memory-post-serve-v1.json",
+      "lifecycle_stage": "post-serve"
+    },
+    "recommendation_current_state": {
+      "title": "evolution-recommendation-memory-current-state-v1",
+      "path": "test-output/evolution-recommendation-memory-current-state-v1.json",
+      "lifecycle_stage": "current-state"
+    },
+    "refresh_feed": {
+      "title": "evolution-refresh-feed-automation-v1",
+      "path": "test-output/evolution-refresh-feed-automation-v1.json"
+    }
+  },
+  "summary": {
+    "candidate_count": 11,
+    "selected_count": 2,
+    "suppressed_count": 9,
+    "selected_names": [
+      "Proactive Agent",
+      "jarrodwatts/claude-hud"
+    ],
+    "suppressed_names": [
+      "Agent Browser",
+      "davila7/claude-code-templates",
+      "Gog",
+      "anthropics/claude-code",
+      "google-gemini/gemini-cli",
+      "gsd-build/get-shit-done",
+      "openai/codex",
+      "Polymarket",
+      "Weather"
+    ]
+  },
+  "artifacts": {
+    "payload": "test-output/evolution-refresh-payload-v1.json",
+    "pre_serve_memory": "test-output/evolution-recommendation-memory-pre-serve-v1.json",
+    "post_serve_memory": "test-output/evolution-recommendation-memory-post-serve-v1.json",
+    "current_state": "test-output/evolution-recommendation-memory-current-state-v1.json",
+    "refresh_feed": "test-output/evolution-refresh-feed-automation-v1.json",
+    "refresh_report": "outputs/evolution-refresh-feed-automation-v1.md",
+    "run_manifest": "test-output/evolution-refresh-run-v1.json",
+    "review": "outputs/evolution-refresh-review-v1.md",
+    "review_note": "test-output/discord-review-note-evolution-refresh-v1.json"
+  },
+  "review_note": {
+    "requested": true,
+    "output": "test-output/discord-review-note-evolution-refresh-v1.json",
+    "result": {
+      "ok": true,
+      "status": "sent",
+      "channel_id": "1484951098660753558",
+      "message": "[ACP] Phase 4 unified refresh runner\nstatus=review-ready | tests=passed | artifacts=test-output/evolution-refresh-run-v1.json, test-output/evolution-refresh-feed-automation-v1.json, outputs/evolution-refresh-feed-automation-v1.md, outputs/evolution-refresh-review-v1.md | recommend_review=yes",
+      "token_source": "env.DISCORD_BOT_TOKEN_SILIJIAN",
+      "http_status": 200,
+      "response_excerpt": "{\"type\":0,\"content\":\"[ACP] Phase 4 unified refresh runner\\nstatus=review-ready | tests=passed | artifacts=test-output/evolution-refresh-run-v1.json, test-output/evolution-refresh-feed-automation-v1.json, outputs/evolution-refresh-feed-automation-v1.md, outputs/evolution-refresh-review-v1.md | recommend_review=yes\",\"mentions\":[],\"mention_roles\":[],\"attachments\":[],\"embeds\":[],\"timestamp\":\"2026-03-23T14:39:11.407000+00:00\",\"edited_timestamp\":null,\"flags\":0,\"components\":[],\"id\":\"1485649116531920956\",\"channel_id\":\"1484951098660753558\",\"author\":{\"id\":\"1481152336561705022\",\"username\":\"silijian\",\"avatar\":null,\"discriminator\":\"5683\",\"public_flags\":0,\"flags\":0,\"bot\":true,\"banner\":null,\"accent_color\":null,\"global_name\":null,\"avatar_decoration_data\":null,\"collectibles\":null,\"display_name_styles\":null,\"banner_color\":null,\"clan\":null,\"primary_guild\":null},\"pinned\":false,\"mention_everyone\":false,\"tts\":false,\"position\":2717}\n",
+      "message_id": "1485649116531920956"
+    }
+  }
+}

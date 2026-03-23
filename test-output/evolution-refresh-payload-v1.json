@@ -1,0 +1,2386 @@
+{
+  "title": "daily-payload-v2",
+  "generated_at": "2026-03-23T14:39:10.957053+00:00",
+  "sources": [
+    "outputs/applied-ai-evolution-brief-v5.md",
+    "outputs/openclaw-evolution-brief-v15.md"
+  ],
+  "x_signal_lane": {
+    "collector": "x-watchlist-contract",
+    "collector_status": "mock-watchlist-ready",
+    "mode": "mock-watchlist",
+    "mode_label": "mock watchlist fallback",
+    "signal_layer_only": true,
+    "stable_ingest": false,
+    "roles": [
+      "author-signal",
+      "editorial-reference",
+      "risk/evidence"
+    ],
+    "artifact_paths": {
+      "author_signals": "test-output/x-author-signals-v1.json",
+      "linked_objects": "test-output/x-linked-objects-v1.json",
+      "candidate_boosts": "test-output/x-candidate-boosts-v1.json",
+      "watchlist_summary": "outputs/x-watchlist-summary-v1.md"
+    },
+    "artifact_counts": {
+      "author_signals": 4,
+      "linked_objects": 2,
+      "candidate_boosts": 2
+    },
+    "reference_docs": [
+      "references/x-signal-research.md",
+      "references/x-source-spec-v0.md",
+      "references/x-watchlist-v0.md",
+      "references/x-watchlist-seeds-v0.md",
+      "references/x-collector-contract-v1.md",
+      "references/x-integration-flow-v1.md"
+    ],
+    "summary_highlights": [
+      "X can boost candidate generation without becoming a stable primary source。",
+      "X can provide repeat-convergence signals across trusted authors。",
+      "X can attach editorial and weak risk context to canonical objects。"
+    ],
+    "summary_excerpt": "First mock collector output showing how X watchlist signals can feed the current evolution discovery system。",
+    "matched_item_count": 4,
+    "matched_items": [
+      "Proactive Agent",
+      "jarrodwatts/claude-hud",
+      "Agent Browser",
+      "Gog"
+    ],
+    "risk_items": [
+      "Gog"
+    ],
+    "lane_note": "X 只作为 author-signal / editorial-reference / weak risk 的信号层，不作为 stable ingest。"
+  },
+  "feed": {
+    "schema_version": "evolution-feed-v1",
+    "candidate_schema_version": "candidate-object-v1",
+    "layout": "feed-first",
+    "ranking_dimensions": [
+      "relevance",
+      "upgrade_value",
+      "why_now_score",
+      "signal_quality",
+      "actionability"
+    ],
+    "evidence_lane_contract": {
+      "stable": {
+        "description": "稳定主源，优先承载 GitHub、官方文档、官方 changelog 等可复查证据。",
+        "source_types": [
+          "github-repo",
+          "official-docs",
+          "stable-link"
+        ]
+      },
+      "signal": {
+        "description": "信号增强层，只提供 why-now、editorial weighting、weak risk。",
+        "source_types": [
+          "x-linked-object",
+          "x-author-signal",
+          "x-candidate-boost",
+          "x-risk-note"
+        ]
+      },
+      "verification": {
+        "description": "验证与扩展层，承载校准判断、search enrichment、补背景说明。",
+        "source_types": [
+          "calibration-judgment",
+          "search-enrichment",
+          "editorial-verification"
+        ]
+      }
+    },
+    "candidate_objects": [
+      {
+        "name": "Proactive Agent",
+        "repo": "Proactive Agent",
+        "track": "openclaw-evolution",
+        "track_label": "能力/产品线",
+        "source_section": "Adopt / adopt-candidate",
+        "judgment": "adopt-candidate",
+        "raw_reason": "upgraded via calibration rule behavior_layer_upgrade; strategically relevant behavior-layer capability。",
+        "why": [
+          "upgraded via calibration rule behavior_layer_upgrade; strategically relevant behavior-layer capability。"
+        ],
+        "today_signal": "能力层出现明确升档，今天不只是看功能，而是看助手行为变化。 X watchlist 至少有 2 位作者把它带进了今天的观察面，补上了圈内热度来源。",
+        "why_today": "因为它代表助手行为层的变化，这类变化通常比单个技能点更值得今天优先看。 圈内作者直接把 Proactive Agent 的价值点说了出来：Proactive Agent is one of the more interesting behavior-layer OpenClaw surfaces I have seen lately。",
+        "freshness": {
+          "label": "今日升级",
+          "score": 95,
+          "status": "changed-today",
+          "summary": "源 brief 明确给出升级动作，属于今天最该前置的信号。"
+        },
+        "changed_today": true,
+        "change_note": "今天有明确升档。",
+        "action": "今天先按能力层方向重点看一遍。",
+        "links": [
+          "https://github.com/openclaw/skills",
+          "https://github.com/VoltAgent/awesome-openclaw-skills"
+        ],
+        "signal_score": 133,
+        "x_signal": {
+          "matched": true,
+          "signal_layer_only": true,
+          "stable_ingest": false,
+          "collector_status": "mock-watchlist-ready",
+          "mode": "mock-watchlist",
+          "mode_label": "mock watchlist fallback",
+          "canonical_url": "https://github.com/openclaw/skills",
+          "author_count": 2,
+          "post_count": 2,
+          "repeat_convergence": false,
+          "boost_strength": 0.38,
+          "boost_reason": "mixed attention: one behavior-layer positive mention plus one weak skepticism signal。",
+          "recommended_effects": [
+            "editorial-context",
+            "weak-risk-attachment"
+          ],
+          "authors": [
+            "agents_gamma"
+          ],
+          "signal_roles": [
+            "author-signal"
+          ],
+          "mention_types": [
+            "trend-signal"
+          ],
+          "circle_note": "X watchlist 至少有 2 位作者把它带进了今天的观察面，补上了圈内热度来源。",
+          "author_signal_line": "agents_gamma 提到“Proactive Agent is one of the more interesting behavior-layer OpenClaw surfaces I have seen lately.”。",
+          "why_now": "圈内作者直接把 Proactive Agent 的价值点说了出来：Proactive Agent is one of the more interesting behavior-layer OpenClaw surfaces I have seen lately.。",
+          "risk_note": "",
+          "score_delta": 6
+        },
+        "schema_version": "candidate-object-v1",
+        "canonical_id": "capability:proactive-agent",
+        "object_type": "capability",
+        "queue": "priority",
+        "target_audience": "both",
+        "target_audience_label": "双向收益",
+        "recommended_action": "adopt_candidate",
+        "recommended_action_label": "采纳候选",
+        "why_now": "圈内作者直接把 Proactive Agent 的价值点说了出来：Proactive Agent is one of the more interesting behavior-layer OpenClaw surfaces I have seen lately。",
+        "recommended_action_reason": "今天先按能力层方向重点看一遍。",
+        "upgrade_value_reason": "能力层出现明确升档，今天不只是看功能，而是看助手行为变化。 X watchlist 至少有 2 位作者把它带进了今天的观察面，补上了圈内热度来源。",
+        "evidence_lanes": {
+          "stable": [
+            {
+              "lane": "stable",
+              "source_type": "github-repo",
+              "role": "stable-source",
+              "label": "主链接",
+              "url": "https://github.com/openclaw/skills",
+              "excerpt": "",
+              "note": "能力层出现明确升档，今天不只是看功能，而是看助手行为变化。 X watchlist 至少有 2 位作者把它带进了今天的观察面，补上了圈内热度来源。"
+            },
+            {
+              "lane": "stable",
+              "source_type": "github-repo",
+              "role": "stable-source",
+              "label": "稳定来源 2",
+              "url": "https://github.com/voltagent/awesome-openclaw-skills",
+              "excerpt": "",
+              "note": "能力层出现明确升档，今天不只是看功能，而是看助手行为变化。 X watchlist 至少有 2 位作者把它带进了今天的观察面，补上了圈内热度来源。"
+            }
+          ],
+          "signal": [
+            {
+              "lane": "signal",
+              "source_type": "x-linked-object",
+              "role": "editorial-reference",
+              "label": "X linked object",
+              "url": "https://github.com/openclaw/skills",
+              "excerpt": "",
+              "note": "X watchlist 至少有 2 位作者把它带进了今天的观察面，补上了圈内热度来源。"
+            },
+            {
+              "lane": "signal",
+              "source_type": "x-author-signal",
+              "role": "author-signal",
+              "label": "作者信号",
+              "url": "",
+              "excerpt": "agents_gamma 提到“Proactive Agent is one of the more interesting behavior-layer OpenClaw surfaces I have seen...",
+              "note": "圈内作者直接把 Proactive Agent 的价值点说了出来：Proactive Agent is one of the more interesting behavior-layer OpenClaw surfaces I have seen lately。"
+            },
+            {
+              "lane": "signal",
+              "source_type": "x-candidate-boost",
+              "role": "editorial-reference",
+              "label": "X boost",
+              "url": "",
+              "excerpt": "mixed attention: one behavior-layer positive mention plus one weak skepticism signal。",
+              "note": "X watchlist 至少有 2 位作者把它带进了今天的观察面，补上了圈内热度来源。"
+            }
+          ],
+          "verification": [
+            {
+              "lane": "verification",
+              "source_type": "calibration-judgment",
+              "role": "judgment",
+              "label": "Adopt / adopt-candidate",
+              "url": "",
+              "excerpt": "upgraded via calibration rule behavior_layer_upgrade; strategically relevant behavior-layer capability。",
+              "note": "今天有明确升档。"
+            }
+          ]
+        },
+        "evidence_summary": {
+          "stable_count": 2,
+          "signal_count": 3,
+          "verification_count": 1,
+          "lanes_with_evidence": [
+            "stable",
+            "signal",
+            "verification"
+          ],
+          "label_preview": [
+            "主链接",
+            "稳定来源 2",
+            "X linked object"
+          ]
+        },
+        "relevance": 5,
+        "upgrade_value": 5,
+        "why_now_score": 5,
+        "signal_quality": 5,
+        "actionability": 5,
+        "saturation": 0,
+        "repeat_penalty": 0,
+        "serve_score": 25
+      },
+      {
+        "name": "jarrodwatts/claude-hud",
+        "repo": "jarrodwatts/claude-hud",
+        "track": "applied-ai-evolution",
+        "track_label": "工具/工作流线",
+        "source_section": "Adopt",
+        "judgment": "adopt",
+        "raw_reason": "upgraded via calibration rule tooling_surface_upgrade; direct tooling surface with clear practical utility。",
+        "why": [
+          "upgraded via calibration rule tooling_surface_upgrade; direct tooling surface with clear practical utility。"
+        ],
+        "today_signal": "工具面出现明确升级，今天从候选项抬升到前台。 X watchlist 里有 2 位作者在短时间内重复提到同一对象，形成了工具/工作流线的圈内冒头信号。",
+        "why_today": "因为它已经从“可关注”走到“可直接上手”的工具面升级，今天更像一条实用新闻。 圈内作者直接把 jarrodwatts/claude-hud 的价值点说了出来：Claude HUD is one of the few Claude Code add-ons that actually changes how I work day to day。",
+        "freshness": {
+          "label": "今日升级",
+          "score": 95,
+          "status": "changed-today",
+          "summary": "源 brief 明确给出升级动作，属于今天最该前置的信号。"
+        },
+        "changed_today": true,
+        "change_note": "今天有明确升档。",
+        "action": "今天先把它放进优先体验名单。",
+        "links": [
+          "https://github.com/jarrodwatts/claude-hud",
+          "https://github.com/jarrodwatts/claude-delegator"
+        ],
+        "signal_score": 140,
+        "x_signal": {
+          "matched": true,
+          "signal_layer_only": true,
+          "stable_ingest": false,
+          "collector_status": "mock-watchlist-ready",
+          "mode": "mock-watchlist",
+          "mode_label": "mock watchlist fallback",
+          "canonical_url": "https://github.com/jarrodwatts/claude-hud",
+          "author_count": 2,
+          "post_count": 2,
+          "repeat_convergence": true,
+          "boost_strength": 0.74,
+          "boost_reason": "multiple trusted authors linked the same object within a short time window。",
+          "recommended_effects": [
+            "candidate-boost",
+            "enrichment-priority"
+          ],
+          "authors": [
+            "builder_alpha",
+            "workflow_beta"
+          ],
+          "signal_roles": [
+            "author-signal",
+            "editorial-reference"
+          ],
+          "mention_types": [
+            "tool-link",
+            "author-recommendation"
+          ],
+          "circle_note": "X watchlist 里有 2 位作者在短时间内重复提到同一对象，形成了工具/工作流线的圈内冒头信号。",
+          "author_signal_line": "builder_alpha 提到“Claude HUD is one of the few Claude Code add-ons that actually changes how I work day to day.”；workflow_beta 提到“Still think claude-hud is underrated if you live inside Claude Code all day.”。",
+          "why_now": "圈内作者直接把 jarrodwatts/claude-hud 的价值点说了出来：Claude HUD is one of the few Claude Code add-ons that actually changes how I work day to day.。",
+          "risk_note": "",
+          "score_delta": 10
+        },
+        "schema_version": "candidate-object-v1",
+        "canonical_id": "repo:jarrodwatts/claude-hud",
+        "object_type": "repo",
+        "queue": "priority",
+        "target_audience": "user",
+        "target_audience_label": "用户升级",
+        "recommended_action": "try_now",
+        "recommended_action_label": "马上试",
+        "why_now": "圈内作者直接把 jarrodwatts/claude-hud 的价值点说了出来：Claude HUD is one of the few Claude Code add-ons that actually changes how I work day to day。",
+        "recommended_action_reason": "今天先把它放进优先体验名单。",
+        "upgrade_value_reason": "工具面出现明确升级，今天从候选项抬升到前台。 X watchlist 里有 2 位作者在短时间内重复提到同一对象，形成了工具/工作流线的圈内冒头信号。",
+        "evidence_lanes": {
+          "stable": [
+            {
+              "lane": "stable",
+              "source_type": "github-repo",
+              "role": "stable-source",
+              "label": "主链接",
+              "url": "https://github.com/jarrodwatts/claude-hud",
+              "excerpt": "",
+              "note": "工具面出现明确升级，今天从候选项抬升到前台。 X watchlist 里有 2 位作者在短时间内重复提到同一对象，形成了工具/工作流线的圈内冒头信号。"
+            },
+            {
+              "lane": "stable",
+              "source_type": "github-repo",
+              "role": "stable-source",
+              "label": "稳定来源 2",
+              "url": "https://github.com/jarrodwatts/claude-delegator",
+              "excerpt": "",
+              "note": "工具面出现明确升级，今天从候选项抬升到前台。 X watchlist 里有 2 位作者在短时间内重复提到同一对象，形成了工具/工作流线的圈内冒头信号。"
+            }
+          ],
+          "signal": [
+            {
+              "lane": "signal",
+              "source_type": "x-linked-object",
+              "role": "editorial-reference",
+              "label": "X linked object",
+              "url": "https://github.com/jarrodwatts/claude-hud",
+              "excerpt": "",
+              "note": "X watchlist 里有 2 位作者在短时间内重复提到同一对象，形成了工具/工作流线的圈内冒头信号。"
+            },
+            {
+              "lane": "signal",
+              "source_type": "x-author-signal",
+              "role": "author-signal",
+              "label": "作者信号",
+              "url": "",
+              "excerpt": "builder_alpha 提到“Claude HUD is one of the few Claude Code add-ons that actually changes how I work day to d...",
+              "note": "圈内作者直接把 jarrodwatts/claude-hud 的价值点说了出来：Claude HUD is one of the few Claude Code add-ons that actually changes how I work day to day。"
+            },
+            {
+              "lane": "signal",
+              "source_type": "x-candidate-boost",
+              "role": "editorial-reference",
+              "label": "X boost",
+              "url": "",
+              "excerpt": "multiple trusted authors linked the same object within a short time window。",
+              "note": "X watchlist 里有 2 位作者在短时间内重复提到同一对象，形成了工具/工作流线的圈内冒头信号。"
+            }
+          ],
+          "verification": [
+            {
+              "lane": "verification",
+              "source_type": "calibration-judgment",
+              "role": "judgment",
+              "label": "Adopt",
+              "url": "",
+              "excerpt": "upgraded via calibration rule tooling_surface_upgrade; direct tooling surface with clear practical utility。",
+              "note": "今天有明确升档。"
+            }
+          ]
+        },
+        "evidence_summary": {
+          "stable_count": 2,
+          "signal_count": 3,
+          "verification_count": 1,
+          "lanes_with_evidence": [
+            "stable",
+            "signal",
+            "verification"
+          ],
+          "label_preview": [
+            "主链接",
+            "稳定来源 2",
+            "X linked object"
+          ]
+        },
+        "relevance": 4,
+        "upgrade_value": 5,
+        "why_now_score": 5,
+        "signal_quality": 5,
+        "actionability": 5,
+        "saturation": 0,
+        "repeat_penalty": 0,
+        "serve_score": 24
+      },
+      {
+        "name": "Agent Browser",
+        "repo": "Agent Browser",
+        "track": "openclaw-evolution",
+        "track_label": "能力/产品线",
+        "source_section": "Adopt / adopt-candidate",
+        "judgment": "adopt-candidate",
+        "raw_reason": "",
+        "why": [],
+        "today_signal": "能力/产品线继续占据今日前排，属于今天先看的对象。 X watchlist 至少有 2 位作者把它带进了今天的观察面，补上了圈内热度来源。",
+        "why_today": "因为它今天仍在高优先级队列里，值得先占掉读者的第一轮注意力。 X boost 给出的理由是：mixed attention: one behavior-layer positive mention plus one weak skepticism signal。",
+        "freshness": {
+          "label": "今日前排",
+          "score": 82,
+          "status": "front-page-today",
+          "summary": "没有明确升档语句，但今天继续占据前排版面。"
+        },
+        "changed_today": false,
+        "change_note": "今天没有显式变化说明，但仍被编入当前版面。",
+        "action": "今天先读主链接，再决定要不要进入体验名单。",
+        "links": [
+          "https://github.com/openclaw/skills"
+        ],
+        "signal_score": 94,
+        "x_signal": {
+          "matched": true,
+          "signal_layer_only": true,
+          "stable_ingest": false,
+          "collector_status": "mock-watchlist-ready",
+          "mode": "mock-watchlist",
+          "mode_label": "mock watchlist fallback",
+          "canonical_url": "https://github.com/openclaw/skills",
+          "author_count": 2,
+          "post_count": 2,
+          "repeat_convergence": false,
+          "boost_strength": 0.38,
+          "boost_reason": "mixed attention: one behavior-layer positive mention plus one weak skepticism signal。",
+          "recommended_effects": [
+            "editorial-context",
+            "weak-risk-attachment"
+          ],
+          "authors": [
+            "agents_gamma",
+            "skeptic_delta"
+          ],
+          "signal_roles": [
+            "author-signal",
+            "risk/evidence"
+          ],
+          "mention_types": [
+            "trend-signal",
+            "editorial-opinion"
+          ],
+          "circle_note": "X watchlist 至少有 2 位作者把它带进了今天的观察面，补上了圈内热度来源。",
+          "author_signal_line": "",
+          "why_now": "X boost 给出的理由是：mixed attention: one behavior-layer positive mention plus one weak skepticism signal。",
+          "risk_note": "",
+          "score_delta": 6
+        },
+        "schema_version": "candidate-object-v1",
+        "canonical_id": "skill:agent-browser",
+        "object_type": "skill",
+        "queue": "priority",
+        "target_audience": "both",
+        "target_audience_label": "双向收益",
+        "recommended_action": "adopt_candidate",
+        "recommended_action_label": "采纳候选",
+        "why_now": "X boost 给出的理由是：mixed attention: one behavior-layer positive mention plus one weak skepticism signal。",
+        "recommended_action_reason": "今天先读主链接，再决定要不要进入体验名单。",
+        "upgrade_value_reason": "能力/产品线继续占据今日前排，属于今天先看的对象。 X watchlist 至少有 2 位作者把它带进了今天的观察面，补上了圈内热度来源。",
+        "evidence_lanes": {
+          "stable": [
+            {
+              "lane": "stable",
+              "source_type": "github-repo",
+              "role": "stable-source",
+              "label": "主链接",
+              "url": "https://github.com/openclaw/skills",
+              "excerpt": "",
+              "note": "能力/产品线继续占据今日前排，属于今天先看的对象。 X watchlist 至少有 2 位作者把它带进了今天的观察面，补上了圈内热度来源。"
+            }
+          ],
+          "signal": [
+            {
+              "lane": "signal",
+              "source_type": "x-linked-object",
+              "role": "editorial-reference",
+              "label": "X linked object",
+              "url": "https://github.com/openclaw/skills",
+              "excerpt": "",
+              "note": "X watchlist 至少有 2 位作者把它带进了今天的观察面，补上了圈内热度来源。"
+            },
+            {
+              "lane": "signal",
+              "source_type": "x-candidate-boost",
+              "role": "editorial-reference",
+              "label": "X boost",
+              "url": "",
+              "excerpt": "mixed attention: one behavior-layer positive mention plus one weak skepticism signal。",
+              "note": "X watchlist 至少有 2 位作者把它带进了今天的观察面，补上了圈内热度来源。"
+            }
+          ],
+          "verification": []
+        },
+        "evidence_summary": {
+          "stable_count": 1,
+          "signal_count": 2,
+          "verification_count": 0,
+          "lanes_with_evidence": [
+            "stable",
+            "signal"
+          ],
+          "label_preview": [
+            "主链接",
+            "X linked object",
+            "X boost"
+          ]
+        },
+        "relevance": 5,
+        "upgrade_value": 4,
+        "why_now_score": 4,
+        "signal_quality": 5,
+        "actionability": 5,
+        "saturation": 0,
+        "repeat_penalty": 0,
+        "serve_score": 23
+      },
+      {
+        "name": "davila7/claude-code-templates",
+        "repo": "davila7/claude-code-templates",
+        "track": "applied-ai-evolution",
+        "track_label": "工具/工作流线",
+        "source_section": "Adopt",
+        "judgment": "adopt",
+        "raw_reason": "",
+        "why": [],
+        "today_signal": "工具/工作流线继续占据今日前排，属于今天先看的对象。",
+        "why_today": "因为它今天仍在高优先级队列里，值得先占掉读者的第一轮注意力。",
+        "freshness": {
+          "label": "今日前排",
+          "score": 82,
+          "status": "front-page-today",
+          "summary": "没有明确升档语句，但今天继续占据前排版面。"
+        },
+        "changed_today": false,
+        "change_note": "今天没有显式变化说明，但仍被编入当前版面。",
+        "action": "今天先读主链接，再决定要不要进入体验名单。",
+        "links": [
+          "https://github.com/davila7/claude-code-templates"
+        ],
+        "signal_score": 93,
+        "x_signal": {
+          "matched": false,
+          "signal_layer_only": true,
+          "stable_ingest": false,
+          "collector_status": "mock-watchlist-ready",
+          "mode": "mock-watchlist",
+          "mode_label": "mock watchlist fallback"
+        },
+        "schema_version": "candidate-object-v1",
+        "canonical_id": "repo:davila7/claude-code-templates",
+        "object_type": "repo",
+        "queue": "priority",
+        "target_audience": "user",
+        "target_audience_label": "用户升级",
+        "recommended_action": "try_now",
+        "recommended_action_label": "马上试",
+        "why_now": "因为它今天仍在高优先级队列里，值得先占掉读者的第一轮注意力。",
+        "recommended_action_reason": "今天先读主链接，再决定要不要进入体验名单。",
+        "upgrade_value_reason": "工具/工作流线继续占据今日前排，属于今天先看的对象。",
+        "evidence_lanes": {
+          "stable": [
+            {
+              "lane": "stable",
+              "source_type": "github-repo",
+              "role": "stable-source",
+              "label": "主链接",
+              "url": "https://github.com/davila7/claude-code-templates",
+              "excerpt": "",
+              "note": "工具/工作流线继续占据今日前排，属于今天先看的对象。"
+            }
+          ],
+          "signal": [],
+          "verification": []
+        },
+        "evidence_summary": {
+          "stable_count": 1,
+          "signal_count": 0,
+          "verification_count": 0,
+          "lanes_with_evidence": [
+            "stable"
+          ],
+          "label_preview": [
+            "主链接"
+          ]
+        },
+        "relevance": 4,
+        "upgrade_value": 4,
+        "why_now_score": 3,
+        "signal_quality": 3,
+        "actionability": 5,
+        "saturation": 0,
+        "repeat_penalty": 0,
+        "serve_score": 19
+      },
+      {
+        "name": "Gog",
+        "repo": "Gog",
+        "track": "openclaw-evolution",
+        "track_label": "能力/产品线",
+        "source_section": "Follow",
+        "judgment": "follow",
+        "raw_reason": "remains follow via calibration rule strong_support_weak_lesson; strong support, but reusable lesson still unclear。",
+        "why": [
+          "remains follow via calibration rule strong_support_weak_lesson; strong support, but reusable lesson still unclear。"
+        ],
+        "today_signal": "能力/产品线继续挂在快讯雷达，信号还在累积。 X watchlist 至少有 2 位作者把它带进了今天的观察面，补上了圈内热度来源。",
+        "why_today": "因为支持信号还在，但可复用 lesson 还没强到足以拿下今天头版。 圈内作者直接把 Gog 的价值点说了出来：Interesting idea, but Gog still feels cool before it feels reusable。",
+        "freshness": {
+          "label": "持续发酵",
+          "score": 60,
+          "status": "watch-today",
+          "summary": "仍在雷达内发酵，但今天还不到抢头版的时候。"
+        },
+        "changed_today": false,
+        "change_note": "今天没有新升档，属于位置延续。 弱风险备注：skeptic_delta 提醒“Interesting idea, but Gog still feels cool before it feels reusable.”。",
+        "action": "先放在快讯雷达里持续跟进。",
+        "links": [
+          "https://github.com/openclaw/skills"
+        ],
+        "signal_score": 56,
+        "x_signal": {
+          "matched": true,
+          "signal_layer_only": true,
+          "stable_ingest": false,
+          "collector_status": "mock-watchlist-ready",
+          "mode": "mock-watchlist",
+          "mode_label": "mock watchlist fallback",
+          "canonical_url": "https://github.com/openclaw/skills",
+          "author_count": 2,
+          "post_count": 2,
+          "repeat_convergence": false,
+          "boost_strength": 0.38,
+          "boost_reason": "mixed attention: one behavior-layer positive mention plus one weak skepticism signal。",
+          "recommended_effects": [
+            "editorial-context",
+            "weak-risk-attachment"
+          ],
+          "authors": [
+            "skeptic_delta"
+          ],
+          "signal_roles": [
+            "risk/evidence"
+          ],
+          "mention_types": [
+            "editorial-opinion"
+          ],
+          "circle_note": "X watchlist 至少有 2 位作者把它带进了今天的观察面，补上了圈内热度来源。",
+          "author_signal_line": "skeptic_delta 提到“Interesting idea, but Gog still feels cool before it feels reusable.”。",
+          "why_now": "圈内作者直接把 Gog 的价值点说了出来：Interesting idea, but Gog still feels cool before it feels reusable.。",
+          "risk_note": "弱风险备注：skeptic_delta 提醒“Interesting idea, but Gog still feels cool before it feels reusable.”。",
+          "score_delta": 4
+        },
+        "schema_version": "candidate-object-v1",
+        "canonical_id": "workflow:gog",
+        "object_type": "workflow",
+        "queue": "follow",
+        "target_audience": "both",
+        "target_audience_label": "双向收益",
+        "recommended_action": "risk_watch",
+        "recommended_action_label": "风险观察",
+        "why_now": "圈内作者直接把 Gog 的价值点说了出来：Interesting idea, but Gog still feels cool before it feels reusable。",
+        "recommended_action_reason": "先放在快讯雷达里持续跟进。",
+        "upgrade_value_reason": "能力/产品线继续挂在快讯雷达，信号还在累积。 X watchlist 至少有 2 位作者把它带进了今天的观察面，补上了圈内热度来源。",
+        "evidence_lanes": {
+          "stable": [
+            {
+              "lane": "stable",
+              "source_type": "github-repo",
+              "role": "stable-source",
+              "label": "主链接",
+              "url": "https://github.com/openclaw/skills",
+              "excerpt": "",
+              "note": "能力/产品线继续挂在快讯雷达，信号还在累积。 X watchlist 至少有 2 位作者把它带进了今天的观察面，补上了圈内热度来源。"
+            }
+          ],
+          "signal": [
+            {
+              "lane": "signal",
+              "source_type": "x-linked-object",
+              "role": "editorial-reference",
+              "label": "X linked object",
+              "url": "https://github.com/openclaw/skills",
+              "excerpt": "",
+              "note": "X watchlist 至少有 2 位作者把它带进了今天的观察面，补上了圈内热度来源。"
+            },
+            {
+              "lane": "signal",
+              "source_type": "x-author-signal",
+              "role": "author-signal",
+              "label": "作者信号",
+              "url": "",
+              "excerpt": "skeptic_delta 提到“Interesting idea, but Gog still feels cool before it feels reusable.”。",
+              "note": "圈内作者直接把 Gog 的价值点说了出来：Interesting idea, but Gog still feels cool before it feels reusable。"
+            },
+            {
+              "lane": "signal",
+              "source_type": "x-candidate-boost",
+              "role": "editorial-reference",
+              "label": "X boost",
+              "url": "",
+              "excerpt": "mixed attention: one behavior-layer positive mention plus one weak skepticism signal。",
+              "note": "X watchlist 至少有 2 位作者把它带进了今天的观察面，补上了圈内热度来源。"
+            },
+            {
+              "lane": "signal",
+              "source_type": "x-risk-note",
+              "role": "risk/evidence",
+              "label": "弱风险",
+              "url": "",
+              "excerpt": "弱风险备注：skeptic_delta 提醒“Interesting idea, but Gog still feels cool before it feels reusable.”。",
+              "note": "弱风险备注：skeptic_delta 提醒“Interesting idea, but Gog still feels cool before it feels reusable.”。"
+            }
+          ],
+          "verification": [
+            {
+              "lane": "verification",
+              "source_type": "calibration-judgment",
+              "role": "judgment",
+              "label": "Follow",
+              "url": "",
+              "excerpt": "remains follow via calibration rule strong_support_weak_lesson; strong support, but reusable lesson still u...",
+              "note": "今天没有新升档，属于位置延续。 弱风险备注：skeptic_delta 提醒“Interesting idea, but Gog still feels cool before it feels reusable.”。"
+            }
+          ]
+        },
+        "evidence_summary": {
+          "stable_count": 1,
+          "signal_count": 4,
+          "verification_count": 1,
+          "lanes_with_evidence": [
+            "stable",
+            "signal",
+            "verification"
+          ],
+          "label_preview": [
+            "主链接",
+            "X linked object",
+            "作者信号"
+          ]
+        },
+        "relevance": 5,
+        "upgrade_value": 2,
+        "why_now_score": 4,
+        "signal_quality": 5,
+        "actionability": 3,
+        "saturation": 0,
+        "repeat_penalty": 0,
+        "serve_score": 19
+      },
+      {
+        "name": "gsd-build/get-shit-done",
+        "repo": "gsd-build/get-shit-done",
+        "track": "applied-ai-evolution",
+        "track_label": "工具/工作流线",
+        "source_section": "Follow / framework-to-study",
+        "judgment": "follow",
+        "raw_reason": "remains follow via calibration rule framework_to_study; treat as methodology/framework-to-study。",
+        "why": [
+          "remains follow via calibration rule framework_to_study; treat as methodology/framework-to-study。"
+        ],
+        "today_signal": "工具/工作流线继续挂在快讯雷达，信号还在累积。",
+        "why_today": "因为方法论价值在，但今天更适合记进雷达，不必挤进主版。",
+        "freshness": {
+          "label": "持续发酵",
+          "score": 60,
+          "status": "watch-today",
+          "summary": "仍在雷达内发酵，但今天还不到抢头版的时候。"
+        },
+        "changed_today": false,
+        "change_note": "今天没有新升档，属于位置延续。",
+        "action": "先放在快讯雷达里持续跟进。",
+        "links": [
+          "https://github.com/gsd-build/get-shit-done"
+        ],
+        "signal_score": 52,
+        "x_signal": {
+          "matched": false,
+          "signal_layer_only": true,
+          "stable_ingest": false,
+          "collector_status": "mock-watchlist-ready",
+          "mode": "mock-watchlist",
+          "mode_label": "mock watchlist fallback"
+        },
+        "schema_version": "candidate-object-v1",
+        "canonical_id": "repo:gsd-build/get-shit-done",
+        "object_type": "repo",
+        "queue": "follow",
+        "target_audience": "user",
+        "target_audience_label": "用户升级",
+        "recommended_action": "follow",
+        "recommended_action_label": "继续跟进",
+        "why_now": "因为方法论价值在，但今天更适合记进雷达，不必挤进主版。",
+        "recommended_action_reason": "先放在快讯雷达里持续跟进。",
+        "upgrade_value_reason": "工具/工作流线继续挂在快讯雷达，信号还在累积。",
+        "evidence_lanes": {
+          "stable": [
+            {
+              "lane": "stable",
+              "source_type": "github-repo",
+              "role": "stable-source",
+              "label": "主链接",
+              "url": "https://github.com/gsd-build/get-shit-done",
+              "excerpt": "",
+              "note": "工具/工作流线继续挂在快讯雷达，信号还在累积。"
+            }
+          ],
+          "signal": [],
+          "verification": [
+            {
+              "lane": "verification",
+              "source_type": "calibration-judgment",
+              "role": "judgment",
+              "label": "Follow / framework-to-study",
+              "url": "",
+              "excerpt": "remains follow via calibration rule framework_to_study; treat as methodology/framework-to-study。",
+              "note": "今天没有新升档，属于位置延续。"
+            }
+          ]
+        },
+        "evidence_summary": {
+          "stable_count": 1,
+          "signal_count": 0,
+          "verification_count": 1,
+          "lanes_with_evidence": [
+            "stable",
+            "verification"
+          ],
+          "label_preview": [
+            "主链接",
+            "Follow / framework-to-study"
+          ]
+        },
+        "relevance": 4,
+        "upgrade_value": 3,
+        "why_now_score": 3,
+        "signal_quality": 3,
+        "actionability": 4,
+        "saturation": 0,
+        "repeat_penalty": 0,
+        "serve_score": 17
+      },
+      {
+        "name": "anthropics/claude-code",
+        "repo": "anthropics/claude-code",
+        "track": "official-baseline",
+        "track_label": "官方基线",
+        "source_section": "Official anchors",
+        "judgment": "official-anchor",
+        "raw_reason": "",
+        "why": [],
+        "today_signal": "官方项目继续作为今日基线，不主动抢占头版。",
+        "why_today": "因为今天需要一个稳定参照系，来判断头版项目到底离主流工具面有多远。",
+        "freshness": {
+          "label": "基线续看",
+          "score": 38,
+          "status": "baseline-carry",
+          "summary": "今天继续提供官方基线，不以爆点身份出现。"
+        },
+        "changed_today": false,
+        "change_note": "今天主要承担校准作用。",
+        "action": "继续挂表，用来和新项目对照。",
+        "links": [
+          "https://github.com/anthropics/claude-code"
+        ],
+        "signal_score": 35,
+        "schema_version": "candidate-object-v1",
+        "canonical_id": "repo:anthropics/claude-code",
+        "object_type": "official-anchor",
+        "queue": "official_anchors",
+        "target_audience": "both",
+        "target_audience_label": "双向收益",
+        "recommended_action": "official_anchor",
+        "recommended_action_label": "官方基线",
+        "why_now": "因为今天需要一个稳定参照系，来判断头版项目到底离主流工具面有多远。",
+        "recommended_action_reason": "继续挂表，用来和新项目对照。",
+        "upgrade_value_reason": "官方项目继续作为今日基线，不主动抢占头版。",
+        "evidence_lanes": {
+          "stable": [
+            {
+              "lane": "stable",
+              "source_type": "official-docs",
+              "role": "stable-source",
+              "label": "主链接",
+              "url": "https://github.com/anthropics/claude-code",
+              "excerpt": "",
+              "note": "官方项目继续作为今日基线，不主动抢占头版。"
+            }
+          ],
+          "signal": [],
+          "verification": []
+        },
+        "evidence_summary": {
+          "stable_count": 1,
+          "signal_count": 0,
+          "verification_count": 0,
+          "lanes_with_evidence": [
+            "stable"
+          ],
+          "label_preview": [
+            "主链接"
+          ]
+        },
+        "relevance": 4,
+        "upgrade_value": 3,
+        "why_now_score": 3,
+        "signal_quality": 3,
+        "actionability": 4,
+        "saturation": 0,
+        "repeat_penalty": 0,
+        "serve_score": 17
+      },
+      {
+        "name": "google-gemini/gemini-cli",
+        "repo": "google-gemini/gemini-cli",
+        "track": "official-baseline",
+        "track_label": "官方基线",
+        "source_section": "Official anchors",
+        "judgment": "official-anchor",
+        "raw_reason": "",
+        "why": [],
+        "today_signal": "官方项目继续作为今日基线，不主动抢占头版。",
+        "why_today": "因为今天需要一个稳定参照系，来判断头版项目到底离主流工具面有多远。",
+        "freshness": {
+          "label": "基线续看",
+          "score": 38,
+          "status": "baseline-carry",
+          "summary": "今天继续提供官方基线，不以爆点身份出现。"
+        },
+        "changed_today": false,
+        "change_note": "今天主要承担校准作用。",
+        "action": "继续挂表，用来和新项目对照。",
+        "links": [
+          "https://github.com/google-gemini/gemini-cli"
+        ],
+        "signal_score": 35,
+        "schema_version": "candidate-object-v1",
+        "canonical_id": "repo:google-gemini/gemini-cli",
+        "object_type": "official-anchor",
+        "queue": "official_anchors",
+        "target_audience": "both",
+        "target_audience_label": "双向收益",
+        "recommended_action": "official_anchor",
+        "recommended_action_label": "官方基线",
+        "why_now": "因为今天需要一个稳定参照系，来判断头版项目到底离主流工具面有多远。",
+        "recommended_action_reason": "继续挂表，用来和新项目对照。",
+        "upgrade_value_reason": "官方项目继续作为今日基线，不主动抢占头版。",
+        "evidence_lanes": {
+          "stable": [
+            {
+              "lane": "stable",
+              "source_type": "official-docs",
+              "role": "stable-source",
+              "label": "主链接",
+              "url": "https://github.com/google-gemini/gemini-cli",
+              "excerpt": "",
+              "note": "官方项目继续作为今日基线，不主动抢占头版。"
+            }
+          ],
+          "signal": [],
+          "verification": []
+        },
+        "evidence_summary": {
+          "stable_count": 1,
+          "signal_count": 0,
+          "verification_count": 0,
+          "lanes_with_evidence": [
+            "stable"
+          ],
+          "label_preview": [
+            "主链接"
+          ]
+        },
+        "relevance": 4,
+        "upgrade_value": 3,
+        "why_now_score": 3,
+        "signal_quality": 3,
+        "actionability": 4,
+        "saturation": 0,
+        "repeat_penalty": 0,
+        "serve_score": 17
+      },
+      {
+        "name": "openai/codex",
+        "repo": "openai/codex",
+        "track": "official-baseline",
+        "track_label": "官方基线",
+        "source_section": "Official anchors",
+        "judgment": "official-anchor",
+        "raw_reason": "",
+        "why": [],
+        "today_signal": "官方项目继续作为今日基线，不主动抢占头版。",
+        "why_today": "因为今天需要一个稳定参照系，来判断头版项目到底离主流工具面有多远。",
+        "freshness": {
+          "label": "基线续看",
+          "score": 38,
+          "status": "baseline-carry",
+          "summary": "今天继续提供官方基线，不以爆点身份出现。"
+        },
+        "changed_today": false,
+        "change_note": "今天主要承担校准作用。",
+        "action": "继续挂表，用来和新项目对照。",
+        "links": [
+          "https://github.com/openai/codex"
+        ],
+        "signal_score": 35,
+        "schema_version": "candidate-object-v1",
+        "canonical_id": "repo:openai/codex",
+        "object_type": "official-anchor",
+        "queue": "official_anchors",
+        "target_audience": "both",
+        "target_audience_label": "双向收益",
+        "recommended_action": "official_anchor",
+        "recommended_action_label": "官方基线",
+        "why_now": "因为今天需要一个稳定参照系，来判断头版项目到底离主流工具面有多远。",
+        "recommended_action_reason": "继续挂表，用来和新项目对照。",
+        "upgrade_value_reason": "官方项目继续作为今日基线，不主动抢占头版。",
+        "evidence_lanes": {
+          "stable": [
+            {
+              "lane": "stable",
+              "source_type": "official-docs",
+              "role": "stable-source",
+              "label": "主链接",
+              "url": "https://github.com/openai/codex",
+              "excerpt": "",
+              "note": "官方项目继续作为今日基线，不主动抢占头版。"
+            }
+          ],
+          "signal": [],
+          "verification": []
+        },
+        "evidence_summary": {
+          "stable_count": 1,
+          "signal_count": 0,
+          "verification_count": 0,
+          "lanes_with_evidence": [
+            "stable"
+          ],
+          "label_preview": [
+            "主链接"
+          ]
+        },
+        "relevance": 4,
+        "upgrade_value": 3,
+        "why_now_score": 3,
+        "signal_quality": 3,
+        "actionability": 4,
+        "saturation": 0,
+        "repeat_penalty": 0,
+        "serve_score": 17
+      },
+      {
+        "name": "Polymarket",
+        "repo": "Polymarket",
+        "track": "openclaw-evolution",
+        "track_label": "能力/产品线",
+        "source_section": "Deep-dive",
+        "judgment": "deep-dive",
+        "raw_reason": "",
+        "why": [],
+        "today_signal": "题材仍在，但今天先放后看。",
+        "why_today": "因为它还没有给到足够的新信息，值得保留但不该稀释今天头版。",
+        "freshness": {
+          "label": "先放后看",
+          "score": 22,
+          "status": "hold-for-later",
+          "summary": "保留题材，但不进入今天的主版面。"
+        },
+        "changed_today": false,
+        "change_note": "今天不进入主版。",
+        "action": "暂不分配主版面注意力。",
+        "links": [
+          "https://github.com/openclaw/skills"
+        ],
+        "signal_score": 20,
+        "return_trigger": "等出现可复用的新做法或更强外部佐证时再回看。",
+        "schema_version": "candidate-object-v1",
+        "canonical_id": "workflow:polymarket",
+        "object_type": "workflow",
+        "queue": "deprioritized",
+        "target_audience": "both",
+        "target_audience_label": "双向收益",
+        "recommended_action": "deep_dive",
+        "recommended_action_label": "深入研究",
+        "why_now": "因为它还没有给到足够的新信息，值得保留但不该稀释今天头版。",
+        "recommended_action_reason": "暂不分配主版面注意力。",
+        "upgrade_value_reason": "题材仍在，但今天先放后看。",
+        "evidence_lanes": {
+          "stable": [
+            {
+              "lane": "stable",
+              "source_type": "github-repo",
+              "role": "stable-source",
+              "label": "主链接",
+              "url": "https://github.com/openclaw/skills",
+              "excerpt": "",
+              "note": "题材仍在，但今天先放后看。"
+            }
+          ],
+          "signal": [],
+          "verification": []
+        },
+        "evidence_summary": {
+          "stable_count": 1,
+          "signal_count": 0,
+          "verification_count": 0,
+          "lanes_with_evidence": [
+            "stable"
+          ],
+          "label_preview": [
+            "主链接"
+          ]
+        },
+        "relevance": 5,
+        "upgrade_value": 2,
+        "why_now_score": 3,
+        "signal_quality": 3,
+        "actionability": 3,
+        "saturation": 0,
+        "repeat_penalty": 0,
+        "serve_score": 16
+      },
+      {
+        "name": "Weather",
+        "repo": "Weather",
+        "track": "openclaw-evolution",
+        "track_label": "能力/产品线",
+        "source_section": "Deep-dive",
+        "judgment": "deep-dive",
+        "raw_reason": "",
+        "why": [],
+        "today_signal": "题材仍在，但今天先放后看。",
+        "why_today": "因为它还没有给到足够的新信息，值得保留但不该稀释今天头版。",
+        "freshness": {
+          "label": "先放后看",
+          "score": 22,
+          "status": "hold-for-later",
+          "summary": "保留题材，但不进入今天的主版面。"
+        },
+        "changed_today": false,
+        "change_note": "今天不进入主版。",
+        "action": "暂不分配主版面注意力。",
+        "links": [
+          "https://github.com/openclaw/skills"
+        ],
+        "signal_score": 20,
+        "return_trigger": "等出现可复用的新做法或更强外部佐证时再回看。",
+        "schema_version": "candidate-object-v1",
+        "canonical_id": "skill:weather",
+        "object_type": "skill",
+        "queue": "deprioritized",
+        "target_audience": "openclaw",
+        "target_audience_label": "OpenClaw 进化",
+        "recommended_action": "deep_dive",
+        "recommended_action_label": "深入研究",
+        "why_now": "因为它还没有给到足够的新信息，值得保留但不该稀释今天头版。",
+        "recommended_action_reason": "暂不分配主版面注意力。",
+        "upgrade_value_reason": "题材仍在，但今天先放后看。",
+        "evidence_lanes": {
+          "stable": [
+            {
+              "lane": "stable",
+              "source_type": "github-repo",
+              "role": "stable-source",
+              "label": "主链接",
+              "url": "https://github.com/openclaw/skills",
+              "excerpt": "",
+              "note": "题材仍在，但今天先放后看。"
+            }
+          ],
+          "signal": [],
+          "verification": []
+        },
+        "evidence_summary": {
+          "stable_count": 1,
+          "signal_count": 0,
+          "verification_count": 0,
+          "lanes_with_evidence": [
+            "stable"
+          ],
+          "label_preview": [
+            "主链接"
+          ]
+        },
+        "relevance": 4,
+        "upgrade_value": 2,
+        "why_now_score": 3,
+        "signal_quality": 3,
+        "actionability": 3,
+        "saturation": 0,
+        "repeat_penalty": 0,
+        "serve_score": 15
+      }
+    ],
+    "queues": {
+      "priority": [
+        "capability:proactive-agent",
+        "repo:jarrodwatts/claude-hud",
+        "skill:agent-browser",
+        "repo:davila7/claude-code-templates"
+      ],
+      "follow": [
+        "workflow:gog",
+        "repo:gsd-build/get-shit-done"
+      ],
+      "official_anchors": [
+        "repo:anthropics/claude-code",
+        "repo:google-gemini/gemini-cli",
+        "repo:openai/codex"
+      ],
+      "deprioritized": [
+        "workflow:polymarket",
+        "skill:weather"
+      ]
+    }
+  },
+  "summary": {
+    "priority": [
+      {
+        "name": "Proactive Agent",
+        "repo": "Proactive Agent",
+        "track": "openclaw-evolution",
+        "track_label": "能力/产品线",
+        "source_section": "Adopt / adopt-candidate",
+        "judgment": "adopt-candidate",
+        "raw_reason": "upgraded via calibration rule behavior_layer_upgrade; strategically relevant behavior-layer capability。",
+        "why": [
+          "upgraded via calibration rule behavior_layer_upgrade; strategically relevant behavior-layer capability。"
+        ],
+        "today_signal": "能力层出现明确升档，今天不只是看功能，而是看助手行为变化。 X watchlist 至少有 2 位作者把它带进了今天的观察面，补上了圈内热度来源。",
+        "why_today": "因为它代表助手行为层的变化，这类变化通常比单个技能点更值得今天优先看。 圈内作者直接把 Proactive Agent 的价值点说了出来：Proactive Agent is one of the more interesting behavior-layer OpenClaw surfaces I have seen lately。",
+        "freshness": {
+          "label": "今日升级",
+          "score": 95,
+          "status": "changed-today",
+          "summary": "源 brief 明确给出升级动作，属于今天最该前置的信号。"
+        },
+        "changed_today": true,
+        "change_note": "今天有明确升档。",
+        "action": "今天先按能力层方向重点看一遍。",
+        "links": [
+          "https://github.com/openclaw/skills",
+          "https://github.com/VoltAgent/awesome-openclaw-skills"
+        ],
+        "signal_score": 133,
+        "x_signal": {
+          "matched": true,
+          "signal_layer_only": true,
+          "stable_ingest": false,
+          "collector_status": "mock-watchlist-ready",
+          "mode": "mock-watchlist",
+          "mode_label": "mock watchlist fallback",
+          "canonical_url": "https://github.com/openclaw/skills",
+          "author_count": 2,
+          "post_count": 2,
+          "repeat_convergence": false,
+          "boost_strength": 0.38,
+          "boost_reason": "mixed attention: one behavior-layer positive mention plus one weak skepticism signal。",
+          "recommended_effects": [
+            "editorial-context",
+            "weak-risk-attachment"
+          ],
+          "authors": [
+            "agents_gamma"
+          ],
+          "signal_roles": [
+            "author-signal"
+          ],
+          "mention_types": [
+            "trend-signal"
+          ],
+          "circle_note": "X watchlist 至少有 2 位作者把它带进了今天的观察面，补上了圈内热度来源。",
+          "author_signal_line": "agents_gamma 提到“Proactive Agent is one of the more interesting behavior-layer OpenClaw surfaces I have seen lately.”。",
+          "why_now": "圈内作者直接把 Proactive Agent 的价值点说了出来：Proactive Agent is one of the more interesting behavior-layer OpenClaw surfaces I have seen lately.。",
+          "risk_note": "",
+          "score_delta": 6
+        },
+        "schema_version": "candidate-object-v1",
+        "canonical_id": "capability:proactive-agent",
+        "object_type": "capability",
+        "queue": "priority",
+        "target_audience": "both",
+        "target_audience_label": "双向收益",
+        "recommended_action": "adopt_candidate",
+        "recommended_action_label": "采纳候选",
+        "why_now": "圈内作者直接把 Proactive Agent 的价值点说了出来：Proactive Agent is one of the more interesting behavior-layer OpenClaw surfaces I have seen lately。",
+        "recommended_action_reason": "今天先按能力层方向重点看一遍。",
+        "upgrade_value_reason": "能力层出现明确升档，今天不只是看功能，而是看助手行为变化。 X watchlist 至少有 2 位作者把它带进了今天的观察面，补上了圈内热度来源。",
+        "evidence_lanes": {
+          "stable": [
+            {
+              "lane": "stable",
+              "source_type": "github-repo",
+              "role": "stable-source",
+              "label": "主链接",
+              "url": "https://github.com/openclaw/skills",
+              "excerpt": "",
+              "note": "能力层出现明确升档，今天不只是看功能，而是看助手行为变化。 X watchlist 至少有 2 位作者把它带进了今天的观察面，补上了圈内热度来源。"
+            },
+            {
+              "lane": "stable",
+              "source_type": "github-repo",
+              "role": "stable-source",
+              "label": "稳定来源 2",
+              "url": "https://github.com/voltagent/awesome-openclaw-skills",
+              "excerpt": "",
+              "note": "能力层出现明确升档，今天不只是看功能，而是看助手行为变化。 X watchlist 至少有 2 位作者把它带进了今天的观察面，补上了圈内热度来源。"
+            }
+          ],
+          "signal": [
+            {
+              "lane": "signal",
+              "source_type": "x-linked-object",
+              "role": "editorial-reference",
+              "label": "X linked object",
+              "url": "https://github.com/openclaw/skills",
+              "excerpt": "",
+              "note": "X watchlist 至少有 2 位作者把它带进了今天的观察面，补上了圈内热度来源。"
+            },
+            {
+              "lane": "signal",
+              "source_type": "x-author-signal",
+              "role": "author-signal",
+              "label": "作者信号",
+              "url": "",
+              "excerpt": "agents_gamma 提到“Proactive Agent is one of the more interesting behavior-layer OpenClaw surfaces I have seen...",
+              "note": "圈内作者直接把 Proactive Agent 的价值点说了出来：Proactive Agent is one of the more interesting behavior-layer OpenClaw surfaces I have seen lately。"
+            },
+            {
+              "lane": "signal",
+              "source_type": "x-candidate-boost",
+              "role": "editorial-reference",
+              "label": "X boost",
+              "url": "",
+              "excerpt": "mixed attention: one behavior-layer positive mention plus one weak skepticism signal。",
+              "note": "X watchlist 至少有 2 位作者把它带进了今天的观察面，补上了圈内热度来源。"
+            }
+          ],
+          "verification": [
+            {
+              "lane": "verification",
+              "source_type": "calibration-judgment",
+              "role": "judgment",
+              "label": "Adopt / adopt-candidate",
+              "url": "",
+              "excerpt": "upgraded via calibration rule behavior_layer_upgrade; strategically relevant behavior-layer capability。",
+              "note": "今天有明确升档。"
+            }
+          ]
+        },
+        "evidence_summary": {
+          "stable_count": 2,
+          "signal_count": 3,
+          "verification_count": 1,
+          "lanes_with_evidence": [
+            "stable",
+            "signal",
+            "verification"
+          ],
+          "label_preview": [
+            "主链接",
+            "稳定来源 2",
+            "X linked object"
+          ]
+        },
+        "relevance": 5,
+        "upgrade_value": 5,
+        "why_now_score": 5,
+        "signal_quality": 5,
+        "actionability": 5,
+        "saturation": 0,
+        "repeat_penalty": 0,
+        "serve_score": 25
+      },
+      {
+        "name": "jarrodwatts/claude-hud",
+        "repo": "jarrodwatts/claude-hud",
+        "track": "applied-ai-evolution",
+        "track_label": "工具/工作流线",
+        "source_section": "Adopt",
+        "judgment": "adopt",
+        "raw_reason": "upgraded via calibration rule tooling_surface_upgrade; direct tooling surface with clear practical utility。",
+        "why": [
+          "upgraded via calibration rule tooling_surface_upgrade; direct tooling surface with clear practical utility。"
+        ],
+        "today_signal": "工具面出现明确升级，今天从候选项抬升到前台。 X watchlist 里有 2 位作者在短时间内重复提到同一对象，形成了工具/工作流线的圈内冒头信号。",
+        "why_today": "因为它已经从“可关注”走到“可直接上手”的工具面升级，今天更像一条实用新闻。 圈内作者直接把 jarrodwatts/claude-hud 的价值点说了出来：Claude HUD is one of the few Claude Code add-ons that actually changes how I work day to day。",
+        "freshness": {
+          "label": "今日升级",
+          "score": 95,
+          "status": "changed-today",
+          "summary": "源 brief 明确给出升级动作，属于今天最该前置的信号。"
+        },
+        "changed_today": true,
+        "change_note": "今天有明确升档。",
+        "action": "今天先把它放进优先体验名单。",
+        "links": [
+          "https://github.com/jarrodwatts/claude-hud",
+          "https://github.com/jarrodwatts/claude-delegator"
+        ],
+        "signal_score": 140,
+        "x_signal": {
+          "matched": true,
+          "signal_layer_only": true,
+          "stable_ingest": false,
+          "collector_status": "mock-watchlist-ready",
+          "mode": "mock-watchlist",
+          "mode_label": "mock watchlist fallback",
+          "canonical_url": "https://github.com/jarrodwatts/claude-hud",
+          "author_count": 2,
+          "post_count": 2,
+          "repeat_convergence": true,
+          "boost_strength": 0.74,
+          "boost_reason": "multiple trusted authors linked the same object within a short time window。",
+          "recommended_effects": [
+            "candidate-boost",
+            "enrichment-priority"
+          ],
+          "authors": [
+            "builder_alpha",
+            "workflow_beta"
+          ],
+          "signal_roles": [
+            "author-signal",
+            "editorial-reference"
+          ],
+          "mention_types": [
+            "tool-link",
+            "author-recommendation"
+          ],
+          "circle_note": "X watchlist 里有 2 位作者在短时间内重复提到同一对象，形成了工具/工作流线的圈内冒头信号。",
+          "author_signal_line": "builder_alpha 提到“Claude HUD is one of the few Claude Code add-ons that actually changes how I work day to day.”；workflow_beta 提到“Still think claude-hud is underrated if you live inside Claude Code all day.”。",
+          "why_now": "圈内作者直接把 jarrodwatts/claude-hud 的价值点说了出来：Claude HUD is one of the few Claude Code add-ons that actually changes how I work day to day.。",
+          "risk_note": "",
+          "score_delta": 10
+        },
+        "schema_version": "candidate-object-v1",
+        "canonical_id": "repo:jarrodwatts/claude-hud",
+        "object_type": "repo",
+        "queue": "priority",
+        "target_audience": "user",
+        "target_audience_label": "用户升级",
+        "recommended_action": "try_now",
+        "recommended_action_label": "马上试",
+        "why_now": "圈内作者直接把 jarrodwatts/claude-hud 的价值点说了出来：Claude HUD is one of the few Claude Code add-ons that actually changes how I work day to day。",
+        "recommended_action_reason": "今天先把它放进优先体验名单。",
+        "upgrade_value_reason": "工具面出现明确升级，今天从候选项抬升到前台。 X watchlist 里有 2 位作者在短时间内重复提到同一对象，形成了工具/工作流线的圈内冒头信号。",
+        "evidence_lanes": {
+          "stable": [
+            {
+              "lane": "stable",
+              "source_type": "github-repo",
+              "role": "stable-source",
+              "label": "主链接",
+              "url": "https://github.com/jarrodwatts/claude-hud",
+              "excerpt": "",
+              "note": "工具面出现明确升级，今天从候选项抬升到前台。 X watchlist 里有 2 位作者在短时间内重复提到同一对象，形成了工具/工作流线的圈内冒头信号。"
+            },
+            {
+              "lane": "stable",
+              "source_type": "github-repo",
+              "role": "stable-source",
+              "label": "稳定来源 2",
+              "url": "https://github.com/jarrodwatts/claude-delegator",
+              "excerpt": "",
+              "note": "工具面出现明确升级，今天从候选项抬升到前台。 X watchlist 里有 2 位作者在短时间内重复提到同一对象，形成了工具/工作流线的圈内冒头信号。"
+            }
+          ],
+          "signal": [
+            {
+              "lane": "signal",
+              "source_type": "x-linked-object",
+              "role": "editorial-reference",
+              "label": "X linked object",
+              "url": "https://github.com/jarrodwatts/claude-hud",
+              "excerpt": "",
+              "note": "X watchlist 里有 2 位作者在短时间内重复提到同一对象，形成了工具/工作流线的圈内冒头信号。"
+            },
+            {
+              "lane": "signal",
+              "source_type": "x-author-signal",
+              "role": "author-signal",
+              "label": "作者信号",
+              "url": "",
+              "excerpt": "builder_alpha 提到“Claude HUD is one of the few Claude Code add-ons that actually changes how I work day to d...",
+              "note": "圈内作者直接把 jarrodwatts/claude-hud 的价值点说了出来：Claude HUD is one of the few Claude Code add-ons that actually changes how I work day to day。"
+            },
+            {
+              "lane": "signal",
+              "source_type": "x-candidate-boost",
+              "role": "editorial-reference",
+              "label": "X boost",
+              "url": "",
+              "excerpt": "multiple trusted authors linked the same object within a short time window。",
+              "note": "X watchlist 里有 2 位作者在短时间内重复提到同一对象，形成了工具/工作流线的圈内冒头信号。"
+            }
+          ],
+          "verification": [
+            {
+              "lane": "verification",
+              "source_type": "calibration-judgment",
+              "role": "judgment",
+              "label": "Adopt",
+              "url": "",
+              "excerpt": "upgraded via calibration rule tooling_surface_upgrade; direct tooling surface with clear practical utility。",
+              "note": "今天有明确升档。"
+            }
+          ]
+        },
+        "evidence_summary": {
+          "stable_count": 2,
+          "signal_count": 3,
+          "verification_count": 1,
+          "lanes_with_evidence": [
+            "stable",
+            "signal",
+            "verification"
+          ],
+          "label_preview": [
+            "主链接",
+            "稳定来源 2",
+            "X linked object"
+          ]
+        },
+        "relevance": 4,
+        "upgrade_value": 5,
+        "why_now_score": 5,
+        "signal_quality": 5,
+        "actionability": 5,
+        "saturation": 0,
+        "repeat_penalty": 0,
+        "serve_score": 24
+      },
+      {
+        "name": "Agent Browser",
+        "repo": "Agent Browser",
+        "track": "openclaw-evolution",
+        "track_label": "能力/产品线",
+        "source_section": "Adopt / adopt-candidate",
+        "judgment": "adopt-candidate",
+        "raw_reason": "",
+        "why": [],
+        "today_signal": "能力/产品线继续占据今日前排，属于今天先看的对象。 X watchlist 至少有 2 位作者把它带进了今天的观察面，补上了圈内热度来源。",
+        "why_today": "因为它今天仍在高优先级队列里，值得先占掉读者的第一轮注意力。 X boost 给出的理由是：mixed attention: one behavior-layer positive mention plus one weak skepticism signal。",
+        "freshness": {
+          "label": "今日前排",
+          "score": 82,
+          "status": "front-page-today",
+          "summary": "没有明确升档语句，但今天继续占据前排版面。"
+        },
+        "changed_today": false,
+        "change_note": "今天没有显式变化说明，但仍被编入当前版面。",
+        "action": "今天先读主链接，再决定要不要进入体验名单。",
+        "links": [
+          "https://github.com/openclaw/skills"
+        ],
+        "signal_score": 94,
+        "x_signal": {
+          "matched": true,
+          "signal_layer_only": true,
+          "stable_ingest": false,
+          "collector_status": "mock-watchlist-ready",
+          "mode": "mock-watchlist",
+          "mode_label": "mock watchlist fallback",
+          "canonical_url": "https://github.com/openclaw/skills",
+          "author_count": 2,
+          "post_count": 2,
+          "repeat_convergence": false,
+          "boost_strength": 0.38,
+          "boost_reason": "mixed attention: one behavior-layer positive mention plus one weak skepticism signal。",
+          "recommended_effects": [
+            "editorial-context",
+            "weak-risk-attachment"
+          ],
+          "authors": [
+            "agents_gamma",
+            "skeptic_delta"
+          ],
+          "signal_roles": [
+            "author-signal",
+            "risk/evidence"
+          ],
+          "mention_types": [
+            "trend-signal",
+            "editorial-opinion"
+          ],
+          "circle_note": "X watchlist 至少有 2 位作者把它带进了今天的观察面，补上了圈内热度来源。",
+          "author_signal_line": "",
+          "why_now": "X boost 给出的理由是：mixed attention: one behavior-layer positive mention plus one weak skepticism signal。",
+          "risk_note": "",
+          "score_delta": 6
+        },
+        "schema_version": "candidate-object-v1",
+        "canonical_id": "skill:agent-browser",
+        "object_type": "skill",
+        "queue": "priority",
+        "target_audience": "both",
+        "target_audience_label": "双向收益",
+        "recommended_action": "adopt_candidate",
+        "recommended_action_label": "采纳候选",
+        "why_now": "X boost 给出的理由是：mixed attention: one behavior-layer positive mention plus one weak skepticism signal。",
+        "recommended_action_reason": "今天先读主链接，再决定要不要进入体验名单。",
+        "upgrade_value_reason": "能力/产品线继续占据今日前排，属于今天先看的对象。 X watchlist 至少有 2 位作者把它带进了今天的观察面，补上了圈内热度来源。",
+        "evidence_lanes": {
+          "stable": [
+            {
+              "lane": "stable",
+              "source_type": "github-repo",
+              "role": "stable-source",
+              "label": "主链接",
+              "url": "https://github.com/openclaw/skills",
+              "excerpt": "",
+              "note": "能力/产品线继续占据今日前排，属于今天先看的对象。 X watchlist 至少有 2 位作者把它带进了今天的观察面，补上了圈内热度来源。"
+            }
+          ],
+          "signal": [
+            {
+              "lane": "signal",
+              "source_type": "x-linked-object",
+              "role": "editorial-reference",
+              "label": "X linked object",
+              "url": "https://github.com/openclaw/skills",
+              "excerpt": "",
+              "note": "X watchlist 至少有 2 位作者把它带进了今天的观察面，补上了圈内热度来源。"
+            },
+            {
+              "lane": "signal",
+              "source_type": "x-candidate-boost",
+              "role": "editorial-reference",
+              "label": "X boost",
+              "url": "",
+              "excerpt": "mixed attention: one behavior-layer positive mention plus one weak skepticism signal。",
+              "note": "X watchlist 至少有 2 位作者把它带进了今天的观察面，补上了圈内热度来源。"
+            }
+          ],
+          "verification": []
+        },
+        "evidence_summary": {
+          "stable_count": 1,
+          "signal_count": 2,
+          "verification_count": 0,
+          "lanes_with_evidence": [
+            "stable",
+            "signal"
+          ],
+          "label_preview": [
+            "主链接",
+            "X linked object",
+            "X boost"
+          ]
+        },
+        "relevance": 5,
+        "upgrade_value": 4,
+        "why_now_score": 4,
+        "signal_quality": 5,
+        "actionability": 5,
+        "saturation": 0,
+        "repeat_penalty": 0,
+        "serve_score": 23
+      },
+      {
+        "name": "davila7/claude-code-templates",
+        "repo": "davila7/claude-code-templates",
+        "track": "applied-ai-evolution",
+        "track_label": "工具/工作流线",
+        "source_section": "Adopt",
+        "judgment": "adopt",
+        "raw_reason": "",
+        "why": [],
+        "today_signal": "工具/工作流线继续占据今日前排，属于今天先看的对象。",
+        "why_today": "因为它今天仍在高优先级队列里，值得先占掉读者的第一轮注意力。",
+        "freshness": {
+          "label": "今日前排",
+          "score": 82,
+          "status": "front-page-today",
+          "summary": "没有明确升档语句，但今天继续占据前排版面。"
+        },
+        "changed_today": false,
+        "change_note": "今天没有显式变化说明，但仍被编入当前版面。",
+        "action": "今天先读主链接，再决定要不要进入体验名单。",
+        "links": [
+          "https://github.com/davila7/claude-code-templates"
+        ],
+        "signal_score": 93,
+        "x_signal": {
+          "matched": false,
+          "signal_layer_only": true,
+          "stable_ingest": false,
+          "collector_status": "mock-watchlist-ready",
+          "mode": "mock-watchlist",
+          "mode_label": "mock watchlist fallback"
+        },
+        "schema_version": "candidate-object-v1",
+        "canonical_id": "repo:davila7/claude-code-templates",
+        "object_type": "repo",
+        "queue": "priority",
+        "target_audience": "user",
+        "target_audience_label": "用户升级",
+        "recommended_action": "try_now",
+        "recommended_action_label": "马上试",
+        "why_now": "因为它今天仍在高优先级队列里，值得先占掉读者的第一轮注意力。",
+        "recommended_action_reason": "今天先读主链接，再决定要不要进入体验名单。",
+        "upgrade_value_reason": "工具/工作流线继续占据今日前排，属于今天先看的对象。",
+        "evidence_lanes": {
+          "stable": [
+            {
+              "lane": "stable",
+              "source_type": "github-repo",
+              "role": "stable-source",
+              "label": "主链接",
+              "url": "https://github.com/davila7/claude-code-templates",
+              "excerpt": "",
+              "note": "工具/工作流线继续占据今日前排，属于今天先看的对象。"
+            }
+          ],
+          "signal": [],
+          "verification": []
+        },
+        "evidence_summary": {
+          "stable_count": 1,
+          "signal_count": 0,
+          "verification_count": 0,
+          "lanes_with_evidence": [
+            "stable"
+          ],
+          "label_preview": [
+            "主链接"
+          ]
+        },
+        "relevance": 4,
+        "upgrade_value": 4,
+        "why_now_score": 3,
+        "signal_quality": 3,
+        "actionability": 5,
+        "saturation": 0,
+        "repeat_penalty": 0,
+        "serve_score": 19
+      }
+    ],
+    "follow": [
+      {
+        "name": "Gog",
+        "repo": "Gog",
+        "track": "openclaw-evolution",
+        "track_label": "能力/产品线",
+        "source_section": "Follow",
+        "judgment": "follow",
+        "raw_reason": "remains follow via calibration rule strong_support_weak_lesson; strong support, but reusable lesson still unclear。",
+        "why": [
+          "remains follow via calibration rule strong_support_weak_lesson; strong support, but reusable lesson still unclear。"
+        ],
+        "today_signal": "能力/产品线继续挂在快讯雷达，信号还在累积。 X watchlist 至少有 2 位作者把它带进了今天的观察面，补上了圈内热度来源。",
+        "why_today": "因为支持信号还在，但可复用 lesson 还没强到足以拿下今天头版。 圈内作者直接把 Gog 的价值点说了出来：Interesting idea, but Gog still feels cool before it feels reusable。",
+        "freshness": {
+          "label": "持续发酵",
+          "score": 60,
+          "status": "watch-today",
+          "summary": "仍在雷达内发酵，但今天还不到抢头版的时候。"
+        },
+        "changed_today": false,
+        "change_note": "今天没有新升档，属于位置延续。 弱风险备注：skeptic_delta 提醒“Interesting idea, but Gog still feels cool before it feels reusable.”。",
+        "action": "先放在快讯雷达里持续跟进。",
+        "links": [
+          "https://github.com/openclaw/skills"
+        ],
+        "signal_score": 56,
+        "x_signal": {
+          "matched": true,
+          "signal_layer_only": true,
+          "stable_ingest": false,
+          "collector_status": "mock-watchlist-ready",
+          "mode": "mock-watchlist",
+          "mode_label": "mock watchlist fallback",
+          "canonical_url": "https://github.com/openclaw/skills",
+          "author_count": 2,
+          "post_count": 2,
+          "repeat_convergence": false,
+          "boost_strength": 0.38,
+          "boost_reason": "mixed attention: one behavior-layer positive mention plus one weak skepticism signal。",
+          "recommended_effects": [
+            "editorial-context",
+            "weak-risk-attachment"
+          ],
+          "authors": [
+            "skeptic_delta"
+          ],
+          "signal_roles": [
+            "risk/evidence"
+          ],
+          "mention_types": [
+            "editorial-opinion"
+          ],
+          "circle_note": "X watchlist 至少有 2 位作者把它带进了今天的观察面，补上了圈内热度来源。",
+          "author_signal_line": "skeptic_delta 提到“Interesting idea, but Gog still feels cool before it feels reusable.”。",
+          "why_now": "圈内作者直接把 Gog 的价值点说了出来：Interesting idea, but Gog still feels cool before it feels reusable.。",
+          "risk_note": "弱风险备注：skeptic_delta 提醒“Interesting idea, but Gog still feels cool before it feels reusable.”。",
+          "score_delta": 4
+        },
+        "schema_version": "candidate-object-v1",
+        "canonical_id": "workflow:gog",
+        "object_type": "workflow",
+        "queue": "follow",
+        "target_audience": "both",
+        "target_audience_label": "双向收益",
+        "recommended_action": "risk_watch",
+        "recommended_action_label": "风险观察",
+        "why_now": "圈内作者直接把 Gog 的价值点说了出来：Interesting idea, but Gog still feels cool before it feels reusable。",
+        "recommended_action_reason": "先放在快讯雷达里持续跟进。",
+        "upgrade_value_reason": "能力/产品线继续挂在快讯雷达，信号还在累积。 X watchlist 至少有 2 位作者把它带进了今天的观察面，补上了圈内热度来源。",
+        "evidence_lanes": {
+          "stable": [
+            {
+              "lane": "stable",
+              "source_type": "github-repo",
+              "role": "stable-source",
+              "label": "主链接",
+              "url": "https://github.com/openclaw/skills",
+              "excerpt": "",
+              "note": "能力/产品线继续挂在快讯雷达，信号还在累积。 X watchlist 至少有 2 位作者把它带进了今天的观察面，补上了圈内热度来源。"
+            }
+          ],
+          "signal": [
+            {
+              "lane": "signal",
+              "source_type": "x-linked-object",
+              "role": "editorial-reference",
+              "label": "X linked object",
+              "url": "https://github.com/openclaw/skills",
+              "excerpt": "",
+              "note": "X watchlist 至少有 2 位作者把它带进了今天的观察面，补上了圈内热度来源。"
+            },
+            {
+              "lane": "signal",
+              "source_type": "x-author-signal",
+              "role": "author-signal",
+              "label": "作者信号",
+              "url": "",
+              "excerpt": "skeptic_delta 提到“Interesting idea, but Gog still feels cool before it feels reusable.”。",
+              "note": "圈内作者直接把 Gog 的价值点说了出来：Interesting idea, but Gog still feels cool before it feels reusable。"
+            },
+            {
+              "lane": "signal",
+              "source_type": "x-candidate-boost",
+              "role": "editorial-reference",
+              "label": "X boost",
+              "url": "",
+              "excerpt": "mixed attention: one behavior-layer positive mention plus one weak skepticism signal。",
+              "note": "X watchlist 至少有 2 位作者把它带进了今天的观察面，补上了圈内热度来源。"
+            },
+            {
+              "lane": "signal",
+              "source_type": "x-risk-note",
+              "role": "risk/evidence",
+              "label": "弱风险",
+              "url": "",
+              "excerpt": "弱风险备注：skeptic_delta 提醒“Interesting idea, but Gog still feels cool before it feels reusable.”。",
+              "note": "弱风险备注：skeptic_delta 提醒“Interesting idea, but Gog still feels cool before it feels reusable.”。"
+            }
+          ],
+          "verification": [
+            {
+              "lane": "verification",
+              "source_type": "calibration-judgment",
+              "role": "judgment",
+              "label": "Follow",
+              "url": "",
+              "excerpt": "remains follow via calibration rule strong_support_weak_lesson; strong support, but reusable lesson still u...",
+              "note": "今天没有新升档，属于位置延续。 弱风险备注：skeptic_delta 提醒“Interesting idea, but Gog still feels cool before it feels reusable.”。"
+            }
+          ]
+        },
+        "evidence_summary": {
+          "stable_count": 1,
+          "signal_count": 4,
+          "verification_count": 1,
+          "lanes_with_evidence": [
+            "stable",
+            "signal",
+            "verification"
+          ],
+          "label_preview": [
+            "主链接",
+            "X linked object",
+            "作者信号"
+          ]
+        },
+        "relevance": 5,
+        "upgrade_value": 2,
+        "why_now_score": 4,
+        "signal_quality": 5,
+        "actionability": 3,
+        "saturation": 0,
+        "repeat_penalty": 0,
+        "serve_score": 19
+      },
+      {
+        "name": "gsd-build/get-shit-done",
+        "repo": "gsd-build/get-shit-done",
+        "track": "applied-ai-evolution",
+        "track_label": "工具/工作流线",
+        "source_section": "Follow / framework-to-study",
+        "judgment": "follow",
+        "raw_reason": "remains follow via calibration rule framework_to_study; treat as methodology/framework-to-study。",
+        "why": [
+          "remains follow via calibration rule framework_to_study; treat as methodology/framework-to-study。"
+        ],
+        "today_signal": "工具/工作流线继续挂在快讯雷达，信号还在累积。",
+        "why_today": "因为方法论价值在，但今天更适合记进雷达，不必挤进主版。",
+        "freshness": {
+          "label": "持续发酵",
+          "score": 60,
+          "status": "watch-today",
+          "summary": "仍在雷达内发酵，但今天还不到抢头版的时候。"
+        },
+        "changed_today": false,
+        "change_note": "今天没有新升档，属于位置延续。",
+        "action": "先放在快讯雷达里持续跟进。",
+        "links": [
+          "https://github.com/gsd-build/get-shit-done"
+        ],
+        "signal_score": 52,
+        "x_signal": {
+          "matched": false,
+          "signal_layer_only": true,
+          "stable_ingest": false,
+          "collector_status": "mock-watchlist-ready",
+          "mode": "mock-watchlist",
+          "mode_label": "mock watchlist fallback"
+        },
+        "schema_version": "candidate-object-v1",
+        "canonical_id": "repo:gsd-build/get-shit-done",
+        "object_type": "repo",
+        "queue": "follow",
+        "target_audience": "user",
+        "target_audience_label": "用户升级",
+        "recommended_action": "follow",
+        "recommended_action_label": "继续跟进",
+        "why_now": "因为方法论价值在，但今天更适合记进雷达，不必挤进主版。",
+        "recommended_action_reason": "先放在快讯雷达里持续跟进。",
+        "upgrade_value_reason": "工具/工作流线继续挂在快讯雷达，信号还在累积。",
+        "evidence_lanes": {
+          "stable": [
+            {
+              "lane": "stable",
+              "source_type": "github-repo",
+              "role": "stable-source",
+              "label": "主链接",
+              "url": "https://github.com/gsd-build/get-shit-done",
+              "excerpt": "",
+              "note": "工具/工作流线继续挂在快讯雷达，信号还在累积。"
+            }
+          ],
+          "signal": [],
+          "verification": [
+            {
+              "lane": "verification",
+              "source_type": "calibration-judgment",
+              "role": "judgment",
+              "label": "Follow / framework-to-study",
+              "url": "",
+              "excerpt": "remains follow via calibration rule framework_to_study; treat as methodology/framework-to-study。",
+              "note": "今天没有新升档，属于位置延续。"
+            }
+          ]
+        },
+        "evidence_summary": {
+          "stable_count": 1,
+          "signal_count": 0,
+          "verification_count": 1,
+          "lanes_with_evidence": [
+            "stable",
+            "verification"
+          ],
+          "label_preview": [
+            "主链接",
+            "Follow / framework-to-study"
+          ]
+        },
+        "relevance": 4,
+        "upgrade_value": 3,
+        "why_now_score": 3,
+        "signal_quality": 3,
+        "actionability": 4,
+        "saturation": 0,
+        "repeat_penalty": 0,
+        "serve_score": 17
+      }
+    ],
+    "official_anchors": [
+      {
+        "name": "anthropics/claude-code",
+        "repo": "anthropics/claude-code",
+        "track": "official-baseline",
+        "track_label": "官方基线",
+        "source_section": "Official anchors",
+        "judgment": "official-anchor",
+        "raw_reason": "",
+        "why": [],
+        "today_signal": "官方项目继续作为今日基线，不主动抢占头版。",
+        "why_today": "因为今天需要一个稳定参照系，来判断头版项目到底离主流工具面有多远。",
+        "freshness": {
+          "label": "基线续看",
+          "score": 38,
+          "status": "baseline-carry",
+          "summary": "今天继续提供官方基线，不以爆点身份出现。"
+        },
+        "changed_today": false,
+        "change_note": "今天主要承担校准作用。",
+        "action": "继续挂表，用来和新项目对照。",
+        "links": [
+          "https://github.com/anthropics/claude-code"
+        ],
+        "signal_score": 35,
+        "schema_version": "candidate-object-v1",
+        "canonical_id": "repo:anthropics/claude-code",
+        "object_type": "official-anchor",
+        "queue": "official_anchors",
+        "target_audience": "both",
+        "target_audience_label": "双向收益",
+        "recommended_action": "official_anchor",
+        "recommended_action_label": "官方基线",
+        "why_now": "因为今天需要一个稳定参照系，来判断头版项目到底离主流工具面有多远。",
+        "recommended_action_reason": "继续挂表，用来和新项目对照。",
+        "upgrade_value_reason": "官方项目继续作为今日基线，不主动抢占头版。",
+        "evidence_lanes": {
+          "stable": [
+            {
+              "lane": "stable",
+              "source_type": "official-docs",
+              "role": "stable-source",
+              "label": "主链接",
+              "url": "https://github.com/anthropics/claude-code",
+              "excerpt": "",
+              "note": "官方项目继续作为今日基线，不主动抢占头版。"
+            }
+          ],
+          "signal": [],
+          "verification": []
+        },
+        "evidence_summary": {
+          "stable_count": 1,
+          "signal_count": 0,
+          "verification_count": 0,
+          "lanes_with_evidence": [
+            "stable"
+          ],
+          "label_preview": [
+            "主链接"
+          ]
+        },
+        "relevance": 4,
+        "upgrade_value": 3,
+        "why_now_score": 3,
+        "signal_quality": 3,
+        "actionability": 4,
+        "saturation": 0,
+        "repeat_penalty": 0,
+        "serve_score": 17
+      },
+      {
+        "name": "google-gemini/gemini-cli",
+        "repo": "google-gemini/gemini-cli",
+        "track": "official-baseline",
+        "track_label": "官方基线",
+        "source_section": "Official anchors",
+        "judgment": "official-anchor",
+        "raw_reason": "",
+        "why": [],
+        "today_signal": "官方项目继续作为今日基线，不主动抢占头版。",
+        "why_today": "因为今天需要一个稳定参照系，来判断头版项目到底离主流工具面有多远。",
+        "freshness": {
+          "label": "基线续看",
+          "score": 38,
+          "status": "baseline-carry",
+          "summary": "今天继续提供官方基线，不以爆点身份出现。"
+        },
+        "changed_today": false,
+        "change_note": "今天主要承担校准作用。",
+        "action": "继续挂表，用来和新项目对照。",
+        "links": [
+          "https://github.com/google-gemini/gemini-cli"
+        ],
+        "signal_score": 35,
+        "schema_version": "candidate-object-v1",
+        "canonical_id": "repo:google-gemini/gemini-cli",
+        "object_type": "official-anchor",
+        "queue": "official_anchors",
+        "target_audience": "both",
+        "target_audience_label": "双向收益",
+        "recommended_action": "official_anchor",
+        "recommended_action_label": "官方基线",
+        "why_now": "因为今天需要一个稳定参照系，来判断头版项目到底离主流工具面有多远。",
+        "recommended_action_reason": "继续挂表，用来和新项目对照。",
+        "upgrade_value_reason": "官方项目继续作为今日基线，不主动抢占头版。",
+        "evidence_lanes": {
+          "stable": [
+            {
+              "lane": "stable",
+              "source_type": "official-docs",
+              "role": "stable-source",
+              "label": "主链接",
+              "url": "https://github.com/google-gemini/gemini-cli",
+              "excerpt": "",
+              "note": "官方项目继续作为今日基线，不主动抢占头版。"
+            }
+          ],
+          "signal": [],
+          "verification": []
+        },
+        "evidence_summary": {
+          "stable_count": 1,
+          "signal_count": 0,
+          "verification_count": 0,
+          "lanes_with_evidence": [
+            "stable"
+          ],
+          "label_preview": [
+            "主链接"
+          ]
+        },
+        "relevance": 4,
+        "upgrade_value": 3,
+        "why_now_score": 3,
+        "signal_quality": 3,
+        "actionability": 4,
+        "saturation": 0,
+        "repeat_penalty": 0,
+        "serve_score": 17
+      },
+      {
+        "name": "openai/codex",
+        "repo": "openai/codex",
+        "track": "official-baseline",
+        "track_label": "官方基线",
+        "source_section": "Official anchors",
+        "judgment": "official-anchor",
+        "raw_reason": "",
+        "why": [],
+        "today_signal": "官方项目继续作为今日基线，不主动抢占头版。",
+        "why_today": "因为今天需要一个稳定参照系，来判断头版项目到底离主流工具面有多远。",
+        "freshness": {
+          "label": "基线续看",
+          "score": 38,
+          "status": "baseline-carry",
+          "summary": "今天继续提供官方基线，不以爆点身份出现。"
+        },
+        "changed_today": false,
+        "change_note": "今天主要承担校准作用。",
+        "action": "继续挂表，用来和新项目对照。",
+        "links": [
+          "https://github.com/openai/codex"
+        ],
+        "signal_score": 35,
+        "schema_version": "candidate-object-v1",
+        "canonical_id": "repo:openai/codex",
+        "object_type": "official-anchor",
+        "queue": "official_anchors",
+        "target_audience": "both",
+        "target_audience_label": "双向收益",
+        "recommended_action": "official_anchor",
+        "recommended_action_label": "官方基线",
+        "why_now": "因为今天需要一个稳定参照系，来判断头版项目到底离主流工具面有多远。",
+        "recommended_action_reason": "继续挂表，用来和新项目对照。",
+        "upgrade_value_reason": "官方项目继续作为今日基线，不主动抢占头版。",
+        "evidence_lanes": {
+          "stable": [
+            {
+              "lane": "stable",
+              "source_type": "official-docs",
+              "role": "stable-source",
+              "label": "主链接",
+              "url": "https://github.com/openai/codex",
+              "excerpt": "",
+              "note": "官方项目继续作为今日基线，不主动抢占头版。"
+            }
+          ],
+          "signal": [],
+          "verification": []
+        },
+        "evidence_summary": {
+          "stable_count": 1,
+          "signal_count": 0,
+          "verification_count": 0,
+          "lanes_with_evidence": [
+            "stable"
+          ],
+          "label_preview": [
+            "主链接"
+          ]
+        },
+        "relevance": 4,
+        "upgrade_value": 3,
+        "why_now_score": 3,
+        "signal_quality": 3,
+        "actionability": 4,
+        "saturation": 0,
+        "repeat_penalty": 0,
+        "serve_score": 17
+      }
+    ],
+    "deprioritized": [
+      {
+        "name": "Polymarket",
+        "repo": "Polymarket",
+        "track": "openclaw-evolution",
+        "track_label": "能力/产品线",
+        "source_section": "Deep-dive",
+        "judgment": "deep-dive",
+        "raw_reason": "",
+        "why": [],
+        "today_signal": "题材仍在，但今天先放后看。",
+        "why_today": "因为它还没有给到足够的新信息，值得保留但不该稀释今天头版。",
+        "freshness": {
+          "label": "先放后看",
+          "score": 22,
+          "status": "hold-for-later",
+          "summary": "保留题材，但不进入今天的主版面。"
+        },
+        "changed_today": false,
+        "change_note": "今天不进入主版。",
+        "action": "暂不分配主版面注意力。",
+        "links": [
+          "https://github.com/openclaw/skills"
+        ],
+        "signal_score": 20,
+        "return_trigger": "等出现可复用的新做法或更强外部佐证时再回看。",
+        "schema_version": "candidate-object-v1",
+        "canonical_id": "workflow:polymarket",
+        "object_type": "workflow",
+        "queue": "deprioritized",
+        "target_audience": "both",
+        "target_audience_label": "双向收益",
+        "recommended_action": "deep_dive",
+        "recommended_action_label": "深入研究",
+        "why_now": "因为它还没有给到足够的新信息，值得保留但不该稀释今天头版。",
+        "recommended_action_reason": "暂不分配主版面注意力。",
+        "upgrade_value_reason": "题材仍在，但今天先放后看。",
+        "evidence_lanes": {
+          "stable": [
+            {
+              "lane": "stable",
+              "source_type": "github-repo",
+              "role": "stable-source",
+              "label": "主链接",
+              "url": "https://github.com/openclaw/skills",
+              "excerpt": "",
+              "note": "题材仍在，但今天先放后看。"
+            }
+          ],
+          "signal": [],
+          "verification": []
+        },
+        "evidence_summary": {
+          "stable_count": 1,
+          "signal_count": 0,
+          "verification_count": 0,
+          "lanes_with_evidence": [
+            "stable"
+          ],
+          "label_preview": [
+            "主链接"
+          ]
+        },
+        "relevance": 5,
+        "upgrade_value": 2,
+        "why_now_score": 3,
+        "signal_quality": 3,
+        "actionability": 3,
+        "saturation": 0,
+        "repeat_penalty": 0,
+        "serve_score": 16
+      },
+      {
+        "name": "Weather",
+        "repo": "Weather",
+        "track": "openclaw-evolution",
+        "track_label": "能力/产品线",
+        "source_section": "Deep-dive",
+        "judgment": "deep-dive",
+        "raw_reason": "",
+        "why": [],
+        "today_signal": "题材仍在，但今天先放后看。",
+        "why_today": "因为它还没有给到足够的新信息，值得保留但不该稀释今天头版。",
+        "freshness": {
+          "label": "先放后看",
+          "score": 22,
+          "status": "hold-for-later",
+          "summary": "保留题材，但不进入今天的主版面。"
+        },
+        "changed_today": false,
+        "change_note": "今天不进入主版。",
+        "action": "暂不分配主版面注意力。",
+        "links": [
+          "https://github.com/openclaw/skills"
+        ],
+        "signal_score": 20,
+        "return_trigger": "等出现可复用的新做法或更强外部佐证时再回看。",
+        "schema_version": "candidate-object-v1",
+        "canonical_id": "skill:weather",
+        "object_type": "skill",
+        "queue": "deprioritized",
+        "target_audience": "openclaw",
+        "target_audience_label": "OpenClaw 进化",
+        "recommended_action": "deep_dive",
+        "recommended_action_label": "深入研究",
+        "why_now": "因为它还没有给到足够的新信息，值得保留但不该稀释今天头版。",
+        "recommended_action_reason": "暂不分配主版面注意力。",
+        "upgrade_value_reason": "题材仍在，但今天先放后看。",
+        "evidence_lanes": {
+          "stable": [
+            {
+              "lane": "stable",
+              "source_type": "github-repo",
+              "role": "stable-source",
+              "label": "主链接",
+              "url": "https://github.com/openclaw/skills",
+              "excerpt": "",
+              "note": "题材仍在，但今天先放后看。"
+            }
+          ],
+          "signal": [],
+          "verification": []
+        },
+        "evidence_summary": {
+          "stable_count": 1,
+          "signal_count": 0,
+          "verification_count": 0,
+          "lanes_with_evidence": [
+            "stable"
+          ],
+          "label_preview": [
+            "主链接"
+          ]
+        },
+        "relevance": 4,
+        "upgrade_value": 2,
+        "why_now_score": 3,
+        "signal_quality": 3,
+        "actionability": 3,
+        "saturation": 0,
+        "repeat_penalty": 0,
+        "serve_score": 15
+      }
+    ]
+  },
+  "editorial_signals": {
+    "changed_today_count": 2,
+    "priority_tracks": [
+      "工具/工作流线",
+      "能力/产品线"
+    ],
+    "front_page_candidates": [
+      "Proactive Agent",
+      "jarrodwatts/claude-hud",
+      "Agent Browser"
+    ],
+    "x_matched_items": [
+      "Proactive Agent",
+      "jarrodwatts/claude-hud",
+      "Agent Browser",
+      "Gog"
+    ],
+    "feed_candidate_count": 11
+  }
+}
