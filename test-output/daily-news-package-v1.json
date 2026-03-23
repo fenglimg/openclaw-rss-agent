@@ -5,10 +5,10 @@
     "date": "2026-03-23",
     "weekday": "Mon",
     "timezone": "UTC",
-    "edition_label": "news-style-v3"
+    "edition_label": "news-style-v3+x-signal"
   },
-  "editor_line": "今天版面同时出现两种更像“新闻”的变化：一边是可直接上手的工具面升级，另一边是更值得盯住的行为层升档。",
-  "deck": "今日版面：2 条头条｜4 条快讯雷达｜3 个官方基线｜2 条先放后看",
+  "editor_line": "今天版面同时出现两种更像“新闻”的变化：校准升档把项目顶上来，X 信号层再补上圈内为什么突然提它。",
+  "deck": "今日版面：2 条头条｜4 条快讯雷达｜3 个官方基线｜2 条先放后看｜X 命中 4 项",
   "desk": {
     "front_page_balance": {
       "counts": {
@@ -18,13 +18,45 @@
       "balanced": true
     },
     "quick_alerts": [
-      "jarrodwatts/claude-hud：工具面出现明确升级，今天从候选项抬升到前台。",
-      "Proactive Agent：能力层出现明确升档，今天不只是看功能，而是看助手行为变化。",
-      "官方基线：今天继续挂表，不和头版抢注意力。",
+      "jarrodwatts/claude-hud：工具面出现明确升级，今天从候选项抬升到前台。 X watchlist 里有 2 位作者在短时间内重复提到同一对象，形成了工具/工作流线的圈内冒头信号。 X：X watchlist 里有 2 位作者在短时间内重复提到同一对象，形成了工具/工作流线的圈内冒头信号。 Boost 0.74。",
+      "Proactive Agent：能力层出现明确升档，今天不只是看功能，而是看助手行为变化。 X watchlist 至少有 2 位作者把它带进了今天的观察面，补上了圈内热度来源。 X：X watchlist 至少有 2 位作者把它带进了今天的观察面，补上了圈内热度来源。 Boost 0.38。",
+      "X 信号层：命中 4 个版面对象，只作 why-now / weak-risk 旁证，不作 stable ingest。",
       "快讯补位：davila7/claude-code-templates 仍在雷达里，适合补看。"
     ],
     "official_baseline_line": "官方项目今天主要承担校准背景的角色，不主动挤占头版。",
-    "hold_line": "先放后看区只保留今天不该抢版面的题材。"
+    "hold_line": "先放后看区只保留今天不该抢版面的题材。",
+    "x_signal_lane": {
+      "mode": "mock-watchlist",
+      "mode_label": "mock watchlist fallback",
+      "collector_status": "mock-watchlist-ready",
+      "roles": [
+        "author-signal",
+        "editorial-reference",
+        "risk/evidence"
+      ],
+      "summary_line": "当前模式：mock watchlist fallback｜X 只作 signal layer，不作 stable ingest｜author signals 4 条｜linked objects 2 个｜boosts 2 条",
+      "artifact_counts": {
+        "author_signals": 4,
+        "linked_objects": 2,
+        "candidate_boosts": 2
+      },
+      "matched_item_count": 4,
+      "matched_items": [
+        "jarrodwatts/claude-hud",
+        "Proactive Agent",
+        "Agent Browser",
+        "Gog"
+      ],
+      "risk_items": [
+        "Gog"
+      ],
+      "lane_note": "X 只作为 author-signal / editorial-reference / weak risk 的信号层，不作为 stable ingest。",
+      "summary_highlights": [
+        "X can boost candidate generation without becoming a stable primary source。",
+        "X can provide repeat-convergence signals across trusted authors。",
+        "X can attach editorial and weak risk context to canonical objects。"
+      ]
+    }
   },
   "sections": {
     "lead": [
@@ -34,13 +66,18 @@
         "repo": "jarrodwatts/claude-hud",
         "track": "applied-ai-evolution",
         "track_label": "工具/工作流线",
-        "headline": "jarrodwatts/claude-hud 升到今天前台",
+        "headline": "jarrodwatts/claude-hud 升到今天前台，且出现 X 圈内冒头",
         "strapline": "工具/工作流线 · 今日升级",
-        "today_signal": "工具面出现明确升级，今天从候选项抬升到前台。",
-        "why_today": "因为它已经从“可关注”走到“可直接上手”的工具面升级，今天更像一条实用新闻。",
+        "today_signal": "工具面出现明确升级，今天从候选项抬升到前台。 X watchlist 里有 2 位作者在短时间内重复提到同一对象，形成了工具/工作流线的圈内冒头信号。",
+        "why_today": "因为它已经从“可关注”走到“可直接上手”的工具面升级，今天更像一条实用新闻。 圈内作者直接把 jarrodwatts/claude-hud 的价值点说了出来：Claude HUD is one of the few Claude Code add-ons that actually changes how I work day to day。",
         "freshness_line": "今日升级｜今日变化：有明确升档｜源 brief 明确给出升级动作，属于今天最该前置的信号。",
         "change_note": "今天有明确升档。",
         "action": "今天先把它放进优先体验名单。",
+        "x_signal_line": "X watchlist 里有 2 位作者在短时间内重复提到同一对象，形成了工具/工作流线的圈内冒头信号。 Boost 0.74。",
+        "x_contract_line": "mock watchlist fallback；角色：author-signal/editorial-reference；只作信号层，不作 stable ingest。",
+        "author_signal_line": "builder_alpha 提到“Claude HUD is one of the few Claude Code add-ons that actually changes how I work day to day.”；workflow_beta 提到“Still think claude-hud is underrated if you live inside Claude Code all day.”。",
+        "risk_note": "",
+        "worth_today_line": "圈内作者直接把 jarrodwatts/claude-hud 的价值点说了出来：Claude HUD is one of the few Claude Code add-ons that actually changes how I work day to day.。",
         "links": [
           {
             "label": "主链接",
@@ -60,11 +97,16 @@
         "track_label": "能力/产品线",
         "headline": "Proactive Agent 升到今天前台",
         "strapline": "能力/产品线 · 今日升级",
-        "today_signal": "能力层出现明确升档，今天不只是看功能，而是看助手行为变化。",
-        "why_today": "因为它代表助手行为层的变化，这类变化通常比单个技能点更值得今天优先看。",
+        "today_signal": "能力层出现明确升档，今天不只是看功能，而是看助手行为变化。 X watchlist 至少有 2 位作者把它带进了今天的观察面，补上了圈内热度来源。",
+        "why_today": "因为它代表助手行为层的变化，这类变化通常比单个技能点更值得今天优先看。 圈内作者直接把 Proactive Agent 的价值点说了出来：Proactive Agent is one of the more interesting behavior-layer OpenClaw surfaces I have seen lately。",
         "freshness_line": "今日升级｜今日变化：有明确升档｜源 brief 明确给出升级动作，属于今天最该前置的信号。",
         "change_note": "今天有明确升档。",
         "action": "今天先按能力层方向重点看一遍。",
+        "x_signal_line": "X watchlist 至少有 2 位作者把它带进了今天的观察面，补上了圈内热度来源。 Boost 0.38。",
+        "x_contract_line": "mock watchlist fallback；角色：author-signal；只作信号层，不作 stable ingest。",
+        "author_signal_line": "agents_gamma 提到“Proactive Agent is one of the more interesting behavior-layer OpenClaw surfaces I have seen lately.”。",
+        "risk_note": "",
+        "worth_today_line": "圈内作者直接把 Proactive Agent 的价值点说了出来：Proactive Agent is one of the more interesting behavior-layer OpenClaw surfaces I have seen lately.。",
         "links": [
           {
             "label": "主链接",
@@ -88,7 +130,12 @@
         "why_today": "因为它今天仍在高优先级队列里，值得先占掉读者的第一轮注意力。",
         "freshness": "今日前排",
         "action": "今天先读主链接，再决定要不要进入体验名单。",
-        "primary_link": "https://github.com/davila7/claude-code-templates"
+        "primary_link": "https://github.com/davila7/claude-code-templates",
+        "x_signal_line": "",
+        "author_signal_line": "",
+        "risk_note": "",
+        "worth_today_line": "",
+        "x_matched": false
       },
       {
         "tag": "靠前观察",
@@ -96,11 +143,16 @@
         "repo": "Agent Browser",
         "track": "openclaw-evolution",
         "track_label": "能力/产品线",
-        "today_signal": "能力/产品线继续占据今日前排，属于今天先看的对象。",
-        "why_today": "因为它今天仍在高优先级队列里，值得先占掉读者的第一轮注意力。",
+        "today_signal": "能力/产品线继续占据今日前排，属于今天先看的对象。 X watchlist 至少有 2 位作者把它带进了今天的观察面，补上了圈内热度来源。",
+        "why_today": "因为它今天仍在高优先级队列里，值得先占掉读者的第一轮注意力。 X boost 给出的理由是：mixed attention: one behavior-layer positive mention plus one weak skepticism signal。",
         "freshness": "今日前排",
         "action": "今天先读主链接，再决定要不要进入体验名单。",
-        "primary_link": "https://github.com/openclaw/skills"
+        "primary_link": "https://github.com/openclaw/skills",
+        "x_signal_line": "X watchlist 至少有 2 位作者把它带进了今天的观察面，补上了圈内热度来源。 Boost 0.38。",
+        "author_signal_line": "",
+        "risk_note": "",
+        "worth_today_line": "X boost 给出的理由是：mixed attention: one behavior-layer positive mention plus one weak skepticism signal。",
+        "x_matched": true
       },
       {
         "tag": "继续发酵",
@@ -112,7 +164,12 @@
         "why_today": "因为方法论价值在，但今天更适合记进雷达，不必挤进主版。",
         "freshness": "持续发酵",
         "action": "先放在快讯雷达里持续跟进。",
-        "primary_link": "https://github.com/gsd-build/get-shit-done"
+        "primary_link": "https://github.com/gsd-build/get-shit-done",
+        "x_signal_line": "",
+        "author_signal_line": "",
+        "risk_note": "",
+        "worth_today_line": "",
+        "x_matched": false
       },
       {
         "tag": "继续发酵",
@@ -120,11 +177,16 @@
         "repo": "Gog",
         "track": "openclaw-evolution",
         "track_label": "能力/产品线",
-        "today_signal": "能力/产品线继续挂在快讯雷达，信号还在累积。",
-        "why_today": "因为支持信号还在，但可复用 lesson 还没强到足以拿下今天头版。",
+        "today_signal": "能力/产品线继续挂在快讯雷达，信号还在累积。 X watchlist 至少有 2 位作者把它带进了今天的观察面，补上了圈内热度来源。",
+        "why_today": "因为支持信号还在，但可复用 lesson 还没强到足以拿下今天头版。 圈内作者直接把 Gog 的价值点说了出来：Interesting idea, but Gog still feels cool before it feels reusable。",
         "freshness": "持续发酵",
         "action": "先放在快讯雷达里持续跟进。",
-        "primary_link": "https://github.com/openclaw/skills"
+        "primary_link": "https://github.com/openclaw/skills",
+        "x_signal_line": "X watchlist 至少有 2 位作者把它带进了今天的观察面，补上了圈内热度来源。 Boost 0.38。",
+        "author_signal_line": "skeptic_delta 提到“Interesting idea, but Gog still feels cool before it feels reusable.”。",
+        "risk_note": "弱风险备注：skeptic_delta 提醒“Interesting idea, but Gog still feels cool before it feels reusable.”。",
+        "worth_today_line": "圈内作者直接把 Gog 的价值点说了出来：Interesting idea, but Gog still feels cool before it feels reusable.。",
+        "x_matched": true
       }
     ],
     "official_watch": [
@@ -165,7 +227,7 @@
     "reading_agenda": [
       "先看 jarrodwatts/claude-hud，它代表今天最前面的版面变化。",
       "再看 Proactive Agent，补足另一条主线。",
-      "最后扫一眼 davila7/claude-code-templates，补完雷达层。"
+      "最后扫一眼 Agent Browser，看 X 信号层给出的作者视角或风险备注。"
     ]
   }
 }

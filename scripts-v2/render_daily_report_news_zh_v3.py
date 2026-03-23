@@ -23,6 +23,7 @@ def render_report(package: dict) -> str:
     sections = package['sections']
     desk = package.get('desk', {})
     balance = (desk.get('front_page_balance') or {}).get('counts', {})
+    x_lane = desk.get('x_signal_lane') or {}
     balance_line = '｜'.join(f'{name} {count}' for name, count in balance.items() if count)
 
     lines = [
@@ -35,6 +36,17 @@ def render_report(package: dict) -> str:
         package['editor_line'],
         '',
     ]
+
+    if x_lane:
+        lines.extend(['## X 信号层', ''])
+        lines.append(f"- 当前模式：{x_lane.get('summary_line', 'X 只作 signal layer，不作 stable ingest。')}")
+        if x_lane.get('matched_items'):
+            lines.append(f"- 命中对象：{'、'.join(x_lane['matched_items'])}")
+        if x_lane.get('risk_items'):
+            lines.append(f"- 风险备注对象：{'、'.join(x_lane['risk_items'])}")
+        for highlight in x_lane.get('summary_highlights', []):
+            lines.append(f'- 值班摘要：{highlight}')
+        lines.append('')
 
     if desk.get('quick_alerts'):
         lines.extend(['## 一眼看完今天', ''])
@@ -49,6 +61,16 @@ def render_report(package: dict) -> str:
         lines.append(f"- 今天发生了什么：{lead['today_signal']}")
         lines.append(f"- 为什么是今天：{lead['why_today']}")
         lines.append(f"- 新鲜度：{lead['freshness_line']}")
+        if lead.get('x_signal_line'):
+            lines.append(f"- X 圈内信号：{lead['x_signal_line']}")
+        if lead.get('author_signal_line'):
+            lines.append(f"- 作者信号：{lead['author_signal_line']}")
+        if lead.get('worth_today_line'):
+            lines.append(f"- 为什么今天值得提：{lead['worth_today_line']}")
+        if lead.get('risk_note'):
+            lines.append(f"- 风险备注：{lead['risk_note']}")
+        if lead.get('x_contract_line'):
+            lines.append(f"- X 合约状态：{lead['x_contract_line']}")
         lines.append(f"- 先怎么看：{lead['action']}")
         lines.append('- 相关链接：')
         lines.extend(render_link_cards(lead['links']))
@@ -58,9 +80,17 @@ def render_report(package: dict) -> str:
         lines.extend(['## 快讯雷达', ''])
         for item in sections['briefs']:
             tail = f"｜<{item['primary_link']}>" if item['primary_link'] else ''
-            lines.append(
-                f"- [{item['track_label']}·{item['freshness']}] **{item['name']}**：{item['today_signal']} 为什么看：{item['why_today']} 先看法：{item['action']}{tail}"
-            )
+            summary = f"- [{item['track_label']}·{item['freshness']}] **{item['name']}**：{item['today_signal']} 为什么看：{item['why_today']}"
+            if item.get('x_signal_line'):
+                summary += f" X：{item['x_signal_line']}"
+            if item.get('author_signal_line'):
+                summary += f" 作者信号：{item['author_signal_line']}"
+            if item.get('risk_note'):
+                summary += f" 风险备注：{item['risk_note']}"
+            if item.get('worth_today_line'):
+                summary += f" 为什么今天值得提：{item['worth_today_line']}"
+            summary += f" 先看法：{item['action']}{tail}"
+            lines.append(summary)
         lines.append('')
 
     if sections['official_watch']:

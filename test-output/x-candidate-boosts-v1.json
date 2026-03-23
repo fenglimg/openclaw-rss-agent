@@ -1,7 +1,35 @@
 {
   "version": "v1",
-  "generated_at": "2026-03-22T17:43:58Z",
-  "collector": "x-watchlist-real-collector-skeleton-v1",
-  "status": "skeleton-no-backend",
-  "items": []
+  "items": [
+    {
+      "canonical_url": "https://github.com/jarrodwatts/claude-hud",
+      "track_bias": [
+        "applied-ai-evolution"
+      ],
+      "author_count": 2,
+      "post_count": 2,
+      "repeat_convergence": true,
+      "boost_reason": "multiple trusted authors linked the same object within a short time window",
+      "boost_strength": 0.74,
+      "recommended_effects": [
+        "candidate-boost",
+        "enrichment-priority"
+      ]
+    },
+    {
+      "canonical_url": "https://github.com/openclaw/skills",
+      "track_bias": [
+        "openclaw-evolution"
+      ],
+      "author_count": 2,
+      "post_count": 2,
+      "repeat_convergence": false,
+      "boost_reason": "mixed attention: one behavior-layer positive mention plus one weak skepticism signal",
+      "boost_strength": 0.38,
+      "recommended_effects": [
+        "editorial-context",
+        "weak-risk-attachment"
+      ]
+    }
+  ]
 }

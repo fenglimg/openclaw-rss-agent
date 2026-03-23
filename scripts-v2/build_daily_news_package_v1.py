@@ -81,8 +81,13 @@ def brief_tag(item: dict) -> str:
 
 def build_headline(item: dict) -> str:
     name = item['name']
+    x_signal = item.get('x_signal') or {}
+    if item.get('changed_today') and x_signal.get('repeat_convergence'):
+        return f'{name} 升到今天前台，且出现 X 圈内冒头'
     if item.get('changed_today'):
         return f'{name} 升到今天前台'
+    if x_signal.get('repeat_convergence'):
+        return f'{name} 留在版面前排，且被 X 圈内重复点名'
     if item.get('track') == 'applied-ai-evolution':
         return f'{name} 留在工具/工作流线前排'
     if item.get('track') == 'openclaw-evolution':
@@ -106,6 +111,47 @@ def build_freshness_line(item: dict) -> str:
     return f'{label}｜今日变化：{changed}｜{summary}'.strip('｜')
 
 
+def build_x_signal_line(item: dict) -> str:
+    x_signal = item.get('x_signal') or {}
+    if not x_signal.get('matched'):
+        return ''
+    note = clean_reason(x_signal.get('circle_note', ''))
+    boost_strength = x_signal.get('boost_strength')
+    if boost_strength:
+        note = f"{note} Boost {boost_strength:.2f}。".strip()
+    return note
+
+
+def build_x_contract_line(item: dict) -> str:
+    x_signal = item.get('x_signal') or {}
+    if not x_signal.get('matched'):
+        return ''
+    roles = '/'.join(x_signal.get('signal_roles', [])) or 'author-signal'
+    return clean_reason(
+        f"{x_signal.get('mode_label', 'x-signal')}；角色：{roles}；只作信号层，不作 stable ingest"
+    )
+
+
+def build_author_signal_line(item: dict) -> str:
+    x_signal = item.get('x_signal') or {}
+    return clean_reason(x_signal.get('author_signal_line', ''))
+
+
+def build_risk_line(item: dict) -> str:
+    x_signal = item.get('x_signal') or {}
+    risk_note = x_signal.get('risk_note') or ''
+    if risk_note:
+        return clean_reason(risk_note)
+    return ''
+
+
+def build_worth_today_line(item: dict) -> str:
+    x_signal = item.get('x_signal') or {}
+    if x_signal.get('why_now'):
+        return clean_reason(x_signal.get('why_now'))
+    return ''
+
+
 def build_lead_item(item: dict, rank: int):
     return {
         'rank': rank,
@@ -120,22 +166,33 @@ def build_lead_item(item: dict, rank: int):
         'freshness_line': build_freshness_line(item),
         'change_note': clean_reason(item.get('change_note', '今天仍在版面内。')),
         'action': clean_reason(item.get('action', '今天先读主链接。')),
+        'x_signal_line': build_x_signal_line(item),
+        'x_contract_line': build_x_contract_line(item),
+        'author_signal_line': build_author_signal_line(item),
+        'risk_note': build_risk_line(item),
+        'worth_today_line': build_worth_today_line(item),
         'links': build_link_cards(item),
     }
 
 
 def build_brief_item(item: dict):
+    x_signal = item.get('x_signal') or {}
     return {
         'tag': brief_tag(item),
         'name': item['name'],
         'repo': item.get('repo', item['name']),
         'track': item.get('track'),
         'track_label': track_label(item),
-        'today_signal': clean_reason(item.get('today_signal', '')), 
-        'why_today': clean_reason(item.get('why_today', '')), 
+        'today_signal': clean_reason(item.get('today_signal', '')),
+        'why_today': clean_reason(item.get('why_today', '')),
         'freshness': item.get('freshness', {}).get('label', '持续发酵'),
         'action': clean_reason(item.get('action', '继续观察。')),
         'primary_link': (item.get('links') or [''])[0],
+        'x_signal_line': build_x_signal_line(item),
+        'author_signal_line': build_author_signal_line(item),
+        'risk_note': build_risk_line(item),
+        'worth_today_line': build_worth_today_line(item),
+        'x_matched': x_signal.get('matched', False),
     }
 
 
@@ -158,16 +215,19 @@ def build_backlog_item(item: dict):
     }
 
 
-def build_editor_line(priority: list) -> str:
+def build_editor_line(priority: list, x_lane: dict) -> str:
     changed = [item for item in priority if item.get('changed_today')]
+    x_hits = [item for item in priority if (item.get('x_signal') or {}).get('matched')]
     tracks = {item.get('track') for item in priority}
-    if changed and 'applied-ai-evolution' in tracks and 'openclaw-evolution' in tracks:
-        return '今天版面同时出现两种更像“新闻”的变化：一边是可直接上手的工具面升级，另一边是更值得盯住的行为层升档。'
+    if changed and x_hits and 'applied-ai-evolution' in tracks and 'openclaw-evolution' in tracks:
+        return '今天版面同时出现两种更像“新闻”的变化：校准升档把项目顶上来，X 信号层再补上圈内为什么突然提它。'
+    if changed and x_hits:
+        return '今天真正值得看的，不只是被升档的项目，还有 X watchlist 给出的圈内冒头解释。'
     if changed:
         return '今天真正值得看的，是被明确升级的项目，而不是所有仍在名单里的名字。'
     if 'applied-ai-evolution' in tracks and 'openclaw-evolution' in tracks:
         return '今天版面继续维持工具线和能力线对开，让读者同时看到“能马上用什么”和“方向正在往哪走”。'
-    return '今天的重点是把真正该先看的对象排到前面，而不是把所有信号平铺出来。'
+    return clean_reason(x_lane.get('lane_note', '今天的重点是把真正该先看的对象排到前面，而不是把所有信号平铺出来。'))
 
 
 def choose_lead_items(priority: list) -> list:
@@ -212,11 +272,18 @@ def interleave_by_track(items: list) -> list:
     return ordered + remaining
 
 
-def build_quick_alerts(lead_items: list, brief_items: list, official_items: list) -> list:
+def build_quick_alerts(lead_items: list, brief_items: list, official_items: list, x_lane: dict) -> list:
     alerts = []
     for lead in lead_items:
-        alerts.append(f"{lead['name']}：{lead['today_signal']}")
-    if official_items:
+        alert = f"{lead['name']}：{lead['today_signal']}"
+        if lead.get('x_signal_line'):
+            alert += f" X：{lead['x_signal_line']}"
+        alerts.append(alert)
+    if x_lane.get('matched_item_count'):
+        alerts.append(
+            f"X 信号层：命中 {x_lane['matched_item_count']} 个版面对象，只作 why-now / weak-risk 旁证，不作 stable ingest。"
+        )
+    elif official_items:
         alerts.append('官方基线：今天继续挂表，不和头版抢注意力。')
     if brief_items:
         first = brief_items[0]
@@ -230,9 +297,40 @@ def build_reading_agenda(lead_items: list, brief_items: list) -> list:
         picks.append(f"先看 {lead_items[0]['name']}，它代表今天最前面的版面变化。")
     if len(lead_items) > 1:
         picks.append(f"再看 {lead_items[1]['name']}，补足另一条主线。")
-    if brief_items:
+    x_briefs = [item for item in brief_items if item.get('x_matched')]
+    if x_briefs:
+        picks.append(f"最后扫一眼 {x_briefs[0]['name']}，看 X 信号层给出的作者视角或风险备注。")
+    elif brief_items:
         picks.append(f"最后扫一眼 {brief_items[0]['name']}，补完雷达层。")
     return picks[:3]
+
+
+def build_x_desk(payload: dict, visible_items: list) -> dict:
+    x_lane = payload.get('x_signal_lane', {})
+    matched_items = [item for item in visible_items if (item.get('x_signal') or {}).get('matched')]
+    risk_items = [item['name'] for item in visible_items if (item.get('x_signal') or {}).get('risk_note')]
+    counts = x_lane.get('artifact_counts', {})
+    matched_names = [item['name'] for item in matched_items]
+    summary_parts = [
+        f"当前模式：{x_lane.get('mode_label', 'x-signal')}",
+        'X 只作 signal layer，不作 stable ingest',
+        f"author signals {counts.get('author_signals', 0)} 条",
+        f"linked objects {counts.get('linked_objects', 0)} 个",
+        f"boosts {counts.get('candidate_boosts', 0)} 条",
+    ]
+    return {
+        'mode': x_lane.get('mode'),
+        'mode_label': x_lane.get('mode_label'),
+        'collector_status': x_lane.get('collector_status'),
+        'roles': x_lane.get('roles', []),
+        'summary_line': '｜'.join(summary_parts),
+        'artifact_counts': counts,
+        'matched_item_count': len(matched_items),
+        'matched_items': matched_names,
+        'risk_items': risk_items,
+        'lane_note': clean_reason(x_lane.get('lane_note', '')),
+        'summary_highlights': [clean_reason(line) for line in x_lane.get('summary_highlights', [])],
+    }
 
 
 def build_news_package(payload: dict):
@@ -241,6 +339,7 @@ def build_news_package(payload: dict):
     follow = sorted(summary.get('follow', []), key=lambda item: (-item.get('signal_score', judgment_rank(item)), -judgment_rank(item)))
     official = summary.get('official_anchors', [])
     backlog = summary.get('deprioritized', [])
+    x_lane = payload.get('x_signal_lane', {})
     now = datetime.now(timezone.utc)
 
     lead_source = choose_lead_items(priority)
@@ -259,14 +358,17 @@ def build_news_package(payload: dict):
     for item in lead_items:
         front_page_counts[item['track_label']] = front_page_counts.get(item['track_label'], 0) + 1
 
+    visible_items = priority + follow
+    x_desk = build_x_desk(payload, visible_items)
     desk = {
         'front_page_balance': {
             'counts': front_page_counts,
             'balanced': sum(1 for count in front_page_counts.values() if count > 0) >= 2,
         },
-        'quick_alerts': build_quick_alerts(lead_items, brief_items, official_items),
+        'quick_alerts': build_quick_alerts(lead_items, brief_items, official_items, x_desk),
         'official_baseline_line': '官方项目今天主要承担校准背景的角色，不主动挤占头版。',
         'hold_line': '先放后看区只保留今天不该抢版面的题材。',
+        'x_signal_lane': x_desk,
     }
 
     return {
@@ -276,10 +378,10 @@ def build_news_package(payload: dict):
             'date': now.strftime('%Y-%m-%d'),
             'weekday': now.strftime('%a'),
             'timezone': 'UTC',
-            'edition_label': 'news-style-v3',
+            'edition_label': 'news-style-v3+x-signal',
         },
-        'editor_line': build_editor_line(priority),
-        'deck': f"今日版面：{len(lead_items)} 条头条｜{len(brief_items)} 条快讯雷达｜{len(official_items)} 个官方基线｜{len(backlog_items)} 条先放后看",
+        'editor_line': build_editor_line(priority, x_lane),
+        'deck': f"今日版面：{len(lead_items)} 条头条｜{len(brief_items)} 条快讯雷达｜{len(official_items)} 个官方基线｜{len(backlog_items)} 条先放后看｜X 命中 {x_desk['matched_item_count']} 项",
         'desk': desk,
         'sections': {
             'lead': lead_items,

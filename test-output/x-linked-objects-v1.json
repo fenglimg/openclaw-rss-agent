@@ -1,7 +1,51 @@
 {
   "version": "v1",
-  "generated_at": "2026-03-22T17:43:58Z",
-  "collector": "x-watchlist-real-collector-skeleton-v1",
-  "status": "skeleton-no-backend",
-  "items": []
+  "items": [
+    {
+      "canonical_url": "https://github.com/jarrodwatts/claude-hud",
+      "object_type": "github-repo",
+      "source_posts": [
+        "https://x.com/builder_alpha/status/1001",
+        "https://x.com/workflow_beta/status/1002"
+      ],
+      "authors": [
+        "builder_alpha",
+        "workflow_beta"
+      ],
+      "mention_types": [
+        "tool-link",
+        "author-recommendation"
+      ],
+      "track_bias": [
+        "applied-ai-evolution"
+      ],
+      "x_signal_roles": [
+        "author-signal",
+        "editorial-reference"
+      ]
+    },
+    {
+      "canonical_url": "https://github.com/openclaw/skills",
+      "object_type": "github-repo",
+      "source_posts": [
+        "https://x.com/agents_gamma/status/1003",
+        "https://x.com/skeptic_delta/status/1004"
+      ],
+      "authors": [
+        "agents_gamma",
+        "skeptic_delta"
+      ],
+      "mention_types": [
+        "trend-signal",
+        "editorial-opinion"
+      ],
+      "track_bias": [
+        "openclaw-evolution"
+      ],
+      "x_signal_roles": [
+        "author-signal",
+        "risk/evidence"
+      ]
+    }
+  ]
 }

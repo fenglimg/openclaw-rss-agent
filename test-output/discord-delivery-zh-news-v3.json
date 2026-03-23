@@ -4,14 +4,14 @@
   "report": "outputs/daily-report-zh-news-v3.md",
   "chunks_file": "test-output/discord-chunked-delivery-zh-news-v3.json",
   "delivery_file": "test-output/discord-delivery-zh-news-v3.json",
-  "chunk_count": 2,
+  "chunk_count": 5,
   "chunks_sent": 0,
   "token_source": null,
   "message_ids": [],
   "sent": [],
   "failed_chunks": [],
   "package_file": "test-output/daily-news-package-v1.json",
-  "edition": "news-style-v3",
+  "edition": "news-style-v3+x-signal",
   "lead_names": [
     "jarrodwatts/claude-hud",
     "Proactive Agent"
@@ -20,5 +20,21 @@
   "brief_count": 4,
   "official_count": 3,
   "hold_count": 2,
-  "front_page_balanced": true
+  "front_page_balanced": true,
+  "x_mode": "mock watchlist fallback",
+  "x_matched_item_count": 4,
+  "x_matched_items": [
+    "jarrodwatts/claude-hud",
+    "Proactive Agent",
+    "Agent Browser",
+    "Gog"
+  ],
+  "x_risk_items": [
+    "Gog"
+  ],
+  "x_refresh": {
+    "mode": "auto",
+    "refreshed": false,
+    "reason": "existing X contract outputs already populated"
+  }
 }

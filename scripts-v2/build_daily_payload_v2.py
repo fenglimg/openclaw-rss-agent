@@ -8,6 +8,20 @@ APPLIED = Path('outputs/applied-ai-evolution-brief-v5.md')
 OPENCLAW = Path('outputs/openclaw-evolution-brief-v15.md')
 OUT = Path('test-output/daily-payload-v2.json')
 
+X_AUTHOR_SIGNALS = Path('test-output/x-author-signals-v1.json')
+X_LINKED_OBJECTS = Path('test-output/x-linked-objects-v1.json')
+X_CANDIDATE_BOOSTS = Path('test-output/x-candidate-boosts-v1.json')
+X_WATCHLIST_SUMMARY = Path('outputs/x-watchlist-summary-v1.md')
+
+X_REFERENCE_DOCS = [
+    'references/x-signal-research.md',
+    'references/x-source-spec-v0.md',
+    'references/x-watchlist-v0.md',
+    'references/x-watchlist-seeds-v0.md',
+    'references/x-collector-contract-v1.md',
+    'references/x-integration-flow-v1.md',
+]
+
 TRACK_LABEL = {
     'applied-ai-evolution': '工具/工作流线',
     'openclaw-evolution': '能力/产品线',
@@ -29,6 +43,15 @@ BASE_SCORE = {
 
 def read(path: Path) -> str:
     return path.read_text(encoding='utf-8') if path.exists() else ''
+
+
+def read_json(path: Path) -> dict:
+    if not path.exists():
+        return {}
+    try:
+        return json.loads(path.read_text(encoding='utf-8'))
+    except json.JSONDecodeError:
+        return {}
 
 
 def bullets_under(text: str, heading: str):
@@ -82,6 +105,69 @@ def normalize_sentence(text: str) -> str:
     if cleaned and cleaned[-1] not in '。！？':
         cleaned += '。'
     return cleaned
+
+
+def merge_sentences(*parts: str) -> str:
+    normalized = []
+    seen = set()
+    for part in parts:
+        sentence = normalize_sentence(part)
+        if sentence and sentence not in seen:
+            normalized.append(sentence)
+            seen.add(sentence)
+    return ' '.join(normalized)
+
+
+def normalize_url(url: str) -> str:
+    cleaned = (url or '').strip()
+    if not cleaned:
+        return ''
+    cleaned = re.sub(r'[?#].*$', '', cleaned)
+    if cleaned.endswith('/'):
+        cleaned = cleaned[:-1]
+    if cleaned.startswith('https://github.com/'):
+        owner_repo = cleaned[len('https://github.com/'):]
+        parts = [part for part in owner_repo.split('/') if part]
+        if len(parts) >= 2:
+            cleaned = f'https://github.com/{parts[0].lower()}/{parts[1].lower()}'
+    return cleaned
+
+
+def compact_excerpt(text: str) -> str:
+    cleaned = re.sub(r'\s+', ' ', text or '').strip().replace('"', '”')
+    if len(cleaned) > 110:
+        cleaned = cleaned[:107].rstrip() + '...'
+    return cleaned
+
+
+def item_aliases(name: str, repo: str, links: list) -> set:
+    aliases = set()
+    for raw in (name, repo):
+        lowered = (raw or '').lower().strip()
+        if not lowered:
+            continue
+        aliases.add(lowered)
+        aliases.add(lowered.replace('-', ' '))
+        aliases.add(lowered.replace('/', ' '))
+        aliases.add(lowered.replace('_', ' '))
+        aliases.add(lowered.replace(' ', '-'))
+        if '/' in lowered:
+            aliases.add(lowered.split('/')[-1])
+    for link in links or []:
+        normalized = normalize_url(link)
+        if normalized.startswith('https://github.com/'):
+            slug = normalized[len('https://github.com/'):]
+            aliases.add(slug)
+            tail = slug.split('/')[-1]
+            aliases.add(tail)
+            aliases.add(tail.replace('-', ' '))
+            aliases.add(slug.replace('-', ' '))
+    return {alias for alias in aliases if len(alias) >= 3}
+
+
+def excerpt_mentions_item(text: str, aliases: set) -> bool:
+    lowered = (text or '').lower()
+    return any(alias in lowered for alias in aliases)
 
 
 def score_reason(reason: str, judgment: str) -> int:
@@ -270,6 +356,245 @@ def build_hold_item(line: str, track: str) -> dict:
     }
 
 
+def collect_summary_highlights(text: str) -> list:
+    highlights = []
+    capture = False
+    for raw_line in text.splitlines():
+        line = raw_line.strip()
+        if line.startswith('## What this mock demonstrates') or line.startswith('## What this run proves'):
+            capture = True
+            continue
+        if capture and line.startswith('## '):
+            break
+        if capture and line.startswith('- '):
+            highlights.append(normalize_sentence(line[2:]))
+    return highlights[:3]
+
+
+def build_x_signal_lane() -> dict:
+    author_data = read_json(X_AUTHOR_SIGNALS)
+    linked_data = read_json(X_LINKED_OBJECTS)
+    boost_data = read_json(X_CANDIDATE_BOOSTS)
+    summary_text = read(X_WATCHLIST_SUMMARY)
+
+    collector = (
+        author_data.get('collector')
+        or linked_data.get('collector')
+        or boost_data.get('collector')
+        or 'x-watchlist-contract'
+    )
+    raw_status = (
+        author_data.get('status')
+        or linked_data.get('status')
+        or boost_data.get('status')
+        or ('mock-watchlist-ready' if 'First mock collector output' in summary_text else 'unknown')
+    )
+    if raw_status == 'skeleton-no-backend':
+        mode = 'skeleton-no-backend'
+        mode_label = '未接真实 backend 的 skeleton'
+    elif 'mock' in raw_status or 'mock collector' in summary_text.lower() or author_data.get('items'):
+        mode = 'mock-watchlist'
+        mode_label = 'mock watchlist fallback'
+    else:
+        mode = raw_status or 'unknown'
+        mode_label = raw_status or 'unknown'
+
+    lane = {
+        'collector': collector,
+        'collector_status': raw_status,
+        'mode': mode,
+        'mode_label': mode_label,
+        'signal_layer_only': True,
+        'stable_ingest': False,
+        'roles': ['author-signal', 'editorial-reference', 'risk/evidence'],
+        'artifact_paths': {
+            'author_signals': str(X_AUTHOR_SIGNALS),
+            'linked_objects': str(X_LINKED_OBJECTS),
+            'candidate_boosts': str(X_CANDIDATE_BOOSTS),
+            'watchlist_summary': str(X_WATCHLIST_SUMMARY),
+        },
+        'reference_docs': X_REFERENCE_DOCS,
+        'artifact_counts': {
+            'author_signals': len(author_data.get('items', [])),
+            'linked_objects': len(linked_data.get('items', [])),
+            'candidate_boosts': len(boost_data.get('items', [])),
+        },
+        'summary_highlights': collect_summary_highlights(summary_text),
+        'summary_excerpt': normalize_sentence(summary_text.splitlines()[2]) if len(summary_text.splitlines()) > 2 else '',
+    }
+
+    author_lookup = {}
+    for item in author_data.get('items', []):
+        canonical_urls = [normalize_url(url) for url in item.get('canonical_urls', []) if normalize_url(url)]
+        for canonical_url in canonical_urls:
+            author_lookup.setdefault(canonical_url, []).append(item)
+
+    linked_lookup = {
+        normalize_url(item.get('canonical_url')): item
+        for item in linked_data.get('items', [])
+        if normalize_url(item.get('canonical_url'))
+    }
+    boost_lookup = {
+        normalize_url(item.get('canonical_url')): item
+        for item in boost_data.get('items', [])
+        if normalize_url(item.get('canonical_url'))
+    }
+
+    lane['lookups'] = {
+        'author_lookup': author_lookup,
+        'linked_lookup': linked_lookup,
+        'boost_lookup': boost_lookup,
+    }
+    return lane
+
+
+def build_author_signal_line(signals: list) -> str:
+    if not signals:
+        return ''
+    snippets = []
+    for signal in signals[:2]:
+        handle = signal.get('author_handle') or 'unknown-author'
+        excerpt = compact_excerpt(signal.get('text_excerpt', ''))
+        if excerpt:
+            snippets.append(f'{handle} 提到“{excerpt}”')
+        else:
+            snippets.append(f'{handle} 给了一个作者信号')
+    return '；'.join(snippets) + '。'
+
+
+def build_circle_note(boost: dict, linked: dict, track: str) -> str:
+    author_count = int(boost.get('author_count') or len(linked.get('authors', [])) or 0)
+    post_count = int(boost.get('post_count') or len(linked.get('source_posts', [])) or 0)
+    repeat_convergence = bool(boost.get('repeat_convergence'))
+    if repeat_convergence and author_count:
+        return f'X watchlist 里有 {author_count} 位作者在短时间内重复提到同一对象，形成了{track_label(track)}的圈内冒头信号。'
+    if author_count:
+        return f'X watchlist 至少有 {author_count} 位作者把它带进了今天的观察面，补上了圈内热度来源。'
+    if post_count:
+        return f'X signal lane 里出现了 {post_count} 条相关提及，可作为今天的弱旁证。'
+    return ''
+
+
+def build_x_why_now(signals: list, boost: dict, item_name: str) -> str:
+    if signals:
+        excerpt = compact_excerpt(signals[0].get('text_excerpt', ''))
+        if excerpt:
+            return f'圈内作者直接把 {item_name} 的价值点说了出来：{excerpt}。'
+    boost_reason = normalize_sentence(boost.get('boost_reason', ''))
+    if boost_reason:
+        return f'X boost 给出的理由是：{boost_reason}'
+    return ''
+
+
+def build_risk_note(item: dict, signals: list) -> str:
+    risk_signals = [signal for signal in signals if signal.get('x_signal_role') == 'risk/evidence']
+    if risk_signals:
+        risk = risk_signals[0]
+        handle = risk.get('author_handle') or 'unknown-author'
+        excerpt = compact_excerpt(risk.get('text_excerpt', ''))
+        if excerpt:
+            return f'弱风险备注：{handle} 提醒“{excerpt}”。'
+        return f'弱风险备注：{handle} 给了一个保守信号。'
+    if 'known risk/evidence caution' in (item.get('raw_reason') or '').lower():
+        return '弱风险备注：原始校准结果已提示 known risk/evidence caution，今天仍不适合把它当成无争议信号。'
+    return ''
+
+
+def build_x_signal(item: dict, x_lane: dict) -> dict:
+    links = [normalize_url(link) for link in item.get('links', []) if normalize_url(link)]
+    aliases = item_aliases(item.get('name', ''), item.get('repo', ''), links)
+    lookups = x_lane.get('lookups', {})
+
+    matched_url = ''
+    linked = {}
+    boost = {}
+    all_signals = []
+    for link in links:
+        linked = lookups.get('linked_lookup', {}).get(link) or {}
+        boost = lookups.get('boost_lookup', {}).get(link) or {}
+        all_signals = lookups.get('author_lookup', {}).get(link) or []
+        if linked or boost or all_signals:
+            matched_url = link
+            break
+
+    if not matched_url:
+        return {
+            'matched': False,
+            'signal_layer_only': True,
+            'stable_ingest': False,
+            'collector_status': x_lane.get('collector_status'),
+            'mode': x_lane.get('mode'),
+            'mode_label': x_lane.get('mode_label'),
+        }
+
+    item_specific = [signal for signal in all_signals if excerpt_mentions_item(signal.get('text_excerpt', ''), aliases)]
+    scoped_signals = sorted(item_specific, key=lambda signal: -(signal.get('author_signal_weight') or 0.0))
+
+    author_handles = []
+    handle_source = [signal.get('author_handle') for signal in scoped_signals] if scoped_signals else linked.get('authors', [])
+    for handle in handle_source:
+        if handle and handle not in author_handles:
+            author_handles.append(handle)
+
+    signal_roles = []
+    role_source = [signal.get('x_signal_role') for signal in scoped_signals] if scoped_signals else linked.get('x_signal_roles', [])
+    for role in role_source:
+        if role and role not in signal_roles:
+            signal_roles.append(role)
+
+    mention_types = []
+    mention_source = [signal.get('mention_type') for signal in scoped_signals] if scoped_signals else linked.get('mention_types', [])
+    for mention_type in mention_source:
+        if mention_type and mention_type not in mention_types:
+            mention_types.append(mention_type)
+
+    author_count = int(boost.get('author_count') or len(author_handles))
+    post_count = int(boost.get('post_count') or len(linked.get('source_posts', [])) or len(scoped_signals))
+    repeat_convergence = bool(boost.get('repeat_convergence'))
+    boost_strength = float(boost.get('boost_strength') or 0.0)
+    risk_note = build_risk_note(item, scoped_signals)
+    score_delta = min(12, author_count * 2 + round(boost_strength * 4) + (3 if repeat_convergence else 0) - (2 if risk_note else 0))
+    if score_delta < 0:
+        score_delta = 0
+
+    return {
+        'matched': True,
+        'signal_layer_only': True,
+        'stable_ingest': False,
+        'collector_status': x_lane.get('collector_status'),
+        'mode': x_lane.get('mode'),
+        'mode_label': x_lane.get('mode_label'),
+        'canonical_url': matched_url,
+        'author_count': author_count,
+        'post_count': post_count,
+        'repeat_convergence': repeat_convergence,
+        'boost_strength': boost_strength,
+        'boost_reason': normalize_sentence(boost.get('boost_reason', '')),
+        'recommended_effects': boost.get('recommended_effects', []),
+        'authors': author_handles,
+        'signal_roles': signal_roles,
+        'mention_types': mention_types,
+        'circle_note': build_circle_note(boost, linked, item.get('track', '')),
+        'author_signal_line': build_author_signal_line(scoped_signals),
+        'why_now': build_x_why_now(scoped_signals, boost, item.get('name', '这个对象')),
+        'risk_note': risk_note,
+        'score_delta': score_delta,
+    }
+
+
+def attach_x_signal(item: dict, x_lane: dict) -> dict:
+    enriched = dict(item)
+    x_signal = build_x_signal(item, x_lane)
+    enriched['x_signal'] = x_signal
+    if x_signal.get('matched'):
+        enriched['signal_score'] += x_signal.get('score_delta', 0)
+        enriched['today_signal'] = merge_sentences(enriched.get('today_signal', ''), x_signal.get('circle_note', ''))
+        enriched['why_today'] = merge_sentences(enriched.get('why_today', ''), x_signal.get('why_now', ''))
+        if x_signal.get('risk_note'):
+            enriched['change_note'] = merge_sentences(enriched.get('change_note', ''), x_signal.get('risk_note', ''))
+    return enriched
+
+
 def sort_items(items: list) -> list:
     return sorted(
         items,
@@ -277,13 +602,31 @@ def sort_items(items: list) -> list:
     )
 
 
-def build_payload(applied_text: str, openclaw_text: str) -> dict:
-    applied_adopt = [build_item(line, 'applied-ai-evolution', 'Adopt', 'adopt') for line in bullets_under(applied_text, 'Adopt')]
-    applied_follow = [build_item(line, 'applied-ai-evolution', 'Follow / framework-to-study', 'follow') for line in bullets_under(applied_text, 'Follow / framework-to-study')]
+def enrich_with_x(items: list, x_lane: dict) -> list:
+    return [attach_x_signal(item, x_lane) for item in items]
+
+
+def build_payload(applied_text: str, openclaw_text: str, x_lane: dict | None = None) -> dict:
+    x_lane = x_lane or build_x_signal_lane()
+
+    applied_adopt = enrich_with_x(
+        [build_item(line, 'applied-ai-evolution', 'Adopt', 'adopt') for line in bullets_under(applied_text, 'Adopt')],
+        x_lane,
+    )
+    applied_follow = enrich_with_x(
+        [build_item(line, 'applied-ai-evolution', 'Follow / framework-to-study', 'follow') for line in bullets_under(applied_text, 'Follow / framework-to-study')],
+        x_lane,
+    )
     applied_official = [build_official_item(line) for line in bullets_under(applied_text, 'Official anchors')]
 
-    openclaw_adopt = [build_item(line, 'openclaw-evolution', 'Adopt / adopt-candidate', 'adopt-candidate') for line in bullets_under(openclaw_text, 'Adopt / adopt-candidate')]
-    openclaw_follow = [build_item(line, 'openclaw-evolution', 'Follow', 'follow') for line in bullets_under(openclaw_text, 'Follow')]
+    openclaw_adopt = enrich_with_x(
+        [build_item(line, 'openclaw-evolution', 'Adopt / adopt-candidate', 'adopt-candidate') for line in bullets_under(openclaw_text, 'Adopt / adopt-candidate')],
+        x_lane,
+    )
+    openclaw_follow = enrich_with_x(
+        [build_item(line, 'openclaw-evolution', 'Follow', 'follow') for line in bullets_under(openclaw_text, 'Follow')],
+        x_lane,
+    )
     openclaw_deep = [build_hold_item(line, 'openclaw-evolution') for line in bullets_under(openclaw_text, 'Deep-dive')]
 
     priority = sort_items(applied_adopt)[:2] + sort_items(openclaw_adopt)[:2]
@@ -292,11 +635,33 @@ def build_payload(applied_text: str, openclaw_text: str) -> dict:
     official = applied_official[:3]
     deprioritized = sort_items(openclaw_deep)[:2]
 
+    visible_items = priority + follow
+    x_matched_items = [item for item in visible_items if (item.get('x_signal') or {}).get('matched')]
+    x_risk_items = [item['name'] for item in visible_items if (item.get('x_signal') or {}).get('risk_note')]
+
     generated_at = datetime.now(timezone.utc)
     return {
         'title': 'daily-payload-v2',
         'generated_at': generated_at.isoformat(),
         'sources': [str(APPLIED), str(OPENCLAW)],
+        'x_signal_lane': {
+            'collector': x_lane.get('collector'),
+            'collector_status': x_lane.get('collector_status'),
+            'mode': x_lane.get('mode'),
+            'mode_label': x_lane.get('mode_label'),
+            'signal_layer_only': True,
+            'stable_ingest': False,
+            'roles': x_lane.get('roles', []),
+            'artifact_paths': x_lane.get('artifact_paths', {}),
+            'artifact_counts': x_lane.get('artifact_counts', {}),
+            'reference_docs': x_lane.get('reference_docs', []),
+            'summary_highlights': x_lane.get('summary_highlights', []),
+            'summary_excerpt': x_lane.get('summary_excerpt', ''),
+            'matched_item_count': len(x_matched_items),
+            'matched_items': [item['name'] for item in x_matched_items],
+            'risk_items': x_risk_items,
+            'lane_note': 'X 只作为 author-signal / editorial-reference / weak risk 的信号层，不作为 stable ingest。',
+        },
         'summary': {
             'priority': priority,
             'follow': follow,
@@ -307,6 +672,7 @@ def build_payload(applied_text: str, openclaw_text: str) -> dict:
             'changed_today_count': sum(1 for item in priority + follow if item.get('changed_today')),
             'priority_tracks': sorted({item['track_label'] for item in priority}),
             'front_page_candidates': [item['name'] for item in priority[:3]],
+            'x_matched_items': [item['name'] for item in x_matched_items],
         },
     }
 

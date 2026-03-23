@@ -40,6 +40,27 @@ class DailyNewsPipelineV3Tests(unittest.TestCase):
         self.assertEqual(claude_hud['freshness']['label'], '今日升级')
         self.assertEqual(proactive['freshness']['label'], '今日升级')
 
+    def test_payload_consumes_x_contract_and_mock_signals(self):
+        payload = self.build_payload()
+        x_lane = payload['x_signal_lane']
+
+        self.assertEqual(x_lane['mode'], 'mock-watchlist')
+        self.assertEqual(x_lane['artifact_counts']['author_signals'], 4)
+        self.assertGreaterEqual(x_lane['matched_item_count'], 3)
+        self.assertIn('jarrodwatts/claude-hud', x_lane['matched_items'])
+
+        claude_hud = next(item for item in payload['summary']['priority'] if item['name'] == 'jarrodwatts/claude-hud')
+        gog = next(item for item in payload['summary']['follow'] if item['name'] == 'Gog')
+
+        self.assertTrue(claude_hud['x_signal']['matched'])
+        self.assertTrue(claude_hud['x_signal']['repeat_convergence'])
+        self.assertIn('builder_alpha', claude_hud['x_signal']['authors'])
+        self.assertIn('圈内冒头信号', claude_hud['today_signal'])
+
+        self.assertTrue(gog['x_signal']['matched'])
+        self.assertIn('skeptic_delta', gog['x_signal']['risk_note'])
+        self.assertIn('弱风险备注', gog['change_note'])
+
     def test_news_package_balances_front_page(self):
         payload = self.build_payload()
         package = package_mod.build_news_package(payload)
@@ -49,15 +70,23 @@ class DailyNewsPipelineV3Tests(unittest.TestCase):
         self.assertEqual(len(set(lead_tracks)), 2)
         self.assertTrue(package['desk']['front_page_balance']['balanced'])
         self.assertGreaterEqual(len(package['desk']['quick_alerts']), 2)
+        self.assertGreaterEqual(package['desk']['x_signal_lane']['matched_item_count'], 3)
+        self.assertIn('jarrodwatts/claude-hud', package['desk']['x_signal_lane']['matched_items'])
 
     def test_render_reads_like_daily_news(self):
         payload = self.build_payload()
         package = package_mod.build_news_package(payload)
         report = render_mod.render_report(package)
 
+        self.assertIn('## X 信号层', report)
         self.assertIn('## 一眼看完今天', report)
         self.assertIn('## 今日头条', report)
         self.assertIn('今天发生了什么', report)
+        self.assertIn('作者信号', report)
+        self.assertIn('风险备注', report)
+        self.assertIn('为什么今天值得提', report)
+        self.assertIn('builder_alpha', report)
+        self.assertIn('skeptic_delta', report)
         self.assertIn('## 快讯雷达', report)
         self.assertIn('## 官方基线', report)
 

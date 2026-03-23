@@ -1,32 +1,32 @@
 # X Watchlist Summary v1
 
-Real collector skeleton run.
+First mock collector output showing how X watchlist signals can feed the current evolution discovery system.
 
-## Status
-- Collector: `x-watchlist-real-collector-skeleton-v1`
-- Run mode: skeleton only
-- Backend: not connected yet
-- Generated at: `2026-03-22T17:43:58Z`
+## Stronger applied signal
 
-## What this run proves
-- The repository now has a concrete execution path for a real X watchlist collector.
-- Downstream outputs are fixed to the agreed contract files.
-- The next step is to connect one backend (for example `twitter-cli`, `twscrape`, or browser/session-based collection) without changing downstream file shapes.
+### https://github.com/jarrodwatts/claude-hud
+- Track bias: `applied-ai-evolution`
+- Authors: `builder_alpha`, `workflow_beta`
+- Signal pattern: repeated positive mention + practical tooling framing
+- Recommended downstream effects:
+  - `candidate-boost`
+  - `enrichment-priority`
+- Why it matters: this is the exact kind of repeat-convergence signal that can accelerate a practical tool from generic follow toward stronger adopt pressure.
 
-## Current outputs
-- `test-output/x-author-signals-v1.json`
-- `test-output/x-linked-objects-v1.json`
-- `test-output/x-candidate-boosts-v1.json`
-- `outputs/x-watchlist-summary-v1.md`
+## Mixed openclaw signal
 
-## Watchlist seed source
-- Loaded from: `references/x-watchlist-seeds-v0.md`
-- Seed file present: `true`
+### https://github.com/openclaw/skills
+- Track bias: `openclaw-evolution`
+- Authors: `agents_gamma`, `skeptic_delta`
+- Signal pattern: one positive behavior-layer signal plus one weak skepticism/editorial signal
+- Recommended downstream effects:
+  - `editorial-context`
+  - `weak-risk-attachment`
+- Why it matters: this kind of X signal should not directly promote adoption, but it can explain why an item stays in `follow` instead of being upgraded too quickly.
 
-## Next implementation point
-Wire one minimal acquisition backend that:
-1. reads a small manually reviewed watchlist
-2. fetches recent posts
-3. extracts outbound links
-4. canonicalizes links
-5. writes into the existing output contract
+## What this mock demonstrates
+
+- X can boost candidate generation without becoming a stable primary source.
+- X can provide repeat-convergence signals across trusted authors.
+- X can attach editorial and weak risk context to canonical objects.
+- The durable object remains the canonical URL, not the post itself.

@@ -1,10 +1,59 @@
 {
   "title": "daily-payload-v2",
-  "generated_at": "2026-03-23T05:30:07.689705+00:00",
+  "generated_at": "2026-03-23T11:02:44.593381+00:00",
   "sources": [
     "outputs/applied-ai-evolution-brief-v5.md",
     "outputs/openclaw-evolution-brief-v15.md"
   ],
+  "x_signal_lane": {
+    "collector": "x-watchlist-contract",
+    "collector_status": "mock-watchlist-ready",
+    "mode": "mock-watchlist",
+    "mode_label": "mock watchlist fallback",
+    "signal_layer_only": true,
+    "stable_ingest": false,
+    "roles": [
+      "author-signal",
+      "editorial-reference",
+      "risk/evidence"
+    ],
+    "artifact_paths": {
+      "author_signals": "test-output/x-author-signals-v1.json",
+      "linked_objects": "test-output/x-linked-objects-v1.json",
+      "candidate_boosts": "test-output/x-candidate-boosts-v1.json",
+      "watchlist_summary": "outputs/x-watchlist-summary-v1.md"
+    },
+    "artifact_counts": {
+      "author_signals": 4,
+      "linked_objects": 2,
+      "candidate_boosts": 2
+    },
+    "reference_docs": [
+      "references/x-signal-research.md",
+      "references/x-source-spec-v0.md",
+      "references/x-watchlist-v0.md",
+      "references/x-watchlist-seeds-v0.md",
+      "references/x-collector-contract-v1.md",
+      "references/x-integration-flow-v1.md"
+    ],
+    "summary_highlights": [
+      "X can boost candidate generation without becoming a stable primary source。",
+      "X can provide repeat-convergence signals across trusted authors。",
+      "X can attach editorial and weak risk context to canonical objects。"
+    ],
+    "summary_excerpt": "First mock collector output showing how X watchlist signals can feed the current evolution discovery system。",
+    "matched_item_count": 4,
+    "matched_items": [
+      "jarrodwatts/claude-hud",
+      "Proactive Agent",
+      "Agent Browser",
+      "Gog"
+    ],
+    "risk_items": [
+      "Gog"
+    ],
+    "lane_note": "X 只作为 author-signal / editorial-reference / weak risk 的信号层，不作为 stable ingest。"
+  },
   "summary": {
     "priority": [
       {
@@ -18,8 +67,8 @@
         "why": [
           "upgraded via calibration rule tooling_surface_upgrade; direct tooling surface with clear practical utility。"
         ],
-        "today_signal": "工具面出现明确升级，今天从候选项抬升到前台。",
-        "why_today": "因为它已经从“可关注”走到“可直接上手”的工具面升级，今天更像一条实用新闻。",
+        "today_signal": "工具面出现明确升级，今天从候选项抬升到前台。 X watchlist 里有 2 位作者在短时间内重复提到同一对象，形成了工具/工作流线的圈内冒头信号。",
+        "why_today": "因为它已经从“可关注”走到“可直接上手”的工具面升级，今天更像一条实用新闻。 圈内作者直接把 jarrodwatts/claude-hud 的价值点说了出来：Claude HUD is one of the few Claude Code add-ons that actually changes how I work day to day。",
         "freshness": {
           "label": "今日升级",
           "score": 95,
@@ -33,7 +82,42 @@
           "https://github.com/jarrodwatts/claude-hud",
           "https://github.com/jarrodwatts/claude-delegator"
         ],
-        "signal_score": 130
+        "signal_score": 140,
+        "x_signal": {
+          "matched": true,
+          "signal_layer_only": true,
+          "stable_ingest": false,
+          "collector_status": "mock-watchlist-ready",
+          "mode": "mock-watchlist",
+          "mode_label": "mock watchlist fallback",
+          "canonical_url": "https://github.com/jarrodwatts/claude-hud",
+          "author_count": 2,
+          "post_count": 2,
+          "repeat_convergence": true,
+          "boost_strength": 0.74,
+          "boost_reason": "multiple trusted authors linked the same object within a short time window。",
+          "recommended_effects": [
+            "candidate-boost",
+            "enrichment-priority"
+          ],
+          "authors": [
+            "builder_alpha",
+            "workflow_beta"
+          ],
+          "signal_roles": [
+            "author-signal",
+            "editorial-reference"
+          ],
+          "mention_types": [
+            "tool-link",
+            "author-recommendation"
+          ],
+          "circle_note": "X watchlist 里有 2 位作者在短时间内重复提到同一对象，形成了工具/工作流线的圈内冒头信号。",
+          "author_signal_line": "builder_alpha 提到“Claude HUD is one of the few Claude Code add-ons that actually changes how I work day to day.”；workflow_beta 提到“Still think claude-hud is underrated if you live inside Claude Code all day.”。",
+          "why_now": "圈内作者直接把 jarrodwatts/claude-hud 的价值点说了出来：Claude HUD is one of the few Claude Code add-ons that actually changes how I work day to day.。",
+          "risk_note": "",
+          "score_delta": 10
+        }
       },
       {
         "name": "Proactive Agent",
@@ -46,8 +130,8 @@
         "why": [
           "upgraded via calibration rule behavior_layer_upgrade; strategically relevant behavior-layer capability。"
         ],
-        "today_signal": "能力层出现明确升档，今天不只是看功能，而是看助手行为变化。",
-        "why_today": "因为它代表助手行为层的变化，这类变化通常比单个技能点更值得今天优先看。",
+        "today_signal": "能力层出现明确升档，今天不只是看功能，而是看助手行为变化。 X watchlist 至少有 2 位作者把它带进了今天的观察面，补上了圈内热度来源。",
+        "why_today": "因为它代表助手行为层的变化，这类变化通常比单个技能点更值得今天优先看。 圈内作者直接把 Proactive Agent 的价值点说了出来：Proactive Agent is one of the more interesting behavior-layer OpenClaw surfaces I have seen lately。",
         "freshness": {
           "label": "今日升级",
           "score": 95,
@@ -61,7 +145,99 @@
           "https://github.com/openclaw/skills",
           "https://github.com/VoltAgent/awesome-openclaw-skills"
         ],
-        "signal_score": 127
+        "signal_score": 133,
+        "x_signal": {
+          "matched": true,
+          "signal_layer_only": true,
+          "stable_ingest": false,
+          "collector_status": "mock-watchlist-ready",
+          "mode": "mock-watchlist",
+          "mode_label": "mock watchlist fallback",
+          "canonical_url": "https://github.com/openclaw/skills",
+          "author_count": 2,
+          "post_count": 2,
+          "repeat_convergence": false,
+          "boost_strength": 0.38,
+          "boost_reason": "mixed attention: one behavior-layer positive mention plus one weak skepticism signal。",
+          "recommended_effects": [
+            "editorial-context",
+            "weak-risk-attachment"
+          ],
+          "authors": [
+            "agents_gamma"
+          ],
+          "signal_roles": [
+            "author-signal"
+          ],
+          "mention_types": [
+            "trend-signal"
+          ],
+          "circle_note": "X watchlist 至少有 2 位作者把它带进了今天的观察面，补上了圈内热度来源。",
+          "author_signal_line": "agents_gamma 提到“Proactive Agent is one of the more interesting behavior-layer OpenClaw surfaces I have seen lately.”。",
+          "why_now": "圈内作者直接把 Proactive Agent 的价值点说了出来：Proactive Agent is one of the more interesting behavior-layer OpenClaw surfaces I have seen lately.。",
+          "risk_note": "",
+          "score_delta": 6
+        }
+      },
+      {
+        "name": "Agent Browser",
+        "repo": "Agent Browser",
+        "track": "openclaw-evolution",
+        "track_label": "能力/产品线",
+        "source_section": "Adopt / adopt-candidate",
+        "judgment": "adopt-candidate",
+        "raw_reason": "",
+        "why": [],
+        "today_signal": "能力/产品线继续占据今日前排，属于今天先看的对象。 X watchlist 至少有 2 位作者把它带进了今天的观察面，补上了圈内热度来源。",
+        "why_today": "因为它今天仍在高优先级队列里，值得先占掉读者的第一轮注意力。 X boost 给出的理由是：mixed attention: one behavior-layer positive mention plus one weak skepticism signal。",
+        "freshness": {
+          "label": "今日前排",
+          "score": 82,
+          "status": "front-page-today",
+          "summary": "没有明确升档语句，但今天继续占据前排版面。"
+        },
+        "changed_today": false,
+        "change_note": "今天没有显式变化说明，但仍被编入当前版面。",
+        "action": "今天先读主链接，再决定要不要进入体验名单。",
+        "links": [
+          "https://github.com/openclaw/skills"
+        ],
+        "signal_score": 94,
+        "x_signal": {
+          "matched": true,
+          "signal_layer_only": true,
+          "stable_ingest": false,
+          "collector_status": "mock-watchlist-ready",
+          "mode": "mock-watchlist",
+          "mode_label": "mock watchlist fallback",
+          "canonical_url": "https://github.com/openclaw/skills",
+          "author_count": 2,
+          "post_count": 2,
+          "repeat_convergence": false,
+          "boost_strength": 0.38,
+          "boost_reason": "mixed attention: one behavior-layer positive mention plus one weak skepticism signal。",
+          "recommended_effects": [
+            "editorial-context",
+            "weak-risk-attachment"
+          ],
+          "authors": [
+            "agents_gamma",
+            "skeptic_delta"
+          ],
+          "signal_roles": [
+            "author-signal",
+            "risk/evidence"
+          ],
+          "mention_types": [
+            "trend-signal",
+            "editorial-opinion"
+          ],
+          "circle_note": "X watchlist 至少有 2 位作者把它带进了今天的观察面，补上了圈内热度来源。",
+          "author_signal_line": "",
+          "why_now": "X boost 给出的理由是：mixed attention: one behavior-layer positive mention plus one weak skepticism signal。",
+          "risk_note": "",
+          "score_delta": 6
+        }
       },
       {
         "name": "davila7/claude-code-templates",
@@ -86,35 +262,77 @@
         "links": [
           "https://github.com/davila7/claude-code-templates"
         ],
-        "signal_score": 93
-      },
-      {
-        "name": "Agent Browser",
-        "repo": "Agent Browser",
-        "track": "openclaw-evolution",
-        "track_label": "能力/产品线",
-        "source_section": "Adopt / adopt-candidate",
-        "judgment": "adopt-candidate",
-        "raw_reason": "",
-        "why": [],
-        "today_signal": "能力/产品线继续占据今日前排，属于今天先看的对象。",
-        "why_today": "因为它今天仍在高优先级队列里，值得先占掉读者的第一轮注意力。",
-        "freshness": {
-          "label": "今日前排",
-          "score": 82,
-          "status": "front-page-today",
-          "summary": "没有明确升档语句，但今天继续占据前排版面。"
-        },
-        "changed_today": false,
-        "change_note": "今天没有显式变化说明，但仍被编入当前版面。",
-        "action": "今天先读主链接，再决定要不要进入体验名单。",
-        "links": [
-          "https://github.com/openclaw/skills"
-        ],
-        "signal_score": 88
+        "signal_score": 93,
+        "x_signal": {
+          "matched": false,
+          "signal_layer_only": true,
+          "stable_ingest": false,
+          "collector_status": "mock-watchlist-ready",
+          "mode": "mock-watchlist",
+          "mode_label": "mock watchlist fallback"
+        }
       }
     ],
     "follow": [
+      {
+        "name": "Gog",
+        "repo": "Gog",
+        "track": "openclaw-evolution",
+        "track_label": "能力/产品线",
+        "source_section": "Follow",
+        "judgment": "follow",
+        "raw_reason": "remains follow via calibration rule strong_support_weak_lesson; strong support, but reusable lesson still unclear。",
+        "why": [
+          "remains follow via calibration rule strong_support_weak_lesson; strong support, but reusable lesson still unclear。"
+        ],
+        "today_signal": "能力/产品线继续挂在快讯雷达，信号还在累积。 X watchlist 至少有 2 位作者把它带进了今天的观察面，补上了圈内热度来源。",
+        "why_today": "因为支持信号还在，但可复用 lesson 还没强到足以拿下今天头版。 圈内作者直接把 Gog 的价值点说了出来：Interesting idea, but Gog still feels cool before it feels reusable。",
+        "freshness": {
+          "label": "持续发酵",
+          "score": 60,
+          "status": "watch-today",
+          "summary": "仍在雷达内发酵，但今天还不到抢头版的时候。"
+        },
+        "changed_today": false,
+        "change_note": "今天没有新升档，属于位置延续。 弱风险备注：skeptic_delta 提醒“Interesting idea, but Gog still feels cool before it feels reusable.”。",
+        "action": "先放在快讯雷达里持续跟进。",
+        "links": [
+          "https://github.com/openclaw/skills"
+        ],
+        "signal_score": 56,
+        "x_signal": {
+          "matched": true,
+          "signal_layer_only": true,
+          "stable_ingest": false,
+          "collector_status": "mock-watchlist-ready",
+          "mode": "mock-watchlist",
+          "mode_label": "mock watchlist fallback",
+          "canonical_url": "https://github.com/openclaw/skills",
+          "author_count": 2,
+          "post_count": 2,
+          "repeat_convergence": false,
+          "boost_strength": 0.38,
+          "boost_reason": "mixed attention: one behavior-layer positive mention plus one weak skepticism signal。",
+          "recommended_effects": [
+            "editorial-context",
+            "weak-risk-attachment"
+          ],
+          "authors": [
+            "skeptic_delta"
+          ],
+          "signal_roles": [
+            "risk/evidence"
+          ],
+          "mention_types": [
+            "editorial-opinion"
+          ],
+          "circle_note": "X watchlist 至少有 2 位作者把它带进了今天的观察面，补上了圈内热度来源。",
+          "author_signal_line": "skeptic_delta 提到“Interesting idea, but Gog still feels cool before it feels reusable.”。",
+          "why_now": "圈内作者直接把 Gog 的价值点说了出来：Interesting idea, but Gog still feels cool before it feels reusable.。",
+          "risk_note": "弱风险备注：skeptic_delta 提醒“Interesting idea, but Gog still feels cool before it feels reusable.”。",
+          "score_delta": 4
+        }
+      },
       {
         "name": "gsd-build/get-shit-done",
         "repo": "gsd-build/get-shit-done",
@@ -140,34 +358,15 @@
         "links": [
           "https://github.com/gsd-build/get-shit-done"
         ],
-        "signal_score": 52
-      },
-      {
-        "name": "Gog",
-        "repo": "Gog",
-        "track": "openclaw-evolution",
-        "track_label": "能力/产品线",
-        "source_section": "Follow",
-        "judgment": "follow",
-        "raw_reason": "remains follow via calibration rule strong_support_weak_lesson; strong support, but reusable lesson still unclear。",
-        "why": [
-          "remains follow via calibration rule strong_support_weak_lesson; strong support, but reusable lesson still unclear。"
-        ],
-        "today_signal": "能力/产品线继续挂在快讯雷达，信号还在累积。",
-        "why_today": "因为支持信号还在，但可复用 lesson 还没强到足以拿下今天头版。",
-        "freshness": {
-          "label": "持续发酵",
-          "score": 60,
-          "status": "watch-today",
-          "summary": "仍在雷达内发酵，但今天还不到抢头版的时候。"
-        },
-        "changed_today": false,
-        "change_note": "今天没有新升档，属于位置延续。",
-        "action": "先放在快讯雷达里持续跟进。",
-        "links": [
-          "https://github.com/openclaw/skills"
-        ],
-        "signal_score": 52
+        "signal_score": 52,
+        "x_signal": {
+          "matched": false,
+          "signal_layer_only": true,
+          "stable_ingest": false,
+          "collector_status": "mock-watchlist-ready",
+          "mode": "mock-watchlist",
+          "mode_label": "mock watchlist fallback"
+        }
       }
     ],
     "official_anchors": [
@@ -311,7 +510,13 @@
     "front_page_candidates": [
       "jarrodwatts/claude-hud",
       "Proactive Agent",
-      "davila7/claude-code-templates"
+      "Agent Browser"
+    ],
+    "x_matched_items": [
+      "jarrodwatts/claude-hud",
+      "Proactive Agent",
+      "Agent Browser",
+      "Gog"
     ]
   }
 }

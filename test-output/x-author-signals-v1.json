@@ -1,7 +1,113 @@
 {
   "version": "v1",
-  "generated_at": "2026-03-22T17:43:58Z",
-  "collector": "x-watchlist-real-collector-skeleton-v1",
-  "status": "skeleton-no-backend",
-  "items": []
+  "items": [
+    {
+      "platform": "x",
+      "author_handle": "builder_alpha",
+      "author_display_name": "Builder Alpha",
+      "post_url": "https://x.com/builder_alpha/status/1001",
+      "post_id": "1001",
+      "posted_at": "2026-03-22T15:00:00Z",
+      "text_excerpt": "Claude HUD is one of the few Claude Code add-ons that actually changes how I work day to day.",
+      "linked_urls": [
+        "https://github.com/jarrodwatts/claude-hud"
+      ],
+      "canonical_urls": [
+        "https://github.com/jarrodwatts/claude-hud"
+      ],
+      "mention_type": "tool-link",
+      "x_signal_role": "author-signal",
+      "engagement": {
+        "likes": 180,
+        "reposts": 22,
+        "replies": 11,
+        "views": 6200
+      },
+      "author_signal_weight": 0.85,
+      "track_bias": [
+        "applied-ai-evolution"
+      ]
+    },
+    {
+      "platform": "x",
+      "author_handle": "workflow_beta",
+      "author_display_name": "Workflow Beta",
+      "post_url": "https://x.com/workflow_beta/status/1002",
+      "post_id": "1002",
+      "posted_at": "2026-03-22T15:40:00Z",
+      "text_excerpt": "Still think claude-hud is underrated if you live inside Claude Code all day.",
+      "linked_urls": [
+        "https://github.com/jarrodwatts/claude-hud"
+      ],
+      "canonical_urls": [
+        "https://github.com/jarrodwatts/claude-hud"
+      ],
+      "mention_type": "author-recommendation",
+      "x_signal_role": "editorial-reference",
+      "engagement": {
+        "likes": 95,
+        "reposts": 10,
+        "replies": 4,
+        "views": 3100
+      },
+      "author_signal_weight": 0.7,
+      "track_bias": [
+        "applied-ai-evolution"
+      ]
+    },
+    {
+      "platform": "x",
+      "author_handle": "agents_gamma",
+      "author_display_name": "Agents Gamma",
+      "post_url": "https://x.com/agents_gamma/status/1003",
+      "post_id": "1003",
+      "posted_at": "2026-03-22T14:50:00Z",
+      "text_excerpt": "Proactive Agent is one of the more interesting behavior-layer OpenClaw surfaces I have seen lately.",
+      "linked_urls": [
+        "https://github.com/openclaw/skills"
+      ],
+      "canonical_urls": [
+        "https://github.com/openclaw/skills"
+      ],
+      "mention_type": "trend-signal",
+      "x_signal_role": "author-signal",
+      "engagement": {
+        "likes": 140,
+        "reposts": 18,
+        "replies": 7,
+        "views": 5400
+      },
+      "author_signal_weight": 0.78,
+      "track_bias": [
+        "openclaw-evolution"
+      ]
+    },
+    {
+      "platform": "x",
+      "author_handle": "skeptic_delta",
+      "author_display_name": "Skeptic Delta",
+      "post_url": "https://x.com/skeptic_delta/status/1004",
+      "post_id": "1004",
+      "posted_at": "2026-03-22T16:20:00Z",
+      "text_excerpt": "Interesting idea, but Gog still feels cool before it feels reusable.",
+      "linked_urls": [
+        "https://github.com/openclaw/skills"
+      ],
+      "canonical_urls": [
+        "https://github.com/openclaw/skills"
+      ],
+      "mention_type": "editorial-opinion",
+      "x_signal_role": "risk/evidence",
+      "engagement": {
+        "likes": 60,
+        "reposts": 3,
+        "replies": 9,
+        "views": 1900
+      },
+      "author_signal_weight": 0.55,
+      "track_bias": [
+        "openclaw-evolution"
+      ]
+    }
+  ]
 }
