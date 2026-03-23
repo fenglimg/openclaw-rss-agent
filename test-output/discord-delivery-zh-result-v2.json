@@ -1,0 +1,31 @@
+{
+  "ok": true,
+  "status": "sent",
+  "report": "outputs/daily-report-zh-from-payload-v2.md",
+  "chunks_file": "test-output/discord-chunked-delivery-zh-v2.json",
+  "delivery_file": "test-output/discord-delivery-zh-result-v2.json",
+  "chunk_count": 2,
+  "chunks_sent": 2,
+  "token_source": "env.DISCORD_BOT_TOKEN_SILIJIAN",
+  "message_ids": [
+    "1485458818879193140",
+    "1485458820477227018"
+  ],
+  "sent": [
+    {
+      "index": 1,
+      "length": 1694,
+      "status": "sent",
+      "message_id": "1485458818879193140",
+      "channel_id": "1484951098660753558"
+    },
+    {
+      "index": 2,
+      "length": 471,
+      "status": "sent",
+      "message_id": "1485458820477227018",
+      "channel_id": "1484951098660753558"
+    }
+  ],
+  "failed_chunks": []
+}

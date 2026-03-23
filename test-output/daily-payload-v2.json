@@ -1,0 +1,317 @@
+{
+  "title": "daily-payload-v2",
+  "generated_at": "2026-03-23T05:30:07.689705+00:00",
+  "sources": [
+    "outputs/applied-ai-evolution-brief-v5.md",
+    "outputs/openclaw-evolution-brief-v15.md"
+  ],
+  "summary": {
+    "priority": [
+      {
+        "name": "jarrodwatts/claude-hud",
+        "repo": "jarrodwatts/claude-hud",
+        "track": "applied-ai-evolution",
+        "track_label": "工具/工作流线",
+        "source_section": "Adopt",
+        "judgment": "adopt",
+        "raw_reason": "upgraded via calibration rule tooling_surface_upgrade; direct tooling surface with clear practical utility。",
+        "why": [
+          "upgraded via calibration rule tooling_surface_upgrade; direct tooling surface with clear practical utility。"
+        ],
+        "today_signal": "工具面出现明确升级，今天从候选项抬升到前台。",
+        "why_today": "因为它已经从“可关注”走到“可直接上手”的工具面升级，今天更像一条实用新闻。",
+        "freshness": {
+          "label": "今日升级",
+          "score": 95,
+          "status": "changed-today",
+          "summary": "源 brief 明确给出升级动作，属于今天最该前置的信号。"
+        },
+        "changed_today": true,
+        "change_note": "今天有明确升档。",
+        "action": "今天先把它放进优先体验名单。",
+        "links": [
+          "https://github.com/jarrodwatts/claude-hud",
+          "https://github.com/jarrodwatts/claude-delegator"
+        ],
+        "signal_score": 130
+      },
+      {
+        "name": "Proactive Agent",
+        "repo": "Proactive Agent",
+        "track": "openclaw-evolution",
+        "track_label": "能力/产品线",
+        "source_section": "Adopt / adopt-candidate",
+        "judgment": "adopt-candidate",
+        "raw_reason": "upgraded via calibration rule behavior_layer_upgrade; strategically relevant behavior-layer capability。",
+        "why": [
+          "upgraded via calibration rule behavior_layer_upgrade; strategically relevant behavior-layer capability。"
+        ],
+        "today_signal": "能力层出现明确升档，今天不只是看功能，而是看助手行为变化。",
+        "why_today": "因为它代表助手行为层的变化，这类变化通常比单个技能点更值得今天优先看。",
+        "freshness": {
+          "label": "今日升级",
+          "score": 95,
+          "status": "changed-today",
+          "summary": "源 brief 明确给出升级动作，属于今天最该前置的信号。"
+        },
+        "changed_today": true,
+        "change_note": "今天有明确升档。",
+        "action": "今天先按能力层方向重点看一遍。",
+        "links": [
+          "https://github.com/openclaw/skills",
+          "https://github.com/VoltAgent/awesome-openclaw-skills"
+        ],
+        "signal_score": 127
+      },
+      {
+        "name": "davila7/claude-code-templates",
+        "repo": "davila7/claude-code-templates",
+        "track": "applied-ai-evolution",
+        "track_label": "工具/工作流线",
+        "source_section": "Adopt",
+        "judgment": "adopt",
+        "raw_reason": "",
+        "why": [],
+        "today_signal": "工具/工作流线继续占据今日前排，属于今天先看的对象。",
+        "why_today": "因为它今天仍在高优先级队列里，值得先占掉读者的第一轮注意力。",
+        "freshness": {
+          "label": "今日前排",
+          "score": 82,
+          "status": "front-page-today",
+          "summary": "没有明确升档语句，但今天继续占据前排版面。"
+        },
+        "changed_today": false,
+        "change_note": "今天没有显式变化说明，但仍被编入当前版面。",
+        "action": "今天先读主链接，再决定要不要进入体验名单。",
+        "links": [
+          "https://github.com/davila7/claude-code-templates"
+        ],
+        "signal_score": 93
+      },
+      {
+        "name": "Agent Browser",
+        "repo": "Agent Browser",
+        "track": "openclaw-evolution",
+        "track_label": "能力/产品线",
+        "source_section": "Adopt / adopt-candidate",
+        "judgment": "adopt-candidate",
+        "raw_reason": "",
+        "why": [],
+        "today_signal": "能力/产品线继续占据今日前排，属于今天先看的对象。",
+        "why_today": "因为它今天仍在高优先级队列里，值得先占掉读者的第一轮注意力。",
+        "freshness": {
+          "label": "今日前排",
+          "score": 82,
+          "status": "front-page-today",
+          "summary": "没有明确升档语句，但今天继续占据前排版面。"
+        },
+        "changed_today": false,
+        "change_note": "今天没有显式变化说明，但仍被编入当前版面。",
+        "action": "今天先读主链接，再决定要不要进入体验名单。",
+        "links": [
+          "https://github.com/openclaw/skills"
+        ],
+        "signal_score": 88
+      }
+    ],
+    "follow": [
+      {
+        "name": "gsd-build/get-shit-done",
+        "repo": "gsd-build/get-shit-done",
+        "track": "applied-ai-evolution",
+        "track_label": "工具/工作流线",
+        "source_section": "Follow / framework-to-study",
+        "judgment": "follow",
+        "raw_reason": "remains follow via calibration rule framework_to_study; treat as methodology/framework-to-study。",
+        "why": [
+          "remains follow via calibration rule framework_to_study; treat as methodology/framework-to-study。"
+        ],
+        "today_signal": "工具/工作流线继续挂在快讯雷达，信号还在累积。",
+        "why_today": "因为方法论价值在，但今天更适合记进雷达，不必挤进主版。",
+        "freshness": {
+          "label": "持续发酵",
+          "score": 60,
+          "status": "watch-today",
+          "summary": "仍在雷达内发酵，但今天还不到抢头版的时候。"
+        },
+        "changed_today": false,
+        "change_note": "今天没有新升档，属于位置延续。",
+        "action": "先放在快讯雷达里持续跟进。",
+        "links": [
+          "https://github.com/gsd-build/get-shit-done"
+        ],
+        "signal_score": 52
+      },
+      {
+        "name": "Gog",
+        "repo": "Gog",
+        "track": "openclaw-evolution",
+        "track_label": "能力/产品线",
+        "source_section": "Follow",
+        "judgment": "follow",
+        "raw_reason": "remains follow via calibration rule strong_support_weak_lesson; strong support, but reusable lesson still unclear。",
+        "why": [
+          "remains follow via calibration rule strong_support_weak_lesson; strong support, but reusable lesson still unclear。"
+        ],
+        "today_signal": "能力/产品线继续挂在快讯雷达，信号还在累积。",
+        "why_today": "因为支持信号还在，但可复用 lesson 还没强到足以拿下今天头版。",
+        "freshness": {
+          "label": "持续发酵",
+          "score": 60,
+          "status": "watch-today",
+          "summary": "仍在雷达内发酵，但今天还不到抢头版的时候。"
+        },
+        "changed_today": false,
+        "change_note": "今天没有新升档，属于位置延续。",
+        "action": "先放在快讯雷达里持续跟进。",
+        "links": [
+          "https://github.com/openclaw/skills"
+        ],
+        "signal_score": 52
+      }
+    ],
+    "official_anchors": [
+      {
+        "name": "anthropics/claude-code",
+        "repo": "anthropics/claude-code",
+        "track": "official-baseline",
+        "track_label": "官方基线",
+        "source_section": "Official anchors",
+        "judgment": "official-anchor",
+        "raw_reason": "",
+        "why": [],
+        "today_signal": "官方项目继续作为今日基线，不主动抢占头版。",
+        "why_today": "因为今天需要一个稳定参照系，来判断头版项目到底离主流工具面有多远。",
+        "freshness": {
+          "label": "基线续看",
+          "score": 38,
+          "status": "baseline-carry",
+          "summary": "今天继续提供官方基线，不以爆点身份出现。"
+        },
+        "changed_today": false,
+        "change_note": "今天主要承担校准作用。",
+        "action": "继续挂表，用来和新项目对照。",
+        "links": [
+          "https://github.com/anthropics/claude-code"
+        ],
+        "signal_score": 35
+      },
+      {
+        "name": "openai/codex",
+        "repo": "openai/codex",
+        "track": "official-baseline",
+        "track_label": "官方基线",
+        "source_section": "Official anchors",
+        "judgment": "official-anchor",
+        "raw_reason": "",
+        "why": [],
+        "today_signal": "官方项目继续作为今日基线，不主动抢占头版。",
+        "why_today": "因为今天需要一个稳定参照系，来判断头版项目到底离主流工具面有多远。",
+        "freshness": {
+          "label": "基线续看",
+          "score": 38,
+          "status": "baseline-carry",
+          "summary": "今天继续提供官方基线，不以爆点身份出现。"
+        },
+        "changed_today": false,
+        "change_note": "今天主要承担校准作用。",
+        "action": "继续挂表，用来和新项目对照。",
+        "links": [
+          "https://github.com/openai/codex"
+        ],
+        "signal_score": 35
+      },
+      {
+        "name": "google-gemini/gemini-cli",
+        "repo": "google-gemini/gemini-cli",
+        "track": "official-baseline",
+        "track_label": "官方基线",
+        "source_section": "Official anchors",
+        "judgment": "official-anchor",
+        "raw_reason": "",
+        "why": [],
+        "today_signal": "官方项目继续作为今日基线，不主动抢占头版。",
+        "why_today": "因为今天需要一个稳定参照系，来判断头版项目到底离主流工具面有多远。",
+        "freshness": {
+          "label": "基线续看",
+          "score": 38,
+          "status": "baseline-carry",
+          "summary": "今天继续提供官方基线，不以爆点身份出现。"
+        },
+        "changed_today": false,
+        "change_note": "今天主要承担校准作用。",
+        "action": "继续挂表，用来和新项目对照。",
+        "links": [
+          "https://github.com/google-gemini/gemini-cli"
+        ],
+        "signal_score": 35
+      }
+    ],
+    "deprioritized": [
+      {
+        "name": "Polymarket",
+        "repo": "Polymarket",
+        "track": "openclaw-evolution",
+        "track_label": "能力/产品线",
+        "source_section": "Deep-dive",
+        "judgment": "deep-dive",
+        "raw_reason": "",
+        "why": [],
+        "today_signal": "题材仍在，但今天先放后看。",
+        "why_today": "因为它还没有给到足够的新信息，值得保留但不该稀释今天头版。",
+        "freshness": {
+          "label": "先放后看",
+          "score": 22,
+          "status": "hold-for-later",
+          "summary": "保留题材，但不进入今天的主版面。"
+        },
+        "changed_today": false,
+        "change_note": "今天不进入主版。",
+        "action": "暂不分配主版面注意力。",
+        "links": [
+          "https://github.com/openclaw/skills"
+        ],
+        "signal_score": 20,
+        "return_trigger": "等出现可复用的新做法或更强外部佐证时再回看。"
+      },
+      {
+        "name": "Weather",
+        "repo": "Weather",
+        "track": "openclaw-evolution",
+        "track_label": "能力/产品线",
+        "source_section": "Deep-dive",
+        "judgment": "deep-dive",
+        "raw_reason": "",
+        "why": [],
+        "today_signal": "题材仍在，但今天先放后看。",
+        "why_today": "因为它还没有给到足够的新信息，值得保留但不该稀释今天头版。",
+        "freshness": {
+          "label": "先放后看",
+          "score": 22,
+          "status": "hold-for-later",
+          "summary": "保留题材，但不进入今天的主版面。"
+        },
+        "changed_today": false,
+        "change_note": "今天不进入主版。",
+        "action": "暂不分配主版面注意力。",
+        "links": [
+          "https://github.com/openclaw/skills"
+        ],
+        "signal_score": 20,
+        "return_trigger": "等出现可复用的新做法或更强外部佐证时再回看。"
+      }
+    ]
+  },
+  "editorial_signals": {
+    "changed_today_count": 2,
+    "priority_tracks": [
+      "工具/工作流线",
+      "能力/产品线"
+    ],
+    "front_page_candidates": [
+      "jarrodwatts/claude-hud",
+      "Proactive Agent",
+      "davila7/claude-code-templates"
+    ]
+  }
+}

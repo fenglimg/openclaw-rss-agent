@@ -1,0 +1,12 @@
+{
+  "ok": true,
+  "input_paths": [
+    "outputs/applied-ai-evolution-brief-v5.md",
+    "outputs/openclaw-evolution-brief-v15.md"
+  ],
+  "chunk_count": 1,
+  "max_len": 1800,
+  "chunks": [
+    "# Applied AI Evolution Brief v5\n\nCalibration-native applied output: final practical queues now consume calibration results directly.\n\n## Adopt\n\n- **obra/superpowers**\n- **mindfold-ai/Trellis**\n- **davila7/claude-code-templates**\n- **jarrodwatts/claude-hud** — upgraded via calibration rule `tooling_surface_upgrade`; direct tooling surface with clear practical utility.\n\n## Follow / framework-to-study\n\n- **gsd-build/get-shit-done** — remains `follow` via calibration rule `framework_to_study`; treat as methodology/framework-to-study.\n\n## Official anchors\n\n- **anthropics/claude-code**\n- **openai/codex**\n- **google-gemini/gemini-cli**\n\n# OpenClaw Evolution Brief v15\n\nCalibration-native OpenClaw output: final queues now consume calibration results directly.\n\n## Adopt / adopt-candidate\n\n- **Agent Browser**\n- **Summarize**\n- **Github**\n- **self-improving-agent** — remains adopt, but with known risk/evidence caution.\n- **Proactive Agent** — upgraded via calibration rule `behavior_layer_upgrade`; strategically relevant behavior-layer capability.\n\n## Follow\n\n- **Gog** — remains `follow` via calibration rule `strong_support_weak_lesson`; strong support, but reusable lesson still unclear.\n\n## Deep-dive\n\n- **Polymarket**\n- **Weather**"
+  ]
+}

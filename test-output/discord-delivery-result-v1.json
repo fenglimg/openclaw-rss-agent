@@ -1,0 +1,21 @@
+{
+  "ok": true,
+  "status": "sent",
+  "input": "test-output/discord-chunked-delivery-v1.json",
+  "chunk_count": 1,
+  "chunks_sent": 1,
+  "token_source": "env.DISCORD_BOT_TOKEN_SILIJIAN",
+  "message_ids": [
+    "1485452033820463115"
+  ],
+  "sent": [
+    {
+      "index": 1,
+      "length": 1239,
+      "status": "sent",
+      "message_id": "1485452033820463115",
+      "channel_id": "1484951098660753558"
+    }
+  ],
+  "failed_chunks": []
+}

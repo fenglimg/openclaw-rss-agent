@@ -1,0 +1,24 @@
+{
+  "ok": true,
+  "status": "prepared",
+  "report": "outputs/daily-report-zh-news-v3.md",
+  "chunks_file": "test-output/discord-chunked-delivery-zh-news-v3.json",
+  "delivery_file": "test-output/discord-delivery-zh-news-v3.json",
+  "chunk_count": 2,
+  "chunks_sent": 0,
+  "token_source": null,
+  "message_ids": [],
+  "sent": [],
+  "failed_chunks": [],
+  "package_file": "test-output/daily-news-package-v1.json",
+  "edition": "news-style-v3",
+  "lead_names": [
+    "jarrodwatts/claude-hud",
+    "Proactive Agent"
+  ],
+  "lead_count": 2,
+  "brief_count": 4,
+  "official_count": 3,
+  "hold_count": 2,
+  "front_page_balanced": true
+}

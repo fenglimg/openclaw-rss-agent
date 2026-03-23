@@ -1,0 +1,101 @@
+#!/usr/bin/env python3
+import json
+from pathlib import Path
+
+OUT = Path('test-output/daily-payload-v1.json')
+
+payload = {
+    'title': 'daily-payload-v1',
+    'summary': {
+        'priority': [
+            {
+                'name': 'Claude HUD',
+                'repo': 'jarrodwatts/claude-hud',
+                'track': 'applied-ai-evolution',
+                'judgment': 'adopt',
+                'why': [
+                    '工具型 surface 明确，已经不只是概念展示。',
+                    '作者生态与相邻项目开始收敛，说明不是孤立信号。',
+                    '已被 calibration 从 follow 提升到更接近 adopt。'
+                ],
+                'action': '放进优先体验名单。',
+                'links': [
+                    'https://github.com/jarrodwatts/claude-hud',
+                    'https://github.com/jarrodwatts/claude-delegator',
+                    'https://github.com/hesreallyhim/awesome-claude-code',
+                    'https://github.com/ccplugins/awesome-claude-code-plugins'
+                ]
+            },
+            {
+                'name': 'Proactive Agent',
+                'repo': 'Proactive Agent',
+                'track': 'openclaw-evolution',
+                'judgment': 'adopt-candidate',
+                'why': [
+                    '这是行为层能力，不只是普通 utility skill。',
+                    '它影响的是助手的主动性与持续跟进能力。',
+                    '已被 calibration 从 follow 提升到 adopt-candidate。'
+                ],
+                'action': '提升优先级，后续单独做行为层分析。',
+                'links': [
+                    'https://github.com/openclaw/skills',
+                    'https://github.com/VoltAgent/awesome-openclaw-skills',
+                    'https://github.com/sundial-org/awesome-openclaw-skills'
+                ]
+            }
+        ],
+        'follow': [
+            {
+                'name': 'Get Shit Done',
+                'repo': 'gsd-build/get-shit-done',
+                'judgment': 'follow',
+                'why': [
+                    '方法论信号很强。',
+                    '更适合当 framework-to-study，而不是今天直接 adopt。'
+                ],
+                'action': '保持 follow，必要时做专题拆解。',
+                'links': ['https://github.com/gsd-build/get-shit-done']
+            },
+            {
+                'name': 'Gog',
+                'repo': 'Gog',
+                'judgment': 'follow',
+                'why': [
+                    '支持信号不少，但可复用 lesson 还不够清楚。'
+                ],
+                'action': '继续跟，不着急加权。',
+                'links': ['https://github.com/openclaw/skills']
+            }
+        ],
+        'official_anchors': [
+            {
+                'name': 'Claude Code',
+                'repo': 'anthropics/claude-code',
+                'links': ['https://github.com/anthropics/claude-code']
+            },
+            {
+                'name': 'Codex',
+                'repo': 'openai/codex',
+                'links': ['https://github.com/openai/codex']
+            },
+            {
+                'name': 'Gemini CLI',
+                'repo': 'google-gemini/gemini-cli',
+                'links': ['https://github.com/google-gemini/gemini-cli']
+            }
+        ],
+        'deprioritized': [
+            {
+                'name': 'Polymarket',
+                'reason': '当前更像 domain-specific signal，通用产品 lesson 不够强。'
+            },
+            {
+                'name': 'Weather',
+                'reason': '当前更像 domain-specific signal，暂时不占用今天注意力。'
+            }
+        ]
+    }
+}
+
+OUT.write_text(json.dumps(payload, ensure_ascii=False, indent=2), encoding='utf-8')
+print(str(OUT))

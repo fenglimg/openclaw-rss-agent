@@ -1,0 +1,12 @@
+{
+  "ok": true,
+  "input_paths": [
+    "outputs/daily-report-zh-from-payload-v2.md"
+  ],
+  "chunk_count": 2,
+  "max_len": 1800,
+  "chunks": [
+    "# 今日进化日报\n\n## 先看结论\n今天最值得优先看的，还是两类东西：\n\n1. **能直接改善日常工作流的工具型项目**，代表是 **Claude HUD（`jarrodwatts/claude-hud`）**。\n2. **会改变助手行为模式的能力层信号**，代表是 **Proactive Agent**。\n\n前者更接近“拿来就能试、很可能马上有体感”的工具升级；后者更像“如果做对了，会改变整个产品行为方式”的能力方向。相比之下，`gsd-build/get-shit-done` 和 `Gog` 仍然值得跟，但暂时还不到今天就要大幅投入注意力的程度。官方项目像 `Claude Code`、`Codex`、`Gemini CLI`` 依然要看，不过更适合作为基线背景，而不是直接挤占今天的 adopt 位。\n\n---\n\n## 今天建议优先看\n\n### 1. Claude HUD（`jarrodwatts/claude-hud`）\n**一句话：** 工具型 surface 明确，已经不只是概念展示。\n\n**为什么值得看：**\n- 工具型 surface 明确，已经不只是概念展示。\n- 作者生态与相邻项目开始收敛，说明不是孤立信号。\n- 已被 calibration 从 follow 提升到更接近 adopt。\n\n**建议动作：** 放进优先体验名单。\n\n**具体链接：**\n- 主项目：<https://github.com/jarrodwatts/claude-hud>\n- 作者相关项目：<https://github.com/jarrodwatts/claude-delegator>\n- 生态参考：<https://github.com/hesreallyhim/awesome-claude-code>\n- 生态参考：<https://github.com/ccplugins/awesome-claude-code-plugins>\n\n---\n\n### 2. Proactive Agent\n**一句话：** 这是行为层能力，不只是普通 utility skill。\n\n**为什么值得看：**\n- 这是行为层能力，不只是普通 utility skill。\n- 它影响的是助手的主动性与持续跟进能力。\n- 已被 calibration 从 follow 提升到 adopt-candidate。\n\n**建议动作：** 提升优先级，后续单独做行为层分析。\n\n**具体链接：**\n- 技能生态：<https://github.com/openclaw/skills>\n- 生态收录：<https://github.com/VoltAgent/awesome-openclaw-skills>\n- 生态收录：<https://github.com/sundial-org/awesome-openclaw-skills>\n\n---\n\n## 值得继续跟进\n\n### 3. Get Shit Done（`gsd-build/get-shit-done`）\n**一句话：** 方法论信号很强。\n\n**为什么值得看：**\n- 方法论信号很强。\n- 更适合当 framework-to-study，而不是今天直接 adopt。\n\n**建议动作：** 保持 follow，必要时做专题拆解。\n\n**具体链接：**\n- 主项目：<https://github.com/gsd-build/get-shit-done>\n\n---\n\n### 4. Gog\n**一句话：** 支持信号不少，但可复用 lesson 还不够清楚。\n\n**为什么值得看：**\n- 支持信号不少，但可复用 lesson 还不够清楚。\n\n**建议动作：** 继续跟，不着急加权。\n\n**具体链接：**\n- 技能生态：<https://github.com/openclaw/skills>\n\n---\n\n## 官方动向（基线项目）\n\n这三类项目依然要持续盯着，因为它们定义的是生态基线，而不是今天的战术 adopt 位：",
+    "- Claude Code：<https://github.com/anthropics/claude-code>\n- Codex：<https://github.com/openai/codex>\n- Gemini CLI：<https://github.com/google-gemini/gemini-cli>\n\n如果日报里把它们和实战型 workflow / tooling 候选混在一起，读起来会很乱；单独列出来会更符合阅读习惯。\n\n---\n\n## 今天不用急着投入\n\n- **Polymarket**：当前更像 domain-specific signal，通用产品 lesson 不够强。\n- **Weather**：当前更像 domain-specific signal，暂时不占用今天注意力。\n\n---\n\n## 今天的阅读建议\n如果时间很少，先看：\n- `Claude HUD`\n- `Proactive Agent`\n\n如果还有时间，再看：\n- `Get Shit Done`\n\n剩下的先作为背景跟踪，不需要今天全部展开。"
+  ]
+}

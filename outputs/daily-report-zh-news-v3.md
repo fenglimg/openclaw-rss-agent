@@ -1,0 +1,64 @@
+# 🗞️ AI 资讯日报｜2026-03-23 Mon (UTC)
+
+> 今日版面：2 条头条｜4 条快讯雷达｜3 个官方基线｜2 条先放后看
+> 头版配比：工具/工作流线 1｜能力/产品线 1
+
+## 今晨导语
+今天版面同时出现两种更像“新闻”的变化：一边是可直接上手的工具面升级，另一边是更值得盯住的行为层升档。
+
+## 一眼看完今天
+
+- jarrodwatts/claude-hud：工具面出现明确升级，今天从候选项抬升到前台。
+- Proactive Agent：能力层出现明确升档，今天不只是看功能，而是看助手行为变化。
+- 官方基线：今天继续挂表，不和头版抢注意力。
+- 快讯补位：davila7/claude-code-templates 仍在雷达里，适合补看。
+
+## 今日头条
+
+### 头条 1｜jarrodwatts/claude-hud 升到今天前台
+- 版面位置：工具/工作流线 · 今日升级
+- 今天发生了什么：工具面出现明确升级，今天从候选项抬升到前台。
+- 为什么是今天：因为它已经从“可关注”走到“可直接上手”的工具面升级，今天更像一条实用新闻。
+- 新鲜度：今日升级｜今日变化：有明确升档｜源 brief 明确给出升级动作，属于今天最该前置的信号。
+- 先怎么看：今天先把它放进优先体验名单。
+- 相关链接：
+- 主链接：<https://github.com/jarrodwatts/claude-hud>
+- 延伸 1：<https://github.com/jarrodwatts/claude-delegator>
+
+### 头条 2｜Proactive Agent 升到今天前台
+- 版面位置：能力/产品线 · 今日升级
+- 今天发生了什么：能力层出现明确升档，今天不只是看功能，而是看助手行为变化。
+- 为什么是今天：因为它代表助手行为层的变化，这类变化通常比单个技能点更值得今天优先看。
+- 新鲜度：今日升级｜今日变化：有明确升档｜源 brief 明确给出升级动作，属于今天最该前置的信号。
+- 先怎么看：今天先按能力层方向重点看一遍。
+- 相关链接：
+- 主链接：<https://github.com/openclaw/skills>
+- 延伸 1：<https://github.com/VoltAgent/awesome-openclaw-skills>
+
+## 快讯雷达
+
+- [工具/工作流线·今日前排] **davila7/claude-code-templates**：工具/工作流线继续占据今日前排，属于今天先看的对象。 为什么看：因为它今天仍在高优先级队列里，值得先占掉读者的第一轮注意力。 先看法：今天先读主链接，再决定要不要进入体验名单。｜<https://github.com/davila7/claude-code-templates>
+- [能力/产品线·今日前排] **Agent Browser**：能力/产品线继续占据今日前排，属于今天先看的对象。 为什么看：因为它今天仍在高优先级队列里，值得先占掉读者的第一轮注意力。 先看法：今天先读主链接，再决定要不要进入体验名单。｜<https://github.com/openclaw/skills>
+- [工具/工作流线·持续发酵] **gsd-build/get-shit-done**：工具/工作流线继续挂在快讯雷达，信号还在累积。 为什么看：因为方法论价值在，但今天更适合记进雷达，不必挤进主版。 先看法：先放在快讯雷达里持续跟进。｜<https://github.com/gsd-build/get-shit-done>
+- [能力/产品线·持续发酵] **Gog**：能力/产品线继续挂在快讯雷达，信号还在累积。 为什么看：因为支持信号还在，但可复用 lesson 还没强到足以拿下今天头版。 先看法：先放在快讯雷达里持续跟进。｜<https://github.com/openclaw/skills>
+
+## 官方基线
+
+- **anthropics/claude-code**（官方代码代理基线）：今天继续挂在基线位，用来校准头版项目与主流官方能力的距离。 <https://github.com/anthropics/claude-code>
+- **openai/codex**（官方代码工作流基线）：今天继续挂在基线位，用来校准头版项目与主流官方能力的距离。 <https://github.com/openai/codex>
+- **google-gemini/gemini-cli**（官方多模型 CLI 基线）：今天继续挂在基线位，用来校准头版项目与主流官方能力的距离。 <https://github.com/google-gemini/gemini-cli>
+- 值班台说明：官方项目今天主要承担校准背景的角色，不主动挤占头版。
+
+## 先放后看
+
+- **Polymarket**：因为它还没有给到足够的新信息，值得保留但不该稀释今天头版。 回看触发：等出现可复用的新做法或更强外部佐证时再回看。
+- **Weather**：因为它还没有给到足够的新信息，值得保留但不该稀释今天头版。 回看触发：等出现可复用的新做法或更强外部佐证时再回看。
+- 值班台说明：先放后看区只保留今天不该抢版面的题材。
+
+## 3 分钟看完顺序
+
+- 先看 jarrodwatts/claude-hud，它代表今天最前面的版面变化。
+- 再看 Proactive Agent，补足另一条主线。
+- 最后扫一眼 davila7/claude-code-templates，补完雷达层。
+
+<!-- news-style-output: scripts-v2/render_daily_report_news_zh_v3.py -->

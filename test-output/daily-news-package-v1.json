@@ -1,0 +1,171 @@
+{
+  "title": "daily-news-package-v1",
+  "source_payload": "daily-payload-v2",
+  "meta": {
+    "date": "2026-03-23",
+    "weekday": "Mon",
+    "timezone": "UTC",
+    "edition_label": "news-style-v3"
+  },
+  "editor_line": "今天版面同时出现两种更像“新闻”的变化：一边是可直接上手的工具面升级，另一边是更值得盯住的行为层升档。",
+  "deck": "今日版面：2 条头条｜4 条快讯雷达｜3 个官方基线｜2 条先放后看",
+  "desk": {
+    "front_page_balance": {
+      "counts": {
+        "工具/工作流线": 1,
+        "能力/产品线": 1
+      },
+      "balanced": true
+    },
+    "quick_alerts": [
+      "jarrodwatts/claude-hud：工具面出现明确升级，今天从候选项抬升到前台。",
+      "Proactive Agent：能力层出现明确升档，今天不只是看功能，而是看助手行为变化。",
+      "官方基线：今天继续挂表，不和头版抢注意力。",
+      "快讯补位：davila7/claude-code-templates 仍在雷达里，适合补看。"
+    ],
+    "official_baseline_line": "官方项目今天主要承担校准背景的角色，不主动挤占头版。",
+    "hold_line": "先放后看区只保留今天不该抢版面的题材。"
+  },
+  "sections": {
+    "lead": [
+      {
+        "rank": 1,
+        "name": "jarrodwatts/claude-hud",
+        "repo": "jarrodwatts/claude-hud",
+        "track": "applied-ai-evolution",
+        "track_label": "工具/工作流线",
+        "headline": "jarrodwatts/claude-hud 升到今天前台",
+        "strapline": "工具/工作流线 · 今日升级",
+        "today_signal": "工具面出现明确升级，今天从候选项抬升到前台。",
+        "why_today": "因为它已经从“可关注”走到“可直接上手”的工具面升级，今天更像一条实用新闻。",
+        "freshness_line": "今日升级｜今日变化：有明确升档｜源 brief 明确给出升级动作，属于今天最该前置的信号。",
+        "change_note": "今天有明确升档。",
+        "action": "今天先把它放进优先体验名单。",
+        "links": [
+          {
+            "label": "主链接",
+            "url": "https://github.com/jarrodwatts/claude-hud"
+          },
+          {
+            "label": "延伸 1",
+            "url": "https://github.com/jarrodwatts/claude-delegator"
+          }
+        ]
+      },
+      {
+        "rank": 2,
+        "name": "Proactive Agent",
+        "repo": "Proactive Agent",
+        "track": "openclaw-evolution",
+        "track_label": "能力/产品线",
+        "headline": "Proactive Agent 升到今天前台",
+        "strapline": "能力/产品线 · 今日升级",
+        "today_signal": "能力层出现明确升档，今天不只是看功能，而是看助手行为变化。",
+        "why_today": "因为它代表助手行为层的变化，这类变化通常比单个技能点更值得今天优先看。",
+        "freshness_line": "今日升级｜今日变化：有明确升档｜源 brief 明确给出升级动作，属于今天最该前置的信号。",
+        "change_note": "今天有明确升档。",
+        "action": "今天先按能力层方向重点看一遍。",
+        "links": [
+          {
+            "label": "主链接",
+            "url": "https://github.com/openclaw/skills"
+          },
+          {
+            "label": "延伸 1",
+            "url": "https://github.com/VoltAgent/awesome-openclaw-skills"
+          }
+        ]
+      }
+    ],
+    "briefs": [
+      {
+        "tag": "今日前排",
+        "name": "davila7/claude-code-templates",
+        "repo": "davila7/claude-code-templates",
+        "track": "applied-ai-evolution",
+        "track_label": "工具/工作流线",
+        "today_signal": "工具/工作流线继续占据今日前排，属于今天先看的对象。",
+        "why_today": "因为它今天仍在高优先级队列里，值得先占掉读者的第一轮注意力。",
+        "freshness": "今日前排",
+        "action": "今天先读主链接，再决定要不要进入体验名单。",
+        "primary_link": "https://github.com/davila7/claude-code-templates"
+      },
+      {
+        "tag": "靠前观察",
+        "name": "Agent Browser",
+        "repo": "Agent Browser",
+        "track": "openclaw-evolution",
+        "track_label": "能力/产品线",
+        "today_signal": "能力/产品线继续占据今日前排，属于今天先看的对象。",
+        "why_today": "因为它今天仍在高优先级队列里，值得先占掉读者的第一轮注意力。",
+        "freshness": "今日前排",
+        "action": "今天先读主链接，再决定要不要进入体验名单。",
+        "primary_link": "https://github.com/openclaw/skills"
+      },
+      {
+        "tag": "继续发酵",
+        "name": "gsd-build/get-shit-done",
+        "repo": "gsd-build/get-shit-done",
+        "track": "applied-ai-evolution",
+        "track_label": "工具/工作流线",
+        "today_signal": "工具/工作流线继续挂在快讯雷达，信号还在累积。",
+        "why_today": "因为方法论价值在，但今天更适合记进雷达，不必挤进主版。",
+        "freshness": "持续发酵",
+        "action": "先放在快讯雷达里持续跟进。",
+        "primary_link": "https://github.com/gsd-build/get-shit-done"
+      },
+      {
+        "tag": "继续发酵",
+        "name": "Gog",
+        "repo": "Gog",
+        "track": "openclaw-evolution",
+        "track_label": "能力/产品线",
+        "today_signal": "能力/产品线继续挂在快讯雷达，信号还在累积。",
+        "why_today": "因为支持信号还在，但可复用 lesson 还没强到足以拿下今天头版。",
+        "freshness": "持续发酵",
+        "action": "先放在快讯雷达里持续跟进。",
+        "primary_link": "https://github.com/openclaw/skills"
+      }
+    ],
+    "official_watch": [
+      {
+        "name": "anthropics/claude-code",
+        "repo": "anthropics/claude-code",
+        "role": "官方代码代理基线",
+        "summary": "今天继续挂在基线位，用来校准头版项目与主流官方能力的距离。",
+        "primary_link": "https://github.com/anthropics/claude-code"
+      },
+      {
+        "name": "openai/codex",
+        "repo": "openai/codex",
+        "role": "官方代码工作流基线",
+        "summary": "今天继续挂在基线位，用来校准头版项目与主流官方能力的距离。",
+        "primary_link": "https://github.com/openai/codex"
+      },
+      {
+        "name": "google-gemini/gemini-cli",
+        "repo": "google-gemini/gemini-cli",
+        "role": "官方多模型 CLI 基线",
+        "summary": "今天继续挂在基线位，用来校准头版项目与主流官方能力的距离。",
+        "primary_link": "https://github.com/google-gemini/gemini-cli"
+      }
+    ],
+    "backlog": [
+      {
+        "name": "Polymarket",
+        "reason": "因为它还没有给到足够的新信息，值得保留但不该稀释今天头版。",
+        "return_trigger": "等出现可复用的新做法或更强外部佐证时再回看。"
+      },
+      {
+        "name": "Weather",
+        "reason": "因为它还没有给到足够的新信息，值得保留但不该稀释今天头版。",
+        "return_trigger": "等出现可复用的新做法或更强外部佐证时再回看。"
+      }
+    ],
+    "reading_agenda": [
+      "先看 jarrodwatts/claude-hud，它代表今天最前面的版面变化。",
+      "再看 Proactive Agent，补足另一条主线。",
+      "最后扫一眼 davila7/claude-code-templates，补完雷达层。"
+    ]
+  }
+}
